@@ -1,6 +1,6 @@
 # Conda & Conda-Incubator Governance
 
-This document outlines the policies and procedures that manage the conda community. This document recognizes that, while packaging and package tooling is deeply important to all of us, conda is an all-volunteer organization. Individual members of the core team, any sub-team, and external contributors choose to participate and may choose to leave at any time for any reason or for no reason. 
+This document outlines the policies and procedures that manage the conda community. This document recognizes that, while packaging and package tooling is deeply important to all of us, participation in the organization is voluntary. Individual members of the core team, any sub-team, and external contributors choose to participate and may choose to leave at any time for any reason or for no reason. 
 
 Larger organizations, such as for-profit businesses, that contribute code and support to the conda organization are welcome to (but not required to) maintain creative control of their contributions as long as such contributions adhere to the rules in this document. Such organizations are also welcome to cede creative & maintenance control of any specific project to the community as well.
 
@@ -31,9 +31,9 @@ This organization does not hold as part of its role the creation of any packages
 Here are defined the primary teams participating in the conda organization's activities.
 
 * **core:** The core team is the governing body over the entire conda organization. Members of the core team have full voting rights within the organization. Members of core are the face of the organization, and are responsible for officially interfacing with external communities, organizations, non-profits, and companies. The core team may create new sub-teams, as appropriate. Each member of core is entitled to one vote on all elected matters.
-* **maintainers:** A maintainer is an individual or group responsible for the management of one or more repositories and packages. Maintainers have the ability to merge pull requests into the repositories of the packages they maintain.
+* **maintainers:** A maintainer is an individual or group responsible for the management of a software project consisting of one or more repositories and any software releases. Maintainers have the ability to merge pull requests into the repositories of the software project they maintain and produce releases of that software project.
 * **external contributors:** This group encompasses all others who are not on core or maintainers. This includes first-time contributors, collaborators, and original authors. They have no special rights within the conda organization itself.
-* **emeritus-core:** Core members that are inactive (commits, GitHub comments/issues/reviews, dev meetings, and voting on polls) in the past six months will be asked if they want to become emeritus-core developers. One week after asking, if the inactive core member has not responded, they will be automatically moved to emeritus status. Any core member can also request to become emeritus if they wish to do so (e.g. taking a sabbatical or long vacation). Emeritus core members can still vote and be brought back to active core anytime, the only difference is that emeritus-core will not count as the total core members when computing the necessary votes a poll needs to pass. The `core.csv` list should be updated when change in the status of a member occurs.
+* **emeritus-core:** Core members that are inactive (commits, GitHub comments/issues/reviews, dev meetings, and voting on polls) in the past six months will be asked if they want to become emeritus-core developers. One week after asking, if the inactive core member has not responded, they will be automatically moved to emeritus status. Any core member can also request to become emeritus if they wish to do so (e.g. taking a sabbatical or long vacation). Emeritus core members can still vote and be brought back to active core anytime, the only difference is that emeritus-core votes will not count towards the total core members when computing the necessary votes a poll needs to meet quorum. The `core.csv` list should be updated when change in the status of a member occurs.
 
 
 ## Sub-Teams
@@ -53,7 +53,7 @@ All sub-teams must adhere to the governance, policies, and procedures of the con
 The conda organization acknowledges that project contributions may come from a variety of sources. To this end we define two maintenance categories for our projects.
 
 * A **Community** maintained project is one where the development, ownership, and maintenance are controlled by the conda organization at large. Contributors keep the copyright for code they wrote and submit for inclusion to the respective project under the terms of license of that project. 
-* A **Federated** project is maintained by a sub-team of *the conda organization*. Such projects maintain control of distribution and licensing via the project's sub-team. Federated projects are not controled by the community at large. Still, as part of the conda organization, federated projects agree to the terms of this governance document, including but not limited to the Code of Conduct.
+* A **Federated** project is maintained by a sub-team of *the conda organization*. Such projects maintain control of distribution and licensing via the project's sub-team. Federated projects are not controlled by the community at large. Still, as part of the conda organization, federated projects agree to the terms of this governance document, including but not limited to the Code of Conduct.
 * An **Attic** project is one which is unmaintained or clearly superseded by another project. No support is provided or anticipated for these projects. 
 
 All projects must prominently list their maintenance status in their README and provide clear instructions on where people can seek help for the project. The possible maintenance statuses are one of `federated` or `community` or `attic`. 
@@ -95,15 +95,17 @@ Members of **core** are excluded from these votes and retain commits rights to a
 This section presents descriptions and criteria for voting items in the conda organization. The core team is the only team with voting rights. Members of core may also call a vote on any topic. The restrictions on calling a vote are as follows:
 
 * There must only be one vote active on a particular item at any time.
-* The act of calling for a vote cannot itself violate the code of conduct. For example, Sam repeatedly called for votes immediately after a previous vote failed to achieve Sam's result. Sam is attempting to bully other members of core into agreeing, and is thus violating the code of conduct.
+* The act of calling for a vote must not itself violate the code of conduct. For example, Sam repeatedly called for votes immediately after a previous vote failed to achieve Sam's result. Sam is attempting to bully other members of core into agreeing, and is thus violating the code of conduct.
 * Voting yes moves the proposal forward; 
-  voting no is the only way to express opposition to the proposal;
-  not voting is discouraged, but non-votes do not count as "no".
-* There should always be an option to abstain from voting.
+  Voting no is the only way to express opposition to the proposal;
+  There is always an option to abstain from voting;
+  Not voting is discouraged, but non-votes do not count as "no", "yes", or "abstain".
+* Core members must explicitly abstain from a vote via making a comment on the PR/issue or selecting the "abstain" option. Simply not voting at all doesn't count as an abstention.
+* Abstentions count towards the quorum but are excluded when computing if a vote passes. 
 
 Voting items are labeled as either **standard** or **sensitive**. Standard items are ones where public record and discourse is preferable. Sensitive voting items are ones where the results of the vote should remain private to the voters after the vote has occurred. Sensitive votes should take place on a secure anonymous voting platform in order to retain election integrity and anonymity. (We may use `Polys <polys.me>`_ and `the Helios voting system <https://vote.heliosvoting.org/>`_, but are open to any secure, anonymous system.) The email capability of your chosen voting platform should be used for sending voting invitations and reminders, and you should use the email list from `core.csv` as the authoritative list of emails to use.
 
-The default voting period is 1 week (7 days). This may be modified at the time when a vote is called, but may never be less than one week.
+The default voting period is 1 week (7 days). This may be modified at the time when a vote is called, but may never be less than one week modulo exceptions for some time-sensitive votes below.
 
 Additional requirements may apply in case low turnouts have to be handled, see "Quorum" below.
 
@@ -121,8 +123,7 @@ A ``vote`` label must be applied to the PR or issue.
 
 ----
 
-**Posting results:** To maintain the historical record, the outcome of any standard vote which invoked the timeout rules below
-should be recorded in the "vote-results" folder of our documentation. 
+**Posting results:** To maintain the historical record, the outcome of any standard vote which invoked the timeout rules below should be recorded in the "vote-results" folder of our documentation. 
 
 Each "timed out" vote should be its own file.  The filename should reflect the topic and the date that the vote opened. The file should contain at least:
          
@@ -132,12 +133,11 @@ Each "timed out" vote should be its own file.  The filename should reflect the t
 * Poll open and close dates
 * documentation of the vote reminders as detailed below
 
-Non-timed-out vote results should be documented in github PR/issue upon which the voting happened. A ``vote`` label must be applied 
-to the PR or issue.
+Non-timed-out vote results should be documented in github PR/issue upon which the voting happened. A ``vote`` label must be applied to the PR or issue.
 
 ----
 
-**Quorum:** All percentages below express *both* required participation, as a fraction of the active core team, as well as the fraction of that fraction who vote affirmatively on the issue. For example, in a vote requiring 50%, with 18 active core members, at least 9 must vote; if 9 vote, there must 5 affirmative votes. If 13 members vote, 7 must be affirmative.
+**Quorum:** All percentages below express *both* required participation, as a fraction of the active core team, as well as the fraction of that fraction who vote affirmatively (i.e. vote `yes`) on the issue. For example, in a vote requiring 50%, with 18 active core members, at least 9 must vote; if 9 vote, there must 5 affirmative votes. If 13 members vote, 7 must be affirmative.
 
 Because everyone is busy and it is difficult sometimes to get quorum, votes not achieving quorum will eventually time out on their set end date. When this happens, the current participation level is taken for what it is, and the percentage of affirmative votes is calculated from whatever the vote total is at that time. In order for a timeout to occur, the vote must have:
 
@@ -158,6 +158,20 @@ To post a timeout reminder, here is a template comment:
     To vote please leave Approve (yea) or Request Changes (nay) reviews.
               
 To declare a standard vote "timed out," the person making such a declaration must post a pull-request adding a vote record to the `vote-results` folder. The declaration PR should be merged by the first core member who is available to verify that the requirements for the timeout have been met, based on their own personal records.
+
+----
+
+**Voting Total Examples**
+
+Assume the core team has 10 active members, 2 emeritus members, and the vote threshold is 50%.
+
+1. Among core there are 3 "yes", 2 "no", and 1 "abstain" votes. No emeritus votes were recorded. This vote has reached quorum (3 + 2 + 1 = 6 which is at least 50% of 10). It also passes since it recorded 3 "yes" votes and 2 "no" votes giving 3/5 (60%) which is at least 50% of 5.
+
+2. Among core there are 4 "yes", 2 "no", and no abstentions. One emeritus core member voted "no". This vote has reached quorum (4 + 2 = 6 which is at least 50% of 10). It has also passed since it recorded 4 "yes" votes and 3 "no" votes giving 4/7 which is at least 50% of 6.
+
+3. Among core there are 3 "yes" votes, "1" no vote and no abstentions. No emeritus members voted. Further the timeout rules above **were** invoked. This vote has thus reached quorum and it has passed since 3/4 (75%) is at least 50%.
+
+4. Among core there are 3 "yes" votes, "1" no vote and no abstentions. No emeritus members voted. Further the timeout rules above **were not** invoked. This vote has not reached quorum and should be extended or redone.
 
 ----
 
@@ -214,14 +228,14 @@ In the second case, the incubated project has been communally developed by other
 
 ----
 
-**Graduate a Software Project from Incubation:** At some point, many projects will want to be included in the main conda organization. Graduating a project can be done with a super-majority vote from core. There are no strict criteria for when a project is ready, stable, or viable for graduation. Rather, members of core are entrusted to use their objective best judgment and common sense when making this determination. Adherence to conda specifications is a particularly important aspect of the decision to include a project in the main conda organization. The membership of the initial maintenance team should be included in the vote information. This kind of vote applies only to software projects. Specifications are covered separately.
+**Incorporate a Software Project into the main `conda` Organization:** At some point, many projects will want to be included in the main `conda` GitHub (or otherwise) organization. Moving a project into this organization can be done with a super-majority vote from core. There are no strict criteria for when a project is ready, stable, or viable for this step. Rather, members of core are entrusted to use their objective best judgment and common sense when making this determination. Adherence to conda specifications is a particularly important aspect of the decision to include a project in the main conda organization. The membership of the initial maintenance team should be included in the vote information. There is not requirement for a project to incubate before a vote of this nature can be called. This kind of vote applies only to software projects. Specifications are covered separately.
 
 * Standard
 * 60% Majority to pass
 
 ----
 
-**Graduate a Specification Project from Incubation to Main:** The purpose of specifications is to be fully endorsed by the main conda organization. Graduating a specification can be done with a super-super-majority vote from core. The purpose of this is to ensure that the overwhelming majority of the conda ecosystem agrees with the goals & aims of the specification, even if no software implements it at the time of the vote. Specifications are encouraged to be written and developed in the incubator. New versions of a specification (beyond simple typographical and grammatical fixes) are considered new specifications for purposes of voting here. 
+**Graduate a Specification Project from Incubation to Main:** The purpose of specifications is to be fully endorsed by the main conda organization. Graduating a specification can be done with a super-super-majority vote from core. The purpose of this is to ensure that the overwhelming majority of the conda ecosystem agrees with the goals & aims of the specification, even if no software implements it at the time of the vote. Specifications are highly encouraged to be written and developed in `conda-incubator` so they can accrue comments and changes. New versions of a specification (beyond simple typographical and grammatical fixes) are considered new specifications for purposes of voting here. 
 
 In spite of the high threshold for approval here, we highly encourage the writing of specification documents. 
 
@@ -252,6 +266,8 @@ In spite of the high threshold for approval here, we highly encourage the writin
 ----
 
 **Spending of funds:** Proposers must specify the purpose, time limit, and source of funds that are to be spent. Purpose and time limit should be general enough in order to prevent excessive voting. For example, recurrent items (such as CI) should not need to be voted on each and every month. Instead, they should exist for a defined period of time (e.g. until the current migration ends, or for the next year). For such recurring expenses, the person coordinating spending the funds can choose to cancel the spending if it is deemed no longer necessary or cost-effective without calling another vote, although they should make reasonable efforts to notify the rest of core before doing so.
+
+Prior to their submission, grant proposals must be supplied to the core members and a vote called under the `Spending of funds` policy. If the vote does not pass the proposal is not to be submitted in its current form and an additional round of voting is required on any subsequent draft. If the vote passes and the funds are awarded, further voting to spend the funds is not required.
 
 * Standard
 * 50% Majority to pass
@@ -303,7 +319,7 @@ In alphabetical order,
 {{ core_members }}
 
 
-## Emetirus members
+## Emeritus members
 
 In alphabetical order,
 
@@ -312,6 +328,6 @@ In alphabetical order,
 
 ## Document History
 
-This document was initially written by Anthony Scopatz.
+This document was initially written by Anthony Scopatz, CJ Wright, Matthew R. Becker, Uwe Korn, and Eric Dill.
 
 This document is released under the CC-BY 4.0 license.
