@@ -30,6 +30,7 @@
 * Crystal Soja
 * Peter Wang
 * Isabela Presedo-Floyd
+* Michael Sarahan
 
 
 ## Agenda
