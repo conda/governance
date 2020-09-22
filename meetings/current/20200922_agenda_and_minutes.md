@@ -1,10 +1,10 @@
-# 2020-09-08 Conda Community Meeting 
+# 2020-09-22 Conda Community Meeting 
 
 ****
 
 [Meeting link](https://meet.google.com/uje-pdns-hch)
 
-[What time is the meeting in my time zone](https://arewemeetingyet.com/Chicago/2020-09-08/09:00/b/Conda%20community%20meeting)
+[What time is the meeting in my time zone](https://arewemeetingyet.com/Chicago/2020-09-22/09:00/b/Conda%20community%20meeting)
 
 [last weeks meeting]() None!
 
