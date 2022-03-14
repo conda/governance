@@ -9,31 +9,33 @@ We deeply appreciate all good faith contributions.
 
 ## Code of Conduct
 
-The conda organization adheres to the [NumFOCUS Code of Conduct](https://www.numfocus.org/code-of-conduct).
+The conda organization's [Code of Conduct](CODE_OF_CONDUCT.md) governs all interactions within the conda organization.  Please take a few minutes to familiarize yourself with it.
+
+Our code of conduct is based on the [NumFOCUS Code of Conduct template](https://github.com/numfocus/numfocus/blob/8759e21481552f213489e3718979ccecf68e9ead/manual/numfocus-coc.md).
 
 
 ## Naming & Manifest
 
-This document defines the conda organization as the body responsible for governing the tools, specifications, and libraries within the conda ecosystem, broadly speaking. This encompasses specific GitHub organizations, such as `conda` and `conda-incubator`. Authors of particular software projects, such as `conda` or `mamba`, are free to choose if and when their projects are included as part of the conda organization.
+This document defines the conda organization as the body responsible for governing the tools, specifications, and libraries within the conda ecosystem, broadly speaking. This encompasses specific GitHub organizations, such as [`conda`](https://github.com/conda/) and [`conda-incubator`](https://github.com/conda-incubator/). Authors of particular software projects, such as [`conda`](https://github.com/conda/conda) or [`mamba`](https://github.com/mamba-org/mamba), are free to choose if and when their projects are included as part of the conda organization.
 
-This organization does not hold as part of its role the creation of any packages. The act of packaging itself has other organizations dedicated to their creation, such as Anaconda, conda-forge, & bioconda.
+This organization does not hold as part of its role the creation of any packages. The act of packaging itself has other organizations dedicated to their creation, such as [Anaconda](https://anaconda.com/), [conda-forge](https://conda-forge.org/), and [bioconda](https://bioconda.github.io/).
 
 
 ## Terminology
 
-1. *Conda* or *The conda organization* : The conda organization defined here, including `conda` and `conda-incubator`.
+1. *conda* or *the conda organization* : The conda organization defined here, including `conda` and `conda-incubator`.
 2. *The conda project* : The actual conda software itself, as distinct from the conda organization.
 3. *The conda ecosystem* : The broadest set of tools, packages, and people that use any conda related tooling. The conda organization is a subset of *the conda ecosystem*. Members of the ecosystem should not feel compelled or obligated to participate in the conda organization, though positive engagement is welcome.
 
 
 ## Teams & Roles
 
-Here are defined the primary teams participating in the conda organization's activities.
+The primary teams participating in the conda organization's activities are:
 
 * **core:** The core team is the governing body over the entire conda organization. Members of the core team have full voting rights within the organization. Members of core are the face of the organization, and are responsible for officially interfacing with external communities, organizations, non-profits, and companies. The core team may create new sub-teams, as appropriate. Each member of core is entitled to one vote on all elected matters.
 * **maintainers:** A maintainer is an individual or group responsible for the management of a software project consisting of one or more repositories and any software releases. Maintainers have the ability to merge pull requests into the repositories of the software project they maintain and produce releases of that software project.
 * **external contributors:** This group encompasses all others who are not on core or maintainers. This includes first-time contributors, collaborators, and original authors. They have no special rights within the conda organization itself.
-* **emeritus-core:** Core members that are inactive (commits, GitHub comments/issues/reviews, dev meetings, and voting on polls) in the past six months will be asked if they want to become emeritus-core developers. One week after asking, if the inactive core member has not responded, they will be automatically moved to emeritus status. Any core member can also request to become emeritus if they wish to do so (e.g. taking a sabbatical or long vacation). Emeritus core members can still vote and be brought back to active core anytime, the only difference is that emeritus-core votes will not count towards the total core members when computing the necessary votes a poll needs to meet quorum. The `core.csv` list should be updated when change in the status of a member occurs.
+* **emeritus-core:** Core members that are inactive (commits, GitHub comments/issues/reviews, dev meetings, and voting on polls) in the past six months will be asked if they want to become emeritus-core developers. One week after asking, if the inactive core member has not responded, they will be automatically moved to emeritus status. Any core member can also request to become emeritus if they wish to do so (e.g. taking a sabbatical or long vacation). Emeritus core members can still vote and be brought back to active core anytime, but emeritus-core votes will not count towards the total core members when computing the necessary votes a poll needs to meet quorum. The [`core.csv`](core.csv) list should be updated when change in the status of a member occurs.
 
 
 ## Sub-Teams
@@ -42,7 +44,7 @@ The core team may elect to create new sub-teams for managing the daily business 
 
 Sub-teams have a charter that is either *dynamic* or *static*.
 
-* A **dynamic** charter means that the sub-team is self-organizing, with respect to its own internal policies, procedures, and membership. A sub-team may choose to modify its membership independent of the core team. For example, a Google Summer of Code team could be a good candidate for a dynamic charter. Alternatively, maintenance teams also have a dynamic charter, except for voting on commit rights and membership, as detailed below.
+* A **dynamic** charter means that the sub-team is self-organizing, with respect to its own internal policies, procedures, and membership. A sub-team may choose to modify its membership independent of the core team. For example, a Google Summer of Code team could be a good candidate for a dynamic charter. Maintenance teams also have a dynamic charter, except for voting on commit rights and membership, as detailed below.
 * A **static** charter means that all membership decisions and non-trivial policies changes must be approved by the core team. For example, a finance team may require a static charter.
 
 All sub-teams must adhere to the governance, policies, and procedures of the conda organization at all times.
@@ -50,10 +52,10 @@ All sub-teams must adhere to the governance, policies, and procedures of the con
 
 ## Community, Federated, & Attic Maintenance
 
-The conda organization acknowledges that project contributions may come from a variety of sources. To this end we define two maintenance categories for our projects.
+The conda organization acknowledges that project contributions may come from a variety of sources. To this end we define three maintenance categories for our projects.
 
 * A **Community** maintained project is one where the development, ownership, and maintenance are controlled by the conda organization at large. Contributors keep the copyright for code they wrote and submit for inclusion to the respective project under the terms of license of that project. 
-* A **Federated** project is maintained by a sub-team of *the conda organization*. Such projects maintain control of distribution and licensing via the project's sub-team. Federated projects are not controlled by the community at large. Still, as part of the conda organization, federated projects agree to the terms of this governance document, including but not limited to the Code of Conduct.
+* A **Federated** project is maintained by a sub-team of *the conda organization*. Such projects maintain control of distribution and licensing via the project's sub-team. Federated projects are not controlled by the community at large. Still, as part of the conda organization, federated projects agree to the terms of this governance document, including but not limited to the [Code of Conduct](CODE_OF_CONDUCT.md).
 * An **Attic** project is one which is unmaintained or clearly superseded by another project. No support is provided or anticipated for these projects. 
 
 All projects must prominently list their maintenance status in their README and provide clear instructions on where people can seek help for the project. The possible maintenance statuses are one of `federated` or `community` or `attic`. 
@@ -74,9 +76,9 @@ Federated projects are under no obligation to have a transition plan or any inte
 
 ## Incubation
 
-All projects start their journeys in an experimental or unstable state. To this end, we delineate stable projects as living in the `conda` GitHub organization. Therefore, projects new to the conda organization & governance must begin their inclusion here in the `conda-incubator` organization. The barrier to entry for a project to be added to the incubator should be very low. A vote from core is required to move a project from incubation to the main GitHub organization.
+All projects start their journeys in an experimental or unstable state. To this end, we delineate stable projects as living in the `conda` GitHub organization. Therefore, projects new to the conda organization and governance must begin their inclusion here in the `conda-incubator` organization. The barrier to entry for a project to be added to the incubator should be very low. A vote from core is required to move a project from incubation to the main GitHub organization.
 
-The member of core sponsoring the incubation is responsible for ensuring that basic legal requirements have been met that allow for the incubation. For example, trademark usage and license terms must been checked prior to incubation.
+Any single member of core may add a project to the incubator, given the knowledge and consent of the author (see [below](#voting)). The member of core sponsoring the incubation is responsible for ensuring that basic legal requirements have been met that allow for the incubation. For example, trademark usage and license terms must been checked prior to incubation.
 
 
 ## Maintenance Teams
@@ -85,9 +87,9 @@ A maintenance team is a sub-team with a dynamic charter, except for a few caveat
 
 The initial maintenance team for projects in the `conda` organization are specified in the vote to move a project from the incubator to the main `conda` organization. As this vote has a 60% threshold and sub-team formation is only a 50% threshold, the vote for adding a project to the main `conda` organization can serve both purposes. Maintenance teams for incubating projects do not need a vote for their creation. Instead they are created when the project is moved into `conda-incubator`.
 
-For federated and incubating projects, the maintenance team decides among themselves on how to add and/or remove members from the maintenance team. Further, maintenance teams for incubating projects are exempted from the requirement to have at least one core member. For a community maintained project, a petition for commits right is made to the current members of the maintenance team for that project. If this petition passes according to the voting rules for "Nominate new member of a maintenance team" below, the petitioner is granted write access and added to the team.
+For federated and incubating projects, the maintenance team decides among themselves on how to add and/or remove members from the maintenance team. Further, maintenance teams for incubating projects are exempted from the requirement to have at least one core member. For a community maintained project, a petition for commit rights is made to the current members of the maintenance team for that project. If this petition passes according to the voting rules for "Nominate new member of a maintenance team" below, the petitioner is granted write access and added to the team.
 
-Members of **core** are excluded from these votes and retain commits rights to all community projects as stated above. They can add or remove themselves from maintenance teams as they see fit in order to indicate which projects they are involved with, have a say in voting for write access petitions, etc. Members of core may not add themselves to a maintenance team in order to vote on a petition for commit access if they were not already on that team when the petition was made. 
+Members of **core** are excluded from these votes and retain commit rights to all community projects as stated above. They can add or remove themselves from maintenance teams as they see fit in order to indicate which projects they are involved with, have a say in voting for write access petitions, etc. Members of core may not add themselves to a maintenance team in order to vote on a petition for commit access if they were not already on that team when the petition was made. 
 
 
 ## Voting
@@ -103,14 +105,13 @@ This section presents descriptions and criteria for voting items in the conda or
 * Core members must explicitly abstain from a vote via making a comment on the PR/issue or selecting the "abstain" option. Simply not voting at all doesn't count as an abstention.
 * Abstentions count towards the quorum but are excluded when computing if a vote passes. 
 
-Voting items are labeled as either **standard** or **sensitive**. Standard items are ones where public record and discourse is preferable. Sensitive voting items are ones where the results of the vote should remain private to the voters after the vote has occurred. Sensitive votes should take place on a secure anonymous voting platform in order to retain election integrity and anonymity. (We may use `Polys <polys.me>`_ and `the Helios voting system <https://vote.heliosvoting.org/>`_, but are open to any secure, anonymous system.) The email capability of your chosen voting platform should be used for sending voting invitations and reminders, and you should use the email list from `core.csv` as the authoritative list of emails to use.
+Voting items are labeled as either **standard** or **sensitive**. Standard items are ones where public record and discourse is preferable. Sensitive voting items are ones where the results of the vote should remain private to the voters after the vote has occurred. Sensitive votes should take place on a secure anonymous voting platform in order to retain election integrity and anonymity. (We may use [`Polys`](https://polys.me) and the [`Helios voting system`](https://vote.heliosvoting.org/), but are open to any secure, anonymous system.) The email capability of your chosen voting platform should be used for sending voting invitations and reminders, and you should use the email list from `core.csv` as the authoritative list of emails to use.
 
 The default voting period is 1 week (7 days). This may be modified at the time when a vote is called, but may never be less than one week modulo exceptions for some time-sensitive votes below.
 
 Additional requirements may apply in case low turnouts have to be handled, see "Quorum" below.
 
 To call for a standard vote, here is a template Issue/PR comment:
-
 
     @conda/core
     This PR falls under the {policy} policy, please vote and/or comment on this PR.
@@ -119,11 +120,11 @@ To call for a standard vote, here is a template Issue/PR comment:
     If you would like changes to the current language please leave a comment or push to this branch.
     This vote will end on {date}.
 
-A ``vote`` label must be applied to the PR or issue.
+A `vote` label must be applied to the PR or issue.
 
 ----
 
-**Posting results:** To maintain the historical record, the outcome of any standard vote which invoked the timeout rules below should be recorded in the "vote-results" folder of our documentation. 
+**Posting results:** To maintain the historical record, the outcome of any standard vote which invoked the timeout rules below should be recorded in the `vote-results` folder of our documentation. 
 
 Each "timed out" vote should be its own file.  The filename should reflect the topic and the date that the vote opened. The file should contain at least:
          
@@ -133,7 +134,7 @@ Each "timed out" vote should be its own file.  The filename should reflect the t
 * Poll open and close dates
 * documentation of the vote reminders as detailed below
 
-Non-timed-out vote results should be documented in github PR/issue upon which the voting happened. A ``vote`` label must be applied to the PR or issue.
+Non-timed-out vote results should be documented in github PR/issue upon which the voting happened. A `vote` label must be applied to the PR or issue.
 
 ----
 
@@ -175,7 +176,7 @@ Assume the core team has 10 active members, 2 emeritus members, and the vote thr
 
 ----
 
-**Enhancement Proposal Approval:** When ready, the proposer may call for a vote on an existing conda enhancement proposal (EP). This requires a super-majority (60%) to pass so that the decision to accept the EP is unequivocal and we have ensured that consensus has been reached.
+**Enhancement Proposal Approval:** When ready, the proposer may call for a vote on an existing conda enhancement proposal (CEP). This requires a super-majority (60%) to pass so that the decision to accept the CEP is unequivocal and we have ensured that consensus has been reached.
 
 * Standard
 * 60% Majority to pass
@@ -210,18 +211,18 @@ Assume the core team has 10 active members, 2 emeritus members, and the vote thr
 
 ----
 
-**Add Project/Repo to Incubator:** Any single member of core may add a project to the incubator, given the knowledge and consent of the author. The low barrier to entry here is because we want to encourage innovation, experimentation, and growth.  Members of core are encouraged to use common sense when adding new projects to the `conda-incubator` organization.
+**Add Project/Repo to Incubator:** Any single member of core may add a project to the incubator, given the knowledge and consent of the author(s). The low barrier to entry here is because we want to encourage innovation, experimentation, and growth.  Members of core are encouraged to use common sense when adding new projects to the `conda-incubator` organization.
 
 * Standard
 * 1 member of core willing to add the repository, no vote required
 
 ----
 
-**Remove Project/Repo from Incubator:** While we do not anticipate this ever being necessary, if the situation arises where a project needs to be removed from the incubator, two potential options are available, depending on the copyright & maintenance of the project. 
+**Remove Project/Repo from Incubator:** While we do not anticipate this ever being necessary, if the situation arises where a project needs to be removed from the incubator, two potential options are available, depending on the copyright and maintenance of the project. 
 
 In the first, easy case, the incubated project has been wholly developed and maintained by the authors. Here, the project should be allowed to leave incubation if the developers of that project decide and consent to leave. No vote from core is required. A willing core member may be needed to transfer the repository, though.
 
-In the second case, the incubated project has been communally developed by other members of the conda organization AND/OR the copyright of the project has been transferred to the conda organization, NumFOCUS, or a similar entity that is larger than the developers/copyright holders at the time initial incubation.  In this case, core must decide whether or not to allow the project to leave. A simple vote is required.
+In the second case, the incubated project has been communally developed by other members of the conda organization AND/OR the copyright of the project has been transferred to the conda organization, NumFOCUS, or a similar entity that is larger than the developers/copyright holders at the time of initial incubation.  In this case, core must decide whether or not to allow the project to leave. A simple vote is required.
 
 * Standard
 * 50% Majority to pass
