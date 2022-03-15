@@ -85,7 +85,7 @@ Any single member of core may add a project to the incubator, given the knowledg
 
 A maintenance team is a sub-team with a dynamic charter, except for a few caveats as detailed here. They exist to maintain a specific project (or possibly set of projects). Each project in `conda` or `conda-incubator` should belong to exactly one maintenance team. This team is granted write access to the repos associated with the project.
 
-The initial maintenance team for projects in the `conda` organization are specified in the vote to move a project from the incubator to the main `conda` organization. As this vote has a 60% threshold and sub-team formation is only a 50% threshold, the vote for adding a project to the main `conda` organization can serve both purposes. Maintenance teams for incubating projects do not need a vote for their creation. Instead they are created when the project is moved into `conda-incubator`.
+The initial maintenance team for projects in the `conda` organization are specified in the vote to move a project from the incubator to the main `conda` organization. As this vote has a 60% threshold and sub-team formation is only a greater than 50% threshold, the vote for adding a project to the main `conda` organization can serve both purposes. Maintenance teams for incubating projects do not need a vote for their creation. Instead they are created when the project is moved into `conda-incubator`.
 
 For federated and incubating projects, the maintenance team decides among themselves on how to add and/or remove members from the maintenance team. Further, maintenance teams for incubating projects are exempted from the requirement to have at least one core member. For a community maintained project, a petition for commit rights is made to the current members of the maintenance team for that project. If this petition passes according to the voting rules for "Nominate new member of a maintenance team" below, the petitioner is granted write access and added to the team.
 
@@ -138,7 +138,9 @@ Non-timed-out vote results should be documented in github PR/issue upon which th
 
 ----
 
-**Quorum:** All percentages below express *both* required participation, as a fraction of the active core team, as well as the fraction of that fraction who vote affirmatively (i.e. vote `yes`) on the issue. For example, in a vote requiring 50%, with 18 active core members, at least 9 must vote; if 9 vote, there must 5 affirmative votes. If 13 members vote, 7 must be affirmative.
+**Quorum:** With one exception, all percentages below express *both* required participation, as a fraction of the active core team, as well as the fraction of that fraction who vote affirmatively (i.e. vote `yes`) on the issue. The exception is when 50% is required.  In these cases, *at least half* of team members need to participate, but *more than 50%* of votes need to be affirmative for the vote to pass.
+
+For example, in a vote requiring 50% participation, with 20 active members, at least 10 must vote; if 10 or 11 vote, there must be at least 6 affirmative votes. If 12 or 13 members vote, at least 7 votes must be affirmative to pass, and so on.
 
 Because everyone is busy and it is difficult sometimes to get quorum, votes not achieving quorum will eventually time out on their set end date. When this happens, the current participation level is taken for what it is, and the percentage of affirmative votes is calculated from whatever the vote total is at that time. In order for a timeout to occur, the vote must have:
 
@@ -166,11 +168,11 @@ To declare a standard vote "timed out," the person making such a declaration mus
 
 Assume the core team has 10 active members, 2 emeritus members, and the vote threshold is 50%.
 
-1. Among core there are 3 "yes", 2 "no", and 1 "abstain" votes. No emeritus votes were recorded. This vote has reached quorum (3 + 2 + 1 = 6 which is at least 50% of 10). It also passes since it recorded 3 "yes" votes and 2 "no" votes giving 3/5 (60%) which is at least 50% of 5.
+1. Among core there are 3 "yes", 2 "no", and 1 "abstain" votes. No emeritus votes were recorded. This vote has reached quorum (3 + 2 + 1 = 6 which is at least 50% of 10). It also passes since it recorded 3 "yes" votes and 2 "no" votes giving 3/5 (60%) which is greater than 50% of 5.
 
-2. Among core there are 4 "yes", 2 "no", and no abstentions. One emeritus core member voted "no". This vote has reached quorum (4 + 2 = 6 which is at least 50% of 10). It has also passed since it recorded 4 "yes" votes and 3 "no" votes giving 4/7 which is at least 50% of 6.
+2. Among core there are 4 "yes", 2 "no", and no abstentions. One emeritus core member voted "no". This vote has reached quorum (4 + 2 = 6 which is at least 50% of 10). It has also passed since it recorded 4 "yes" votes and 3 "no" votes giving 4/7 which is greater than 50% of 6.
 
-3. Among core there are 3 "yes" votes, "1" no vote and no abstentions. No emeritus members voted. Further the timeout rules above **were** invoked. This vote has thus reached quorum and it has passed since 3/4 (75%) is at least 50%.
+3. Among core there are 3 "yes" votes, "1" no vote and no abstentions. No emeritus members voted. Further the timeout rules above **were** invoked. This vote has thus reached quorum and it has passed since 3/4 (75%) is greater than 50%.
 
 4. Among core there are 3 "yes" votes, "1" no vote and no abstentions. No emeritus members voted. Further the timeout rules above **were not** invoked. This vote has not reached quorum and should be extended or redone.
 
@@ -193,21 +195,27 @@ Assume the core team has 10 active members, 2 emeritus members, and the vote thr
 **Nominate new member of a maintenance team:** The proposer must provide a sufficient justification as to why the nominee should be welcomed into the maintenance team. Prior work on the project is an essential part of the nomination process. The voting body for these votes are the current members of the maintenance team at the time the nomination is made.
 
 * Sensitive
-* 50% Majority or at least 3 yes votes, whichever is smaller, to pass
+* Voting: One of the following:
+  * at least 3 members voting, with all votes being "yes"
+  * at least 50% participation, with greater than 50% "yes" votes to pass
 
 ----
 
 **Sub-team Formation:** Proposers must specify the name, role & responsibility, members, and charter (dynamic or static) of any new sub-teams.
 
 * Standard
-* 50% Majority to pass
+* Voting:
+  * At least 50% participation
+  * More than 50% "yes" votes to pass
 
 ----
 
 **Sub-team Dissolution:** Proposers must specify the name and justification for why a sub-team should be dissolved.
 
 * Standard
-* 50% Majority to pass
+* Voting:
+  * At least 50% participation
+  * More than 50% "yes" votes to pass
 
 ----
 
@@ -225,7 +233,9 @@ In the first, easy case, the incubated project has been wholly developed and mai
 In the second case, the incubated project has been communally developed by other members of the conda organization AND/OR the copyright of the project has been transferred to the conda organization, NumFOCUS, or a similar entity that is larger than the developers/copyright holders at the time of initial incubation.  In this case, core must decide whether or not to allow the project to leave. A simple vote is required.
 
 * Standard
-* 50% Majority to pass
+* Voting:
+  * At least 50% participation
+  * More than 50% "yes" votes to pass
 
 ----
 
@@ -271,7 +281,9 @@ In spite of the high threshold for approval here, we highly encourage the writin
 Prior to their submission, grant proposals must be supplied to the core members and a vote called under the `Spending of funds` policy. If the vote does not pass the proposal is not to be submitted in its current form and an additional round of voting is required on any subsequent draft. If the vote passes and the funds are awarded, further voting to spend the funds is not required.
 
 * Standard
-* 50% Majority to pass
+* Voting:
+  * At least 50% participation
+  * More than 50% "yes" votes to pass
 
 ----
 
