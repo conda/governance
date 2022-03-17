@@ -32,7 +32,7 @@ This organization does not hold as part of its role the creation of any packages
 
 The primary teams participating in the conda organization's activities are:
 
-* **Steering Council:** The Steering Council is the governing body over the entire conda organization. Members of the Steering Council have full voting rights within the organization. Steering Council embers are the face of the organization, and are responsible for officially interfacing with external communities, organizations, non-profits, and companies. The Steeping Council may create new sub-teams, as appropriate. Each Steering Council member is entitled to one vote on all elected matters.
+* **Steering Council:** The Steering Council is the governing body over the entire conda organization. Members of the Steering Council have full voting rights within the organization. Steering Council members are the face of the organization, and are responsible for officially interfacing with external communities, organizations, non-profits, and companies. The Steering Council may create new sub-teams, as appropriate. Each Steering Council member is entitled to one vote on all elected matters.
 * **Project Teams:** Project Teams are responsible for the management of a software project consisting of one or more repositories and any software releases. Project Team members have the ability to merge pull requests into the repositories of the software project they maintain and produce releases of that software project.
 * **External Contributors:** This group encompasses all others who are not on the Steering Council or Project Teams. This includes first-time contributors, collaborators, and original authors. They have no special rights within the conda organization itself.
 * **Emeritus Steering:** Steering Council members that are inactive (commits, GitHub comments/issues/reviews, dev meetings, and voting on polls) in the past six months will be asked if they want to become Emeritus Steering members. One week after asking, if the inactive Steering Council member has not responded, they will be automatically moved to emeritus status. Any Steering Council member can also request to become Emeritus if they wish to do so (e.g. taking a sabbatical or long vacation). Emeritus Steering members can still vote and be brought back to active Steering Council membership at anytime, but Emeritus Steering member votes will not count towards the total Steering Council members when computing the necessary votes a poll needs to meet quorum. The [`steering.csv`](steering.csv) list should be updated when change in the status of a member occurs.
@@ -45,7 +45,7 @@ The Steering Council may elect to create new sub-teams for managing the daily bu
 Sub-teams have a charter that is either *dynamic* or *static*.
 
 * A **dynamic** charter means that the sub-team is self-organizing, with respect to its own internal policies, procedures, and membership. A sub-team may choose to modify its membership independent of the Steering Council. For example, a Google Summer of Code team could be a good candidate for a dynamic charter. Project Teams also have a dynamic charter, except for voting on commit rights and membership, as detailed below.
-* A **static** charter means that all membership decisions and non-trivial policies changes must be approved by the Steering Council. For example, a finance team may require a static charter.
+* A **static** charter means that all membership decisions and non-trivial policy changes must be approved by the Steering Council. For example, a finance team may require a static charter.
 
 All sub-teams must adhere to the governance, policies, and procedures of the conda organization at all times.
 
@@ -89,12 +89,12 @@ The initial Project Team for projects in the `conda` organization are specified 
 
 For federated and incubating projects, the Project Team decides among themselves on how to add and/or remove members from the Project Team. Further, Project Teams for incubating projects are exempted from the requirement to have at least one Steering Council member. For a community maintained project, a petition for commit rights is made to the current members of the Project Team for that project. If this petition passes according to the voting rules for "Nominate new member of a Project Team" below, the petitioner is granted write access and added to the team.
 
-**Steering Council** members are excluded from these votes and retain commit rights to all community projects as stated above. They can add or remove themselves from Project Teams as they see fit in order to indicate which projects they are involved with, have a say in voting for write access petitions, etc. Steering Council members may not add themselves to a PRoject Team in order to vote on a petition for commit access if they were not already on that team when the petition was made. 
+**Steering Council** members are excluded from these votes and retain commit rights to all community projects as stated above. They can add or remove themselves from Project Teams as they see fit in order to indicate which projects they are involved with, have a say in voting for write access petitions, etc. Steering Council members may not add themselves to a Project Team in order to vote on a petition for commit access if they were not already on that team when the petition was made. 
 
 
 ## Voting
 
-This section presents descriptions and criteria for voting items in the conda organization. The Steering Council is the only team with voting rights. Steering Council members may also call a vote on any topic. The restrictions on calling a vote are as follows:
+This section presents descriptions and criteria for voting items in the conda organization. The Steering Council is the only team with voting rights at the conda organization level. Steering Council members may also call a vote on any topic. The restrictions on calling a vote are as follows:
 
 * There must only be one vote active on a particular item at any time.
 * The act of calling for a vote must not itself violate the code of conduct. For example, Sam repeatedly called for votes immediately after a previous vote failed to achieve Sam's result. Sam is attempting to bully other Steering Council members into agreeing, and is thus violating the code of conduct.
@@ -189,15 +189,6 @@ Assume the Steering Council has 10 active members, 2 Emeritus members, and the v
 
 * Sensitive
 * 2/3rds Majority to pass
-
-----
-
-**Nominate new member of a Project Team:** The proposer must provide a sufficient justification as to why the nominee should be welcomed into the Project Team. Prior work on the project is an essential part of the nomination process. The voting body for these votes are the current members of the Project Team at the time the nomination is made.
-
-* Sensitive
-* Voting: One of the following:
-  * at least 3 members voting, with all votes being "yes"
-  * at least 50% participation, with greater than 50% "yes" votes to pass
 
 ----
 
@@ -296,6 +287,19 @@ Prior to their submission, grant proposals must be supplied to the Steering Coun
 
 All other voting items are considered to be standard and require a 50% majority to pass.
 
+### Community Project Team Voting
+
+Here are the minimal voting policies for Community Project Teams.
+
+**Nominate new member of a Community Project Team:** The proposer must provide a sufficient justification as to why the nominee should be welcomed into the Project Team. Prior work on the project is an essential part of the nomination process. The voting body for these votes are the current members of the Project Team at the time the nomination is made.
+
+* Sensitive
+* Voting: One of the following:
+  * at least 3 members voting, with all votes being "yes"
+  * at least 50% participation, with greater than 50% "yes" votes to pass
+
+
+
 
 ## Ratification of this Document
 
@@ -341,6 +345,6 @@ In alphabetical order,
 
 ## Document History
 
-This document was initially written by Anthony Scopatz, CJ Wright, Matthew R. Becker, Uwe Korn, and Eric Dill.
+This document was initially written by Anthony Scopatz, CJ Wright, Matthew R. Becker, Uwe Korn, and Eric Dill.  In early 2022 several clarifications were made to this document. None of those clarifications change policies.
 
 This document is released under the CC-BY 4.0 license.
