@@ -8,11 +8,13 @@
   - [conda Organization Code of Conduct: Introduction & Scope](#conda-organization-code-of-conduct-introduction--scope)
   - [Standards for Behavior](#standards-for-behavior)
     - [Unacceptable Behavior](#unacceptable-behavior)
+    - [Behavior Outside of conda Organization Spaces](#behavior-outside-of-conda-organization-spaces)
+  - [Confidentiality and Public Statements to the Community](#confidentiality-and-public-statements-to-the-community)
+  - [Live Events: Immediate and Long Term Actions and Consequences](#live-events-immediate-and-long-term-actions-and-consequences)
   - [Reporting Guidelines](#reporting-guidelines)
     - [How to Submit a Report](#how-to-submit-a-report)
-    - [Person(s) Responsible for Resolving Complaints](#persons-responsible-for-resolving-complaints)
-    - [Conflicts of Interest](#conflicts-of-interest)
     - [What to Include in a Report](#what-to-include-in-a-report)
+    - [Conflicts of Interest](#conflicts-of-interest)
   - [Enforcement: What Happens After a Report is Filed?](#enforcement-what-happens-after-a-report-is-filed)
     - [Acknowledgment and Responding to Immediate Needs](#acknowledgment-and-responding-to-immediate-needs)
     - [Reviewing the Report](#reviewing-the-report)
@@ -20,9 +22,13 @@
     - [Response and Potential Consequences](#response-and-potential-consequences)
     - [Appealing a Decision](#appealing-a-decision)
   - [Timeline Summary:](#timeline-summary)
-    - [Confirming Receipt](#confirming-receipt)
-    - [Reviewing the Report](#reviewing-the-report-1)
-    - [Consequences & Resolution](#consequences--resolution)
+  - [Committee Membership](#committee-membership)
+    - [Terms and New Members](#terms-and-new-members)
+    - [Eligibility](#eligibility)
+      - [Shared Funding](#shared-funding)
+      - [Overlap with Steering Council Membership](#overlap-with-steering-council-membership)
+    - [Ombudsperson](#ombudsperson)
+- [Updating this Code of Conduct](#updating-this-code-of-conduct)
 - [License](#license)
 
 # The Short Version
@@ -95,11 +101,65 @@ We will not accept harassment or other exclusionary behaviours, such as:
 - Other unethical or unprofessional conduct
 - Advocating for, or encouraging, any of the above behaviors
 
+The conda Organization prioritizes marginalized people’s safety over privileged people’s comfort. The conda CoC Committee reserves the right not to act on complaints including, but not limited to:
+
+* ‘Reverse’ -isms, including ‘reverse racism,’ ‘reverse sexism,’ and ‘cisphobia’.
+* Reasonable communication of boundaries, such as “leave me alone,” “go away,” or “I’m not discussing this with you.”
+* Communicating in a ‘tone’ you don’t find congenial.
+* Criticizing racist, sexist, cissexist, or otherwise oppressive behavior or assumptions.
+
+### Behavior Outside of conda Organization Spaces
+
+The CoC Committee does not have any control over behavior and membership in spaces outside the conda Organizion. However, if you are being harassed by a member of the conda community outside our spaces, we still want to know about it. We will take all good-faith reports of harassment by conda community members seriously. This includes harassment outside our spaces and harassment that took place at any point in time. 
+
+The CoC Committee reserves the right to exclude people from conda Organization spaces based on their past behavior, including behavior outside conda Organization spaces and behavior towards people who are not in the conda community.  
+
 ## Confidentiality and Public Statements to the Community
 
 The CoC Committee will keep the identity of the reporter confidential. 
 
 All CoC cases will be reported to the community.  The level of detail in reports will vary from case to case. Reports will describe at least the type of infraction that was reported, and the Committee's decision and any action taken.  In most cases, the report will not include personally identifiable information.
+
+## Live Events: Immediate and Long Term Actions and Consequences
+
+---
+
+**If you feel your safety is in jeopardy or the situation is an emergency, we urge you to contact local law enforcement before making a report to the event's Code of Conduct representatives or other staff.** (In the U.S., dial 911.)
+
+---
+
+Live events present particular challenges: 
+  
+**Code of conduct reports, and consequences that stem from them, merit a thoughtful and deliberative process.  Decisions and consequences matter for the reporter, the reported, and for the community at large.  However, many reports, especially at live events, require rapid action to quickly address the behavior being reported.**
+
+To better support situations where immediate action may be required, these guidelines are used during live events:
+
+* All conda Organization events will have specific, named Code of Conduct contacts for the events.
+* The names and contact mechanisms for the Code of Conduct representatives will be clearly and frequently communicated to event participants.
+
+For reports made during live events, or in any situtation where urgent action is needed:
+
+* Any two (or more) event organizers, event staff, or CoC Committee members can decide if immediate action is to be taken and what that action is.  In exceptionally dangerous situations this decision can be made by a single person.  
+* Theses rapid decisions can be reconsidered during the event as more information becomes available.
+* The scope of any rapid decision is limited to the current event / situation.
+* The report, any related information, and any decisions and consequences will be reported to the full Code of Conduct Committee as soon as possible.
+
+The full Code of Conduct Committee will then consider the report using the full timeline and processes defined below.  The Committee may decide to apply consequences in other spaces beyond the space where the behavior was reported.
+
+Potential consequences for violating the conda Organization Code of Conduct at a live event include:
+
+- Warning the person to cease their behavior and that any further reports will result in sanctions
+- Requiring that the person avoid any interaction with, and physical proximity to, the person they are harassing for the remainder of the event
+- Ending a talk that violates the policy early
+- Not publishing the video or slides of a talk that violated the policy
+- Not allowing a speaker who violated the policy to give (further) talks at the event now or in the future
+- Immediately ending any event volunteer responsibilities and privileges the reported person holds
+- Requiring that the person not volunteer for future events the conda Organization runs (either indefinitely or for a certain time period)
+- Expelling the person from the event without a refund
+- Requiring that the person immediately leave the event and not return
+- Banning the person from future events (either indefinitely or for a certain time period)
+- Any other response that the CoC Committee deems necessary and appropriate to the situation
+
 
 ## Reporting Guidelines
 
@@ -113,8 +173,6 @@ Take care of each other. Alert the conda CoC Committee, a Committee member, a St
 
 ### How to Submit a Report
 
-**If you feel your safety is in jeopardy or the situation is an emergency, we urge you to contact local law enforcement before making a report to the CoC Committee or event organizers.** (In the U.S., dial 911.)
-
 The CoC Committee is committed to promptly addressing any reported issues. If you have experienced or witnessed behavior that violates the conda Organization Code of Conduct, please complete the form below to make a report.
 
 **REPORTING FORM:** [*https://URL/to/your/CoC/reporting/form*](https://URL/to/your/CoC/reporting/form)
@@ -124,38 +182,6 @@ Reports are sent to the conda Code of Conduct Commitee (see below).
 <!-- If you are using TypeForm, leave the following text in place -->
 
 You can view the Privacy Policy and Terms of Service for TypeForm at [*https://terms.typeform.com/to/fJAmVc*](https://terms.typeform.com/to/fJAmVc).
-
-### Person(s) Responsible for Resolving Complaints
-
-All reports of breaches of the code of conduct will be investigated and handled by the **Code of Conduct Committee**.
-
-The current Code of Conduct Committee consists of:
-
--   [NAME 1]
-
-    -   [*EMAIL*](mailto:EMAIL)
-
-    -   +1 PHONE NUMBER (OPTIONAL)  
-
--   [NAME 2]
-
-    -   [*EMAIL*](mailto:EMAIL)
-
-    -   +1 PHONE NUMBER (OPTIONAL)  
-    
--   [NAME 3]
-
-    -   [*EMAIL*](mailto:EMAIL)
-
-    -   +1 PHONE NUMBER (OPTIONAL)  
-
-You can reach the entire CoC Committee by emailing [***EMAIL ADDRESS***](mailto:EMAIL ADDRESS).
-
-### Conflicts of Interest
-
-Committee members are expected to recuse themselves in they have a conflict of interest. In addition, the CoC Committee can vote to remove a committee member from a case, if the committee feels that the member has a conflict of interest.  This vote requires a simple majority.
-
-If you are concerned about making a report that will be read by any of the above individuals, please reach out to [Leah Silen](mailto:leah@numfocus.org), Executive Director of NumFOCUS (https://numfocus.org/code-of-conduct#persons-responsible). [MAY WANT TO INSERT LANGUAGE HERE DESCRIBING THE RELATIONSHIP BETWEEN THE PROJECT AND NUMFOCUS. E.G. "The conda Organization IS AN AFFILIATED PROJECT OF NUMFOCUS."]
 
 ### What to Include in a Report
 
@@ -172,7 +198,12 @@ Our ability to address any code of conduct breaches in a timely and effective ma
 
 At conda Organization Events: Event staff will attempt to gather and write down the above information from anyone making a verbal report at a live event. Recording the details in writing is exceedingly important in order for us to effectively respond to reports. If event staff write down a report taken verbally, then the person making the report will be asked to review the written report for accuracy.
 
-**If urgent action is needed regarding an incident at a live event, we strongly encourage you to reach out to the event staff for immediate assistance.**
+### Conflicts of Interest
+
+Committee members are expected to recuse themselves in they have a conflict of interest. In addition, the CoC Committee can vote to remove a committee member from a case, if the committee feels that the member has a conflict of interest.  This vote requires a simple majority.
+
+If you are concerned about making a report that will be read by any of the committee members, please reach out to [Leah Silen](mailto:leah@numfocus.org), Executive Director of NumFOCUS (https://numfocus.org/code-of-conduct#persons-responsible). [MAY WANT TO INSERT LANGUAGE HERE DESCRIBING THE RELATIONSHIP BETWEEN THE PROJECT AND NUMFOCUS. E.G. "The conda Organization IS AN AFFILIATED PROJECT OF NUMFOCUS."]
+
 
 ## Enforcement: What Happens After a Report is Filed?
 
@@ -181,8 +212,6 @@ What happens after a report is filed?
 ### Acknowledgment and Responding to Immediate Needs
 
 CoC Committee members and/or our event staff will attempt to ensure your safety and help with any immediate needs, particularly at live events.  The CoC Committee will make every effort to **acknowledge receipt within 24 hours** (and we'll aim for much more quickly than that).  
-
-<!-- PROJECT SHOULD REVIEW THE RESPONSE SCHEDULE LISTED ABOVE AND BELOW, AND DETERMINE WHETHER IT IS REALISTIC FOR THE PROJECT. -->
 
 ### Reviewing the Report
 
@@ -215,22 +244,6 @@ Potential consequences for violating the conda Organization code of conduct incl
 - Publishing an account of the harassment and calling for the resignation of the alleged harasser from their responsibilities (usually pursued by people without formal authority: may be called for if the person is the event leader, or refuses to stand aside from the conflict of interest, or similar)
 - Any other response that the CoC Committee deems necessary and appropriate to the situation
 
-At conda Organization events, if a participant engages in behavior that violates this code of conduct, the event organizers and staff may take any action they deem appropriate.
-
-Potential consequences for violating the conda Organization Code of Conduct at a live event include:
-
-- Warning the person to cease their behavior and that any further reports will result in sanctions
-- Requiring that the person avoid any interaction with, and physical proximity to, the person they are harassing for the remainder of the event
-- Ending a talk that violates the policy early
-- Not publishing the video or slides of a talk that violated the policy
-- Not allowing a speaker who violated the policy to give (further) talks at the event now or in the future
-- Immediately ending any event volunteer responsibilities and privileges the reported person holds
-- Requiring that the person not volunteer for future events the conda Organization runs (either indefinitely or for a certain time period)
-- Expelling the person from the event without a refund
-- Requiring that the person immediately leave the event and not return
-- Banning the person from future events (either indefinitely or for a certain time period)
-- Any other response that the CoC Committee deems necessary and appropriate to the situation
-
 No one espousing views or values contrary to the standards of our code of conduct will be permitted to hold any position representing the conda Organization, including volunteer positions. The CoC Committee has the right and responsibility to remove, edit, or reject comments, commits, code, website edits, issues, and other contributions that are not aligned with this code of conduct.
 
 We aim to **respond within one week** to the original reporter with either a resolution or an explanation of why the situation is not yet resolved.
@@ -241,26 +254,32 @@ Our policy is to make sure that everyone aware of the initial incident is also m
 
 ### Appealing a Decision
 
-To appeal a decision of the CoC Committee, contact [PROJECT CoC Point Person] via email at
-[*EMAIL ADDRESS*](mailto:EMAIL ADDRESS) with your appeal and
-the [PROJECT CoC TEAM/LEADERSHIP TEAM] will review the case.
+To appeal a decision of the CoC Committee, contact [Committee Co-Chairs and Ombudsperson](#committee-membership), with your appeal and they will review the case.
 
 ## Timeline Summary:
 
-### Confirming Receipt
-
-The CoC Committee will make every effort to acknowledge receipt of a report **within 24 hours** (and we'll aim for much more quickly than that).
-
-### Reviewing the Report
-
-The CoC Committee will make all efforts to review the incident **within three days**.
-
-### Consequences & Resolution
-
-We aim to respond **within one week** to the original reporter with either a resolution or an explanation of why the situation is not yet resolved.
+| Time | Event | Details |
+| ---- | ---- | ---- |
+| Within 24 Hours | Acknowledge | The CoC Committee will make every effort to **acknowledge receipt of a report within 24 hours** (and we'll aim for much more quickly than that). |
+| Within 3 Days | Review | The CoC Committee will make all efforts to **review the incident within three days**. |
+| Within 1 Week | Resolve | We aim to **respond within one week** to the original reporter with either a resolution or an explanation of why the situation is not yet resolved. |
 
 
 # Committee Membership
+
+You can reach the entire CoC Committee by emailing [***EMAIL ADDRESS***](mailto:EMAIL ADDRESS).
+
+| Name | Contact | Employer / Funding | Current Term Ends |
+| ---- | ---- | ---- | ---- |
+| [Dave Clements](https://github.com/tnabtaf) | | [Anaconda](https://anaconda.com/) | 2023-07-01 |
+| [Mahe Iram Khan](https://github.com/ForgottenProgramme) | | [Anaconda](https://anadonda.com/) | 2023-07-01 | 
+| [Ken Odegard](https://github.com/kenodegard) | | [Anaconda](https://anaconda.com/) | 2023-07-01 |
+| [Crystal Soja](https://github.com/csoja), Co-Chair | | [Anaconda](https://anaconda.com/) | 2023-07-01 |
+| [Eric Dill](https://github.com/ericdill), Co-Chair | | [Voltron Data](https://voltrondata.com/) | 2024-07-01 |
+| [Filipe Pires Alvarenga Fernandes](https://github.com/ocefpaf) | | [University of São Paulo](https://www5.usp.br/) | 2024-07-01 |
+| [Bianca Henderson](https://github.com/beeankha) | | [Anaconda](https://anaconda.com/) | 2024-07-01 |
+| [Katherine Kinnaman](https://github.com/kathatherine) | | [Anaconda](https://anadonda.com/) | 2024-07-01 | 
+| [](), [External Ombudsperson](#ombudsperson) | | [External Org]() | 2024-07-01 |
 
 ## Terms and New Members
 
@@ -274,15 +293,26 @@ Committee members can also be removed by a greater than 50% vote from their fell
 
 Anyone from the community who is interested and able to do CoC Committee work is eligible to be nominated for the committee.  
 
+### Shared Funding
+
 Unlike the Steering Council, we are not limiting the number of Committee members who share a common source of funding. However, if a report involves someone who shares funding with CoC Committee members, then the remainder of the committee may vote to exclude some or all Committee members with that same funding, even if that excludes a majority of the CoC Committee. This should be done only if the separately funded Committee members feel that the common funding is interfering with decision making.  
 
 Note: This requires tracking the funding sources of CoC Committee members.  The CoC Committee will use the same tracking policies and methods as the Steering Council does.
 
+### Overlap with Steering Council Membership
+
+Committee members can also be on the conda Organization Steering Council.  However, Steering Council members have to make up less than 50% of the Code of Conduct Committee.  
+
 ## Ombudsperson
 
-The Code of Conduct Committee has an external ombudsperson to provide independent and impartial oversight of the committee.  The ombudsperson is only involved in the committee in situations where the committee itself is particularly conflicted, or where the involved persons believe the committee is compromised in the current situation.  The ombudsperson will always be someone external to the conda community.
+The Code of Conduct Committee has an external ombudsperson to provide independent and impartial oversight of the committee.  The ombudsperson is only involved in situations where the committee itself is particularly conflicted, or where the involved persons believe the committee is compromised in the current situation.  The ombudsperson will always be someone external to the conda community.
 
 Our external ombudsperson is TO BE NAMED of the TO BE NAMED PROJECT's Code of Conduct Committee.  Please contact TO BE NAMED \<EMAIL ADDRESS\> if you believe that the committee is not doing what it should, or that it is biased in your situation.  The Ombudsperson will work with you and the committee to resolve the situation.
+
+
+# Updating this Code of Conduct
+
+The conda Organizations Code of Conduct can be updated by a majority vote (greater than 50%) of the CoC Committee.
 
 
 # License
