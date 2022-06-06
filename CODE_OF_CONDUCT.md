@@ -113,7 +113,7 @@ The conda Organization prioritizes marginalized people’s safety over privilege
 
 ## Behavior Outside of conda Organization Spaces
 
-The CoC Committee does not have any control over behavior and membership in spaces outside the conda Organization. However, if you are being harassed by a member of the conda community outside our spaces, we still want to know about it. We will take all good-faith reports of harassment by conda community members seriously. This includes harassment outside our spaces and harassment that took place at any point in time.
+The CoC Committee does not influence behavior and membership in spaces outside the conda Organization. However, if you are being harassed by a member of the conda community outside our spaces, we still want to know about it. We will take all good-faith reports of harassment by conda community members seriously. This includes harassment outside our spaces and harassment that took place at any point in time.
 
 The CoC Committee reserves the right to exclude people from conda Organization spaces based on their past behavior, including behavior outside conda Organization spaces and behavior towards people who are not in the conda community.  
 
@@ -124,7 +124,6 @@ The CoC Committee will keep the identity of the reporter confidential.
 All CoC cases will be reported to the community.  The level of detail in reports will vary from case to case. Reports will describe at least the type of infraction that was reported, and the Committee's decision and any action taken.  In most cases, the report will not include personally identifiable information.
 
 # Live Events: Immediate and Long Term Actions and Consequences
-
 
 > **If you feel your safety is in jeopardy or the situation is an emergency, we urge you to contact local law enforcement before making a report to the event's Code of Conduct representatives or other staff.** (In the U.S., call 911.)
 
@@ -137,11 +136,11 @@ To better support situations where immediate action may be required, these guide
 * All conda Organization events will have specific, named Code of Conduct contacts for the events.
 * The names and contact mechanisms for the Code of Conduct representatives will be clearly and frequently communicated to event participants.
 
-At conda Organization events, Event staff will attempt to gather and write down the above information from anyone making a verbal report at a live event. Recording the details in writing is exceedingly important in order for us to effectively respond to reports. If event staff write down a report taken verbally, then the person making the report will be asked to review the written report for accuracy.
+At conda Organization events, Code of Conduct representatives will attempt to gather and write down [information](#what-to-include-in-a-report) from anyone making a verbal report at a live event. Recording the details in writing is exceedingly important in order for us to effectively respond to reports. If event staff write down a report taken verbally, then the person making the report will be asked to review the written report for accuracy.
 
 For reports made during live events, or in any situation where urgent action is needed:
 
-* Any two (or more) event organizers, event staff, or CoC Committee members can decide if immediate action is to be taken and what that action is.  In exceptionally dangerous situations, this decision can be made by a single person.  
+* Any two (or more) event organizers, event staff, CoC Committee members or CoC representatives can decide if immediate action is to be taken and what that action is.  In exceptionally dangerous situations, this decision can be made by a single person.  
 * These rapid decisions can be reconsidered during the event as more information becomes available.
 * The scope of any rapid decision is limited to the current event / situation.
 * The report, any related information, and any decisions and consequences will be reported to the full Code of Conduct Committee as soon as possible.
@@ -158,7 +157,7 @@ Potential *immediate* consequences for violating the conda Organization Code of 
 - Immediately ending any event volunteer responsibilities and privileges the reported person holds
 - Expelling the person from the event without a refund
 - Requiring that the person immediately leave the event and not return
-- Any other response that the CoC representatives deem necessary and appropriate to the situation
+- Any other response that the CoC representatives or event staff deem necessary and appropriate to the situation
 
 # Reporting Guidelines
 
@@ -168,7 +167,7 @@ All complaints will be reviewed and investigated and will result in a response t
 
 For possibly unintentional breaches of the code of conduct, you may want to respond to the person and point out this code of conduct (either in public or in private, whatever is most appropriate). If you would prefer not to do that, please [report the issue to the conda CoC Committee directly](https://form.jotform.com/221527028480048), or ask [an individual committee member](#committee-membership) for advice in confidence. Complete contact information is below, under [How to Submit a Report](#how-to-submit-a-report).
 
-Take care of each other. Alert the conda CoC Committee, a Committee member, a Steering Council member, or an event organizer if you notice a dangerous situation, someone in distress, or violations of this code of conduct, even if they seem inconsequential.
+Take care of each other. Alert the conda CoC Committee, a Committee member, a CoC event representative, or a Steering Council member if you notice a dangerous situation, someone in distress, or violations of this code of conduct, even if they seem inconsequential.
 
 ## How to Submit a Report
 
@@ -193,13 +192,13 @@ Our ability to address any code of conduct breaches in a timely and effective ma
 
 ## Anonymous Reporting
 
-The reporting form supports anonymous incident reporting.  Anonymous reporting works best when the behavior happened in a public space and was witnessed by many.  If an incident is reported anonymously and was not witnessed by others, than the committee may be limited in what actions it can take and what it can report to the larger community.  Nevertheless, we still want to receive these reports.  They are helpful when determining what we need to address as a community, and when looking for evidence of repeated bad behavior.
+The reporting form supports anonymous incident reporting.  Anonymous reporting works best when the behavior happened in a public space and was witnessed by many.  If an incident is reported anonymously and was not witnessed by others, than the committee may be limited in what actions it can take and what it can report to the larger community.  Nevertheless, we still want to receive these reports.  They are helpful when determining what we need to address as a community, and when looking for evidence of repeated behavior.
 
 ## Conflicts of Interest
 
-Committee members are expected to recuse themselves in they have a conflict of interest. In addition, the CoC Committee can [vote](#voting-and-decision-making) to remove a committee member from a case, if the committee feels that the member has a conflict of interest.  This vote requires a simple majority.
+Committee members are expected to recuse themselves in they have a conflict of interest. In addition, the CoC Committee can [vote](#voting-and-decision-making) to remove a committee member from a case, if the committee feels that the member has a conflict of interest.  This [vote](#voting-and-decision-making) requires a simple majority.
 
-If you are concerned about making a report that will be read by any of the committee members, you are strongly encouraged to contact [any committee member](#committee-membership) directly.
+If you are concerned about making a report that will be read by all committee members, you are strongly encouraged to contact [individual committee members](#committee-membership) directly.
 
 # Enforcement: What Happens After a Report is Filed?
 
@@ -262,7 +261,7 @@ To appeal a decision of the CoC Committee, contact the [Committee Co-Chairs **an
 
 Committee votes and decisions require both a minimum quorum size for the vote to be counted, and then a minimum percentage of cast affirmative votes to pass.
 
-Except where otherwise noted, our voting requirements are
+Except where otherwise noted, votes require a quorum and a simple majority to pass:
 
 * Minimum Quorum:
   * More than 50% of eligible committee members must vote.
@@ -274,23 +273,24 @@ Except where otherwise noted, our voting requirements are
 
 You can reach the entire CoC Committee by emailing [condaconduct@gmail.com](mailto:condaconduct@gmail.com).
 
-| Name | Contact | Employer / Funding | Current Term Ends |
-| ---- | ---- | ---- | ---- |
-| [Dave Clements](https://github.com/tnabtaf) | | [Anaconda](https://anaconda.com/) | 2023-07-01 |
-| [Mahe Iram Khan](https://github.com/ForgottenProgramme) | | [Anaconda](https://anadonda.com/) | 2023-07-01 | 
-| [Ken Odegard](https://github.com/kenodegard) | | [Anaconda](https://anaconda.com/) | 2023-07-01 |
-| [Crystal Soja](https://github.com/csoja), Co-Chair | | [Anaconda](https://anaconda.com/) | 2023-07-01 |
-| [Eric Dill](https://github.com/ericdill), Co-Chair | | [Voltron Data](https://voltrondata.com/) | 2024-07-01 |
-| [Filipe Pires Alvarenga Fernandes](https://github.com/ocefpaf) | | [NOAA](https://noaa.gov/), Dept of Commerce, United States Federal Government | 2024-07-01 |
-| [Bianca Henderson](https://github.com/beeankha) | | [Anaconda](https://anaconda.com/) | 2024-07-01 |
-| [Katherine Kinnaman](https://github.com/kathatherine) | | [Anaconda](https://anadonda.com/) | 2024-07-01 | 
-| [](), [External Ombudsperson](#ombudsperson) | | [External Org]() | 2024-07-01 |
+| Name | Contact | Employer / Funding | Steering Council Member | Current Term Ends |
+| ---- | ---- | ---- | ---- | --- |
+| [Dave Clements](https://github.com/tnabtaf) | dcl&#101;ments&#64;anaconda&#46;com, +1 541 914 6324 | [Anaconda](https://anaconda.com/) | | 2023-07-01 |
+| [Mahe Iram Khan](https://github.com/ForgottenProgramme) | | [Anaconda](https://anadonda.com/) | | 2023-07-01 | 
+| [Ken Odegard](https://github.com/kenodegard) | | [Anaconda](https://anaconda.com/) | | 2023-07-01 |
+| [Crystal Soja](https://github.com/csoja), Co-Chair | | [Anaconda](https://anaconda.com/) | Yes | 2023-07-01 |
+| [Eric Dill](https://github.com/ericdill), Co-Chair | | [Voltron Data](https://voltrondata.com/) | Yes | 2024-07-01 |
+| [Filipe Pires Alvarenga Fernandes](https://github.com/ocefpaf) | | [NOAA](https://noaa.gov/), Dept of Commerce, United States Federal Government | Yes | 2024-07-01 |
+| [Bianca Henderson](https://github.com/beeankha) | | [Anaconda](https://anaconda.com/) | | 2024-07-01 |
+| [Katherine Kinnaman](https://github.com/kathatherine) | | [Anaconda](https://anadonda.com/) | | 2024-07-01 | 
+| [](), [External Ombudsperson](#ombudsperson) | | [External Org]() | | 2024-07-01 |
 
 # Terms and New Members
 
 * Committee members are appointed for two year terms. Committee members can choose to renew their memberships.
 * Committee members can resign before their term ends.
-* Committee members can also be removed by a greater than 50% [vote](#voting-and-decision-making) from their fellow committee members.
+* Committee members can also be removed by a [simple majority vote](#voting-and-decision-making) from their fellow committee members.
+* New committee members are added by a simple majority vote as well.
 
 # Eligibility
 
@@ -300,7 +300,7 @@ Anyone from the community who is interested and able to do CoC Committee work is
 
 Unlike the Steering Council, we are not limiting the number of Committee members who share a common source of funding. However, if a report involves someone who shares funding with CoC Committee members, then the remainder of the committee may vote to exclude some or all Committee members with that same funding, even if that excludes a majority of the CoC Committee. This should be done only if the separately funded Committee members feel that the common funding is interfering with decision making.  
 
-Note: This requires tracking the funding sources of CoC Committee members.  The CoC Committee will use the same tracking policies and methods as the Steering Council does.
+Note: This requires tracking the funding sources of CoC Committee members.
 
 ## Overlap with Steering Council Membership
 
@@ -315,7 +315,7 @@ Our external ombudsperson is TO BE NAMED of the TO BE NAMED PROJECT's Code of Co
 
 # Updating this Code of Conduct
 
-The conda Organization's Code of Conduct can be updated by a majority [vote](#voting-and-decision-making) (greater than 50%) of the CoC Committee.
+The conda Organization's Code of Conduct can be updated by a [simple majority vote](#voting-and-decision-making) of the CoC Committee.
 
 
 # License
