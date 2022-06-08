@@ -280,7 +280,7 @@ You can reach the entire CoC Committee by emailing [condaconduct@gmail.com](mail
 | [Ken Odegard](https://github.com/kenodegard) | | [Anaconda](https://anaconda.com/) | | 2023-07-01 |
 | [Crystal Soja](https://github.com/csoja), Co-Chair | | [Anaconda](https://anaconda.com/) | Yes | 2023-07-01 |
 | [Eric Dill](https://github.com/ericdill), Co-Chair | | [Voltron Data](https://voltrondata.com/) | Yes | 2024-07-01 |
-| [Filipe Pires Alvarenga Fernandes](https://github.com/ocefpaf) | | [NOAA](https://noaa.gov/), Dept of Commerce, United States Federal Government | Yes | 2024-07-01 |
+| [Filipe Pires Alvarenga Fernandes](https://github.com/ocefpaf) | ocefpaf@gmail.com | [IOOS/NOAA](https://ioos.noaa.gov/) | Yes | 2024-07-01 |
 | [Bianca Henderson](https://github.com/beeankha) | | [Anaconda](https://anaconda.com/) | | 2024-07-01 |
 | [Katherine Kinnaman](https://github.com/kathatherine) | | [Anaconda](https://anadonda.com/) | | 2024-07-01 | 
 | [](), [External Ombudsperson](#ombudsperson) | | [External Org]() | | 2024-07-01 |
