@@ -282,7 +282,7 @@ You can reach the entire CoC Committee by emailing [condaconduct@gmail.com](mail
 | [Eric Dill](https://github.com/ericdill), Co-Chair | | [Voltron Data](https://voltrondata.com/) | Yes | 2024-07-01 |
 | [Filipe Pires Alvarenga Fernandes](https://github.com/ocefpaf) | ocefpaf@gmail.com | [IOOS/NOAA](https://ioos.noaa.gov/) | Yes | 2024-07-01 |
 | [Bianca Henderson](https://github.com/beeankha) | | [Anaconda](https://anaconda.com/) | | 2024-07-01 |
-| [Katherine Kinnaman](https://github.com/kathatherine) | | [Anaconda](https://anadonda.com/) | | 2024-07-01 | 
+| [Katherine Kinnaman](https://github.com/kathatherine) | kkinnaman.condacoc@gmail.com | [Anaconda](https://anadonda.com/) | | 2024-07-01 | 
 | [](), [External Ombudsperson](#ombudsperson) | | [External Org]() | | 2024-07-01 |
 
 # Terms and New Members
