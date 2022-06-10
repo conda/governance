@@ -49,8 +49,6 @@
     - [Modifying the governance document](#modifying-the-governance-document)
     - [Community Project Team Voting](#community-project-team-voting)
     - [Nominate new member of a Community Project Team](#nominate-new-member-of-a-community-project-team)
-  - [Ratification of this Document](#ratification-of-this-document)
-    - [Timeline](#timeline)
   - [Current Steering Council Members](#current-steering-council-members)
   - [Emeritus Steering members](#emeritus-steering-members)
   - [Document History](#document-history)
@@ -493,32 +491,6 @@ The proposer must provide a sufficient justification as to why the nominee shoul
   * at least 3 members voting, with all votes being "yes"
   * at least 50% participation, with greater than 50% "yes" votes to pass
 
-## Ratification of this Document
-
-In order initiate the conda Organization described here, anyone is able to participate and become a member of the starting [Steering Council](#steering-council) (or [Emeritus Steering](#emeritus-steering)). In order to be founding Steering Council team member, an individual must perform the following actions:
-
-1. Each individual has to participate in the vote to ratify this governance document,
-2. Each individual has to personally add their own name - and only their own name - to the `steering.csv` or `emeritus.csv` file.
-
-These criteria are intended to be inclusive while having founding Steering Council members demonstrate a real interest in participating.
-
-Interested individuals should use their own judgment and discretion when determining if they should be a founding Steering Council member. Being a founding Steering Council member implies the intention to participate in this organization through voting, governance discussions, Steering Council meetings, etc.  If you are not in a current position to have this level of engagement but anticipate this level of engagement at a future date, consider signing on with initial emeritus status.
-
-There is no obligation or need to become a Steering Council member, if this is not relevant to you. This organization will be making a number of sub-teams, which we welcome and invite the broader conda ecosystem to participate in, when it is of interest.
-
-We encourage everyone to find their niche in this organization, and welcome participation at any and all levels.
-
-The vote for ratification of this governance document is public and requires a 75% majority of those participating in the vote to pass.
-
-### Timeline
-
-1. A draft version of this document will be proposed for general review and comment (RFC). This RFC period must last at least 7 days before a vote can be called.
-2. A vote on the reviewed document is called and will be open for exactly 7 days.
-   * If the vote fails, return to step 1.
-   * If the vote passes, continue to step 2.
-3. Individuals who participated in the vote are able to add themselves to the `steering.csv` or `emeritus.csv` file. After doing so, they are considered members of the Steering Council.
-
-If for some reason someone is unable to make the timeline when the vote is called, that person can always be added to the Steering Council later via the normal process.
 
 ## Current Steering Council Members
 
@@ -536,6 +508,10 @@ In alphabetical order,
 
 ## Document History
 
-This document was initially written by Anthony Scopatz, CJ Wright, Matthew R. Becker, Uwe Korn, and Eric Dill.  In early 2022 several clarifications were made to this document. None of those clarifications change policies.
+This document was initially written by [Anthony Scopatz](https://github.com/scopatz), [CJ Wright](https://github.com/CJ-Wright), [Matthew R. Becker](https://github.com/beckermr), [Uwe Korn](https://github.com/xhochy), and [Eric Dill](https://github.com/ericdill).  
+
+In early 2022 several clarifications were made to this document. None of those clarifications change policies.
+
+In mid 2022 provisional members and restrictions on shared funding of Steering Council members was added.
 
 This document is released under the CC-BY 4.0 license.
