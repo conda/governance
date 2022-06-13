@@ -46,7 +46,7 @@
     - [Spending of funds](#spending-of-funds)
     - [Modifying the governance document](#modifying-the-governance-document)
     - [Community Project Team Voting](#community-project-team-voting)
-    - [Nominate new member of a Community Project Team](#nominate-new-member-of-a-community-project-team)
+      - [Nominate new member of a Community Project Team](#nominate-new-member-of-a-community-project-team)
   - [Current Steering Council Members](#current-steering-council-members)
   - [Emeritus Steering members](#emeritus-steering-members)
   - [Document History](#document-history)
@@ -468,7 +468,7 @@ All other voting items are considered to be standard and require a 50% majority 
 
 Here are the minimal voting policies for Community Project Teams.
 
-### Nominate new member of a Community Project Team
+#### Nominate new member of a Community Project Team
 
 The proposer must provide a sufficient justification as to why the nominee should be welcomed into the Project Team. Prior work on the project is an essential part of the nomination process. The voting body for these votes are the current members of the Project Team at the time the nomination is made.
 
