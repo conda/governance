@@ -113,7 +113,7 @@ The conda Organization prioritizes marginalized people’s safety over privilege
 
 ## Behavior Outside of conda Organization Spaces
 
-The CoC Committee does not influence behavior and membership in spaces outside the conda Organization. However, if you are being harassed by a member of the conda community outside our spaces, we still want to know about it. We will take all good-faith reports of harassment by conda community members seriously. This includes harassment outside our spaces and harassment that took place at any point in time.
+The CoC Committee does not influence behavior and membership in spaces outside the conda Organization. However, if you are being harassed by a member of the conda community outside our spaces, you may still report it to the CoC Committee. We will take all good-faith reports of harassment by conda community members seriously. This includes harassment outside our spaces and harassment that took place at any point in time.
 
 The CoC Committee reserves the right to exclude people from conda Organization spaces based on their past behavior, including behavior outside conda Organization spaces and behavior towards people who are not in the conda community.  
 
