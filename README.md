@@ -9,7 +9,7 @@
     - [Emeritus Steering](#emeritus-steering)
   - [Sub-Teams](#sub-teams)
     - [Dynamic Charter](#dynamic-charter)
-    - [Static Charter:](#static-charter)
+    - [Static Charter](#static-charter)
   - [Community, Federated & Attic Maintenance](#community-federated--attic-maintenance)
     - [Community Projects](#community-projects)
     - [Federated Projects](#federated-projects)
@@ -26,7 +26,7 @@
     - [Shared Funding: Proximate, Ultimate, and In Between](#shared-funding-proximate-ultimate-and-in-between)
       - [Tracking Funding](#tracking-funding)
   - [Steering Council and Project Teams Interactions](#steering-council-and-project-teams-interactions)
-    - [Community Project Teams must be open to qualifies new members](#community-project-teams-must-be-open-to-qualifies-new-members)
+    - [Community Project Teams must be open to qualified new members](#community-project-teams-must-be-open-to-qualified-new-members)
   - [Voting](#voting)
     - [Posting results](#posting-results)
     - [Quorum](#quorum)
@@ -34,19 +34,25 @@
   - [Voting items](#voting-items)
     - [Enhancement Proposal Approval](#enhancement-proposal-approval)
     - [Nominate new Steering Council member](#nominate-new-steering-council-member)
+    - [Nominate a Provisional Steering Council Member](#nominate-a-provisional-steering-coiuncil-member)
+    - [Remove a Provisional Steering Council Member](#remove-a-provisional-steering-council-member)
+    - [Remove an Emeritus Steering Council Member](#remove-an-emeritus-steering-council-member)
+    - [Resolve Overlapping Funding](#resolve-overlapping-funding)
     - [Sub-team Formation](#sub-team-formation)
     - [Sub-team Dissolution](#sub-team-dissolution)
     - [Add Project/Repo to Incubator](#add-projectrepo-to-incubator)
     - [Remove Project/Repo from Incubator](#remove-projectrepo-from-incubator)
     - [Incorporate a Software Project into the main `conda` Organization](#incorporate-a-software-project-into-the-main-conda-organization)
-    - [Graduate a Specification Project from Incubation to Main](#graduate-a-specification-project-from-incubation-to-main)
     - [Lock an Issue, Pull Request, Thread](#lock-an-issue-pull-request-thread)
     - [Block a Contributor](#block-a-contributor)
     - [Remove a Steering Council member](#remove-a-steering-council-member)
     - [Spending of funds](#spending-of-funds)
     - [Modifying the governance document](#modifying-the-governance-document)
+    - [Project Team Membership Appeal](#project-team-membership-appeal)
+    - [All Other Items](#all-other-items)
     - [Community Project Team Voting](#community-project-team-voting)
       - [Nominate new member of a Community Project Team](#nominate-new-member-of-a-community-project-team)
+      - [Remove a Project Team Member](#remove-a-project-team-member)
   - [Current Steering Council Members](#current-steering-council-members)
   - [Emeritus Steering members](#emeritus-steering-members)
   - [Document History](#document-history)
@@ -94,7 +100,7 @@ This group encompasses all others who are not on the Steering Council or Project
 
 ### Emeritus Steering
 
-[Steering Council](#steering-council) members that are inactive (commits, GitHub comments/issues/reviews, dev meetings, and voting on polls) in the past six months will be asked if they want to become Emeritus Steering members. One week after asking, if the inactive Steering Council member has not responded, they will be automatically moved to emeritus status. Any Steering Council member can also request to become Emeritus if they wish to do so (e.g. taking a sabbatical or long vacation). Emeritus Steering members can still vote and be brought back to active Steering Council membership at anytime, but Emeritus Steering member votes will not count towards the total Steering Council members when computing the necessary votes a poll needs to meet quorum. The [`steering.csv`](steering.csv) list should be updated when change in the status of a member occurs.
+[Steering Council](#steering-council) members that are inactive (commits, GitHub comments/issues/reviews, dev meetings, and voting on polls) in the past six months will be asked if they want to become Emeritus Steering members. One week after asking, if the inactive Steering Council member has not responded, they will be automatically moved to emeritus status. Any Steering Council member can also request to become Emeritus if they wish to do so (e.g. taking a sabbatical or long vacation). Emeritus Steering members can be brought back to active Steering Council membership at anytime, assuming there is space and no other policies (e.g., shared funding, council size, etc.) are violated. Emeritus Steering Council members cannot vote. After a period of two years, the Steering Council may vote to remove an Emeritus Steering Council member per the [Remove an Emeritus Steering Council Member](#remove-an-emeritus-steering-council-member) policy below. Members moved to Emeritus status as a result of overlapping funding are not subject to this removal policy. The [`steering.csv`](steering.csv) list should be updated when change in the status of a member occurs with the member added to the [`emeritus.csv`](emeritus.csv) file. Whether or not this member is eligible to be removed should be noted as well.
 
 ## Sub-Teams
 
@@ -106,7 +112,7 @@ All sub-teams must adhere to the governance, policies, and procedures of the con
 
 A **dynamic** charter means that the sub-team is self-organizing, with respect to its own internal policies, procedures, and membership. A sub-team may choose to modify its membership independent of the Steering Council. For example, a Google Summer of Code team could be a good candidate for a dynamic charter. Project Teams also have a dynamic charter.
 
-### Static Charter: 
+### Static Charter
 
 A **static** charter means that all membership decisions and non-trivial policy changes must be approved by the Steering Council. For example, a finance team may require a static charter.
 
@@ -174,9 +180,7 @@ A Project Team is a sub-team with a dynamic charter, except for a few caveats as
 
 The initial Project Team for projects in the `conda` GitHub organization are specified in the vote to move a project from the incubator to the main `conda` GitHub organization. As this vote has a 60% threshold and sub-team formation is only a greater than 50% threshold, the vote for adding a project to the main `conda` GitHub organization can serve both purposes. Project Teams for incubating projects do not need a vote for their creation. Instead they are created when the project is moved into `conda-incubator`.
 
-For [federated](#federated-projects) and [incubating](#incubation) projects, the Project Team decides among themselves on how to add and/or remove members from the Project Team. Further, Project Teams for incubating projects are exempted from the requirement to have at least one Steering Council member. For a community maintained project, a petition for commit rights is made to the current members of the Project Team for that project. If this petition passes according to the voting rules for "[Nominate new member of a Project Team](#nominate-new-member-of-a-community-project-team) below, the petitioner is granted write access and added to the team.
-
-[**Steering Council**](#steering-council) members are excluded from these votes and retain commit rights to all community projects as stated above. They can add or remove themselves from Project Teams as they see fit in order to indicate which projects they are involved with, have a say in voting for write access petitions, etc. Steering Council members may not add themselves to a [Project Team](#project-teams) in order to vote on a petition for commit access if they were not already on that team when the petition was made.
+For [federated](#federated-projects) and [incubating](#incubation) projects, the Project Team decides among themselves on how to add and/or remove members from the Project Team. Further, Project Teams for incubating projects are exempted from the requirement to have at least one Steering Council member. For federated projects, the Project Team must have at least one Steering Council member. For a community maintained project, a petition for commit rights is made to the current members of the Project Team for that project. If this petition passes according to the voting rules for "[Nominate new member of a Project Team](#nominate-new-member-of-a-community-project-team) below, the petitioner is granted write access and added to the team.
 
 ## Steering Council Membership
 
@@ -193,11 +197,17 @@ The minimum and maximum sizes for the Steering Council are:
 
 The minimum of 9 works well with the [minimum quorum size of 5](#quorum) specified below. The maximum of 21 allows for a diversity of members, including as many as 7 Provisional Members (see below), and representation from 11 to 21 different participating organizations (see below).
 
+If the Steering Council falls below its minimum, then all other Council business is suspended until this requirements is met. The requirement can be met by adding Provisional members, adding new contributing members, or members coming back from Emeritus status.
+
+If the Steering Council membership exceeds its maximum, then all other Council business is suspended until this requirements is met. The requirement can be met by dropping Provisional members, removing members, or members voluntarily moving to Emeritus status.
+
+No vote can be held that would push the Steering Council above its maximum size if the vote resulted in adding either standard or provisional Steering Council members.
+
 ### Provisional Members
 
 As mentioned above, Steering Council members will usually have a demonstrated record of prior service to the conda community.  This requirement works well for ensuring that Council members are invested in the community before they can become part of community governance.
 
-We also want to encourage participation by commercial and grant funded organization that have committed to investing in the conda ecosystem. To encourage these organizations to commit resources to the conda ecosystem, **Provisional Steering Council Memberships** are available. 
+We also want to encourage participation by commercial and grant funded organizations that have committed to investing in the conda ecosystem. To encourage these organizations to commit resources to the conda ecosystem, **Provisional Steering Council Memberships** are available.
 
 Provisional memberships are open to organizations that have committed resources to the conda Organization, but do not yet have an established record of contribution *within* the conda Ecosystem. Provisional memberships encourage investment, and give investing organizations an immediate voice in community decisions.
 
@@ -208,7 +218,7 @@ Provisional memberships are open to organizations that
 
 These organizations can request 1 provisional membership on the Steering Council. The evaluation criteria for evaluating this request is based on the organization’s and the nominated person’s commitment to open source principles *as demonstrated in other projects.*
 
-Provisional memberships are expected to be temporary, lasting just long enough for contributors from that organization to demonstrate their values and earn representation as individual contributors. 
+Provisional memberships are expected to be temporary, lasting just long enough for contributors from that organization to demonstrate their values and earn representation as individual contributors.
 
 Provisional memberships can also be revoked at any time by a simple majority vote of the Steering Council, if and when the Council determines that the organization or the individual is no longer acting in the larger interests of the conda community.
 
@@ -216,15 +226,15 @@ Finally, **no more than 1/3 of the Steering Council membership can be Provisiona
 
 ## Shared Funding Membership restrictions
 
-**No more than 2 council members can have the same funder:**  Each Steering Council member can have the same funding organization as **at most one other Council member.** 
+**No more than 2 council members can have the same funder:**  Each Steering Council member can have the same funding organization as **at most one other Council member.**
 
-The conda Organization [actively encourages](#provisional-members) participation by commerical entities.  However, we also need to preserve the voices of individual contributors, and prevent the conda Organization from ever favoring the financial interests of any commercial entity over the interests of the larger community.
+The conda Organization [actively encourages](#provisional-members) participation by commercial entities.  However, we also need to preserve the voices of individual contributors, and prevent the conda Organization from ever favoring the financial interests of any commercial entity over the interests of the larger community.
 
 The conda Organization enforces this restriction by tracking the funding sources of each Steering Council member.
 
 ### Shared Funding: Proximate, Ultimate, and In Between
 
-Funding can be multilayered and complicated. 
+Funding can be multilayered and complicated.
 
 For example, Robert is a researcher in the Computer Science department at Western Michigan University and is working on a National Science Foundation (NSF) grant. For the purposes of the conda Organization, is Robert’s funder his CS department, the university, the specific grant, a division of NSF, the NSF, the US government, or all of the above?
 
@@ -247,21 +257,21 @@ In the other example, Microsoft is a large company and these three largely unrel
 
 Nominated members will provide a list of organizations that fund above 25% of their time. Nominees will need to provide a complete “chain of funding” for each funding source. For example: “GitHub, a part of Microsoft”, or “CS Dept at Western Michigan University, *Computational Reproducibility Made Easy grant*, NHGRI, NIH, US Federal Government.”
 
-The Steering Council determine the appropriate funding level(s) to consider when looking for common funding with existing and proposed members.
+The Steering Council determines the appropriate funding level(s) to consider when looking for common funding with existing and proposed members. The funding source of any Steering Council member can be put to a vote under the policy for [All Other Items](#all-other-items) below.
 
-Council members need to keep their funding documentation up to date, and notify the council whenever it changes.
+Council members need to keep their funding documentation up to date, and notify the council whenever it changes. Should a change in funding state create a shared funding situation, the council members should decide who among themselves should move to emeritus status. If no agreement can be reached, the Steering Council will hold a simple vote to determine which member is moved to emeritus status under the [Resolve Overlapping Funding](#resolve-overlapping-funding) voting provision below.
 
-In cases where people have absolutely no funding related to conda, we still document this funding state, but we do not require people to list their (irrelevant) funding.
+In cases where people have absolutely no funding related to conda, we still document this funding state, but we do not require people to list their (irrelevant) funding. The "no funding" state can be held by an unlimited number of Steering Council members.
 
 ## Steering Council and Project Teams Interactions
 
 The Steering Council and the Project Teams have different roles and different motivations. conda governance aims to impose just enough oversight of Project Team procedures to ensure that membership and voting are indeed open and fair.
 
-### Community Project Teams must be open to qualifies new members
+### Community Project Teams must be open to qualified new members
 
-Community projects must be open to new members who demonstrate their capability and interest in the project through working with the project as a contributor first. If an application to join a Community project is rejected, the person can appeal to the Steering Council. If the rejected person can prove that they in fact meet the criteria for becoming a Project Team member and that they were rejected for inappropriate reasons, including their funding source, then the rejection will be overturned.
+Community projects must be open to new members who demonstrate their capability and interest in the project through working with the project as a contributor first. If an application to join a Community project is rejected, the person can appeal to the Steering Council. If the rejected person can prove that they in fact meet the criteria for becoming a Project Team member and that they were rejected for inappropriate reasons, including their funding source, then the rejection will be overturned. This voting item falls under the [Project Team Membership Appeal](#project-team-membership-appeal) policy below.
 
-It is possible that a project joins as a Community Project, but in fact not be committed to open source principles. If they consistently reject qualified “outside” applicants for Project Team membership, then Steering Council review could lead to a gradual shift in Project Team membership, and causing the original team members to leave. 
+It is possible that a project joins as a Community Project, but in fact not be committed to open source principles. If they consistently reject qualified “outside” applicants for Project Team membership, then Steering Council review could lead to a gradual shift in Project Team membership, and causing the original team members to leave.
 
 We minimize the chance of this happening by clearly communicating requirements for Community Projects when bringing in a new project.
 
@@ -280,7 +290,7 @@ This section presents descriptions and criteria for voting items in the conda Or
 * Steering Council members must explicitly abstain from a vote via making a comment on the PR/issue or selecting the "abstain" option. Simply not voting at all doesn't count as an abstention.
 * Abstentions count towards the [quorum](#quorum) but are excluded when computing if a vote passes.
 
-Voting items are labeled as either **standard** or **sensitive**. Standard items are ones where public record and discourse is preferable. Sensitive voting items are ones where the results of the vote should remain private to the voters after the vote has occurred. Sensitive votes should take place on a secure anonymous voting platform in order to retain election integrity and anonymity. (We may use [`Polys`](https://polys.me) and the [`Helios voting system`](https://vote.heliosvoting.org/), but are open to any secure, anonymous system.) The email capability of your chosen voting platform should be used for sending voting invitations and reminders, and you should use the email list from `steering.csv` as the authoritative list of emails to use.
+Voting items are labeled as either **standard** or **sensitive**. Standard items are ones where public record and discourse is preferable. Sensitive voting items are ones where the results of the vote should remain private to the voters after the vote has occurred. Sensitive votes should take place on a secure anonymous voting platform in order to retain election integrity and anonymity. (We may use [`Polys`](https://polys.me) and the [`Helios voting system`](https://vote.heliosvoting.org/), but are open to any secure, anonymous system.) The email capability of your chosen voting platform should be used for sending voting invitations and reminders if possible. All votes should be sent to the appropriate people using their email listed in `steering.csv` as applicable.
 
 The default voting period is 1 week (7 days). This may be modified at the time when a vote is called, but may never be less than one week modulo exceptions for some time-sensitive votes below.
 
@@ -313,7 +323,7 @@ Non-timed-out vote results should be documented in github PR/issue upon which th
 
 ### Quorum
 
-With one exception, all percentages below express *both* required participation, as a fraction of active Steering Council members, as well as the fraction of that fraction who vote affirmatively (i.e. vote `yes`) on the issue. The exception is when 50% is required.  In these cases, *at least half* of team members need to participate, but *more than 50%* of votes need to be affirmative for the vote to pass.
+With one exception, all percentages below express *both* required participation, as a fraction of active Steering Council members, as well as the fraction of those who vote affirmatively (i.e. vote `yes`) on the issue. The fraction of those who voted affirmatively is determined from the total number who voted `yes`, `no` or `abstain`, not the size of the active Steering Council. The exception is when 50% is required. In these cases, *at least half* of team members need to participate, but *more than 50%* of votes need to be affirmative for the vote to pass. Some votes have special quorum rules and those are listed explicitly below.
 
 For example, in a vote requiring 50% participation, with 20 active members, at least 10 must vote; if 10 or 11 vote, there must be at least 6 affirmative votes. If 12 or 13 members vote, at least 7 votes must be affirmative to pass, and so on.
 
@@ -341,15 +351,15 @@ To declare a standard vote "timed out," the person making such a declaration mus
 
 ### Voting Total Examples
 
-Assume the Steering Council has 10 active members, 2 Emeritus members, and the vote threshold is 50%.
+Assume the Steering Council has 10 active members and the vote threshold is 50%.
 
-1. Among Steering Council members there are 3 "yes", 2 "no", and 1 "abstain" votes. No Emeritus votes were recorded. This vote has reached quorum (3 + 2 + 1 = 6 which is at least 50% of 10). It also passes since it recorded 3 "yes" votes and 2 "no" votes giving 3/5 (60%) which is greater than 50% of 5.
+1. Among Steering Council members there are 3 "yes", 2 "no", and 1 "abstain" votes. This vote has reached quorum (3 + 2 + 1 = 6 which is at least 50% of 10). It also passes since it recorded 3 "yes" votes and 2 "no" votes giving 3/5 (60%) which is greater than 50% of 5.
 
-2. Among Steering Council members there are 4 "yes", 2 "no", and no abstentions. One Emeritus Steering member voted "no". This vote has reached quorum (4 + 2 = 6 which is at least 50% of 10). It has also passed since it recorded 4 "yes" votes and 3 "no" votes giving 4/7 which is greater than 50% of 6.
+2. Among Steering Council members there are 4 "yes", 3 "no", and no abstentions. This vote has reached quorum (4 + 3 = 7 which is at least 50% of 10). It has also passed since it recorded 4 "yes" votes and 3 "no" votes giving 4/7 which is greater than 50% of 6.
 
-3. Among Steering Council members there are 3 "yes" votes, "1" no vote and no abstentions. No Emeritus Steering members voted. Further the timeout rules above **were** invoked. This vote has thus reached quorum and it has passed since 3/4 (75%) is greater than 50%.
+3. Among Steering Council members there are 3 "yes" votes, "1" no vote and no abstentions. Further the timeout rules above **were** invoked. This vote has thus reached quorum and it has passed since 3/4 (75%) is greater than 50%.
 
-4. Among Steering Council members there are 3 "yes" votes, "1" no vote and no abstentions. No Emeritus Steering members voted. Further, the timeout rules above **were not** invoked. This vote has not reached quorum and should be extended or redone.
+4. Among Steering Council members there are 3 "yes" votes, "1" no vote and no abstentions. Further, the timeout rules above **were not** invoked. This vote has not reached quorum and should be extended or redone.
 
 ## Voting items
 
@@ -366,6 +376,48 @@ The proposer must provide a sufficient justification as to why the nominee shoul
 
 * Sensitive
 * 2/3rds Majority to pass
+
+### Nominate a Provisional Steering Council Member
+
+The proposer must provide a sufficient justification as to why the nominee should be welcomed on a provisional basis into the Steering Council. The guidelines on [Provisional Members](#provisional-members) must be followed as well.
+
+* Sensitive
+* Voting:
+  * At least 50% participation
+  * More than 50% "yes" votes to pass
+
+### Remove a Provisional Steering Council Member
+
+The proposer must provide a sufficient justification as to why the provisional member should be removed. The guidelines on [Provisional Members](#provisional-members) must be followed as well.
+
+* Sensitive
+* Voting:
+  * At least 50% participation
+  * More than 50% "yes" votes to pass
+
+### Remove an Emeritus Steering Council Member
+
+If an Emeritus Steering Council member is inactive for two or more years, the Steering Council may vote to remove them. A notice period of one month must be given directly before such a vote is called. If the member moves back from emeritus to active status,
+then the vote cannot be called. Members moved to Emeritus status as a result of overlapping funding are not subject to this policy.
+
+* Sensitive
+* Voting:
+  * At least 50% participation
+  * More than 50% "yes" votes to pass
+
+### Resolve Overlapping Funding
+
+In the case that more than two Steering Council members share the same funding source and no agreement can be reached
+amoung the members with shared funding as to who will enter emeritus status, the Steering Council will hold a simple
+plurality vote in order to resolve the funding conflict. Each member with shared funding will be listed as a separate option in the
+vote. The Steering Council will then vote on which member should be moved to emeritus status. The member who receives the most votes is moved to emeritus status. The quorum for this vote is five. In the case of a tie, the member is chosen at random.
+
+* Sensitive
+* Voting:
+  * Simple plurality of votes
+  * Member with most votes is moved to emeritus status
+  * Ties are resolved by choosing a member at random
+  * The quorum for this vote is five votes
 
 ### Sub-team Formation
 
@@ -412,15 +464,6 @@ At some point, many projects will want to be included in the main `conda` GitHub
 * Standard
 * 60% Majority to pass
 
-### Graduate a Specification Project from Incubation to Main
-
-The purpose of specifications is to be fully endorsed by the main conda organization. Graduating a specification can be done with a super-super-majority vote from the Steering Council. The purpose of this is to ensure that the overwhelming majority of the conda ecosystem agrees with the goals & aims of the specification, even if no software implements it at the time of the vote. Specifications are highly encouraged to be written and developed in `conda-incubator` so they can accrue comments and changes. New versions of a specification (beyond simple typographical and grammatical fixes) are considered new specifications for purposes of voting here.
-
-In spite of the high threshold for approval here, we highly encourage the writing of specification documents.
-
-* Standard
-* 70% Majority to pass
-
 ### Lock an Issue, Pull Request, Thread
 
 Occasionally, discussions become toxic and antithetical to the goal of fostering the conda community. Steering Council members have the right to lock the thread in an "ask for forgiveness and not for permission" way so bad situations are handled quickly. The lock must be justified in the thread itself with a text explaining the reasons for locking and how the participants can contest it.
@@ -460,9 +503,25 @@ The voting should happen in the PR in question and there must be a call to `@con
 * Standard
 * 75% Majority to pass
 
-----
+### Project Team Membership Appeal
 
-All other voting items are considered to be standard and require a 50% majority to pass.
+An applicant to a Project Team that has been rejected from the team via the [Nominate new member of a Community Project Team](#nominate-new-member-of-a-community-project) policy below may appeal that decision to full Steering Council. Per the [Nominate new member of a Community Project Team](#nominate-new-member-of-a-community-project) policy
+below, the proposer must provide a sufficient justification as to why the nominee should be welcomed into the Project Team. Prior
+work on the project is an essential part of the nomination process. If the vote passes, the nominee is added to the Project Team.
+
+* Sensitive
+* Voting:
+  * At least 50% participation
+  * More than 50% "yes" votes to pass
+
+### All Other Items
+
+All other voting items, including Steering Council member funding sources, are considered to be standard and require a 50% majority to pass.
+
+* Standard
+* Voting:
+  * At least 50% participation
+  * More than 50% "yes" votes to pass
 
 ### Community Project Team Voting
 
@@ -476,6 +535,15 @@ The proposer must provide a sufficient justification as to why the nominee shoul
 * Voting: One of the following:
   * at least 3 members voting, with all votes being "yes"
   * at least 50% participation, with greater than 50% "yes" votes to pass
+
+#### Remove a Project Team Member
+
+Sufficient justification must be given as to why a Project Team member should be removed. Removing a Project Team member who was added by the Steering Council via the [Project Team Membership Appeal](#project-team-membership-appeal) process may be considered a violation of the Code of Conduct if sufficient justification is not given.
+
+* Sensitive
+* Voting:
+  * At least 50% participation
+  * More than 50% "yes" votes to pass
 
 
 ## Current Steering Council Members

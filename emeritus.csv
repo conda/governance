@@ -1,9 +1,9 @@
-github_username,email,name
-raydouglass,ray@raydouglass.com,Ray Douglass
-sodre,psodre@gmail.com,Patrick Sodré
-minrk,benjaminrk@gmail.com,Min Ragan-Kelley
-scopatz,scopatz@gmail.com,Anthony Scopatz
-angloyna,angela.gloyna@gmail.com,Angela Gloyna
-jjhelmus,jjhelmus@gmail.com,Jonathan Helmus
-prusse-martin,prusse.martin@gmail.com,Martin Prüsse
-myancy-anaconda,myancy@anaconda.com,Megan Yancy
+github_username,email,name,removable
+raydouglass,ray@raydouglass.com,Ray Douglass,yes
+sodre,psodre@gmail.com,Patrick Sodré,yes
+minrk,benjaminrk@gmail.com,Min Ragan-Kelley,yes
+scopatz,scopatz@gmail.com,Anthony Scopatz,yes
+angloyna,angela.gloyna@gmail.com,Angela Gloyna,yes
+jjhelmus,jjhelmus@gmail.com,Jonathan Helmus,yes
+prusse-martin,prusse.martin@gmail.com,Martin Prüsse,yes
+myancy-anaconda,myancy@anaconda.com,Megan Yancy,yes

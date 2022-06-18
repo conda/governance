@@ -1,5 +1,5 @@
 emails = []
-for fname in ["emeritus.csv", "steering.csv"]:
+for fname in ["steering.csv"]:
     with open(fname) as fp:
         for line in fp:
             email = line.split(",")[1].strip()
