@@ -36,7 +36,6 @@
     - [Nominate new Steering Council member](#nominate-new-steering-council-member)
     - [Nominate a Provisional Steering Council Member](#nominate-a-provisional-steering-coiuncil-member)
     - [Remove a Provisional Steering Council Member](#remove-a-provisional-steering-council-member)
-    - [Remove an Emeritus Steering Council Member](#remove-an-emeritus-steering-council-member)
     - [Resolve Overlapping Funding](#resolve-overlapping-funding)
     - [Sub-team Formation](#sub-team-formation)
     - [Sub-team Dissolution](#sub-team-dissolution)
@@ -100,7 +99,7 @@ This group encompasses all others who are not on the Steering Council or Project
 
 ### Emeritus Steering
 
-[Steering Council](#steering-council) members that are inactive (commits, GitHub comments/issues/reviews, dev meetings, and voting on polls) in the past six months will be asked if they want to become Emeritus Steering members. One week after asking, if the inactive Steering Council member has not responded, they will be automatically moved to emeritus status. Any Steering Council member can also request to become Emeritus if they wish to do so (e.g. taking a sabbatical or long vacation). Emeritus Steering members can be brought back to active Steering Council membership at anytime, assuming there is space and no other policies (e.g., shared funding, council size, etc.) are violated. Emeritus Steering Council members cannot vote. After a period of two years, the Steering Council may vote to remove an Emeritus Steering Council member per the [Remove an Emeritus Steering Council Member](#remove-an-emeritus-steering-council-member) policy below. Members moved to Emeritus status as a result of overlapping funding are not subject to this removal policy. The [`steering.csv`](steering.csv) list should be updated when change in the status of a member occurs with the member added to the [`emeritus.csv`](emeritus.csv) file. Whether or not this member is eligible to be removed should be noted as well.
+[Steering Council](#steering-council) members that are inactive (commits, GitHub comments/issues/reviews, dev meetings, and voting on polls) in the past six months will be asked if they want to become Emeritus Steering members. One week after asking, if the inactive Steering Council member has not responded, they will be automatically moved to emeritus status. Any Steering Council member can also request to become Emeritus if they wish to do so (e.g. taking a sabbatical or long vacation). Emeritus Steering members can be brought back to active Steering Council membership at anytime, assuming there is space and no other policies (e.g., shared funding, council size, etc.) are violated. Emeritus Steering Council members cannot vote. The [`steering.csv`](steering.csv) list should be updated when change in the status of a member occurs with the member added to the [`emeritus.csv`](emeritus.csv) file.
 
 ## Sub-Teams
 
@@ -389,16 +388,6 @@ The proposer must provide a sufficient justification as to why the nominee shoul
 ### Remove a Provisional Steering Council Member
 
 The proposer must provide a sufficient justification as to why the provisional member should be removed. The guidelines on [Provisional Members](#provisional-members) must be followed as well.
-
-* Sensitive
-* Voting:
-  * At least 50% participation
-  * More than 50% "yes" votes to pass
-
-### Remove an Emeritus Steering Council Member
-
-If an Emeritus Steering Council member is inactive for two or more years, the Steering Council may vote to remove them. A notice period of one month must be given directly before such a vote is called. If the member moves back from emeritus to active status,
-then the vote cannot be called. Members moved to Emeritus status as a result of overlapping funding are not subject to this policy.
 
 * Sensitive
 * Voting:
