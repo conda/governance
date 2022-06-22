@@ -1,15 +1,15 @@
-# conda Organization Code of Conduct
+# Conda Organization Code of Conduct
 
 **Table of Contents**
 
 - [The Short Version](#the-short-version)
-- [conda Organization Diversity Statement](#conda-organization-diversity-statement)
-- [conda Organization Code of Conduct: Introduction & Scope](#conda-organization-code-of-conduct-introduction--scope)
+- [Conda Organization Diversity Statement](#conda-organization-diversity-statement)
+- [Conda Organization Code of Conduct: Introduction & Scope](#conda-organization-code-of-conduct-introduction--scope)
 - [Standards for Behavior](#standards-for-behavior)
   - [Unacceptable Behavior](#unacceptable-behavior)
   - [Behavior Outside of conda Organization Spaces](#behavior-outside-of-conda-organization-spaces)
 - [Confidentiality and Public Statements to the Community](#confidentiality-and-public-statements-to-the-community)
-- [Live Events: Immediate and Long Term Actions and Consequences](#live-events-immediate-and-long-term-actions-and-consequences)
+- [Live Events](#live-events)
 - [Reporting Guidelines](#reporting-guidelines)
   - [How to Submit a Report](#how-to-submit-a-report)
   - [What to Include in a Report](#what-to-include-in-a-report)
@@ -42,13 +42,17 @@ The conda Organization is dedicated to providing a harassment-free community for
 
 Thank you for helping make this a welcoming, friendly community for all.
 
-## [Report a code of conduct incident here.](https://form.jotform.com/221527028480048)
+## Report an Incident
+
+* Report a code of conduct incident [using a form](https://form.jotform.com/221527028480048).
+* Report a code of conduct incident via email: [condaconduct@gmail.com](mailto:condaconduct@gmail.com).
+* Contact [an individual committee member](#committee-membership) or [CoC event representative](#coc-representatives) to report an incident in confidence.
 
 &nbsp;
 
 And now the longer version...
 
-# conda Organization Diversity Statement
+# Conda Organization Diversity Statement
 
 The conda Organization welcomes and encourages participation in our community by people of all backgrounds and identities. We are committed to promoting and sustaining a culture that values mutual respect, tolerance, and learning, and we work together as a community to help each other live out these values.
 
@@ -56,7 +60,7 @@ We have created this diversity statement because we believe that a diverse commu
 
 Although we have phrased the formal diversity statement generically to make it all-inclusive, we recognize that there are specific identities that are impacted by systemic discrimination and marginalization. We welcome all people to participate in the conda Organization community regardless of their identity or background.
 
-# conda Organization Code of Conduct: Introduction & Scope
+# Conda Organization Code of Conduct: Introduction & Scope
 
 This code of conduct should be honored by everyone who participates in the conda Organization community. It should be honored in any conda Organization-related activities, by anyone claiming affiliation with the conda Organization, and especially when someone is representing the conda Organization in any role (including as an event volunteer or speaker).
 
@@ -123,9 +127,9 @@ The CoC Committee will keep the identity of the reporter confidential.
 
 All CoC cases will be reported to the community.  The level of detail in reports will vary from case to case. Reports will describe at least the type of infraction that was reported, and the Committee's decision and any action taken.  In most cases, the report will not include personally identifiable information.
 
-# Live Events: Immediate and Long Term Actions and Consequences
+# Live Events
 
-> **If you feel your safety is in jeopardy or the situation is an emergency, we urge you to contact local law enforcement before making a report to the event's Code of Conduct representatives or other staff.** (In the U.S., call 911.)
+> **If you feel your safety is in jeopardy or the situation is an emergency, we urge you to contact local law enforcement before making a report to the event's Code of Conduct committee members, [representatives](#coc-representatives), or other staff.** (In the U.S., call 911.)
 
 Live events present particular challenges: 
   
@@ -136,7 +140,12 @@ To better support situations where immediate action may be required, these guide
 * All conda Organization events will have specific, named Code of Conduct contacts for the events.
 * The names and contact mechanisms for the Code of Conduct representatives will be clearly and frequently communicated to event participants.
 
-At conda Organization events, Code of Conduct representatives will attempt to gather and write down [information](#what-to-include-in-a-report) from anyone making a verbal report at a live event. Recording the details in writing is exceedingly important in order for us to effectively respond to reports. If event staff write down a report taken verbally, then the person making the report will be asked to review the written report for accuracy.
+## CoC Representatives
+
+Every conda Organization associated event will have named CoC Committee members or *CoC representatives* that are the first point of contact for that event.  Who these people are will be clearly and frequently communicated to event participants. CoC representatives are used when there are no committee members participating in the event.
+
+## Live Events: Reporting and Actions
+At conda Organization events, Code of Conduct committee members or representatives will attempt to gather and write down [information](#what-to-include-in-a-report) from anyone making a verbal report at a live event. Recording the details in writing is exceedingly important in order for us to effectively respond to reports. If event staff write down a report taken verbally, then the person making the report will be asked to review the written report for accuracy.
 
 For reports made during live events, or in any situation where urgent action is needed:
 
@@ -157,7 +166,7 @@ Potential *immediate* consequences for violating the conda Organization Code of 
 - Immediately ending any event volunteer responsibilities and privileges the reported person holds
 - Expelling the person from the event without a refund
 - Requiring that the person immediately leave the event and not return
-- Any other response that the CoC representatives or event staff deem necessary and appropriate to the situation
+- Any other response that the CoC members, representatives, or event staff deem necessary and appropriate to the situation
 
 # Reporting Guidelines
 
@@ -165,21 +174,25 @@ If you believe someone is violating the code of conduct, please report this in a
 
 All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances.  The conda CoC Committee commits to maintaining confidentiality with regard to the reporter of an incident.
 
-For possibly unintentional breaches of the code of conduct, you may want to respond to the person and point out this code of conduct (either in public or in private, whatever is most appropriate). If you would prefer not to do that, please [report the issue to the conda CoC Committee directly](https://form.jotform.com/221527028480048), or ask [an individual committee member](#committee-membership) for advice in confidence. Complete contact information is below, under [How to Submit a Report](#how-to-submit-a-report).
+For possibly unintentional breaches of the code of conduct, you may want to respond to the person and point out this code of conduct (either in public or in private, whatever is most appropriate). If you would prefer not to do that, please report the issue to the conda CoC Committee directly. 
 
-Take care of each other. Alert the conda CoC Committee, a Committee member, a CoC event representative, or a Steering Council member if you notice a dangerous situation, someone in distress, or violations of this code of conduct, even if they seem inconsequential.
+Take care of each other. Alert someone if you notice a dangerous situation, someone in distress, or violations of this code of conduct, even if they seem inconsequential.
 
 ## How to Submit a Report
 
-The CoC Committee is committed to promptly addressing any reported issues. If you have experienced or witnessed behavior that violates the conda Organization Code of Conduct, please complete the form below to make a report.
+The CoC Committee is committed to promptly addressing any reported issues. If you have experienced or witnessed behavior that violates the conda Organization Code of Conduct, please let us know.
 
-## **[INCIDENT REPORTING FORM](https://form.jotform.com/221527028480048)**
+You can report an incident
 
-Reports submitted through the reporting form are sent to the [full conda Code of Conduct Committee](#committee-membership).
+* via the **[Incident Reporting Form](https://form.jotform.com/221527028480048)**
+* via email: [condaconduct@gmail.com](mailto:condaconduct@gmail.com)
+* contact [an individual committee member](#committee-membership) or [CoC event representative](#coc-representatives) to report an incident in confidence.
+
+Reports submitted via the form or committee email address are sent to the [full conda Code of Conduct Committee](#committee-membership).
 
 ## What to Include in a Report
 
-Our ability to address any code of conduct breaches in a timely and effective manner is impacted by the amount of information you can provide, so, **[our reporting form](https://form.jotform.com/221527028480048) asks you to include as much of the following information as you can**:
+Our ability to address any code of conduct breaches in a timely and effective manner is impacted by the amount of information you can provide, so, we ask you to include as much of the following information as you can**:
 
 - **Your contact info** (so we can get in touch with you if we need to follow up). This will be kept confidential. You can also file a report [anonymously](#anonymous-reporting).
 - The **approximate time and location of the incident** (please be as specific as possible)
@@ -294,7 +307,7 @@ You can reach the entire CoC Committee by emailing [condaconduct@gmail.com](mail
 
 # Eligibility
 
-Anyone from the community who is interested and able to do CoC Committee work is eligible to be nominated for the committee.  
+Anyone from the community who is interested and able to do CoC Committee work is eligible to be nominated for the committee.  New committee members can be nominated by any community member, including nominating themselves.
 
 ## Shared Funding
 
