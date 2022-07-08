@@ -213,7 +213,7 @@ Provisional memberships are open to organizations that have committed resources 
 Provisional memberships are open to organizations that
 
 * Are funding at least one FTE contributing to the conda ecosystem
-* Have not been involved in the conda ecosystem previously (and thus have no record of contributing to the ecosystem)
+* Have not demonstrated a record of prior service to the conda community
 
 These organizations can request 1 provisional membership on the Steering Council. The evaluation criteria for evaluating this request is based on the organization’s and the nominated person’s commitment to open source principles *as demonstrated in other projects.*
 
