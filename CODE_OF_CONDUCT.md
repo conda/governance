@@ -209,7 +209,7 @@ The reporting form supports anonymous incident reporting.  Anonymous reporting w
 
 ## Conflicts of Interest
 
-Committee members are expected to recuse themselves in they have a conflict of interest. In addition, the CoC Committee can [vote](#voting-and-decision-making) to remove a committee member from a case, if the committee feels that the member has a conflict of interest.  This [vote](#voting-and-decision-making) requires a simple majority.
+Committee members are expected to recuse themselves if they have a conflict of interest, and are required to recuse themselves if they are the accused or the target of the reported behavior. In addition, the CoC Committee can [vote](#voting-and-decision-making) to remove a committee member from a case, if the committee feels that the member has a conflict of interest.  This [vote](#voting-and-decision-making) requires a simple majority.
 
 If you are concerned about making a report that will be read by all committee members, you are strongly encouraged to contact [individual committee members](#committee-membership) directly.
 
