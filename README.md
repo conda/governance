@@ -196,7 +196,7 @@ The minimum and maximum sizes for the Steering Council are:
 
 The minimum of 9 works well with the [minimum quorum size of 5](#quorum) specified below. The maximum of 21 allows for a diversity of members, including as many as 7 Provisional Members (see below), and representation from 11 to 21 different participating organizations (see below).
 
-If the Steering Council falls below its minimum, then all other Council business is suspended until this requirements is met. The requirement can be met by adding Provisional members, adding new contributing members, or members coming back from Emeritus status.
+If the Steering Council falls below its minimum, then all other Council business is suspended until this requirement is met. The only allowed council actions, in this case, are votes on adding Provisional members, votes on adding new contributing members, votes to resolve overlapping funding, existing members moving to Emeritus status, or existing members coming back from Emeritus status.
 
 If the Steering Council membership exceeds its maximum, then all other Council business is suspended until this requirement is met. The only allowed council actions, in this case, are votes on removing Provisional members, votes on removing contributing members, votes to resolve overlapping funding, existing members moving to Emeritus status, or existing members coming back from Emeritus status.
 
