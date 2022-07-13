@@ -198,7 +198,7 @@ The minimum of 9 works well with the [minimum quorum size of 5](#quorum) specifi
 
 If the Steering Council falls below its minimum, then all other Council business is suspended until this requirements is met. The requirement can be met by adding Provisional members, adding new contributing members, or members coming back from Emeritus status.
 
-If the Steering Council membership exceeds its maximum, then all other Council business is suspended until this requirements is met. The requirement can be met by dropping Provisional members, removing members, or members voluntarily moving to Emeritus status.
+If the Steering Council membership exceeds its maximum, then all other Council business is suspended until this requirement is met. The only allowed council actions, in this case, are votes on removing Provisional members, votes on removing contributing members, votes to resolve overlapping funding, existing members moving to Emeritus status, or existing members coming back from Emeritus status.
 
 No vote can be held that would push the Steering Council above its maximum size if the vote resulted in adding either standard or provisional Steering Council members.
 
