@@ -326,7 +326,7 @@ With one exception, all percentages below express *both* required participation,
 
 For example, in a vote requiring 50% participation, with 20 active members, at least 10 must vote; if 10 or 11 vote, there must be at least 6 affirmative votes. If 12 or 13 members vote, at least 7 votes must be affirmative to pass, and so on.
 
-To prevent any [funding organization](#shared-funding-membership-restrictions) from swaying the majority of votes on any topic, the minimum quorum for a vote must be at least 5 members, or the specified council membership percentage for this type of vote, whichever is greater.
+To prevent any [funding organization](#shared-funding-membership-restrictions) from swaying the majority of votes on any topic, the minimum quorum for a vote must be at least 5 members, or the specified council membership percentage for this type of vote, whichever is greater. If the council membership falls below 5 members, then the minimum quorum size is set to the size of the council regardless of the vote percentage. When the vote timeout rules are invoked, the minimum quorum is 5 members or if the council is smaller than 5 members, the size of the council.
 
 Because everyone is busy and it is difficult sometimes to get quorum, votes not achieving quorum will eventually time out on their set end date. When this happens, the current participation level is taken for what it is, and the percentage of affirmative votes is calculated from whatever the vote total is at that time. In order for a timeout to occur, the vote must have:
 
