@@ -330,6 +330,7 @@ To prevent any [funding organization](#shared-funding-membership-restrictions) f
 
 Because everyone is busy and it is difficult sometimes to get quorum, votes not achieving quorum will eventually time out on their set end date. When this happens, the current participation level is taken for what it is, and the percentage of affirmative votes is calculated from whatever the vote total is at that time. In order for a timeout to occur, the vote must have:
 
+* met the minimum quorum described above
 * been open for at least 2 weeks
 * been presented and discussed at a Steering Council meeting
 * been advertised on at least 3 separate occasions on the Steering Council chat channel (beginning of voting period, middle, and one day prior to proposed timeout)
