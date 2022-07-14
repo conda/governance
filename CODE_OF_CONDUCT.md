@@ -205,7 +205,7 @@ Our ability to address any code of conduct breaches in a timely and effective ma
 
 ## Anonymous Reporting
 
-The reporting form supports anonymous incident reporting.  Anonymous reporting works best when the behavior happened in a public space and was witnessed by many.  If an incident is reported anonymously and was not witnessed by others, than the committee may be limited in what actions it can take and what it can report to the larger community.  Nevertheless, the CoC Committee is still interested in receiving these reports.  They are helpful when determining what we need to address as a community, and when looking for evidence of repeated behavior.
+The reporting form supports anonymous incident reporting.  Anonymous reporting works best when the behavior happened in a public space and was witnessed by many.  If an incident is reported anonymously and was not witnessed by others, then the committee may be limited in what actions it can take and what it can report to the larger community.  Nevertheless, the CoC Committee is still interested in receiving these reports.  They are helpful when determining what we need to address as a community, and when looking for evidence of repeated behavior.
 
 ## Conflicts of Interest
 
