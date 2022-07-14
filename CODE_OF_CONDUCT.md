@@ -256,7 +256,7 @@ We aim to **respond within one week** to the original reporter with either a res
 
 We will contact the person who is the subject of the report to let them know what actions will be taken as a result of the report, if any.
 
-Our policy is to make sure that everyone aware of the initial incident is also made aware that official action has been taken, while still respecting the privacy of individuals. In addition, we will also usually [notify the community](#confidentiality-and-public-statements-to-the-community) than an incident has been reported, what type of incident it was, and what the response was, again respecting the privacy of individuals.
+Our policy is to make sure that everyone aware of the initial incident is also made aware that official action has been taken, while still respecting the privacy of individuals. In addition, we will also usually [notify the community](#confidentiality-and-public-statements-to-the-community) that an incident has been reported, what type of incident it was, and what the response was, again respecting the privacy of individuals.
 
 ## Appealing a Decision
 
@@ -266,9 +266,9 @@ To appeal a decision of the CoC Committee, contact the [Committee Co-Chairs **an
 
 | Time | Event | Details |
 | ---- | ---- | ---- |
-| Within 24 Hours | Acknowledge | The CoC Committee will make every effort to **acknowledge receipt of a report within 24 hours** (and we'll aim for much more quickly than that). |
-| Within 3 Days | Review | The CoC Committee will make all efforts to **review the incident within three days**. |
-| Within 1 Week | Resolve | We aim to **respond within one week** to the original reporter with either a resolution or an explanation of why the situation is not yet resolved. |
+| Within 24 Hours | Acknowledge | The CoC Committee will make every effort to **acknowledge receipt of a report within 24 hours**. |
+| Within 3 Days | Review | The CoC Committee aims to **review the incident within three days**. |
+| Within 1 Week | Resolve | We will **respond within one week** to the original reporter with either a resolution or an explanation of why the situation is not yet resolved. |
 
 # Voting and Decision Making
 
