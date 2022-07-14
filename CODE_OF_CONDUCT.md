@@ -156,7 +156,7 @@ For reports made during live events, or in any situation where urgent action is 
 
 The full Code of Conduct Committee will then consider the report using the full timeline and processes defined below.  The Committee may decide to apply consequences in other spaces beyond the space where the behavior was reported.
 
-Potential *immediate* consequences for violating the conda Organization Code of Conduct at a live event include:
+Potential *immediate* consequences for violating the conda Organization Code of Conduct at a live event include, but are not limited to:
 
 - Warning the person to cease their behavior and that any further reports will result in sanctions
 - Requiring that the person avoid any interaction with, and physical proximity to, the person they are harassing for the remainder of the event
