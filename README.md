@@ -109,7 +109,7 @@ All sub-teams must adhere to the governance, policies, and procedures of the con
 
 ### Dynamic Charter
 
-A **dynamic** charter means that the sub-team is self-organizing, with respect to its own internal policies, procedures, and membership. A sub-team may choose to modify its membership independent of the Steering Council. For example, a Google Summer of Code team could be a good candidate for a dynamic charter. Project Teams also have a dynamic charter.
+A **dynamic** charter means that the sub-team is self-organizing, with respect to any additional, internal policies, procedures, and membership. A sub-team may choose to modify its membership independent of the Steering Council. For example, a Google Summer of Code team could be a good candidate for a dynamic charter. Project Teams also have a dynamic charter.
 
 ### Static Charter
 
