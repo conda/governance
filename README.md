@@ -153,14 +153,18 @@ Federated projects are under no obligation to have a transition plan or any inte
 
 1. Trademarks are irrevocably *licensed or transferred* to the conda Organization's fiscal sponsor when a project is added to the conda Organization as a Community Project.
 2. The conda Organization, in conjunction with our fiscal sponsor, then have the right to sublicense the trademarks to other projects, subject to specific limitations: The conda Organization may not degrade the distinctiveness of *licensed* trademarks, or use *licensed* trademarks to disparage or misrepresent the assigner. *Transferred* trademarks are completely controlled by the conda Organization and its fiscal sponsor.
-3. The [Steering Council](#steering-council) then makes trademark decisions, subject to agreed upon restrictions, and coordinates efforts with our fiscal sponsor.
+3. The [Steering Council](#steering-council) then makes trademark decisions, including the ability to revoke previously assigned trademarks, subject to agreed upon restrictions, and coordinates efforts with our fiscal sponsor.
 
 We have guidelines for making decisions about conda Organization trademarks:
 
-1. The project should be open source with a permissive license
-1. The project should be related to the conda ecosystem
-1. The project should be not be overly grand in claiming namespace
-1. The project should not make subjective claims in the chosen project name
+1. The project should be open source with a permissive license. [From OSI](https://opensource.org/faq#permissive):
+
+    > A "permissive" license is simply a non-[copyleft](https://opensource.org/faq#copyleft) open source license — one that guarantees the freedoms to use, modify, and redistribute, but that permits proprietary derivative works. 
+
+2. The project should be open source with a permissive license
+3. The project should be related to the conda ecosystem
+4. The project should be not be overly grand in claiming namespace
+5. The project should not make subjective claims in the chosen project name
 
 Examples of project names that violate the 3rd and 4th guidelines are `conda Pro`, and `pets-dot-com-conda-saves-the-day`.
 
@@ -189,18 +193,7 @@ Steering Council members need to 1) be invested in the conda ecosystem and commu
 
 The Steering Council should reflect a wide range of interests, and still be small enough to have a reasonable expectation that [quorum requirements](#quorum) can be met when votes are called.
 
-The minimum and maximum sizes for the Steering Council are:
-
-* Minimum: 9
-* Maximum: 21
-
-The minimum of 9 works well with the [minimum quorum size of 5](#quorum) specified below. The maximum of 21 allows for a diversity of members, including as many as 7 Provisional Members (see below), and representation from 11 to 21 different participating organizations (see below).
-
-If the Steering Council falls below its minimum, then all other Council business is suspended until this requirement is met. The only allowed council actions, in this case, are votes on adding Provisional members, votes on adding new contributing members, votes to resolve overlapping funding, existing members moving to Emeritus status, or existing members coming back from Emeritus status.
-
-If the Steering Council membership exceeds its maximum, then all other Council business is suspended until this requirement is met. The only allowed council actions, in this case, are votes on removing Provisional members, votes on removing contributing members, votes to resolve overlapping funding, existing members moving to Emeritus status, or existing members coming back from Emeritus status.
-
-No vote can be held that would push the Steering Council above its maximum size if the vote resulted in adding either standard or provisional Steering Council members.
+The minimum Steering Council size is 9. This minimum works well with the [minimum quorum size of 5](#quorum) specified below. If the Steering Council falls below its minimum, then all other Council business is suspended until this requirement is met. The only allowed council actions, in this case, are votes on adding Provisional members, votes on adding new contributing members, votes to resolve overlapping funding, existing members moving to Emeritus status, or existing members coming back from Emeritus status.
 
 ### Provisional Members
 
@@ -233,6 +226,8 @@ The conda Organization enforces this restriction by tracking the funding sources
 
 ### Shared Funding: Proximate, Ultimate, and In Between
 
+Generally, people have shared funding if they are an employee, officer, or member of the Board of Directors of the same entity; if they have a significant consulting relationship with the same entity; or if they own at least 1% of the equity or debt, or derivatives thereof, of the same entity.
+
 Funding can be multilayered and complicated.
 
 For example, Robert is a researcher in the Computer Science department at Western Michigan University and is working on a National Science Foundation (NSF) grant. For the purposes of the conda Organization, is Robert’s funder his CS department, the university, the specific grant, a division of NSF, the NSF, the US government, or all of the above?
@@ -260,7 +255,9 @@ The Steering Council determines the appropriate funding level(s) to consider whe
 
 Council members need to keep their funding documentation up to date, and notify the council whenever it changes. Should a change in funding state create a shared funding situation, the council members should decide who among themselves should move to emeritus status. If no agreement can be reached, the Steering Council will hold a simple vote to determine which member is moved to emeritus status under the [Resolve Overlapping Funding](#resolve-overlapping-funding) voting provision below.
 
-In cases where people have absolutely no funding related to conda, we still document this funding state, but we do not require people to list their (irrelevant) funding. The "no funding" state can be held by an unlimited number of Steering Council members.
+In cases where people have absolutely no funding related to conda, we still document this funding state, but we do not require people to list their irrelevant funding. The "no funding" state can be held by an unlimited number of Steering Council members.
+
+What about cases where someone works on conda for work they are doing, but improving/directing the conda ecosystem is not a specific component of any of their funding? Generally, such cases should be considered as "no funding."
 
 ## Steering Council and Project Teams Interactions
 
