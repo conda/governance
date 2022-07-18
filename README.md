@@ -214,6 +214,8 @@ Provisional memberships are expected to be temporary, lasting just long enough f
 
 Provisional memberships can also be revoked if and when the Council determines that the organization or the individual is no longer acting in the larger interests of the conda community. The voting procedure for such removals are described in the "[Remove a Provisional Steering Council Member](#remove-a-provisional-steering-council-member)" section below.
 
+Organizations may submit an appeal to the Council to stay their provisional membership if and when the organization determines that the individual is no longer acting in the larger interests of the organization or the conda community. The Council will consider the appeal and follow the same voting procedure as described in the "[Remove a Provisional Steering Council Member](#remove-a-provisional-steering-council-member)" section below. The organization may then nominate a replacement for the provisional membership following the procedure described in in the "[Nominate a Provisional Steering Council Member](#nominate-a-provisional-steering-council-member)" section below.
+
 Finally, **no more than 1/3 of the Steering Council membership can be Provisional Members.** At all times, at least 2/3 of the Steering Council membership hold a seat because of demonstrated contributions to the conda ecosystem. If this threshold is violated then all other Council business is suspended until this requirement is met. The only allowed actions, in this case, are votes on removing Provisional members, votes on adding new contributing members, votes to resolve overlapping funding, existing members moving to Emeritus status, or existing members coming back from Emeritus status.
 
 ## Shared Funding Membership restrictions
