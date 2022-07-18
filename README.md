@@ -91,7 +91,7 @@ The Steering Council is the governing body over the entire conda Organization. M
 
 ### Project Teams
 
-Project Teams are responsible for the management of a software project consisting of one or more repositories and any software releases. Project Team members have the ability to merge pull requests into the repositories of the software project they maintain and produce releases of that software project. See the [Project Teams Details](#project-teams-details) section for more.
+Project Teams are responsible for the management of a software project consisting of one or more repositories and any software releases. Project Team members have the ability to merge pull requests into the repositories of the software project they maintain, produce releases of that software project, and all other duties related to repo maintenance. See the [Project Teams Details](#project-teams-details) section for more.
 
 ### External Contributors
 
