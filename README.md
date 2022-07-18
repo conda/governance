@@ -71,7 +71,7 @@ The conda Organization's [Code of Conduct](CODE_OF_CONDUCT.md) governs all inter
 
 ## Naming & Manifest
 
-This document defines the conda Organization as the body responsible for governing the tools, specifications, and libraries within the conda ecosystem, broadly speaking. This encompasses specific GitHub organizations, such as [`conda`](https://github.com/conda/) and [`conda-incubator`](https://github.com/conda-incubator/). Authors of particular software projects, such as [`conda`](https://github.com/conda/conda) or [`mamba`](https://github.com/mamba-org/mamba), are free to choose if and when their projects are included as part of the conda Organization.
+This document defines the conda Organization as the body responsible for governing the tools, specifications, and libraries within the conda ecosystem, broadly speaking. This encompasses specific GitHub organizations, such as [`conda`](https://github.com/conda/) and [`conda-incubator`](https://github.com/conda-incubator/). Authors of particular software projects, such as [`conda`](https://github.com/conda/conda) or [`mamba`](https://github.com/mamba-org/mamba), are free to choose when their projects are included as part of the conda Organization.
 
 This organization does not hold as part of its role the creation of any packages. The act of packaging itself has other organizations dedicated to their creation, such as [Anaconda](https://anaconda.com/), [conda-forge](https://conda-forge.org/), and [bioconda](https://bioconda.github.io/).
 
