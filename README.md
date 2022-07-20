@@ -263,7 +263,7 @@ What about cases where someone works on conda for work they are doing, but impro
 
 ## Steering Council and Project Teams Interactions
 
-The Steering Council and the Project Teams have different roles and different motivations. conda governance aims to impose just enough oversight of Project Team procedures to ensure that membership and voting are indeed open and fair.
+The Steering Council and the Project Teams have different roles and different motivations. Conda governance aims to impose just enough oversight of Project Team procedures to ensure that membership and voting are indeed open and fair.
 
 ### Community Project Teams must be open to qualified new members
 
