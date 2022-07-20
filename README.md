@@ -267,7 +267,7 @@ The Steering Council and the Project Teams have different roles and different mo
 
 ### Community Project Teams must be open to qualified new members
 
-Community projects must be open to new members who demonstrate their capability and interest in the project through working with the project as a contributor first. If an application to join a Community project is rejected, the person can appeal to the Steering Council. If the rejected person can prove that they in fact meet the criteria for becoming a Project Team member and that they were rejected for inappropriate reasons, including their funding source, then the rejection will be overturned. This voting item falls under the [Project Team Membership Appeal](#project-team-membership-appeal) policy below.
+Community projects must be open to new members who demonstrate their capability and interest in the project through working with the project as a contributor first. If an application to join a Community project is rejected, the person can appeal to the Steering Council. If the rejected person can prove that they in fact meet the criteria for becoming a Project Team member and that they were rejected for inappropriate reasons, including their funding source, then the rejection will be reviewed. This voting item falls under the [Project Team Membership Appeal](#project-team-membership-appeal) policy below.
 
 It is possible that a project joins as a Community Project, but in fact not be committed to open source principles. If they consistently reject qualified “outside” applicants for Project Team membership, then Steering Council review could lead to a gradual shift in Project Team membership, and causing the original team members to leave.
 
