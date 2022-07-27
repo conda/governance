@@ -45,7 +45,7 @@ Thank you for helping make this a welcoming, friendly community for all.
 ## Report an Incident
 
 * Report a code of conduct incident [using a form](https://form.jotform.com/221527028480048).
-* Report a code of conduct incident via email: [condaconduct@gmail.com](mailto:condaconduct@gmail.com).
+* Report a code of conduct incident via email: [conduct@conda.org](mailto:conduct@conda.org).
 * Contact [an individual committee member](#committee-membership) or [CoC event representative](#coc-representatives) to report an incident in confidence.
 
 &nbsp;
@@ -185,7 +185,7 @@ The CoC Committee is committed to promptly addressing any reported issues. If yo
 You can report an incident
 
 * via the **[Incident Reporting Form](https://form.jotform.com/221527028480048)**
-* via email: [condaconduct@gmail.com](mailto:condaconduct@gmail.com)
+* via email: [conduct@conda.org](mailto:conduct@conda.org)
 * contact [an individual committee member](#committee-membership) or [CoC event representative](#coc-representatives) to report an incident in confidence.
 
 Reports submitted via the form or committee email address are sent to the [full conda Code of Conduct Committee](#committee-membership).
@@ -284,18 +284,18 @@ Except where otherwise noted, votes require a quorum and a simple majority to pa
 
 # Committee Membership
 
-You can reach the entire CoC Committee by emailing [condaconduct@gmail.com](mailto:condaconduct@gmail.com).
+You can reach the entire CoC Committee by emailing [conduct@conda.org](mailto:conduct@conda.org).
 
 | Name | Contact | Employer / Funding | Steering Council Member | Current Term Ends |
 | ---- | ---- | ---- | ---- | --- |
 | [Dave Clements](https://github.com/tnabtaf) | dcl&#101;ments&#64;anaconda&#46;com, +1 541 914 6324 | [Anaconda](https://anaconda.com/) | | 2023-07-01 |
 | [Mahe Iram Khan](https://github.com/ForgottenProgramme) | | [Anaconda](https://anadonda.com/) | | 2023-07-01 | 
-| [Ken Odegard](https://github.com/kenodegard) | | [Anaconda](https://anaconda.com/) | | 2023-07-01 |
-| [Crystal Soja](https://github.com/csoja), Co-Chair | | [Anaconda](https://anaconda.com/) | Yes | 2023-07-01 |
+| [Ken Odegard](https://github.com/kenodegard) | kodegard&#64;anaconda&#46;com | [Anaconda](https://anaconda.com/) | | 2023-07-01 |
+| [Crystal Soja](https://github.com/csoja), Co-Chair | | [Anaconda](https://anaconda.com/) | | 2023-07-01 |
 | [Eric Dill](https://github.com/ericdill), Co-Chair | | [Voltron Data](https://voltrondata.com/) | Yes | 2024-07-01 |
-| [Filipe Pires Alvarenga Fernandes](https://github.com/ocefpaf) | ocefpaf@gmail.com | [IOOS/NOAA](https://ioos.noaa.gov/) | Yes | 2024-07-01 |
-| [Bianca Henderson](https://github.com/beeankha) | | [Anaconda](https://anaconda.com/) | | 2024-07-01 |
-| [Katherine Kinnaman](https://github.com/kathatherine) | kkinnaman.condacoc@gmail.com | [Anaconda](https://anadonda.com/) | | 2024-07-01 | 
+| [Filipe Pires Alvarenga Fernandes](https://github.com/ocefpaf) | ocefpaf&#64;gmail&#46;com | [IOOS/NOAA](https://ioos.noaa.gov/) | Yes | 2024-07-01 |
+| [Bianca Henderson](https://github.com/beeankha) |bhenderson&#64;anaconda&#46;com | [Anaconda](https://anaconda.com/) | | 2024-07-01 |
+| [Katherine Kinnaman](https://github.com/kathatherine) | kkinnaman.condacoc&#64;gmail&#46;com | [Anaconda](https://anadonda.com/) | | 2024-07-01 |
 | [](), [External Ombudsperson](#ombudsperson) | | [External Org]() | | 2024-07-01 |
 
 # Terms and New Members
