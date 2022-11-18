@@ -4,12 +4,12 @@
   - [Terminology](#terminology)
   - [Teams & Roles](#teams--roles)
     - [Steering Council](#steering-council)
+    - [Sub-Teams](#sub-teams)
+      - [Dynamic Charter](#dynamic-charter)
+      - [Static Charter](#static-charter)
     - [Project Teams](#project-teams)
     - [External Contributors](#external-contributors)
     - [Emeritus Steering](#emeritus-steering)
-  - [Sub-Teams](#sub-teams)
-    - [Dynamic Charter](#dynamic-charter)
-    - [Static Charter](#static-charter)
   - [Community, Federated & Archive Maintenance](#community-federated--archive-maintenance)
     - [Community Projects](#community-projects)
     - [Federated Projects](#federated-projects)
@@ -59,7 +59,7 @@
 
 # Conda & Conda-Incubator Governance
 
-This document outlines the policies and procedures that manage the conda community. This document recognizes that, while packaging and package tooling is deeply important to all of us, participation in the organization is voluntary. Individual members of the Steering Council, any sub-team, and external contributors choose to participate and may choose to leave at any time for any reason or for no reason.
+This document outlines the policies and procedures that manage the conda community. This document recognizes that, while packaging and package tooling is deeply important to all of us, participation in the organization is voluntary. Individual members of the [Steering Council](#steering-council), any [sub-team](#sub-teams), and external contributors choose to participate and may choose to leave at any time for any reason or for no reason.
 
 Larger organizations, such as for-profit businesses, that contribute code and support to the conda organization are welcome to (but not required to) [maintain creative control](#federated-projects) of their contributions as long as such contributions adhere to the rules in this document. Such organizations are also welcome to [cede creative & maintenance control](#community-projects) of any specific project to the community as well.
 
@@ -71,15 +71,15 @@ The conda Organization's [Code of Conduct](CODE_OF_CONDUCT.md) governs all inter
 
 ## Naming & Manifest
 
-This document defines the conda Organization as the body responsible for governing the tools, specifications, and libraries within the conda ecosystem, broadly speaking. This encompasses specific GitHub organizations, such as [`conda`](https://github.com/conda/), [`conda-incubator`](https://github.com/conda-incubator/) and [`conda-archive`](https://github.com/conda-archive/). Authors of particular software projects, such as [`conda`](https://github.com/conda/conda) or [`mamba`](https://github.com/mamba-org/mamba), are free to choose when their projects are included as part of the conda Organization.
+This document defines the *conda Organization* as the body responsible for governing the tools, specifications, and libraries within the conda ecosystem, broadly speaking. This encompasses specific GitHub organizations, such as [`conda`](https://github.com/conda/), [`conda-incubator`](https://github.com/conda-incubator/) and [`conda-archive`](https://github.com/conda-archive/). Authors of particular software projects, such as [`conda`](https://github.com/conda/conda) or [`mamba`](https://github.com/mamba-org/mamba), are free to choose when their projects are included as part of the conda Organization.
 
-This organization does not hold as part of its role the creation of any packages. The act of packaging itself has other organizations dedicated to their creation, such as [Anaconda](https://anaconda.com/), [conda-forge](https://conda-forge.org/), and [bioconda](https://bioconda.github.io/).
+This organization does not hold as part of its role the creation of any packages. The act of packaging itself has other organizations dedicated to their creation, such as [conda-forge](https://conda-forge.org/), [Bioconda](https://bioconda.github.io/), and [Anaconda](https://anaconda.com/).
 
 ## Terminology
 
-1. *conda* or *the conda Organization* : The conda Organization defined here, including `conda`, `conda-incubator` and `conda-archive`.
-2. *The [conda project](https://github.com/conda/conda)* : The actual conda software itself, as distinct from the conda Organization.
-3. *The conda ecosystem* : The broadest set of tools, packages, and people that use any conda related tooling. The conda Organization is a subset of *the conda ecosystem*. Members of the ecosystem should not feel compelled or obligated to participate in the conda Organization, though positive engagement is welcome.
+1. **conda** or the **conda Organization** : The conda Organization defined here, including `conda`, `conda-incubator` and `conda-archive`.
+2. The **[conda project](https://github.com/conda/conda)** : The actual conda software itself, as distinct from the conda Organization.
+3. The **conda ecosystem** : The broadest set of tools, packages, and people that use any conda related tooling. The conda Organization is a subset of *the conda ecosystem*. Members of the ecosystem should not feel compelled or obligated to participate in the conda Organization, though positive engagement is welcome.
 
 ## Teams & Roles
 
@@ -87,33 +87,35 @@ The primary teams participating in the conda Organization's activities are:
 
 ### Steering Council
 
-The Steering Council is the governing body over the entire conda Organization. Members of the Steering Council have full voting rights within the organization. Steering Council members are the face of the organization, and are responsible for officially interfacing with external communities, organizations, non-profits, and companies. The Steering Council may create new sub-teams, as appropriate. Each Steering Council member is entitled to one vote on all elected matters.
+The **Steering Council** is the governing body over the entire conda Organization. Members of the Steering Council have full voting rights within the organization. Steering Council members are the face of the organization, and are responsible for officially interfacing with external communities, organizations, non-profits, and companies. The Steering Council may create new sub-teams, as appropriate. Each Steering Council member is entitled to one vote on all elected matters.
 
-### Project Teams
+### Sub-Teams
 
-Project Teams are responsible for the management of a software project consisting of one or more repositories and any software releases. Project Team members have the ability to merge pull requests into the repositories of the software project they maintain, produce releases of that software project, and all other duties related to repo maintenance. See the [Project Teams Details](#project-teams-details) section for more.
+The [Steering Council](#steering-council) may elect to create new **sub-teams** for managing the daily business of the organization. While sub-teams may have non-Steering members, **every sub-team must have at least one [non-provisional](#provisional-members) Steering Council team member at all times.** If a sub-team fails to have a Steering Council member for more than 1 week, that team is considered to be dissolved. A new sub-team would need to be established by the Steering Council in order to reinstate the activity.
 
-### External Contributors
+All sub-teams must adhere to the governance, policies, and procedures of the conda Organization at all times. Sub-teams have either a *dynamic* or *static* charter.
 
-This group encompasses all others who are not on the Steering Council or Project Teams. This includes first-time contributors, collaborators, and original authors. They have no special rights within the conda organization itself.
-
-### Emeritus Steering
-
-[Steering Council](#steering-council) members that are inactive (commits, GitHub comments/issues/reviews, dev meetings, and voting on polls) in the past six months will be asked if they want to become Emeritus Steering members. One week after asking, if the inactive Steering Council member has not responded, they will be automatically moved to emeritus status. Any Steering Council member can also request to become Emeritus if they wish to do so (e.g. taking a sabbatical or long vacation). Emeritus Steering members can be brought back to active Steering Council membership at anytime, assuming there is space and no other policies (e.g., shared funding, council size, etc.) are violated. Emeritus Steering Council members cannot vote. When the status of a member changes, the [`steering.csv`](steering.csv) and [`emeritus.csv`](emeritus.csv) files should be immediately updated to reflect the members new position.
-
-## Sub-Teams
-
-The [Steering Council](#steering-council) may elect to create new sub-teams for managing the daily business of the organization. While sub-teams may have non-Steering members, **every sub-team must have at least one [non-provisional](#provisional-members) Steering Council team member at all times.** If a sub-team fails to have a Steering Council member for more than 1 week, that team is considered to be dissolved. A new sub-team would need to be established by the Steering Council in order to reinstate the activity.
-
-All sub-teams must adhere to the governance, policies, and procedures of the conda Organization at all times. Sub-teams have a charter that is either *dynamic* or *static*.
-
-### Dynamic Charter
+#### Dynamic Charter
 
 A **dynamic** charter means that the sub-team is self-organizing, with respect to any additional, internal policies, procedures, and membership. A sub-team may choose to modify its membership independent of the Steering Council. For example, a Google Summer of Code team could be a good candidate for a dynamic charter. Project Teams also have a dynamic charter.
 
-### Static Charter
+#### Static Charter
 
 A **static** charter means that all membership decisions and non-trivial policy changes must be approved by the Steering Council. For example, a finance team may require a static charter.
+
+
+### Project Teams
+
+**Project Teams** are responsible for the management of a software project consisting of one or more repositories and any software releases. Project Team members have the ability to merge pull requests into the repositories of the software project they maintain, produce releases of that software project, and all other duties related to repo maintenance. See the [Project Teams Details](#project-teams-details) section for more.
+
+### External Contributors
+
+This group encompasses all others who are not on the [Steering Council](#steering-council), [Sub-teams](#sub-teams), or [Project Teams](#project-teams). This includes first-time contributors, collaborators, and original authors. They have no special rights within the conda Organization itself.
+
+### Emeritus Steering
+
+[Steering Council](#steering-council) members that are inactive (commits, GitHub comments/issues/reviews, dev meetings, and voting on polls) in the past six months will be asked if they want to become **Emeritus Steering** members. One week after asking, if the inactive Steering Council member has not responded, they will be automatically moved to emeritus status. Any Steering Council member can also request to become Emeritus if they wish to do so (e.g. taking a sabbatical or long vacation). Emeritus Steering members can be brought back to active Steering Council membership at anytime, assuming there is space and no other policies (e.g., [shared funding](#shared-funding-membership-restrictions), [council size](#steering-council-size), etc.) are violated. Emeritus Steering Council members cannot vote. When the status of a member changes, the [`steering.csv`](steering.csv) and [`emeritus.csv`](emeritus.csv) files should be immediately updated to reflect the member's new position.
+
 
 ## Community, Federated & Archive Maintenance
 
@@ -133,9 +135,9 @@ An **Archive** project is one which is unmaintained or clearly superseded by ano
 
 ### Project Requirements
 
-All projects must prominently list their maintenance status in their README and provide clear instructions on where people can seek help for the project. The possible maintenance statuses are one of `federated` or `community` or `archive`.
+All projects must prominently list their maintenance status in their README and provide clear instructions on where people can seek help for the project. The possible maintenance statuses are one of [`federated`](#federated-projects) or [`community`](#community-projects) or [`archive`](#archive-projects).
 
-All conda projects must use an [OSI approved software license](https://opensource.org/). We recommend and encourage the use of [BSD-family licenses](https://opensource.org/licenses/BSD-3-Clause). We recommend that specifications and documentation use [Creative Commons licenses](https://creativecommons.org/).
+**All conda projects must use an [OSI approved software license](https://opensource.org/).** We recommend and encourage the use of [BSD-family licenses](https://opensource.org/licenses/BSD-3-Clause). We recommend that specifications and documentation use [Creative Commons licenses](https://creativecommons.org/).
 
 [Project Teams](#project-teams) decide among themselves whether or not to move their projects in and out of `archive` status. The Steering Council must be notified before this change and will move `archive` projects to the `conda-archive` organization and mark them as as archived.
 
@@ -149,7 +151,7 @@ Federated projects are under no obligation to have a transition plan or any inte
 
 ## Trademarks
 
-[Community Projects](#community-projects) need to license/assign the project's trademarks when becoming a conda Organization Community Project. This is an act of good faith and communicates to the community that the project are committed to our overall efforts.
+[Community Projects](#community-projects) need to license/assign the project's trademarks when becoming a conda Organization Community Project. This is an act of good faith and communicates to the community that the project is committed to our overall efforts.
 
 1. Trademarks are irrevocably *licensed or transferred* to the conda Organization's fiscal sponsor when a project is added to the conda Organization as a Community Project.
 2. The conda Organization, in conjunction with our fiscal sponsor, then have the right to sublicense the trademarks to other projects, subject to specific limitations: The conda Organization may not degrade the distinctiveness of *licensed* trademarks, or use *licensed* trademarks to disparage or misrepresent the assigner. *Transferred* trademarks are completely controlled by the conda Organization and its fiscal sponsor.
@@ -159,12 +161,11 @@ We have guidelines for making decisions about conda Organization trademarks:
 
 1. The project should be open source with a permissive license. [From OSI](https://opensource.org/faq#permissive):
 
-    > A "permissive" license is simply a non-[copyleft](https://opensource.org/faq#copyleft) open source license — one that guarantees the freedoms to use, modify, and redistribute, but that permits proprietary derivative works. 
+    > A "permissive" license is simply a non-[copyleft](https://opensource.org/faq#copyleft) open source license — one that guarantees the freedoms to use, modify, and redistribute, but that permits proprietary derivative works.
 
-2. The project should be open source with a permissive license
-3. The project should be related to the conda ecosystem
-4. The project should be not be overly grand in claiming namespace
-5. The project should not make subjective claims in the chosen project name
+2. The project should be related to the conda ecosystem
+3. The project should be not be overly grand in claiming namespace
+4. The project should not make subjective claims in the chosen project name
 
 Examples of project names that violate the 3rd and 4th guidelines are `conda Pro`, and `pets-dot-com-conda-saves-the-day`.
 
@@ -179,11 +180,11 @@ Any single member of the Steering Council may add a project to the incubator, gi
 
 ## Project Teams Details
 
-A Project Team is a sub-team with a dynamic charter, except for a few caveats as detailed here. They exist to maintain a specific project (or possibly set of projects). Each project in `conda` or `conda-incubator` should belong to exactly one Project Team. This team is granted write access to the repos associated with the project.
+A Project Team is a [*sub-team*](#sub-teams) with a [*dynamic* charter](#dynamic-charter), except for a few caveats as detailed here. They exist to maintain a specific project (or possibly set of projects). Each project in `conda` or `conda-incubator` should belong to exactly one Project Team. This team is granted write access to the repos associated with the project.
 
-The initial Project Team for projects in the `conda` GitHub organization are specified in the vote to move a project from the incubator to the main `conda` GitHub organization. As this vote has a 60% threshold and sub-team formation is only a greater than 50% threshold, the vote for adding a project to the main `conda` GitHub organization can serve both purposes. Project Teams for incubating projects do not need a vote for their creation. Instead they are created when the project is moved into `conda-incubator`.
+The initial Project Team for projects in the `conda` GitHub organization are specified in the [vote to move a project from the incubator to the main `conda` GitHub organization](#incorporate-a-software-project-into-the-main-conda-organization). As this vote has a 60% threshold and [sub-team formation](#sub-team-formation) is only a greater than 50% threshold, the vote for adding a project to the main `conda` GitHub organization can serve both purposes. Project Teams for incubating projects do not need a vote for their creation. Instead they are created [when the project is moved into `conda-incubator`](#incubation).
 
-For [federated](#federated-projects) and [incubating](#incubation) projects, the Project Team decides among themselves on how to add and/or remove members from the Project Team. Further, Project Teams for incubating projects are exempted from the requirement to have at least one Steering Council member. For federated projects, the Project Team must have at least one Steering Council member. For a community maintained project, a petition for commit rights is made to the current members of the Project Team for that project. If this petition passes according to the voting rules for "[Nominate new member of a Project Team](#nominate-new-member-of-a-community-project-team) below, the petitioner is granted write access and added to the team.
+For [*federated*](#federated-projects) and [*incubating*](#incubation) projects, the Project Team decides among themselves on how to add and/or remove members from the Project Team. Further, Project Teams for incubating projects are exempted from the requirement to have at least one Steering Council member. For federated projects, the Project Team must have at least one Steering Council member. For a [*community maintained project*](#community-projects), a petition for commit rights is made to the current members of the Project Team for that project. If this petition passes according to the voting rules for [Nominate new member of a Project Team](#nominate-new-member-of-a-community-project-team) below, the petitioner is granted write access and added to the team.
 
 ## Steering Council Membership
 
@@ -193,7 +194,7 @@ Steering Council members need to 1) be invested in the conda ecosystem and commu
 
 The Steering Council should reflect a wide range of interests, and still be small enough to have a reasonable expectation that [quorum requirements](#quorum) can be met when votes are called.
 
-The minimum Steering Council size is 9. This minimum works well with the [minimum quorum size of 5](#quorum) specified below. If the Steering Council falls below its minimum, then all other Council business is suspended until this requirement is met. The only allowed council actions, in this case, are votes on adding Provisional members, votes on adding new contributing members, votes to resolve overlapping funding, existing members moving to Emeritus status, or existing members coming back from Emeritus status.
+**The minimum Steering Council size is 9.** This minimum works well with the [minimum quorum size of 5](#quorum) specified below. If the Steering Council falls below its minimum, then all other Council business is suspended until this requirement is met. The only allowed council actions, in this case, are votes on adding Provisional members, votes on adding new contributing members, votes to resolve overlapping funding, existing members moving to Emeritus status, or existing members coming back from Emeritus status.
 
 ### Provisional Members
 
@@ -208,7 +209,7 @@ Provisional memberships are open to organizations that
 * Are funding at least one FTE contributing to the conda ecosystem
 * Have not demonstrated a record of prior service to the conda community
 
-These organizations can request 1 provisional membership on the Steering Council. The evaluation criteria for evaluating this request is based on the organization’s and the nominated person’s commitment to open source principles *as demonstrated in other projects.*
+These organizations can request 1 provisional membership on the Steering Council. The evaluation criteria for this request is based on the organization’s and the nominated person’s commitment to open source principles *as demonstrated in other projects.*
 
 Provisional memberships are expected to be temporary, lasting just long enough for contributors from that organization to demonstrate their values and earn representation as individual contributors.
 
@@ -224,7 +225,7 @@ Finally, **no more than 1/3 of the Steering Council membership can be Provisiona
 
 The conda Organization [actively encourages](#provisional-members) participation by commercial entities.  However, we also need to preserve the voices of individual contributors, and prevent the conda Organization from ever favoring the financial interests of any commercial entity over the interests of the larger community.
 
-The conda Organization enforces this restriction by tracking the funding sources of each Steering Council member.
+The conda Organization enforces this restriction by [tracking the funding sources](#tracking-funding) of each Steering Council member.
 
 ### Shared Funding: Proximate, Ultimate, and In Between
 
@@ -269,7 +270,7 @@ The Steering Council and the Project Teams have different roles and different mo
 
 Community projects must be open to new members who demonstrate their capability and interest in the project through working with the project as a contributor first. If an application to join a Community project is rejected, the person can appeal to the Steering Council. If the rejected person can prove that they in fact meet the criteria for becoming a Project Team member and that they were rejected for inappropriate reasons, including their funding source, then the rejection will be reviewed. This voting item falls under the [Project Team Membership Appeal](#project-team-membership-appeal) policy below.
 
-It is possible that a project joins as a Community Project, but in fact not be committed to open source principles. If they consistently reject qualified “outside” applicants for Project Team membership, then Steering Council review could lead to a gradual shift in Project Team membership, and causing the original team members to leave.
+It is possible that a project joins as a Community Project, but in fact is not committed to open source principles. If they consistently reject qualified “outside” applicants for Project Team membership, then Steering Council review could lead to a gradual shift in Project Team membership, and causing the original team members to leave.
 
 We minimize the chance of this happening by clearly communicating requirements for Community Projects when bringing in a new project.
 
@@ -396,8 +397,8 @@ The proposer must provide a sufficient justification as to why the provisional m
 
 ### Resolve Overlapping Funding
 
-In the case that more than two Steering Council members share the same funding source and no agreement can be reached
-amoung the members with shared funding as to who will enter emeritus status, the Steering Council will hold a simple
+In the case that more than two Steering Council members [share the same funding source](#shared-funding-membership-restrictions) and no agreement can be reached
+among the members with shared funding as to who will enter [emeritus status](#emeritus-steering), the Steering Council will hold a simple
 plurality vote in order to resolve the funding conflict. Each member with shared funding will be listed as a separate option in the
 vote. The Steering Council will then vote on which member should be moved to emeritus status. The member who receives the most votes is moved to emeritus status. The quorum for this vote is five. In the case of a tie, the member is chosen at random.
 
@@ -410,7 +411,7 @@ vote. The Steering Council will then vote on which member should be moved to eme
 
 ### Sub-team Formation
 
-Proposers must specify the name, role & responsibility, members, and charter (dynamic or static) of any new sub-teams.
+Proposers must specify the name, role & responsibility, members, and charter (dynamic or static) of any new [sub-teams](#sub-teams).
 
 * Standard
 * Voting:
@@ -428,14 +429,14 @@ Proposers must specify the name and justification for why a sub-team should be d
 
 ### Add Project/Repo to Incubator
 
-Any single Steering Council member may add a project to the incubator, given the knowledge and consent of the author(s). The low barrier to entry here is because we want to encourage innovation, experimentation, and growth.  Steering Council members are encouraged to use common sense when adding new projects to the `conda-incubator` organization.
+Any single Steering Council member may add a project to the [incubator](#incubation), given the knowledge and consent of the author(s). The low barrier to entry here is because we want to encourage innovation, experimentation, and growth.  Steering Council members are encouraged to use common sense when adding new projects to the `conda-incubator` organization.
 
 * Standard
 * 1 Steering Council member willing to add the repository, no vote required
 
 ### Remove Project/Repo from Incubator
 
-While we do not anticipate this ever being necessary, if the situation arises where a project needs to be removed from the incubator, two potential options are available, depending on the copyright and maintenance of the project.
+While we do not anticipate this ever being necessary, if the situation arises where a project needs to be removed from the [incubator](#incubation), two potential options are available, depending on the copyright and maintenance of the project.
 
 In the first, easy case, the incubated project has been wholly developed and maintained by the authors. Here, the project should be allowed to leave incubation if the developers of that project decide and consent to leave. No vote from the Steering Council is required. A willing Steering Council member may be needed to transfer the repository, though.
 
@@ -448,7 +449,7 @@ In the second case, the incubated project has been communally developed by other
 
 ### Incorporate a Software Project into the main `conda` Organization
 
-At some point, many projects will want to be included in the main `conda` GitHub (or otherwise) organization. Moving a project into this organization can be done with a super-majority vote from the Steering Council. There are no strict criteria for when a project is ready, stable, or viable for this step. Rather, Steering Council members are entrusted to use their objective best judgment and common sense when making this determination. Adherence to conda specifications is a particularly important aspect of the decision to include a project in the main conda organization. The membership of the initial Project Team should be included in the vote information. There is not requirement for a project to incubate before a vote of this nature can be called. This kind of vote applies only to software projects. Specifications are covered separately.
+At some point, many projects will want to be included in the main `conda` GitHub (or otherwise) organization. Moving a project into this organization can be done with a super-majority vote from the Steering Council. There are no strict criteria for when a project is ready, stable, or viable for this step. Rather, Steering Council members are entrusted to use their objective best judgment and common sense when making this determination. Adherence to conda specifications is a particularly important aspect of the decision to include a project in the main conda organization. The membership of the initial [Project Team](#project-teams) should be included in the vote information. There is not requirement for a project to incubate before a vote of this nature can be called. This kind of vote applies only to software projects. Specifications are covered separately.
 
 * Standard
 * 60% Majority to pass
@@ -514,11 +515,11 @@ All other voting items, including Steering Council member funding sources, are c
 
 ### Community Project Team Voting
 
-Here are the minimal voting policies for Community Project Teams.
+Here are the minimal voting policies for [Community Project](#community-projects) Teams.
 
 #### Nominate new member of a Community Project Team
 
-The proposer must provide a sufficient justification as to why the nominee should be welcomed into the Project Team. Prior work on the project is an essential part of the nomination process. The voting body for these votes are the current members of the Project Team at the time the nomination is made.
+The proposer must provide a sufficient justification as to why the nominee should be welcomed into the Project Team. Prior work on the project is an essential part of the nomination process. The voting body for these votes are the current members of the [Project Team](#project-teams) at the time the nomination is made.
 
 * Sensitive
 * Voting: One of the following:
@@ -551,9 +552,9 @@ In alphabetical order,
 
 ## Document History
 
-This document was initially written by [Anthony Scopatz](https://github.com/scopatz), [CJ Wright](https://github.com/CJ-Wright), [Matthew R. Becker](https://github.com/beckermr), [Uwe Korn](https://github.com/xhochy), and [Eric Dill](https://github.com/ericdill).  
+This document was initially written by [Anthony Scopatz](https://github.com/scopatz), [CJ Wright](https://github.com/CJ-Wright), [Matthew R. Becker](https://github.com/beckermr), [Uwe Korn](https://github.com/xhochy), and [Eric Dill](https://github.com/ericdill).
 
-In early 2022 several clarifications were made to this document. None of those clarifications change policies.
+In early and late 2022 several clarifications were made to this document. None of those clarifications change policies.
 
 In mid 2022 provisional members and restrictions on shared funding of Steering Council members was added.
 
