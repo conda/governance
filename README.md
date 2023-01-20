@@ -238,12 +238,18 @@ Additional requirements may apply in case low turnouts have to be handled, see "
 
 To call for a standard vote, here is a template Issue/PR comment:
 
-    @conda/stering
-    This PR falls under the {policy} policy, please vote and/or comment on this PR.
-    This PR needs {policy_percent} of the Steering Council to vote yea to pass.
-    To vote please leave Approve (yea) or Request Changes (nay) reviews.
-    If you would like changes to the current language please leave a comment or push to this branch.
-    This vote will end on {date}.
+    @conda-incubator/steering
+
+    This vote falls under the **"{policy}"** policy of the [conda governance policy](https://github.com/conda-incubator/governance),
+    please vote and/or comment on this proposal at your earliest convenience.
+
+    It needs **{policy_percent}** of the Steering Council to vote `yes` to pass.
+
+    To vote, please leave `yes`, `no` or `abstain` as comments below.
+
+    If you have questions concerning the proposal, you may also leave a comment or code review.
+
+    **This vote will end on {date}.**
 
 A `vote` label must be applied to the PR or issue.
 
@@ -281,12 +287,21 @@ Extending the above example, if 9 people are required for a quorum, but only 7 h
 
 To post a timeout reminder, here is a template comment:
 
-    @conda/steering
-    This vote falls under the {policy} policy, please vote and/or comment on this PR.
-    This vote needs {policy_percent} of the Steering Council to vote yea to pass.
-    This vote presently has {current_voters}, and needs {policy_percent * steering_council - current_voters} more for quorum.
-    It is proposed that this vote will time out and be evaluated with the current votes in {days}, on {date}.
-    To vote please leave Approve (yea) or Request Changes (nay) reviews.
+    @conda-incubator/steering
+
+    This vote falls under the **{policy}** policy of the
+    [conda governance policy](https://github.com/conda-incubator/governance),
+    please vote and/or comment on this proposal at your earliest convenience.
+
+    It needs **{policy_percent}** of the Steering Council to vote `yes` to pass.
+
+    **This vote presently has {current_voters}, and needs {policy_percent * steering_council - current_voters} more for quorum.**
+
+    It is proposed that this vote will time out and be evaluated with the current votes in {days} days, **on {date}.**
+
+    To vote, please leave `yes`, `no` or `abstain` as comments below.
+
+    If you have questions concerning the proposal, you may also leave a comment or code review.
 
 To declare a standard vote "timed out," the person making such a declaration must post a pull-request adding a vote record to the [`vote-results`](vote-results/]) folder. The declaration PR should be merged by the first Steering Council member who is available to verify that the requirements for the timeout have been met, based on their own personal records.
 
