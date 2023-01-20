@@ -234,6 +234,10 @@ Voting items are labeled as either **standard** or **sensitive**. Standard items
 
 The default voting period is 1 week (7 days). This may be modified at the time when a vote is called, but may never be less than one week modulo exceptions for some time-sensitive votes below.
 
+> When specifying voting periods, the date must be specified in a special calendar designation ["Anywhere on Earth" (AoE)](https://en.wikipedia.org/wiki/Anywhere_on_Earth) to be as inclusive as possible for a global community such as conda's.
+>
+> Here is an example: **"This vote will end on 2023-06-30 [AoE](https://time.is/Anywhere_on_Earth)"**, meaning that the deadline to vote has not passed if, anywhere on Earth, the deadline date has not yet passed.
+
 Additional requirements may apply in case low turnouts have to be handled, see "[quorum](#quorum)" below.
 
 To call for a standard vote, here is a template Issue/PR comment:
@@ -249,7 +253,7 @@ To call for a standard vote, here is a template Issue/PR comment:
 
     If you have questions concerning the proposal, you may also leave a comment or code review.
 
-    **This vote will end on {date}.**
+    **This vote will end on {date}, End of Day, [Anywhere on Earth](https://time.is/Anywhere_on_Earth) (AoE).**
 
 A `vote` label must be applied to the PR or issue.
 
@@ -289,15 +293,14 @@ To post a timeout reminder, here is a template comment:
 
     @conda-incubator/steering
 
-    This vote falls under the **{policy}** policy of the
-    [conda governance policy](https://github.com/conda-incubator/governance),
+    This vote falls under the **"{policy}"** policy of the [conda governance policy](https://github.com/conda-incubator/governance),
     please vote and/or comment on this proposal at your earliest convenience.
 
     It needs **{policy_percent}** of the Steering Council to vote `yes` to pass.
 
     **This vote presently has {current_voters}, and needs {policy_percent * steering_council - current_voters} more for quorum.**
 
-    It is proposed that this vote will time out and be evaluated with the current votes in {days} days, **on {date}.**
+    It is proposed that this vote will time out and be evaluated with the current votes in {days} days, **on {date}, End of Day, [Anywhere on Earth](https://time.is/Anywhere_on_Earth) (AoE).**
 
     To vote, please leave `yes`, `no` or `abstain` as comments below.
 
