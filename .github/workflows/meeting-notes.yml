@@ -4,7 +4,10 @@ on:
   workflow_dispatch:
     inputs:
       date:
-        description: Date of the meeting notes. MUST be understood by `date --date`.
+        description: |
+          Date of the meeting notes. MUST be understood by `date --date`.
+          Common examples are "now", "tomorrow", "next Wednesday", "2023-03-01"...
+          See https://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html for full details.
         required: false
         default: "now"
         type: string
