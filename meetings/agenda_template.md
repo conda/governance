@@ -1,48 +1,38 @@
-# 2020-08-24 conda community meeting 
+---
+tags: [meeting-notes]
+---
+# {{ date.strftime("%Y-%m-%d") }} Conda Community Meeting 
 
-****
+[Zoom link](https://zoom.us/j/9138593505) · [What time is the meeting in my time zone](https://dateful.com/convert/utc?t=6pm)
 
-[Hangout link](https://meet.google.com/uje-pdns-hch)
-
-[What time is the meeting in my time zone](https://arewemeetingyet.com/Chicago/2020-08-25/09:00/b/Conda%20community%20meeting)
-
-[last weeks meeting]() None!
+Various parts of the conda community gather on a regular basis. This meeting brings together all of these sub-communities for a community wide call.
 
 ## Attendees
 
-* names
- 
-## Agenda
+| Name                   | Initials | Affiliation  | GH Username      |
+| ---------------------- | -------- | ------------ | ---------------- |
+|                        |          |              |                  |
+|                        |          |              |                  |
+|                        |          |              |                  |
+|                        |          |              |                  |
+|                        |          |              |                  |
+|                        |          |              |                  |
+|                        |          |              |                  |
+|                        |          |              |                  |
+|                        |          |              |                  |
+|                        |          |              |                  |
 
-* Welcome
-* Acceptance of previous week's agenda/minutes
-* New order of business  
+X people in total
 
+## Introductions
 
-### Standing items
- - [ ] Item
-   * [ ] SubItem
-### New Agenda Items
-- [ ] Item
-   * [ ] SubItem
-### Active votes
+- [ ]
 
-### Subteam updates
+## Announcements
 
-#### Open PRs
+- [ ]
 
-## Discussion
+## New Agenda Items
 
-## Previous Action Items
-Copy previous action items from last meeting agenda.
-
-### This meeting
-
-### Last meeting <Date>
-
-### 2 meetings ago
-
-### 3 meetings ago
-
-### Move to Issue Tracker
+- [ ]
 
