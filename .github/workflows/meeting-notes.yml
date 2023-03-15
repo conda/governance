@@ -12,7 +12,7 @@ on:
         default: "now"
         type: string
   schedule:
-    # this is every wednesday, but we want every two! check 'trigger' below
+    # this is every wednesday, but we want every two! check 'pre-create' job below
     - cron: "00 12 * * WED"
   pull_request:
     types:
