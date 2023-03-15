@@ -11,6 +11,9 @@ on:
         required: false
         default: "now"
         type: string
+  schedule:
+    # this is every wednesday, but we want every two! check 'trigger' below
+    - cron: "00 12 * * WED"
   pull_request:
     types:
       - labeled
@@ -22,11 +25,63 @@ permissions:
 # in your Actions Settings too
 
 jobs:
-  create:
+  pre-create:
+    runs-on: ubuntu-latest
     if: github.event_name != 'pull_request'
+    outputs:
+      should-run: ${{ steps.return-value.should-run }}
+      date: ${{ steps.return-value.date }}
+    steps:
+      - name: Setup Python
+        if: github.event_name == 'schedule'
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dateutil
+        if: github.event_name == 'schedule'
+        run: python -m pip install python-dateutil
+      - name: Check if we need to run this week
+        if: github.event_name == 'schedule'
+        id: check-wednesday
+        shell: python
+        run: |
+          import os
+          from datetime import datetime
+          from dateutil.rrule import rrule, WEEKLY, WE
+          today = datetime.today()
+          print("Today is", today)
+          every_two_wednesdays = rrule(WEEKLY, interval=2, dtstart=datetime(2023, 3, 15), wkst=WE)
+          for wednesday in every_two_wednesdays:
+            print("Testing if today matches...", wednesday)
+            if day.date() == today.date():
+              print("Match! Job should run.")
+              with open(os.environ['GITHUB_ENV'], 'a') as f:
+                print("should_run=yes", f)
+            elif day > today:
+              print("Didn't match. Aborting.")
+              break
+      - name: Set output
+        id: return-value
+        run: |
+          set -x
+          if [[ ${{ github.event_name }} == workflow_dispatch ]]; then
+            echo "should-run=yes" >> $GITHUB_OUTPUT
+            echo "date=${{ github.event.inputs.date }}" >> $GITHUB_OUTPUT
+          elif [[ $should_run == yes ]]; then
+            echo "should-run=yes" >> $GITHUB_OUTPUT
+            # We can change this below to post notes some days in advance
+            echo "date=now" >> $GITHUB_OUTPUT
+          ellse
+            echo "should-run=no" >> $GITHUB_OUTPUT
+            echo "date=never" >> $GITHUB_OUTPUT
+          fi
+
+  create:
+    needs: [pre-create]
+    if: pre-create.outputs.should-run == 'yes'
     uses: Quansight-Labs/hackmd-meeting-notes-action/.github/workflows/create-meeting-notes-pr.yml@main
     with:
-      date: ${{ inputs.date || 'now' }}
+      date: ${{ pre-create.outputs.date }}
       template_path: meetings/agenda_template.md
       output_path: meetings/archive/%Y%m%d_agenda_and_minutes.md
       hackmd_team: conda-community
@@ -37,6 +92,7 @@ jobs:
         Once done with the meeting, sync the note back to the repository by adding the `sync-hackmd-notes` label.
     secrets:
       HACKMD_TOKEN: ${{ secrets.HACKMD_TOKEN }}
+
   sync:
     if: github.event.label.name == 'sync-hackmd-notes'
     uses: Quansight-Labs/hackmd-meeting-notes-action/.github/workflows/sync-meeting-notes-pr.yml@main
