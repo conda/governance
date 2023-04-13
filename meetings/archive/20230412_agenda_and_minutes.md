@@ -19,7 +19,7 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 | Katherine Kinnaman     | KK       | Anaconda     | kathatherine     |
 | Marcel Bargull         | MB       | Bioconda/cf  | mbargull         |
 | Mahe Iram Khan         | MIK      | Anaconda     | forgottenprogramme |
-|                        |          |              |                  |
+| Jaime Rodríguez-Guerra | JRG      | Quansifght/cf | jaimergp        |
 
 12 people in total
 
