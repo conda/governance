@@ -20,6 +20,8 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 | Marius van Niekerk      | MvN     | Voltron Data/cf | mariusvniekerk |
 | Katherine Kinnaman     | KK       | Anaconda     | kathatherine     |
 | Jannis Leidel          | JL       | Anaconda/cf  | jezdez           |
+| John Kirkham           | JK       | NVIDIA/cf    | jakirkham        |
+|
 |                        |          |              |                  |
 
 13 people in total
