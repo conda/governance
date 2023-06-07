@@ -78,10 +78,10 @@ jobs:
 
   create:
     needs: [pre-create]
-    if: pre-create.outputs.should-run == 'yes'
+    if: needs.pre-create.outputs.should-run == 'yes'
     uses: Quansight-Labs/hackmd-meeting-notes-action/.github/workflows/create-meeting-notes-pr.yml@main
     with:
-      date: ${{ pre-create.outputs.date }}
+      date: ${{ needs.pre-create.outputs.date }}
       template_path: meetings/agenda_template.md
       output_path: meetings/archive/%Y%m%d_agenda_and_minutes.md
       hackmd_team: conda-community
