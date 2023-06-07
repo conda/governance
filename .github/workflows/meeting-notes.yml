@@ -29,8 +29,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request'
     outputs:
-      should-run: ${{ steps.return-value.should-run }}
-      date: ${{ steps.return-value.date }}
+      should-run: ${{ steps.return-value.outputs.should-run }}
+      date: ${{ steps.return-value.outputs.date }}
     steps:
       - name: Setup Python
         if: github.event_name == 'schedule'
