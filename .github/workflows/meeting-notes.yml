@@ -53,11 +53,11 @@ jobs:
           every_two_wednesdays = rrule(WEEKLY, interval=2, dtstart=datetime(2023, 3, 15), wkst=WE)
           for wednesday in every_two_wednesdays:
             print("Testing if today matches...", wednesday)
-            if day.date() == today.date():
+            if wednesday.date() == today.date():
               print("Match! Job should run.")
               with open(os.environ['GITHUB_ENV'], 'a') as f:
                 print("should_run=yes", f)
-            elif day > today:
+            elif wednesday > today:
               print("Didn't match. Aborting.")
               break
       - name: Set output
