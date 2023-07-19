@@ -24,8 +24,8 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 | Katherine Abrikian     | KCA      | Anaconda    | kalawac          |
 | Carl Anderson          | CPA      | Anaconda    | barabo           |
 | Nicholas Tucker        | NT       | Anaconda    | ntucker-anaconda |
-
-13 people in total
+| John Kirkham           | JK       | NVIDIA/cf   | jakirkham       |
+14 people in total
 
 ## Introductions
 
