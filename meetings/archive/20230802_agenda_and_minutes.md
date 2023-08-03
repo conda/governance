@@ -18,7 +18,7 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 | Travis Hathaway        | TH       | Anaconda     | travishathaway   |
 | Pavithra Eswaramoorthy | PE       | Quansight    | pavithraes       |
 | Katherine Kinnaman     | KK       | Anaconda     | kathatherine     |
-|                        |          |              |                  |
+| Jaime Rodríguez-Guerra | JRG      | Quansight    | jaimergp         |
 |                        |          |              |                  |
 |                        |          |              |                  |
 
@@ -37,7 +37,6 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 - [x] (cpa) _Labeled_ package downloads for cloned channels (`conda_forge`, `bioconda`, `intel`, `nvidia`, `rapidsai`, etc.) will be getting _faster_ soon.  Previously they were _not_ being served from Cloudflare cache due to a config problem.  This is a heads-up that the change should roll out this week / early next week.
     - Any labeled package wasn't cached before.
     - Now they will be.
-    - 
 - [x] July conda and conda-build releases are out.
 - [x] "conda fetch" becomes "conda auth handler"
     - [x] Pull request: https://github.com/conda/conda/pull/12911
