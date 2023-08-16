@@ -18,7 +18,7 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 | Katherine Kinnaman     | KK       | Anaconda     | kathatherine     |
 | Daniel Holth           | DH       | Anaconda     | dholth           |
 | John Kirkham           | JK       | NVIDIA/cf    | jakirkham        |
-| Dave Clements          | DPC      | Anaconda     |                  |
+| Dave Clements          | DPC      | Anaconda     | tnabtaf          |
 |                        |          |              |                  |
 |                        |          |              |                  |
 
