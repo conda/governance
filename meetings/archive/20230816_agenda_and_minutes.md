@@ -49,7 +49,7 @@ Various parts of the conda community gather on a regular basis. This meeting bri
         - SDGs are only $10K.
         - Crystal: seems similar to internship projects.
         - Jannis: Not just about `conda` or about coding.  Doc, infra, web, 
-- 
+        - John K: Worth considering how this fits into a longer term vision for the project (roadmap?) 
 
 ## TODO
 
