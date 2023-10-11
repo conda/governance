@@ -54,6 +54,6 @@ Various parts of the conda community gather on a regular basis. This meeting bri
         - MVN will bring this up in prefix.dev chat.
         - BZ: We are striving to use standard conda-lock in Pixi.
     - https://github.com/conda/conda-lock/issues/433 (reconstruct repodatarecord from lock)
-    - [ ] https://github.com/conda/conda-lock/issues/491 (alphabetic ordering of packages)
-    - [ ] https://github.com/conda/conda-lock/issues/521 (pep404 standard not used in lock file)
+    - https://github.com/conda/conda-lock/issues/491 (alphabetic ordering of packages)
+    - https://github.com/conda/conda-lock/issues/521 (pep404 standard not used in lock file)
 
