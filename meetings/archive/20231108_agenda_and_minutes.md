@@ -78,9 +78,9 @@ Various parts of the conda community gather on a regular basis. This meeting bri
     - currently looking good, positive response so far, a few tickets to be fixed in a minor release of conda-libmamba-solver
     - planned to be added in a future miniconda release (no ETA yet IIUC)
     - Issues with redefined defaults & conda-build: https://github.com/conda/conda-libmamba-solver/pull/365
-- [ ] (JRG) Provenance info in our package metadata (demo).
-  - [ ] See 'provenance' cell in https://conda-metadata-app.streamlit.app/?q=conda-forge%2Fnoarch%2Fmakim-1.8.3-pyh707e725_0.conda
-  - [ ] Source at: https://github.com/Quansight-Labs/conda-metadata-app
-  - [ ] 'Whatprovides' dataset by Daniel: https://conda-whatprovides.fly.dev/metayaml?sql=select+paths.path%2C+paths_entries.*+from+paths+join+paths_to_entries+on+%28paths.id+%3D+path_id%29+join+paths_entries+on+%28entry_id+%3D+paths_entries.id%29+where+path+%3D+%3Apath&path=main%2Flinux-64%2F_ipyw_jlab_nb_ext_conf-0.1.0-py38h06a4308_1.conda
+- [X] (JRG) Provenance info in our package metadata (demo).
+  - See 'provenance' cell in https://conda-metadata-app.streamlit.app/?q=conda-forge%2Fnoarch%2Fmakim-1.8.3-pyh707e725_0.conda
+  - Source at: https://github.com/Quansight-Labs/conda-metadata-app
+  - 'Whatprovides' dataset by Daniel: https://conda-whatprovides.fly.dev/metayaml?sql=select+paths.path%2C+paths_entries.*+from+paths+join+paths_to_entries+on+%28paths.id+%3D+path_id%29+join+paths_entries+on+%28entry_id+%3D+paths_entries.id%29+where+path+%3D+%3Apath&path=main%2Flinux-64%2F_ipyw_jlab_nb_ext_conf-0.1.0-py38h06a4308_1.conda
 - [x] Time for this meeting? Should we move it earlier in the day?
     - Nothing decided, not even next steps.
