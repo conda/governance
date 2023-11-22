@@ -56,7 +56,7 @@ jobs:
             if wednesday.date() == today.date():
               print("Match! Job should run.")
               with open(os.environ['GITHUB_ENV'], 'a') as f:
-                print("should_run=yes", f)
+                print("should_run=yes", file=f)
             elif wednesday > today:
               print("Didn't match. Aborting.")
               break
