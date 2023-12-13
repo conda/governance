@@ -93,7 +93,7 @@ The CoC Committee reserves the right to exclude people from conda Organization s
 
 The CoC Committee will keep the identity of the reporter confidential.
 
-Whenever possible, CoC cases will be reported to the community.  The level of detail in reports will vary from case to case. Reports will describe at least the type of infraction that was reported, and the Committee's decision and any action taken.  In most cases, the report will not include personally identifiable information.
+Whenever possible, CoC cases will be reported to the community. The level of detail in reports will vary from case to case. Reports will describe at least the type of infraction that was reported, and the Committee's decision and any action taken.  In most cases, the report will not include personally identifiable information.
 
 # Live Events
 
@@ -110,14 +110,14 @@ To better support situations where immediate action may be required, these guide
 
 ## CoC Representatives
 
-Every conda Organization associated event will have named CoC Committee members or *CoC representatives* that are the first point of contact for that event.  Who these people are will be clearly and frequently communicated to event participants. CoC approved representatives are used when there are no committee members participating in the event.
+Every conda Organization associated event will have named CoC Committee members or *CoC representatives* that are the first point of contact for that event. Who these people are will be clearly and frequently communicated to event participants. CoC approved representatives are used when there are no committee members participating in the event.
 
 ## Live Events: Reporting and Actions
 At conda Organization events, Code of Conduct committee members or representatives will attempt to gather and write down [information](#what-to-include-in-a-report) from anyone making a verbal report at a live event. Recording the details in writing is exceedingly important in order for us to effectively respond to reports. If event staff write down a report taken verbally, then the person making the report will be asked to review the written report for accuracy.
 
 For reports made during live events, or in any situation where urgent action is needed:
 
-* Any two (or more) event organizers, event staff, CoC Committee members or CoC representatives can decide if immediate action is to be taken and what that action is.  In exceptionally dangerous situations, this decision can be made by a single person.
+* Any two (or more) event organizers, event staff, CoC Committee members or CoC representatives can decide if immediate action is to be taken and what that action is. In exceptionally dangerous situations, this decision can be made by a single person.
 * These rapid decisions can be reconsidered during the event as more information becomes available.
 * The scope of any rapid decision is limited to the current event / situation.
 * The report, any related information, and any decisions and consequences will be reported to the full Code of Conduct Committee as soon as possible.
@@ -187,7 +187,7 @@ If you are concerned about making a report that will be read by all committee me
 
 ## Acknowledgment and Responding to Immediate Needs
 
-CoC Committee members and/or event staff will attempt to ensure your safety and help with any immediate needs.  The CoC Committee will make every effort to **acknowledge receipt within 24 hours** (and we'll aim for much more quickly than that).
+CoC Committee members and/or event staff will attempt to ensure your safety and help with any immediate needs. The CoC Committee will make every effort to **acknowledge receipt within 24 hours** (and we'll aim for much more quickly than that).
 
 ## Reviewing the Report
 
@@ -230,7 +230,7 @@ Our policy is to make sure that everyone aware of the initial incident is also m
 
 ## Appealing a Decision
 
-To appeal a decision of the CoC Committee, contact the [Committee Co-Chairs](#committee-membership), with your appeal.  Please include as much detail as possible about why you are appealing the decision.  The Co-Chairs will review the appeal, possibly consulting with the full Committee, and then issue a decision.
+To appeal a decision of the CoC Committee, contact the [Committee Co-Chairs](#committee-membership), with your appeal. Please include as much detail as possible about why you are appealing the decision. The Co-Chairs will review the appeal, possibly consulting with the full Committee, and then issue a decision.
 
 # Timeline Summary:
 
