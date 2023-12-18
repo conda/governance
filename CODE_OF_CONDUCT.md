@@ -140,7 +140,8 @@ Potential *immediate* consequences for violating the conda Organization Code of 
 
 If you believe someone is violating the code of conduct, please report this in a timely manner. Code of conduct violations reduce the value of the community for everyone. The conda Code of Conduct (CoC) Committee and the conda Organization take reports of misconduct very seriously and are committed to preserving and maintaining the welcoming nature of our community.
 
-> *Note: You are also encouraged to reach out to the conda Code of Conduct (CoC) Committee if you want clarification on something, if you notice some borderline behavior, or just have a concern. Send us a note at [conduct@conda.org](mailto:conduct@conda.org).*
+> [!NOTE]
+> You are also encouraged to reach out to the conda Code of Conduct (CoC) Committee if you want clarification on something, if you notice some borderline behavior, or just have a concern. Send us a note at [conduct@conda.org](mailto:conduct@conda.org).
 
 All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances.  The conda CoC Committee commits to maintaining confidentiality with regard to the reporter of an incident.
 
@@ -262,7 +263,7 @@ You can reach the entire CoC Committee by emailing [conduct@conda.org](mailto:co
 | [Filipe Pires Alvarenga Fernandes](https://github.com/ocefpaf) | ocefpaf&#64;gmail&#46;com | [IOOS/NOAA](https://ioos.noaa.gov/) | Yes | 2024-07-01 |
 | [Bianca Henderson](https://github.com/beeankha) |bhenderson&#64;anaconda&#46;com | [Anaconda](https://anaconda.com/) | | 2024-07-01 |
 | [Katherine Kinnaman](https://github.com/kathatherine) | kkinnaman.condacoc&#64;gmail&#46;com | [Anaconda](https://anadonda.com/) | | 2024-07-01 |
-| [Mahe Iram Khan](https://github.com/ForgottenProgramme) | | [Anaconda](https://anadonda.com/) | | 2025-07-01 |
+| [Mahe Iram Khan](https://github.com/ForgottenProgramme) | | [Anaconda](https://anaconda.com/) | | 2025-07-01 |
 | [Ken Odegard](https://github.com/kenodegard) | kodegard&#64;anaconda&#46;com | [Anaconda](https://anaconda.com/) | | 2025-07-01 |
 | [Crystal Soja](https://github.com/csoja), Co-Chair | | [Anaconda](https://anaconda.com/) | | 2025-07-01 |
 | [Jaime Rodríguez-Guerra](https://github.com/jaimergp) | | [Quansight](https://quansight.com/) | | 2025-07-01 |
