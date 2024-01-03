@@ -71,7 +71,7 @@ jobs:
             echo "should-run=yes" >> $GITHUB_OUTPUT
             # We can change this below to post notes some days in advance
             echo "date=now" >> $GITHUB_OUTPUT
-          ellse
+          else
             echo "should-run=no" >> $GITHUB_OUTPUT
             echo "date=never" >> $GITHUB_OUTPUT
           fi
