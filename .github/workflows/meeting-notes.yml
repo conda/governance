@@ -85,7 +85,7 @@ jobs:
       template_path: meetings/agenda_template.md
       output_path: meetings/archive/%Y%m%d_agenda_and_minutes.md
       hackmd_team: conda-community
-      force_push: true
+      force_push: false
       pr_body: |
         New meeting notes available at ${env.hackmd_doc_url}.
 
