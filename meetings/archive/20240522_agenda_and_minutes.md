@@ -34,5 +34,8 @@ X people in total
 
 ## New Agenda Items
 
-- [ ]
+- [ ] (JK) Issues with recent package statistics
+    - https://github.com/ContinuumIO/anaconda-package-data/issues/45#issuecomment-2113097722
+- [ ] (WV) Moving rattler repo to conda(-incubator) org?
+- [ ] (WV) Spent some more time on the open CEPs. Put some work on the Jinja+rattler-build CEP. 
 
