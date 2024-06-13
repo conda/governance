@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Conda Sub-Teams",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": ["string", "null"],
+      "description": "Team name in GitHub"
+    },
+    "description": {
+      "type": ["string", "null"],
+      "description": "Team description in GitHub"
+    },
+    "requirements": {
+      "type": ["string", "null"],
+      "description": "Special requirements for team membership"
+    },
+    "scopes": {
+      "type": ["object", "null"],
+      "properties": {
+        "codeowners": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "string"
+          },
+          "description": "The GitHub projects this team owns"
+        },
+        "other": {
+          "type": ["object", "null"],
+          "patternProperties": {
+            ".*": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "additionalProperties": false,
+          "description": "Other responsibilities this team"
+        }
+      },
+      "required": ["codeowners", "other"],
+      "additionalProperties": false,
+      "description": "Team responsibilities"
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "description": "Important links, e.g. the issue proposing the team creation"
+    },
+    "users": {
+      "type": "object",
+      "patternProperties": {
+        ".*": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Maps username to a record of the decision adding them to the team"
+    }
+  },
+  "required": ["name", "scopes", "links", "users"],
+  "additionalProperties": false
+}

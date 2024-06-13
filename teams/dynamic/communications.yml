@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=../sub-teams-schema.json
+name: communications
+description: null
+requirements: null
+scopes:
+    codeowners:
+        - conda/communications
+    other:
+        Discourse: https://conda.discourse.group/
+        LinkedIn: https://www.linkedin.com/company/condacommunity
+        Mastodon: https://fosstodon.org/@conda
+        Matrix: https://matrix.to/#/#conda:matrix.org
+        X/Twitter: https://x.com/condaproject
+links:
+    - https://github.com/conda/governance/issues/53
+users:
+    bkreider: https://github.com/conda/governance/issues/53
+    chenghlee: https://github.com/conda/governance/issues/53
+    goanpeca: https://github.com/conda/governance/issues/53
+    hmaarrfk: https://github.com/conda/governance/issues/53  # missing from team?
+    hoechenberger: https://github.com/conda/governance/issues/53
+    isuruf: https://github.com/conda/governance/issues/53
+    jaimergp: https://github.com/conda/governance/issues/53
+    jezdez: https://github.com/conda/governance/issues/53
+    larsoner: https://github.com/conda/governance/issues/53
+    marcoesters: null  # missing record of decision?
+    mcg1969: https://github.com/conda/governance/issues/53  # missing from team?
+    pseudoyim: https://github.com/conda/governance/issues/53
+    travishathaway: null  # missing record of decision?
