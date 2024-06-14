@@ -7,6 +7,8 @@ scopes:
         - conda/conda-pack
         - conda/constructor
         - conda/menuinst
+        - conda/conda-standalone
+        - conda/nsis-mirror
     other: null
 links:
     - https://github.com/conda/governance/issues/53
