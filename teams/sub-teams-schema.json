@@ -5,11 +5,16 @@
   "properties": {
     "name": {
       "type": ["string", "null"],
-      "description": "Team name in GitHub"
+      "description": "The team name in GitHub"
     },
     "description": {
       "type": ["string", "null"],
-      "description": "Team description in GitHub"
+      "description": "The team description in GitHub"
+    },
+    "charter": {
+      "type": "string",
+      "description": "The team charter type, see [dynamic](https://github.com/conda/governance#dynamic-charter), [static](https://github.com/conda/governance#static-charter), and [project](https://github.com/conda/governance#project-teams-details) requirements",
+      "enum": ["dynamic", "static", "project"]
     },
     "requirements": {
       "type": ["string", "null"],
@@ -47,9 +52,9 @@
         "type": "string",
         "format": "uri"
       },
-      "description": "Important links, e.g. the issue proposing the team creation"
+      "description": "Important links, e.g. the issue/PR proposing the team creation"
     },
-    "users": {
+    "members": {
       "type": "object",
       "patternProperties": {
         ".*": {
@@ -57,10 +62,23 @@
           "format": "uri"
         }
       },
+      "minProperties": 1,
       "additionalProperties": false,
       "description": "Maps username to a record of the decision adding them to the team"
+    },
+    "emeritus": {
+      "type": ["object", "null"],
+      "patternProperties": {
+        ".*": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "description": "Maps username to a record of the decision removing them from the team"
     }
   },
-  "required": ["name", "scopes", "links", "users"],
+  "required": ["name", "description", "charter", "requirements", "scopes", "links", "members", "emeritus"],
   "additionalProperties": false
 }

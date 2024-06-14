@@ -1,6 +1,7 @@
 # yaml-language-server: $schema=../sub-teams-schema.json
 name: constructor
 description: The team maintaining constructor and related projects
+charter: project
 requirements: null
 scopes:
     codeowners:
@@ -12,7 +13,7 @@ scopes:
     other: null
 links:
     - https://github.com/conda/governance/issues/53
-users:
+members:
     bkreider: https://github.com/conda/governance/issues/53
     chenghlee: https://github.com/conda/governance/issues/53
     goanpeca: https://github.com/conda/governance/issues/53
@@ -26,3 +27,4 @@ users:
     mcg1969: https://github.com/conda/governance/issues/53  # missing from team?
     pseudoyim: https://github.com/conda/governance/issues/53
     travishathaway: null  # missing record of decision?
+emeritus: null

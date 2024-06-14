@@ -1,6 +1,7 @@
 # yaml-language-server: $schema=../sub-teams-schema.json
 name: communications
 description: null
+charter: dynamic
 requirements: null
 scopes:
     codeowners:
@@ -13,7 +14,8 @@ scopes:
         X/Twitter: https://x.com/condaproject
 links:
     - https://github.com/conda/governance/issues/53
-users:
-    tnabtaf: https://github.com/conda/governance/issues/81
+members:
     jaimergp: https://github.com/conda/governance/issues/81
     jezdez: https://github.com/conda/governance/issues/81
+emeritus:
+    tnabtaf: https://github.com/conda/governance/issues/81

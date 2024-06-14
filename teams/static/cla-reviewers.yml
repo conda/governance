@@ -1,6 +1,7 @@
 # yaml-language-server: $schema=../sub-teams-schema.json
 name: cla-reviewers
 description: The team reviewing incoming CLA documents
+charter: static
 requirements: All team members must only consists of steering council members for compliance reasons.
 scopes:
     codeowners:
@@ -8,8 +9,9 @@ scopes:
     other: null
 links:
     - https://github.com/conda/governance/issues/136
-users:
+members:
     chenghlee: https://github.com/conda/governance/issues/136
     jaimergp: https://github.com/conda/governance/issues/136
     jezdez: https://github.com/conda/governance/issues/136
     travishathaway: https://github.com/conda/governance/issues/136
+emeritus: null
