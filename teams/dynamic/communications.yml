@@ -10,7 +10,7 @@ scopes:
         Discourse: https://conda.discourse.group/
         LinkedIn: https://www.linkedin.com/company/condacommunity
         Mastodon: https://fosstodon.org/@conda
-        Matrix: https://matrix.to/#/#conda:matrix.org
+        Matrix (public): https://matrix.to/#/#conda-communications:matrix.org
         X/Twitter: https://x.com/condaproject
 links:
     - https://github.com/conda/governance/issues/53

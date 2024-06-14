@@ -7,6 +7,7 @@ scopes:
     codeowners: null
     other:
         GitHub Account: https://github.com/conda-conduct
+        Matrix (private): https://matrix.to/#/!jLRCFFbpabFtdYvfeO:matrix.org
 links:
     - https://github.com/conda/governance/issues/46
     - https://github.com/conda/governance/pull/49

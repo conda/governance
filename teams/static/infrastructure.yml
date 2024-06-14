@@ -11,6 +11,7 @@ scopes:
         - conda/issue-tracker
     other:
         GitHub Account: https://github.com/conda-bot
+        Matrix (private): https://matrix.to/#/!tpEQSUGYWHNdgpDFNc:matrix.org
 links:
     - https://github.com/conda/governance/issues/84
 members:
