@@ -1,7 +1,7 @@
 ---
 tags: [meeting-notes]
 ---
-# {{ date.strftime("%Y-%m-%d") }} Conda Community Meeting 
+# {{ date.strftime("%Y-%m-%d") }} Conda Community Meeting
 
 [Zoom link](https://zoom.us/j/9138593505?pwd=SWh3dE1IK05LV01Qa0FJZ1ZpMzJLZz09) · [What time is the meeting in my time zone](https://dateful.com/convert/utc?t=5pm)
 
@@ -35,4 +35,3 @@ X people in total
 ## New Agenda Items
 
 - [ ]
-
