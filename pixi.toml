@@ -1,13 +1,13 @@
+[dependencies]
+python = ">=3.12.4,<3.13"
+
 [project]
-name = "governance"
-version = "0.1.0"
-description = "Add a short description here"
 authors = ["Wolf Vollprecht <w.vollprecht@gmail.com>"]
 channels = ["conda-forge"]
+description = "Add a short description here"
+name = "governance"
 platforms = ["osx-arm64"]
+version = "0.1.0"
 
 [tasks]
 vote_markdown = "python to_vote.py"
-
-[dependencies]
-python = ">=3.12.4,<3.13"
