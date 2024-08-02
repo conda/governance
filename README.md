@@ -110,7 +110,7 @@ We have guidelines for making decisions about conda Organization trademarks:
 
 Examples of project names that violate the 3rd and 4th guidelines are `conda Pro`, and `pets-dot-com-conda-saves-the-day`.
 
-The conda Organization is in a particularly challenging situation here because the conda name and logo are obviously derived from the [Anaconda Inc.](https://anaconda.com/) name and logo. Several precedents guide us here: Projects like [conda-forge](https://conda-forge.org/) (name), [Bioconda](https://bioconda.org/) (name and logo) and [conda-lock](https://github.com/conda-incubator/conda-lock) (name) have been approved in the past.
+The conda Organization is in a particularly challenging situation here because the conda name and logo are obviously derived from the [Anaconda Inc.](https://anaconda.com/) name and logo. Several precedents guide us here: Projects like [conda-forge](https://conda-forge.org/) (name), [Bioconda](https://bioconda.org/) (name and logo) and [conda-lock](https://github.com/conda/conda-lock) (name) have been approved in the past.
 
 
 ## Incubation
@@ -242,9 +242,9 @@ Additional requirements may apply in case low turnouts have to be handled, see "
 
 To call for a standard vote, here is a template Issue/PR comment:
 
-    @conda-incubator/steering
+    @conda/steering-council
 
-    This vote falls under the **"{policy}"** policy of the [conda governance policy](https://github.com/conda-incubator/governance),
+    This vote falls under the **"{policy}"** policy of the [conda governance policy](https://github.com/conda/governance),
     please vote and/or comment on this proposal at your earliest convenience.
 
     It needs **{policy_percent}** of the Steering Council to vote `yes` to pass.
@@ -291,9 +291,9 @@ Extending the above example, if 9 people are required for a quorum, but only 7 h
 
 To post a timeout reminder, here is a template comment:
 
-    @conda-incubator/steering
+    @conda/steering-council
 
-    This vote falls under the **"{policy}"** policy of the [conda governance policy](https://github.com/conda-incubator/governance),
+    This vote falls under the **"{policy}"** policy of the [conda governance policy](https://github.com/conda/governance),
     please vote and/or comment on this proposal at your earliest convenience.
 
     It needs **{policy_percent}** of the Steering Council to vote `yes` to pass.
@@ -324,7 +324,7 @@ Assume the Steering Council has 10 active members and the vote threshold is 50%.
 
 ### Enhancement Proposal Approval
 
-When ready, the proposer may call for a vote on an existing [conda enhancement proposal (CEP)](https://github.com/conda-incubator/ceps). This requires a super-majority (60%) to pass so that the decision to accept the CEP is unequivocal and we have ensured that consensus has been reached.
+When ready, the proposer may call for a vote on an existing [conda enhancement proposal (CEP)](https://github.com/conda/ceps). This requires a super-majority (60%) to pass so that the decision to accept the CEP is unequivocal and we have ensured that consensus has been reached.
 
 * Standard
 * 60% Majority to pass
