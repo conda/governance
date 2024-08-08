@@ -11,3 +11,8 @@ version = "0.1.0"
 
 [tasks]
 vote_markdown = "python to_vote.py"
+count_votes = "python count_votes.py"
+
+[dependencies]
+python = ">=3.12.4,<3.13"
+requests = ">=2.32.3,<2.33"
