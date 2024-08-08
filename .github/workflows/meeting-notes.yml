@@ -9,11 +9,11 @@ on:
           Common examples are "now", "tomorrow", "next Wednesday", "2023-03-01"...
           See https://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html for full details.
         required: false
-        default: "now"
+        default: now
         type: string
   schedule:
     # this is every wednesday, but we want every two! check 'pre-create' job below
-    - cron: "00 12 * * WED"
+    - cron: 00 12 * * WED
   pull_request:
     types:
       - labeled
