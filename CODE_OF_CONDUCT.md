@@ -259,10 +259,10 @@ You can reach the entire CoC Committee by emailing [conduct@conda.org](mailto:co
 
 | Name | Contact | Employer / Funding | Steering Council Member | Current Term Ends |
 | ---- | ---- | ---- | ---- | --- |
-| [Eric Dill](https://github.com/ericdill) | | [Anaconda](https://anaconda.com/) | | 2024-07-01 |
-| [Filipe Pires Alvarenga Fernandes](https://github.com/ocefpaf) | ocefpaf&#64;gmail&#46;com | [IOOS/NOAA](https://ioos.noaa.gov/) | Yes | 2024-07-01 |
-| [Bianca Henderson](https://github.com/beeankha) |bhenderson&#64;anaconda&#46;com | [Anaconda](https://anaconda.com/) | | 2024-07-01 |
-| [Katherine Kinnaman](https://github.com/kathatherine) | kkinnaman.condacoc&#64;gmail&#46;com | [Anaconda](https://anadonda.com/) | | 2024-07-01 |
+| [Eric Dill](https://github.com/ericdill) | | [Anaconda](https://anaconda.com/) | | 2026-07-01 |
+| [Dasha Gurova](https://github.com/dashagurova) |  | [Anaconda](https://anaconda.com/) |  | 2026-07-01 |
+| [Bianca Henderson](https://github.com/beeankha) | bhenderson&#64;anaconda&#46;com | [Anaconda](https://anaconda.com/) | | 2026-07-01 |
+| [Katherine Kinnaman](https://github.com/kathatherine) | kkinnaman.condacoc&#64;gmail&#46;com | [Anaconda](https://anadonda.com/) | | 2026-07-01 |
 | [Mahe Iram Khan](https://github.com/ForgottenProgramme) | | [Anaconda](https://anaconda.com/) | | 2025-07-01 |
 | [Ken Odegard](https://github.com/kenodegard) | kodegard&#64;anaconda&#46;com | [Anaconda](https://anaconda.com/) | | 2025-07-01 |
 | [Crystal Soja](https://github.com/csoja), Co-Chair | | [Anaconda](https://anaconda.com/) | | 2025-07-01 |
