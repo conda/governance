@@ -266,7 +266,7 @@ You can reach the entire CoC Committee by emailing [conduct@conda.org](mailto:co
 | [Mahe Iram Khan](https://github.com/ForgottenProgramme) | [Anaconda](https://anaconda.com/) | | 2025-07-01 |
 | [Ken Odegard](https://github.com/kenodegard) | [Anaconda](https://anaconda.com/) | | 2025-07-01 |
 | [Crystal Soja](https://github.com/csoja), Co-Chair | [Anaconda](https://anaconda.com/) | | 2025-07-01 |
-| [Jaime Rodríguez-Guerra](https://github.com/jaimergp) | [Quansight](https://quansight.com/) | | 2025-07-01 |
+| [Jaime Rodríguez-Guerra](https://github.com/jaimergp), Co-Chair | [Quansight](https://quansight.com/) | yes | 2025-07-01 |
 
 # Terms and New Members
 
