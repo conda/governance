@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=../sub-teams-schema.json
+name: null
+description: The Code of Conduct Committee
+charter: dynamic
+requirements: null
+scopes:
+    codeowners: null
+    other:
+        GitHub Account: https://github.com/conda-conduct
+        Matrix (private): https://matrix.to/#/!jLRCFFbpabFtdYvfeO:matrix.org
+links:
+    - https://github.com/conda/governance/issues/46
+    - https://github.com/conda/governance/pull/49
+    - https://github.com/conda/governance/pull/121
+members:
+    beeankha: https://github.com/conda/governance/pull/49
+    csoja: https://github.com/conda/governance/issues/46
+    ericdill: https://github.com/conda/governance/issues/46
+    ForgottenProgramme: https://github.com/conda/governance/issues/46
+    jaimergp: https://github.com/conda/governance/pull/121
+    kathatherine: https://github.com/conda/governance/pull/49
+    kenodegard: https://github.com/conda/governance/issues/46
+    ocefpaf: https://github.com/conda/governance/issues/46
+emeritus:
+    tnabtaf: https://github.com/conda/governance/pull/121
