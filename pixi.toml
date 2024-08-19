@@ -1,14 +1,14 @@
+[dependencies]
+python = ">=3.12.4,<3.13"
+requests = ">=2.32.3,<2.33"
+
 [project]
 authors = ["Wolf Vollprecht <w.vollprecht@gmail.com>"]
 channels = ["conda-forge"]
 name = "governance"
-platforms = ["osx-64", "osx-arm64", "win-64" , "linux-64"]
+platforms = ["osx-64", "osx-arm64", "win-64", "linux-64"]
 version = "0.1.0"
 
 [tasks]
-vote_markdown = "python to_vote.py"
 count_votes = "python count_votes.py"
-
-[dependencies]
-python = ">=3.12.4,<3.13"
-requests = ">=2.32.3,<2.33"
+vote_markdown = "python to_vote.py"
