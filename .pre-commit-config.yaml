@@ -49,7 +49,9 @@ repos:
     rev: v2.3.0
     hooks:
       - id: codespell
-        args: [--write-changes, --skip="*.csv"]
+        exclude_types:
+          - csv
+        args: [--write-changes]
   - repo: meta
     # see https://pre-commit.com/#meta-hooks
     hooks:
