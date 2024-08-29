@@ -16,7 +16,7 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 | Jaime Rodríguez-Guerra | JRG      | Quansight    | jaimergp         |
 | Katherine Kinnaman     | KK       | Anaconda     | kathatherine     |
 | Klaus Zimmermann       | KZ       | Quansight    | zklaus           |
-|                        |          |              |                  |
+| John Kirkham           | JK       | NVIDIA/cf    | jakirkham        |
 |                        |          |              |                  |
 |                        |          |              |                  |
 |                        |          |              |                  |
