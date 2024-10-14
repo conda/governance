@@ -12,12 +12,16 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 | Name                   | Initials | Affiliation  | GH Username      |
 | ---------------------- | -------- | ------------ | ---------------- |
 |                        |          |              |                  |
-|                        |          |              |                  |
-|                        |          |              |                  |
-|                        |          |              |                  |
-|                        |          |              |                  |
-|                        |          |              |                  |
-|                        |          |              |                  |
+| Filipe Fernandes       | FF       | conda-forge  | ocefpaf          |
+| Jannis Leidel          | JL       | Anaconda     | jezdez           |
+| Matthew R Becker       | MRB      | conda-forge  | beckermr         |
+| Schuyler Martin        | SM       | Anaconda     | schuylermartin45 |
+| Cheng H. Lee           | CHL      | Anaconda/cf  | chenghlee        |
+| Marco Esters           | ME       | Anaconda     | marcoesters      |
+| Wolf Vollprecht        | WV       | prefix.dev   | wolfv            |
+| John Kirkham           | JK       | NVIDIA/cf    | jakirkham        |
+| Lilly Winfree          | LW       | Anaconda     | lwinfree         |
+| Bianca Henderson       | BH       | Anaconda     | beeankha         |
 |                        |          |              |                  |
 |                        |          |              |                  |
 |                        |          |              |                  |
@@ -30,8 +34,14 @@ X people in total
 
 ## Announcements
 
-- [ ]
+- [x] (JL) [site-packages path in repodata.json CEP](https://github.com/conda/ceps/pull/90) up for vote
 
 ## New Agenda Items
 
-- [ ]
+- [ ] (WV) rattler-build / v1 recipe being rolled out in conda-forge
+    - Is there a way to tell if a package was built using `rattler-build`, rather than `conda-build`? Yes; output package will not contain certain files in the `info/` directory.
+    - possible next steps? - end to end testing of select number of rattler-built packages 
+- [ ] (WV) pixi global getting a huge makeover
+- [x] (JL) ABI3 CEP, coordination between distros
+    - [ ] https://github.com/conda/ceps/pull/86
+- [ ] 
