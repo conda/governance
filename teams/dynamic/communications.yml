@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../sub-teams-schema.json
+name: communications
+description: null
+charter: dynamic
+requirements: null
+scopes:
+    codeowners:
+        - conda/communications
+    other:
+        Discourse: https://conda.discourse.group/
+        LinkedIn: https://www.linkedin.com/company/condacommunity
+        Mastodon: https://fosstodon.org/@conda
+        Matrix (public): https://matrix.to/#/#conda-communications:matrix.org
+        X/Twitter: https://x.com/condaproject
+links:
+    - https://github.com/conda/governance/issues/53
+members:
+    jaimergp: https://github.com/conda/governance/issues/81
+    jezdez: https://github.com/conda/governance/issues/81
+emeritus:
+    tnabtaf: https://github.com/conda/governance/issues/81
