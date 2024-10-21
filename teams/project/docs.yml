@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../sub-teams-schema.json
+name: docs
+description: The team working on all-things docs
+charter: project
+requirements: null
+scopes:
+    codeowners:
+        - conda/conda
+        - conda/conda-build
+        - conda/conda-docs
+        - conda/constructor
+        - conda/infrastructure
+        - conda/menuinst
+    other: null
+links:
+    - https://github.com/conda/conda-docs/issues/780
+members:
+    kathatherine: https://github.com/conda/conda-docs/issues/780
+    travishathaway: https://github.com/conda/conda-docs/issues/780
+emeritus:
+    jezdez: null
+    tnabtaf: null
+
