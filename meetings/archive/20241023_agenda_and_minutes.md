@@ -11,7 +11,7 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 
 | Name                   | Initials | Affiliation  | GH Username      |
 | ---------------------- | -------- | ------------ | ---------------- |
-|                        |          |              |                  |
+| John Kirkham           | JK       | NVIDA/cf     | jakirkham        |
 |                        |          |              |                  |
 |                        |          |              |                  |
 |                        |          |              |                  |
@@ -34,4 +34,5 @@ X people in total
 
 ## New Agenda Items
 
-- [ ]
+- [ ] JRG: `conda/conda-launchers`: build on win-arm64 and codesign it?
+    - See conversation at https://github.com/conda-forge/conda-forge.github.io/issues/1940#issuecomment-2413768986
