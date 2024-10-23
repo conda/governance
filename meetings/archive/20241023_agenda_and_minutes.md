@@ -39,6 +39,7 @@ X people in total
 - [ ] (DG) PyTorch channel announcement: https://github.com/pytorch/pytorch/issues/138506
     - [ ] `condastats` seems to be reporting inaccurate download numbers
     - [ ] JRG: Surprisingly low given the amount of GH Search results for [`pytorch` channel mentions in `environment.yml` files](https://github.com/search?q=%2Fchannels%3A%5Cn*%5Cs%2B-+pytorch%2F+path%3Aenvironment.y*ml&ref=opensearch&type=code)
+    - [ ] JK: Added a comment here: https://github.com/ContinuumIO/anaconda-package-data/issues/45#issuecomment-2433454611
 - [ ] (DG) Status of Zulip transition?
     - [ ] JRG: [Opened draft CEP](https://github.com/conda/ceps/pull/92). No comments so far. Planning to call a vote once the [equivalent CFEP](https://github.com/conda-forge/cfep/pull/54) passes for conda-forge (scheduled Oct 31st).
     - [ ] DG: Willing to help if needed.
