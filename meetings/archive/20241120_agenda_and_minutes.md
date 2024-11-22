@@ -17,7 +17,7 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 | Tania Allard           | TA       | Quansight    | trallard         |
 | Albert DeFusco         | AD       | Anaconda     | albertdefusco    |
 | Dasha Gurova           | DG       | Anaconda     | dashagurova      |
-|                        |          |              |                  |
+| Jaime Rodríguez-Guerra | JRG      | Quansight    | jaimergp         |
 |                        |          |              |                  |
 |                        |          |              |                  |
 
