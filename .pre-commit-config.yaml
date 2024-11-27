@@ -9,7 +9,7 @@ exclude: |
 repos:
   # generic verification and formatting
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: v5.0.0
     hooks:
       # standard end of line/end of file cleanup
       - id: mixed-line-ending
@@ -29,7 +29,7 @@ repos:
         files: ^teams/.*/.*\.ya?ml$
         args: [--schemafile, teams/sub-teams-schema.json]
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.5.5
+    rev: v0.8.0
     hooks:
       # lint & attempt to correct failures (e.g. pyupgrade)
       - id: ruff
@@ -48,7 +48,7 @@ repos:
         # ruamel.yaml doesn't line wrap correctly (?) so set width to 1M to avoid issues
         args: [--mapping=2, --offset=2, --sequence=4, --width=1000000, --implicit_start]
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.29.1
+    rev: 0.29.4
     hooks:
       # verify github syntaxes
       - id: check-github-workflows
@@ -57,6 +57,8 @@ repos:
     rev: v2.3.0
     hooks:
       - id: codespell
+        exclude_types:
+          - csv
         args: [--write-changes]
   - repo: meta
     # see https://pre-commit.com/#meta-hooks
