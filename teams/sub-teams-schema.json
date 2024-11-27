@@ -31,15 +31,12 @@
           "description": "The GitHub projects this team owns"
         },
         "other": {
-          "type": ["object", "null"],
-          "patternProperties": {
-            ".*": {
-              "type": "string",
-              "format": "uri"
-            }
+          "type": ["array", "null"],
+          "items": {
+            "type": "string",
+            "format": "uri"
           },
-          "additionalProperties": false,
-          "description": "Other responsibilities this team"
+          "description": "Other responsibilities of this team"
         }
       },
       "required": ["codeowners", "other"],

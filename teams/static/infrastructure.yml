@@ -4,20 +4,20 @@ description: The team working on conda community infrastructure
 charter: static
 requirements: Any steering council member may join without approval
 scopes:
-    codeowners:
-        - conda/.github
-        - conda/actions
-        - conda/infrastructure
-        - conda/issue-tracker
-    other:
-        GitHub Account: https://github.com/conda-bot
-        Matrix (private): https://matrix.to/#/!tpEQSUGYWHNdgpDFNc:matrix.org
+  codeowners:
+    - conda/.github
+    - conda/actions
+    - conda/infrastructure
+    - conda/issue-tracker
+  other:
+    - https://github.com/conda-bot
+    - https://matrix.to/#/!tpEQSUGYWHNdgpDFNc:matrix.org # private
 links:
-    - https://github.com/conda/governance/issues/84
+  - https://github.com/conda/governance/issues/84
 members:
-    beckermr: https://github.com/conda/governance/issues/84
-    chenghlee: null  # missing record of decision?
-    dbast: https://github.com/conda/governance/issues/84
-    jezdez: https://github.com/conda/governance/issues/84
-    kenodegard: https://github.com/conda/governance/issues/84
-emeritus: null
+  beckermr: https://github.com/conda/governance/issues/84
+  chenghlee: # missing record of decision?
+  dbast: https://github.com/conda/governance/issues/84
+  jezdez: https://github.com/conda/governance/issues/84
+  kenodegard: https://github.com/conda/governance/issues/84
+emeritus:
