@@ -17,7 +17,7 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 | Daniel Holth           | DH       | Anaconda     | dholth           |
 | Katherine Kinnaman     | KK       | Anaconda     | kathatherine     |
 | Dasha Gurova           | DG       | Anaconda     | dashagurova      |
-|                        |          |              |                  |
+| Wolf Vollprecht        | WV       | prefix.dev   | wolfv            |
 |                        |          |              |                  |
 |                        |          |              |                  |
 |                        |          |              |                  |
@@ -47,6 +47,9 @@ X people in total
         - Generally, sure. But Windows...
         - But writing this/these standard(s) should not block any on-going/new work. This exercise is mostly a backfill.
 - [x] WV: rattler-build cache
-- [x] WV: pixi build
+    - [ ] https://github.com/conda/ceps/pull/102
+- [x] WV: pixi build demo/preview
+    - [ ] https://github.com/prefix-dev/pixi/blob/1795629a69142485834e6b1ec64401d9e175323e/CHANGELOG.md?plain=1#L47-L54
 - [x] DH: conda-pupa
+    - [ ] https://github.com/dholth/conda-pupa
 
