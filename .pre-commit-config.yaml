@@ -20,6 +20,14 @@ repos:
       - id: check-yaml
       # catch git merge/rebase problems
       - id: check-merge-conflict
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.28.5
+    hooks:
+      - id: check-github-workflows
+      # validate sub-teams schema
+      - id: check-jsonschema
+        files: ^teams/.*/.*\.ya?ml$
+        args: [--schemafile, teams/sub-teams-schema.json]
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.8.3
     hooks:
