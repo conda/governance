@@ -18,7 +18,7 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 | Filipe Fernandes       | FF       | conda-forge  | ocefpaf          |
 | Wolf Vollprecht        | WV       | prefix.dev   | wolfv            |
 | Katherine Kinnaman     | KK       | Anaconda     | kathatherine     |
-|                        |          |              |                  |
+| John Kirkham           | JK       | jakirkham    | NVIDIA/cf        |
 |                        |          |              |                  |
 |                        |          |              |                  |
 
