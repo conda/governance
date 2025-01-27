@@ -21,7 +21,7 @@ repos:
       # catch git merge/rebase problems
       - id: check-merge-conflict
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.9.2
+    rev: v0.9.3
     hooks:
       # lint & attempt to correct failures (e.g. pyupgrade)
       - id: ruff
@@ -46,7 +46,7 @@ repos:
       - id: check-github-workflows
   - repo: https://github.com/codespell-project/codespell
     # see pyproject.toml
-    rev: v2.3.0
+    rev: v2.4.0
     hooks:
       - id: codespell
         exclude_types:
