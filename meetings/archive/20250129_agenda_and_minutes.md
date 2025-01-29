@@ -60,6 +60,6 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 - [ ] (JL) Progress status of rattler-build adoption in conda-forge?
     - [ ] WV: 600+ recipes migrated. [Minimigrators](https://github.com/regro/cf-scripts/issues/3642) still pending.
     - [ ] MvN: Safe bet for simple recipes like single output `noarch: python`.
-    - [ ] Some chatter about automated migrations, Jinja `{% %}` complications, conda-recipe-manager, and [`hadim/feedrattler`](https://github.com/hadim/feedrattler)
+    - [ ] Some chatter about automated migrations, Jinja `{% if/for %}` complications, conda-recipe-manager, and [`hadim/feedrattler`](https://github.com/hadim/feedrattler)
 - [ ] (JRG) Follow up on conda.org [domain records for Bluesky's conda account](https://github.com/conda/infrastructure/issues/1089) and [schemas.conda.org](https://github.com/conda/infrastructure/issues/1082)? :)
     - [ ] Cheng looking into it.
