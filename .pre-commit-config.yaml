@@ -21,7 +21,7 @@ repos:
       # catch git merge/rebase problems
       - id: check-merge-conflict
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.9.3
+    rev: v0.9.4
     hooks:
       # lint & attempt to correct failures (e.g. pyupgrade)
       - id: ruff
@@ -40,13 +40,13 @@ repos:
         # ruamel.yaml doesn't line wrap correctly (?) so set width to 1M to avoid issues
         args: [--mapping=2, --offset=2, --sequence=4, --width=1000000, --implicit_start]
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.31.0
+    rev: 0.31.1
     hooks:
       # verify github syntaxes
       - id: check-github-workflows
   - repo: https://github.com/codespell-project/codespell
     # see pyproject.toml
-    rev: v2.4.0
+    rev: v2.4.1
     hooks:
       - id: codespell
         exclude_types:
