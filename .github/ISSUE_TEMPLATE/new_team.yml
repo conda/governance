@@ -6,11 +6,8 @@ body:
     attributes:
       value: |
         ## Basic Information
-        To learn more about the different types of teams and their charters, please see [Teams & Roles in Conda Governance](https://github.com/conda/governance#teams--roles):
-        - [Sub-team](https://github.com/conda/governance#sub-teams)
-          - [Dynamic Charter](https://github.com/conda/governance#dynamic-charter)
-          - [Static Charter](https://github.com/conda/governance#static-charter)
-        - [Project Team](https://github.com/conda/governance#project-teams)
+        > [!NOTE]
+        > To learn more about the different types of teams and their charters, please see [Teams & Roles in Conda Governance](https://github.com/conda/governance#teams--roles).
   - type: dropdown
     id: type
     attributes:
