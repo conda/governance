@@ -6,6 +6,10 @@ Larger organizations, such as for-profit businesses, that contribute code and su
 
 We deeply appreciate all good faith contributions.
 
+## Quick Links
+
+- [New Sub-team/Project Team](https://github.com/conda/governance/issues/new?template=new_team.yml)
+
 ## Code of Conduct
 
 The conda Organization's [Code of Conduct](CODE_OF_CONDUCT.md) governs all interactions within the conda Organization.  Please take a few minutes to familiarize yourself with it.
