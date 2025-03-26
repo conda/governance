@@ -1,28 +1,31 @@
-name: Nominate new Steering Council member or move to Emeritus Member
-description: Use this template to request joining or leaving the Steering Council.
-title: Request to Join/Leave Steering Council
+name: Nominate to Steering Council or Move to/from Emeritus Steering
+description: Use this form to self-nominate or nominate others to the Steering Council, or request moving to/from Emeritus Steering.
+title: Nominate to Steering Council or Move to/from Emeritus Steering
 body:
   - type: markdown
     attributes:
       value: |
         ## Basic Information
+        See [Steering Council](https://github.com/conda/governance#steering-council) and [Emeritus Steering](https://github.com/conda/governance#emeritus-steering) for details on the membership roles.
+
         > [!NOTE]
-        > Steering Council members can request to become Emeritus Steering members. See [Conda Governance](https://github.com/conda/governance#emeritus-steering) for details.
+        > Use this form to self-nominate or nominate others to the Steering Council, or request moving to/from Emeritus Steering.
   - type: input
     id: username
     attributes:
       label: GitHub Username
-      description: Provide the GitHub username of the person nominated here to the Steering Council or who asks to become an Emeritus Steering member.
+      description: Provide the GitHub username of the user to be nominated to the Steering Council or to become an Emeritus Steering member.
     validations:
       required: true
   - type: dropdown
     id: action
     attributes:
       label: Request Type
-      description: Select whether you are nominating somebody to the Steering Council (including self-nomination) or whether you're requesting somebody to move to Emeritus Steering (including yourself).
+      description: Select whether this is a nominiation to the Steering Council or whether this is moving an existing member to/from Emeritus Steering.
       options:
-        - Nomination
-        - Emeritus
+        - Nomination to Steering
+        - Steering to Emeritus
+        - Emeritus to Steering
     validations:
       required: true
 
