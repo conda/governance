@@ -1,4 +1,4 @@
-name: Join/Leave Steering Council
+name: Nominate new Steering Council member or move to Emeritus Member
 description: Use this template to request joining or leaving the Steering Council.
 title: Request to Join/Leave Steering Council
 body:
@@ -7,22 +7,22 @@ body:
       value: |
         ## Basic Information
         > [!NOTE]
-        > Members who leave the Steering Council are moved to emeritus status. See [Conda Governance](https://github.com/conda/governance#emeritus-steering) for details.
+        > Steering Council members can request to become Emeritus Steering members. See [Conda Governance](https://github.com/conda/governance#emeritus-steering) for details.
   - type: input
     id: username
     attributes:
       label: GitHub Username
-      description: Provide the GitHub username of the user to be added or removed from the Steering Council.
+      description: Provide the GitHub username of the person nominated here to the Steering Council or who asks to become an Emeritus Steering member.
     validations:
       required: true
   - type: dropdown
     id: action
     attributes:
       label: Request Type
-      description: Select whether you are requesting to join or leave the Steering Council.
+      description: Select whether you are nominating somebody to the Steering Council (including self-nomination) or whether you're requesting somebody to move to Emeritus Steering (including yourself).
       options:
-        - Join
-        - Leave
+        - Nomination
+        - Emeritus
     validations:
       required: true
 
@@ -34,6 +34,6 @@ body:
     id: reason
     attributes:
       label: Reason for Request
-      description: Provide a brief explanation of why you are requesting to join or leave the Steering Council.
+      description: Provide a brief explanation of why you are submitting this request.
     validations:
       required: true
