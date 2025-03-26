@@ -1,42 +1,29 @@
-name: Nominate to Steering Council or Move to/from Emeritus Steering
-description: Use this form to self-nominate or nominate others to the Steering Council, or request moving to/from Emeritus Steering.
-title: Nominate to Steering Council or Move to/from Emeritus Steering
+name: Nominate to Steering Council
+description: Use this form to nominate yourself or someone else to the conda Steering Council.
+title: '[Steering Council Nomination]: '
+
 body:
   - type: markdown
     attributes:
       value: |
-        ## Basic Information
-        See [Steering Council](https://github.com/conda/governance#steering-council) and [Emeritus Steering](https://github.com/conda/governance#emeritus-steering) for details on the membership roles.
+        ## Steering Council Nomination
 
-        > [!NOTE]
-        > Use this form to self-nominate or nominate others to the Steering Council, or request moving to/from Emeritus Steering.
+        Use this form to nominate a new member to the Steering Council (including self-nominations).
+
+        Please refer to the [conda Governance documentation](https://github.com/conda/governance#steering-council) for information about Steering Council responsibilities and qualifications.
+
   - type: input
     id: username
     attributes:
       label: GitHub Username
-      description: Provide the GitHub username of the user to be nominated to the Steering Council or to become an Emeritus Steering member.
-    validations:
-      required: true
-  - type: dropdown
-    id: action
-    attributes:
-      label: Request Type
-      description: Select whether this is a nominiation to the Steering Council or whether this is moving an existing member to/from Emeritus Steering.
-      options:
-        - Nomination to Steering
-        - Steering to Emeritus
-        - Emeritus to Steering
+      description: The GitHub username of the person being nominated.
     validations:
       required: true
 
-  - type: markdown
-    attributes:
-      value: |
-        ## Additional Information
   - type: textarea
-    id: reason
+    id: qualifications
     attributes:
-      label: Reason for Request
-      description: Provide a brief explanation of why you are submitting this request.
+      label: Qualifications & Contributions
+      description: Describe the nominee's contributions to the conda ecosystem and qualifications for the Steering Council.
     validations:
       required: true

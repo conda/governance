@@ -1,0 +1,42 @@
+name: Change Emeritus Steering Status
+description: Use this form to request moving to/from Emeritus Steering status.
+title: '[Emeritus Steering Status]: '
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Emeritus Steering Status
+
+        Use this form to request:
+        - Moving an active Steering Council member to Emeritus status
+        - Reactivating an Emeritus member to the active Steering Council
+
+        Please refer to the [Emeritus Steering documentation](https://github.com/conda/governance#emeritus-steering) for details on status changes.
+
+  - type: input
+    id: username
+    attributes:
+      label: GitHub Username
+      description: The GitHub username of the person to move to/from Emeritus Steering.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: status_change
+    attributes:
+      label: Status Change Type
+      description: Select the type of status change being requested.
+      options:
+        - Steering Concil → Emeritus Steering
+        - Emeritus Steering → Steering Council
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason for Status Change
+      description: Provide a clear explanation for this status change request.
+    validations:
+      required: true
