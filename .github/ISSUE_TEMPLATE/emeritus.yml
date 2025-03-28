@@ -1,5 +1,5 @@
 name: Change Emeritus Steering Status
-description: Use this form to request moving to/from Emeritus Steering status.
+description: Use this form to request moving a member to/from Emeritus Steering status.
 title: '[Emeritus Steering Status]: '
 
 body:
@@ -8,9 +8,7 @@ body:
       value: |
         ## Change Emeritus Steering Status
 
-        Use this form to request:
-        - Moving an active Steering Council member to Emeritus status
-        - Reactivating an Emeritus member to the active Steering Council
+        Use this form to request moving a member to/from Emeritus Steering status.
 
         > [!NOTE]
         > To learn more about Emeritus status, please see [Emeritus Steering in Conda Governance](https://github.com/conda/governance#emeritus-steering).
