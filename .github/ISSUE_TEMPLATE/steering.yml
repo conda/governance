@@ -1,5 +1,5 @@
-name: Nominate to Steering Council
-description: Use this form to nominate yourself or someone else to the conda Steering Council.
+name: Steering Council Nomination
+description: Use this form to nominate yourself or others to the Steering Council.
 title: '[Steering Council Nomination]: '
 
 body:
@@ -10,13 +10,22 @@ body:
 
         Use this form to nominate a new member to the Steering Council (including self-nominations).
 
-        Please refer to the [conda Governance documentation](https://github.com/conda/governance#steering-council) for information about Steering Council responsibilities and qualifications.
+        > [!NOTE]
+        > To learn more about the Steering Council, its membership requirements and responsibilities, please see [Steering Council in Conda Governance](https://github.com/conda/governance#steering-council)/.
 
   - type: input
     id: username
     attributes:
       label: GitHub Username
       description: The GitHub username of the person being nominated.
+    validations:
+      required: true
+
+  - type: input
+    id: funder
+    attributes:
+      label: Funder
+      description: The name of the organization or funder that supports the nominee. Review Steering Council's [shared funding membership restrictions](https://github.com/conda/governance#shared-funding-membership-restrictions).
     validations:
       required: true
 
