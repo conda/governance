@@ -8,7 +8,8 @@ We deeply appreciate all good faith contributions.
 
 ## Quick Links
 
-- [Nominate to Steering Council or Move to/from Emeritus Steering](https://github.com/conda/governance/issues/new?template=steering.yml)
+- [Steering Council Nomination](https://github.com/conda/governance/issues/new?template=steering.yml)
+- [Change Emeritus Steering Status](https://github.com/conda/governance/issues/new?template=emeritus.yml)
 - [New Sub-team/Project Team](https://github.com/conda/governance/issues/new?template=new_team.yml)
 
 ## Code of Conduct
