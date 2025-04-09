@@ -11,9 +11,9 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 
 | Name                   | Initials | Affiliation  | GH Username      |
 | ---------------------- | -------- | ------------ | ---------------- |
-|                        |          |              |                  |
-|                        |          |              |                  |
-|                        |          |              |                  |
+| Jaime Rodríguez-Guerra | JRG      | Quansight/sc | jaimergp         |
+| John Kirkham           | JK       | NVIDIA/cf    | jakirkham        |
+| Matthew R Becker       | MRB      | conda-forge  | beckermr         |
 |                        |          |              |                  |
 |                        |          |              |                  |
 |                        |          |              |                  |
@@ -30,8 +30,16 @@ X people in total
 
 ## Announcements
 
-- [ ]
+- [ ] (JL: most Anaconda staff are at a company meeting during the meeting this week and won't be able to attend)
+- [ ] JRG: CEP vote for `environment.yml` until Apr 21: https://github.com/conda/ceps/pull/81
 
 ## New Agenda Items
 
-- [ ]
+- [ ] (JK) Sub-team structure
+    - https://github.com/conda/governance/issues/222
+    - https://github.com/conda/governance/issues/225
+    - https://github.com/conda/governance/issues/226
+    - MRB: The original intent of the subteams section in the governance was _not_ to tie every Github team to a governance-defined subteam.
+    - JRG: Add note about that in the governance?
+    - MRB: If the intent is just to provision access to project boards, suggest to create per-project-board / per-contract teams without going through a vote.
+    - Add badges / repo tags to each repo to list them as community or federated.
