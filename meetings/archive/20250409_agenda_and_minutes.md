@@ -14,7 +14,7 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 | Jaime Rodríguez-Guerra | JRG      | Quansight/sc | jaimergp         |
 | John Kirkham           | JK       | NVIDIA/cf    | jakirkham        |
 | Matthew R Becker       | MRB      | conda-forge  | beckermr         |
-|                        |          |              |                  |
+| Tania Allard           | TA       | Quansight    | trallard          |
 |                        |          |              |                  |
 |                        |          |              |                  |
 |                        |          |              |                  |
@@ -22,7 +22,7 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 |                        |          |              |                  |
 |                        |          |              |                  |
 
-X people in total
+4 people in total
 
 ## Introductions
 
