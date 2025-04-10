@@ -42,4 +42,4 @@ Various parts of the conda community gather on a regular basis. This meeting bri
     - MRB: The original intent of the subteams section in the governance was _not_ to tie every Github team to a governance-defined subteam.
     - JRG: Add note about that in the governance?
     - MRB: If the intent is just to provision access to project boards, suggest to create per-project-board / per-contract teams without going through a vote.
-    - Add badges / repo tags to each repo to list them as community or federated.
+    - TA: Add badges / repo tags to each repo to list them as community or federated.
