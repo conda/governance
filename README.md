@@ -277,7 +277,7 @@ Non-timed-out vote results should be documented in github PR/issue upon which th
 
 ### Quorum
 
-With one exception, all percentages below express *both* required participation, as a fraction of active Steering Council members, as well as the fraction of those who vote affirmatively (i.e. vote `yes`) on the issue. The fraction of those who voted affirmatively is determined from the total number who voted `yes`, `no` or `abstain`, not the size of the active Steering Council. The exception is when 50% is required. In these cases, *at least half* of team members need to participate, but *more than 50%* of votes need to be affirmative for the vote to pass. Some votes have special quorum rules and those are listed explicitly below.
+With one exception, all percentages below express *both* required participation, as a fraction of active Steering Council members, as well as the fraction of those who vote affirmatively (i.e. vote `yes`) on the issue. The fraction of those who voted affirmatively is determined from the total number who voted `yes` or `no`, not the size of the active Steering Council. The exception is when 50% is required. In these cases, *at least half* of team members need to participate, but *more than 50%* of votes need to be affirmative for the vote to pass. Some votes have special quorum rules and those are listed explicitly below.
 
 For example, in a vote requiring 50% participation, with 20 active members, at least 10 must vote; if 10 or 11 vote, there must be at least 6 affirmative votes. If 12 or 13 members vote, at least 7 votes must be affirmative to pass, and so on.
 
