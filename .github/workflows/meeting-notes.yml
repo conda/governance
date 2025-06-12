@@ -79,7 +79,7 @@ jobs:
   create:
     needs: [pre-create]
     if: needs.pre-create.outputs.should-run == 'yes'
-    uses: Quansight-Labs/hackmd-meeting-notes-action/.github/workflows/create-meeting-notes-pr.yml@main
+    uses: Quansight-Labs/hackmd-meeting-notes-action/.github/workflows/create-meeting-notes-pr.yml@caec6b839f3dc5f8a534520e32100622325d752e # @main
     with:
       date: ${{ needs.pre-create.outputs.date }}
       template_path: meetings/agenda_template.md
@@ -95,8 +95,9 @@ jobs:
 
   sync:
     if: github.event.label.name == 'sync-hackmd-notes'
-    uses: Quansight-Labs/hackmd-meeting-notes-action/.github/workflows/sync-meeting-notes-pr.yml@main
+    uses: Quansight-Labs/hackmd-meeting-notes-action/.github/workflows/create-meeting-notes-pr.yml@caec6b839f3dc5f8a534520e32100622325d752e # @main
     with:
       pr_number: ${{ github.event.number }}
+      hackmd_team: conda-community
     secrets:
       HACKMD_TOKEN: ${{ secrets.HACKMD_TOKEN }}
