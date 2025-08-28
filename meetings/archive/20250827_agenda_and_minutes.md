@@ -11,7 +11,7 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 
 | Name                   | Initials | Affiliation  | GH Username      |
 | ---------------------- | -------- | ------------ | ---------------- |
-|                        |          |              |                  |
+| Schuyler Martin        | SM       | Anaconda     | schuylermartin45 |
 |                        |          |              |                  |
 |                        |          |              |                  |
 |                        |          |              |                  |
@@ -30,7 +30,7 @@ X people in total
 
 ## Announcements
 
-- [ ]
+- [x] CRM v0.6.3 is in the process of being released today.
 
 ## New Agenda Items
 
