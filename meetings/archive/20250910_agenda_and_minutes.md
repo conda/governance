@@ -11,8 +11,8 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 
 | Name                   | Initials | Affiliation  | GH Username      |
 | ---------------------- | -------- | ------------ | ---------------- |
-|                        |          |              |                  |
-|                        |          |              |                  |
+| Dan Yeaw               | DWY      | Anaconda     | @danyeaw         |
+| Ryan Keith             | RK       | Anaconda     | @ryanskeith      |
 |                        |          |              |                  |
 |                        |          |              |                  |
 |                        |          |              |                  |
@@ -26,12 +26,12 @@ X people in total
 
 ## Introductions
 
-- [ ]
+- We introduced ourselves
 
 ## Announcements
 
-- [ ]
+- No topics
 
 ## New Agenda Items
 
-- [ ]
+- No topics
