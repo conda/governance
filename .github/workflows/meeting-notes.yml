@@ -13,7 +13,7 @@ on:
         type: string
   schedule:
     # this is every wednesday, but we want every two! check 'pre-create' job below
-    - cron: 00 12 * * WED
+    - cron: 00 3 * * WED
   pull_request:
     types:
       - labeled
