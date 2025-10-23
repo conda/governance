@@ -11,7 +11,7 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 
 | Name                   | Initials | Affiliation  | GH Username      |
 | ---------------------- | -------- | ------------ | ---------------- |
-|                        |          |              |                  |
+| Jaime Rodríguez-Guerra | JRG      | Quansight    | jaimergp         |
 |                        |          |              |                  |
 |                        |          |              |                  |
 |                        |          |              |                  |
@@ -34,4 +34,15 @@ X people in total
 
 ## New Agenda Items
 
-- [ ]
+- [ ] (JRG, absent): Looking for comments in a series of CEPs about the standards of the conda ecosystem (e.g. MatchSpec syntax, version strings, `conda-meta/*.json` contents, `repodata.json`, etc)
+  - https://github.com/conda/ceps/pull/82
+  - https://github.com/conda/ceps/pull/103
+  - https://github.com/conda/ceps/pull/113
+  - https://github.com/conda/ceps/pull/124
+  - https://github.com/conda/ceps/pull/132
+  - https://github.com/conda/ceps/pull/133
+  - https://github.com/conda/ceps/pull/134
+  - https://github.com/conda/ceps/pull/135
+- [ ] ...
+- [ ] ...
+- [ ] ...
