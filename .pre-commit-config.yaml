@@ -21,7 +21,7 @@ repos:
       # catch git merge/rebase problems
       - id: check-merge-conflict
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.1
+    rev: v0.14.2
     hooks:
       # lint & attempt to correct failures (e.g. pyupgrade)
       - id: ruff
