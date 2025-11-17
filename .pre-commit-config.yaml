@@ -21,7 +21,7 @@ repos:
       # catch git merge/rebase problems
       - id: check-merge-conflict
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.4
+    rev: v0.14.5
     hooks:
       # lint & attempt to correct failures (e.g. pyupgrade)
       - id: ruff
@@ -40,7 +40,7 @@ repos:
         # ruamel.yaml doesn't line wrap correctly (?) so set width to 1M to avoid issues
         args: [--mapping=2, --offset=2, --sequence=4, --width=1000000, --implicit_start]
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.34.1
+    rev: 0.35.0
     hooks:
       # verify github syntaxes
       - id: check-github-workflows
