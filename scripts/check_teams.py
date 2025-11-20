@@ -44,11 +44,11 @@ def report_diff(**entries: list[str]):
 
 
 def token(org):
-    return os.environ.get("GITHUB_TOKEN")
     if org == "conda":
         return os.environ.get("CONDA_ORG_WIDE_TOKEN", "")
     if org == "conda-incubator":
         return os.environ.get("CONDA_INCUBATOR_ORG_WIDE_TOKEN", "")
+    return os.environ.get("GITHUB_TOKEN")
 
 
 def team_members(org: str, team: str) -> list[str]:
