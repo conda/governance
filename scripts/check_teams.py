@@ -45,9 +45,13 @@ def report_diff(**entries: list[str]):
 
 def token(org: str) -> str:
     if org == "conda":
-        return os.environ.get("CONDA_ORG_WIDE_TOKEN") or os.environ.get("GITHUB_TOKEN", "")
+        return os.environ.get("CONDA_ORG_WIDE_TOKEN") or os.environ.get(
+            "GITHUB_TOKEN", ""
+        )
     if org == "conda-incubator":
-        return os.environ.get("CONDA_INCUBATOR_ORG_WIDE_TOKEN") or os.environ.get("GITHUB_TOKEN", "")
+        return os.environ.get("CONDA_INCUBATOR_ORG_WIDE_TOKEN") or os.environ.get(
+            "GITHUB_TOKEN", ""
+        )
     return os.environ.get("GITHUB_TOKEN", "")
 
 
