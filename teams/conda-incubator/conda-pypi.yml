@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/conda-pypi
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/conda-pypi
+  other:
+links:
+members:
+  jezdez:
+  ryanskeith:
+  travishathaway:
+  jjhelmus:
+  jaimergp:
+  kenodegard:
+  danyeaw:
+  ForgottenProgramme:
+emeritus:

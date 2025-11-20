@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda/rattler
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda/rattler
+  other:
+links:
+members:
+  wolfv:
+  baszalmstra:
+  ruben-arts:
+  nichmor:
+  Hofer-Julian:
+emeritus:

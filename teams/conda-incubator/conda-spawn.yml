@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/conda-spawn
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/conda-spawn
+  other:
+links:
+members:
+  jaimergp:
+emeritus:

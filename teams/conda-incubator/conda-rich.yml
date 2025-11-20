@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/conda-rich
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/conda-rich
+  other:
+links:
+members:
+  jezdez:
+  travishathaway:
+emeritus:

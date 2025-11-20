@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/ceps
+description:
+charter:
+requirements:
+scopes:
+  codeowners: []
+  other:
+links:
+members:
+  jezdez:
+  kenodegard:
+  awwad:
+  beeankha:
+emeritus:

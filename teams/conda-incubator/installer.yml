@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/installer
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/installer
+  other:
+links:
+members:
+  jezdez:
+  xhochy:
+  jlstevens:
+  jaimergp:
+  dbast:
+  chenghlee:
+  isuruf:
+  pseudoyim:
+  marcoesters:
+  psteyer:
+emeritus:

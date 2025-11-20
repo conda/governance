@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/conda-tutorial
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/conda-tutorial
+  other:
+links:
+members:
+  jezdez:
+  tnabtaf:
+  leriomaggio:
+  beeankha:
+emeritus:

@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda/conda-lock
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda/conda-lock
+  other:
+links:
+members:
+  jezdez:
+  mariusvniekerk:
+  ocefpaf:
+  ericdill:
+  marcelotrevisani:
+  maresb:
+emeritus:

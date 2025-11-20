@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/rattler
+description:
+charter:
+requirements:
+scopes:
+  codeowners: []
+  other:
+links:
+members:
+  wolfv:
+  baszalmstra:
+  ruben-arts:
+  nichmor:
+  Hofer-Julian:
+emeritus:

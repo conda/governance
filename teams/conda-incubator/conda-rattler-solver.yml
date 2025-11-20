@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/conda-rattler-solver
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/conda-rattler-solver
+  other:
+links:
+members:
+  jezdez:
+  jaimergp:
+emeritus:

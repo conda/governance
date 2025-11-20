@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/conda-completions
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/conda-zsh-completion
+  other:
+links:
+members:
+  jezdez:
+  esc:
+emeritus:

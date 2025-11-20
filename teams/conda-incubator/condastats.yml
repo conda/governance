@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/condastats
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/condastats
+  other:
+links:
+members:
+  jezdez:
+  sophiamyang:
+emeritus:

@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/conda-protect
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/conda-protect
+  other:
+links:
+members:
+  jezdez:
+  travishathaway:
+emeritus:

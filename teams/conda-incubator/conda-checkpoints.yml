@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/conda-checkpoints
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/conda-checkpoints
+  other:
+links:
+members:
+  jaimergp:
+emeritus:

@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/conda-colab
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/condacolab
+  other:
+links:
+members:
+  jaimergp:
+  ssurbhi560:
+emeritus:

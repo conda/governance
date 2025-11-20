@@ -14,7 +14,8 @@ from ruamel.yaml import YAML
 
 HERE = Path(__file__).parent
 ROOT = HERE.parent
-yaml = YAML(typ="safe")
+yaml = YAML()
+yaml.indent(mapping=2, sequence=4, offset=2)
 
 
 def report_diff(**entries: list[str]):
@@ -104,50 +105,87 @@ def access_to_repos(org, team):
     ]
 
 
-exit_code = 0
-teams_in_github = [*teams_in_org("conda"), *teams_in_org("conda-incubator")]
-seen_teams = []
-
-for path in sorted(chain(ROOT.glob("teams/**/*.yml"), ROOT.glob("teams/**/*.yaml"))):
-    print("Checking", path.name, file=sys.stderr)
-    with open(path) as f:
-        team = yaml.load(path)
-    name_components = team["name"].split("/")
-    if len(name_components) == 2:
-        org, name = name_components
-    elif len(name_components) == 1:
-        org = "conda"
-        name = name_components[0]
-    else:
-        print(
-            f"Name {team['name']} must be '<team_name>' or '<org>/<team_name>'",
-            file=sys.stderr,
-        )
-        exit_code = 1
-    try:
-        members = team_members(org, name)
-    except Exception as exc:
-        print(type(exc).__name__, "-", exc, file=sys.stderr)
-        print("----", file=sys.stderr)
-        exit_code = 1
-        continue
-    seen_teams.append(f"{org}/{name}")
-    if set(members) != set(team["members"]):
-        members_in_file = sorted(team["members"], key=str.lower)
-        members_in_gh = sorted(members, key=str.lower)
-        report_diff(file=members_in_file, github=members_in_gh)
-        exit_code = 1
-    repos_in_file = sorted(team["scopes"]["codeowners"] or [], key=str.lower)
-    repos_in_gh = sorted(access_to_repos(org, name), key=str.lower)
-    if set(repos_in_file) != set(repos_in_gh):
-        report_diff(file=repos_in_file, github=repos_in_gh)
-        exit_code = 1
+def all_yamls() -> list[Path]:
+    return sorted(chain(ROOT.glob("teams/**/*.yml"), ROOT.glob("teams/**/*.yaml")))
 
 
-if set(seen_teams) != set(teams_in_github):
-    teams_in_repo = sorted(seen_teams, key=str.lower)
-    teams_in_gh = sorted(teams_in_github, key=str.lower)
-    report_diff(repo=teams_in_repo, github=teams_in_gh)
-    exit_code = 1
+def check_teams() -> int:
+    exit_code = 0
+    teams_in_github = [*teams_in_org("conda"), *teams_in_org("conda-incubator")]
+    seen_teams = []
 
-sys.exit(exit_code)
+    for path in all_yamls():
+        print("Checking", path.relative_to(ROOT), file=sys.stderr)
+        with open(path) as f:
+            team = yaml.load(f)
+        name_components = team["name"].split("/")
+        if len(name_components) == 2:
+            org, name = name_components
+        elif len(name_components) == 1:
+            org = "conda"
+            name = name_components[0]
+        else:
+            print(
+                f"Name {team['name']} must be '<team_name>' or '<org>/<team_name>'",
+                file=sys.stderr,
+            )
+            exit_code = 1
+        try:
+            members = team_members(org, name)
+        except Exception as exc:
+            print(type(exc).__name__, "-", exc, file=sys.stderr)
+            print("----", file=sys.stderr)
+            exit_code = 1
+            continue
+        seen_teams.append(f"{org}/{name}")
+        if set(members) != set(team["members"]):
+            members_in_file = sorted(team["members"], key=str.lower)
+            members_in_gh = sorted(members, key=str.lower)
+            report_diff(file=members_in_file, github=members_in_gh)
+            exit_code = 1
+        repos_in_file = sorted(team["scopes"]["codeowners"] or [], key=str.lower)
+        repos_in_gh = sorted(access_to_repos(org, name), key=str.lower)
+        if set(repos_in_file) != set(repos_in_gh):
+            report_diff(file=repos_in_file, github=repos_in_gh)
+            exit_code = 1
+
+    if set(seen_teams) != set(teams_in_github):
+        teams_in_repo = sorted(seen_teams, key=str.lower)
+        teams_in_gh = sorted(teams_in_github, key=str.lower)
+        report_diff(repo=teams_in_repo, github=teams_in_gh)
+        exit_code = 1
+    return exit_code
+
+
+def generate():
+    team_to_fn = {}
+    for path in all_yamls():
+        with open(path) as f:
+            team = yaml.load(f)
+            team_to_fn[team["name"]] = path
+
+    for team in chain(teams_in_org("conda"), teams_in_org("conda-incubator")):
+        if team in team_to_fn:
+            continue
+        org, team_name = team.split("/")
+        data = {
+            "name": team,
+            "description": None,
+            "charter": None,
+            "requirements": None,
+            "scopes": {"codeowners": access_to_repos(*team.split("/")), "other": None},
+            "links": None,
+            "members": {member: None for member in team_members(*team.split("/"))},
+            "emeritus": None,
+        }
+        Path("teams", org).mkdir(parents=True, exist_ok=True)
+        output_path = Path("teams", org, f"{team_name.replace('.', '-')}.yml")
+        output_path.write_text("# yaml-language-server: $schema=../teams.schema.json\n")
+        with open(output_path, "a") as f:
+            yaml.dump(data, f)
+
+
+if __name__ == "__main__":
+    if sys.argv[1:] and sys.argv[1] == "generate":
+        sys.exit(generate())
+    sys.exit(check_teams())

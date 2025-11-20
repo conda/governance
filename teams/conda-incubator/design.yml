@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/design
+description:
+charter:
+requirements:
+scopes:
+  codeowners: []
+  other:
+links:
+members:
+  jezdez:
+  travishathaway:
+  tnabtaf:
+  jaimergp:
+  kenodegard:
+  eakbulut:
+  kathatherine:
+  ang852:
+emeritus:

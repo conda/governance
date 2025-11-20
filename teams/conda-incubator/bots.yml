@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/bots
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/conda-lockfiles
+  other:
+links:
+members:
+  conda-bot:
+emeritus:

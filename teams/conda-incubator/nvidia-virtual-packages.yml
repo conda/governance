@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/nvidia-virtual-packages
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/nvidia-virtual-packages
+  other:
+links:
+members:
+  chenghlee:
+  carterbox:
+emeritus:

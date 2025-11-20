@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/setup-miniconda
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/setup-miniconda
+    - conda-incubator/setup-miniforge
+  other:
+links:
+members:
+  jezdez:
+  bollwyvl:
+  jaimergp:
+  dbast:
+  goanpeca:
+  conda-bot:
+emeritus:

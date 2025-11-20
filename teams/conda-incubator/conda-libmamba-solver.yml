@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/conda-libmamba-solver
+description:
+charter:
+requirements:
+scopes:
+  codeowners: []
+  other:
+links:
+members:
+  jezdez:
+  wolfv:
+  jjhelmus:
+  jaimergp:
+  conda-bot:
+emeritus:

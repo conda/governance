@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/conda-tui
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/conda-tui
+  other:
+links:
+members:
+  chenghlee:
+  mattkram:
+emeritus:

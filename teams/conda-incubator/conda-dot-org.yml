@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/conda-dot-org
+description:
+charter:
+requirements:
+scopes:
+  codeowners: []
+  other:
+links:
+members:
+  jezdez:
+  travishathaway:
+  tnabtaf:
+  jaimergp:
+  jakirkham:
+  chenghlee:
+  goanpeca:
+  barabo:
+  kenodegard:
+  beeankha:
+  eakbulut:
+  JeremiahSifuentes:
+  asmitbm:
+  Pinak-Datta:
+  kathatherine:
+  ang852:
+emeritus:

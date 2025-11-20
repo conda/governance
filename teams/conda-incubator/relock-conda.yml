@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/relock-conda
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/relock-conda
+  other:
+links:
+members:
+  beckermr:
+emeritus:

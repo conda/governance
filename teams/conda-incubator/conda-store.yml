@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/conda-store
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/conda-store
+    - conda-incubator/conda-store-ui
+    - conda-incubator/jupyterlab-conda-store
+  other:
+links:
+members:
+  gabalafou:
+  dharhas:
+  soapy1:
+  jaimergp:
+  peytondmurray:
+  kcpevey:
+  trallard:
+  pavithraes:
+  smeragoel:
+emeritus:

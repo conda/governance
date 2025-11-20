@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda/prefix-dev
+description:
+charter:
+requirements:
+scopes:
+  codeowners: []
+  other:
+links:
+members:
+  tdejager:
+  wolfv:
+  baszalmstra:
+  ruben-arts:
+  nichmor:
+  Hofer-Julian:
+emeritus:

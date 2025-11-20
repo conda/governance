@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda/anaconda
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda/conda-planning
+  other:
+links:
+members:
+  jezdez:
+  dholth:
+  ryanskeith:
+  travishathaway:
+  schuylermartin45:
+  chenghlee:
+  kenodegard:
+  george-lorch:
+  danyeaw:
+  marcoesters:
+  ForgottenProgramme:
+emeritus:

@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/conda-tree
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/conda-tree
+  other:
+links:
+members:
+  rvalieris:
+emeritus:

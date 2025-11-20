@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda/conda-index
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda/conda-index
+  other:
+links:
+members:
+  jezdez:
+  dholth:
+  jjhelmus:
+  chenghlee:
+emeritus:

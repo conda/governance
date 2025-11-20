@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/docs
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/conda-sphinx-theme
+  other:
+links:
+members:
+  jezdez:
+  travishathaway:
+  kathatherine:
+emeritus:

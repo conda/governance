@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda/conda-dot-org
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda/conda-dot-org
+  other:
+links:
+members:
+  jezdez:
+  travishathaway:
+  jaimergp:
+  beeankha:
+  kathatherine:
+emeritus:

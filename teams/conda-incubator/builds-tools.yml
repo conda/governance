@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/builds-tools
+description:
+charter:
+requirements:
+scopes:
+  codeowners: []
+  other:
+links:
+members:
+  jezdez:
+  msarahan:
+  dholth:
+  ryanskeith:
+  travishathaway:
+  wolfv:
+  schuylermartin45:
+  jaimergp:
+  dbast:
+  jakirkham:
+  chenghlee:
+  kenodegard:
+  isuruf:
+  beckermr:
+  marcelotrevisani:
+  mbargull:
+  beeankha:
+emeritus:

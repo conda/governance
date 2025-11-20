@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/conda-plugins
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/conda-plugins
+  other:
+links:
+members:
+  jezdez:
+  travishathaway:
+  kenodegard:
+  beeankha:
+emeritus:

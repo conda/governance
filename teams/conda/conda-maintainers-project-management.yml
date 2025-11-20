@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda/conda-maintainers-project-management
+description:
+charter:
+requirements:
+scopes:
+  codeowners: []
+  other:
+links:
+members:
+  jezdez:
+  jaimergp:
+  george-lorch:
+  lwinfree:
+  trallard:
+emeritus:

@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/conda-self
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/conda-self
+  other:
+links:
+members:
+  jezdez:
+  soapy1:
+  jaimergp:
+  danyeaw:
+  ForgottenProgramme:
+emeritus:

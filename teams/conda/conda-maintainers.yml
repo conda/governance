@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda/conda-maintainers
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda/conda
+    - conda/conda-libmamba-solver
+    - conda/conda-classic-solver
+    - conda/conda-ghsa-3f43-h8hv-p2jv
+  other:
+links:
+members:
+  jezdez:
+  dholth:
+  ryanskeith:
+  travishathaway:
+  soapy1:
+  jjhelmus:
+  jaimergp:
+  chenghlee:
+  kenodegard:
+  george-lorch:
+  danyeaw:
+  mbargull:
+  beeankha:
+  ForgottenProgramme:
+emeritus:

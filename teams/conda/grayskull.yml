@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda/grayskull
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda/grayskull
+  other:
+links:
+members:
+  jezdez:
+  ocefpaf:
+  marcelotrevisani:
+  ForgottenProgramme:
+emeritus:

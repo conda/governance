@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/hatch-conda-build
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/hatch-conda-build
+  other:
+links:
+members:
+  jezdez:
+  AlbertDeFusco:
+  costrouc:
+emeritus:

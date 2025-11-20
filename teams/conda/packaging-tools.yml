@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda/packaging-tools
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda/conda-package-handling
+    - conda/conda-package-streaming
+  other:
+links:
+members:
+  jezdez:
+  dholth:
+  travishathaway:
+  chenghlee:
+  kenodegard:
+  marcelotrevisani:
+  marcoesters:
+emeritus:

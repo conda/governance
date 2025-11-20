@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda/steering-emeritus
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda/governance
+    - conda/assets
+    - conda/ceps
+    - conda/cla
+  other:
+links:
+members:
+  minrk:
+  dharhas:
+  sodre:
+  jjhelmus:
+  csoja:
+  mcg1969:
+  raydouglass:
+  goanpeca:
+  prusse-martin:
+  beckermr:
+  ericdill:
+  angloyna:
+  awwad:
+  cjmartian:
+emeritus:

@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/code-of-conduct
+description:
+charter:
+requirements:
+scopes:
+  codeowners: []
+  other:
+links:
+members:
+  ocefpaf:
+  tnabtaf:
+  csoja:
+  kenodegard:
+  ericdill:
+  beeankha:
+  kathatherine:
+emeritus:

@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda/quansight
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda/menuinst
+    - conda/constructor
+    - conda/conda-planning
+  other:
+links:
+members:
+  soapy1:
+  jaimergp:
+  peytondmurray:
+  trallard:
+emeritus:
