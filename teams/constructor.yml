@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=teams.schema.json
+name: constructor
+description: The team maintaining constructor and related projects
+charter: project
+requirements:
+scopes:
+  codeowners:
+    - conda/conda-pack
+    - conda/constructor
+    - conda/menuinst
+    - conda/conda-standalone
+    - conda/nsis-mirror
+  other:
+links:
+  - https://github.com/conda/governance/issues/53
+members:
+  bkreider: https://github.com/conda/governance/issues/53
+  chenghlee: https://github.com/conda/governance/issues/53
+  goanpeca: https://github.com/conda/governance/issues/53
+  hmaarrfk: https://github.com/conda/governance/issues/53 # missing from team?
+  hoechenberger: https://github.com/conda/governance/issues/53
+  isuruf: https://github.com/conda/governance/issues/53
+  jaimergp: https://github.com/conda/governance/issues/53
+  jezdez: https://github.com/conda/governance/issues/53
+  larsoner: https://github.com/conda/governance/issues/53
+  marcoesters: # missing record of decision?
+  mcg1969: https://github.com/conda/governance/issues/53 # missing from team?
+  pseudoyim: https://github.com/conda/governance/issues/53
+  travishathaway: # missing record of decision?
+emeritus:

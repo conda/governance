@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=teams.schema.json
+name: infrastructure
+description: The team working on conda community infrastructure
+charter: static
+requirements: Any steering council member may join without approval
+scopes:
+  codeowners:
+    - conda/.github
+    - conda/actions
+    - conda/infrastructure
+    - conda/issue-tracker
+  other:
+    - https://github.com/conda-bot
+    - https://matrix.to/#/!tpEQSUGYWHNdgpDFNc:matrix.org # private
+links:
+  - https://github.com/conda/governance/issues/84
+members:
+  beckermr: https://github.com/conda/governance/issues/84
+  chenghlee: # missing record of decision?
+  dbast: https://github.com/conda/governance/issues/84
+  jezdez: https://github.com/conda/governance/issues/84
+  kenodegard: https://github.com/conda/governance/issues/84
+emeritus:

@@ -1,0 +1,147 @@
+{
+  "$defs": {
+    "Scopes": {
+      "additionalProperties": false,
+      "description": "Defines the responsibilities of a Conda sub-team.\nThis structure is nested within the main CondaSubTeam model.",
+      "properties": {
+        "codeowners": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Codeowners"
+        },
+        "other": {
+          "anyOf": [
+            {
+              "items": {
+                "format": "uri",
+                "maxLength": 2083,
+                "minLength": 1,
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Other"
+        }
+      },
+      "required": [
+        "codeowners",
+        "other"
+      ],
+      "title": "Scopes",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Model for defining Conda Sub-Teams based on the governance structure.",
+  "properties": {
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "type": "string"
+    },
+    "charter": {
+      "enum": [
+        "dynamic",
+        "static",
+        "project"
+      ],
+      "title": "Charter",
+      "type": "string"
+    },
+    "requirements": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Requirements"
+    },
+    "scopes": {
+      "$ref": "#/$defs/Scopes"
+    },
+    "links": {
+      "items": {
+        "format": "uri",
+        "maxLength": 2083,
+        "minLength": 1,
+        "type": "string"
+      },
+      "title": "Links",
+      "type": "array"
+    },
+    "members": {
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "format": "uri",
+            "maxLength": 2083,
+            "minLength": 1,
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "minProperties": 1,
+      "title": "Members",
+      "type": "object"
+    },
+    "emeritus": {
+      "anyOf": [
+        {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "format": "uri",
+                "maxLength": 2083,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "minProperties": 1,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Emeritus"
+    }
+  },
+  "required": [
+    "name",
+    "description",
+    "charter",
+    "requirements",
+    "scopes",
+    "links",
+    "members",
+    "emeritus"
+  ],
+  "title": "Conda Sub-Teams",
+  "type": "object"
+}

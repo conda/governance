@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=teams.schema.json
+name: builds-tools
+description: Team to work on conda-build and other build tools in the conda ecosystem
+charter: project
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/conda-recipe-manager
+    - conda/conda-build
+  other:
+    - https://matrix.to/#/#conda-build-tools:matrix.org # public
+links:
+  - https://github.com/conda/conda-build/issues/4698
+  - https://github.com/conda/governance/issues/128
+members:
+  beeankha: https://github.com/conda/conda-build/issues/4698
+  beckermr:
+  chenghlee: https://github.com/conda/conda-build/issues/4698
+  dbast: https://github.com/conda/conda-build/issues/4698
+  dholth: https://github.com/conda/conda-build/issues/4698
+  isuruf: https://github.com/conda/conda-build/issues/4698
+  jaimergp: https://github.com/conda/conda-build/issues/4698
+  jakirkham: https://github.com/conda/conda-build/issues/4698
+  JeanChristopheMorinPerso: https://github.com/conda/conda-build/issues/4698
+  jezdez: https://github.com/conda/conda-build/issues/4698
+  kenodegard: https://github.com/conda/conda-build/issues/4698
+  marcelotrevisani: https://github.com/conda/conda-build/issues/4698
+  mbargull: https://github.com/conda/conda-build/issues/4698
+  msarahan: https://github.com/conda/conda-build/issues/4698
+  ryanskeith: https://github.com/conda/conda-build/issues/4698
+  travishathaway: https://github.com/conda/conda-build/issues/4698
+  wolfv: https://github.com/conda/conda-build/issues/4698
+  schuylermartin45: https://github.com/conda/governance/issues/128
+emeritus:
+  Callek:
+  danpetry: https://anaconda.slack.com/archives/C05B9MPGR4Y/p1713452484809289

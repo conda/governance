@@ -20,14 +20,22 @@ repos:
       - id: check-yaml
       # catch git merge/rebase problems
       - id: check-merge-conflict
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.28.5
+    hooks:
+      - id: check-github-workflows
+      # validate sub-teams schema
+      - id: check-jsonschema
+        files: ^teams/.*\.ya?ml$
+        args: [--schemafile, teams/teams.schema.json]
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.14.5
     hooks:
-      # lint & attempt to correct failures (e.g. pyupgrade)
       - id: ruff
         args: [--fix]
-      # compatible replacement for black
+        files: ^scripts/.*\.py$
       - id: ruff-format
+        files: ^scripts/.*\.py$
   - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
     rev: v2.15.0
     hooks:
