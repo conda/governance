@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=teams.schema.json
-name: cla-reviewers
+name: conda/cla-reviewers
 description: The team reviewing incoming CLA documents
 charter: static
 requirements: All team members must only consists of steering council members for compliance reasons.

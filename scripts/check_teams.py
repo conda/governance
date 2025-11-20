@@ -43,12 +43,12 @@ def report_diff(**entries: list[str]):
     print("----", file=sys.stderr)
 
 
-def token(org):
+def token(org: str) -> str:
     if org == "conda":
-        return os.environ.get("CONDA_ORG_WIDE_TOKEN", "")
+        return os.environ.get("CONDA_ORG_WIDE_TOKEN") or os.environ.get("GITHUB_TOKEN", "")
     if org == "conda-incubator":
-        return os.environ.get("CONDA_INCUBATOR_ORG_WIDE_TOKEN", "")
-    return os.environ.get("GITHUB_TOKEN")
+        return os.environ.get("CONDA_INCUBATOR_ORG_WIDE_TOKEN") or os.environ.get("GITHUB_TOKEN", "")
+    return os.environ.get("GITHUB_TOKEN", "")
 
 
 def team_members(org: str, team: str) -> list[str]:
@@ -104,7 +104,7 @@ exit_code = 0
 teams_in_github = [*teams_in_org("conda"), *teams_in_org("conda-incubator")]
 seen_teams = []
 
-for path in chain(ROOT.glob("teams/*.yml"), ROOT.glob("teams/*.yaml")):
+for path in sorted(chain(ROOT.glob("teams/**/*.yml"), ROOT.glob("teams/**/*.yaml"))):
     print("Checking", path.name, file=sys.stderr)
     with open(path) as f:
         team = yaml.load(path)

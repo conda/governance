@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=teams.schema.json
-name: infrastructure
+name: conda/infrastructure
 description: The team working on conda community infrastructure
 charter: static
 requirements: Any steering council member may join without approval
