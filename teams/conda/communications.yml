@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=teams.schema.json
+# yaml-language-server: $schema=../teams.schema.json
 name: conda/communications
 description: Handles communications across the organization
 charter: dynamic

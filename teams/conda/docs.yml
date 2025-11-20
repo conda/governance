@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=teams.schema.json
+# yaml-language-server: $schema=../teams.schema.json
 name: conda/docs
 description: The team working on all-things docs
 charter: project

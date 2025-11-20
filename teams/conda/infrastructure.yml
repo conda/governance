@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=teams.schema.json
+# yaml-language-server: $schema=../teams.schema.json
 name: conda/infrastructure
 description: The team working on conda community infrastructure
 charter: static

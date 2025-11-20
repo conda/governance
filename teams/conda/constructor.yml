@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=teams.schema.json
+# yaml-language-server: $schema=../teams.schema.json
 name: conda/constructor
 description: The team maintaining constructor and related projects
 charter: project

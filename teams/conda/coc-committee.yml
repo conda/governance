@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=teams.schema.json
+# yaml-language-server: $schema=../teams.schema.json
 name: conda/coc-committee
 description: The Code of Conduct Committee
 charter: dynamic
