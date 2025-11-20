@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=../sub-teams-schema.json
+# yaml-language-server: $schema=teams.schema.json
 name: cla-reviewers
 description: The team reviewing incoming CLA documents
 charter: static

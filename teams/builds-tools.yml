@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=../sub-teams-schema.json
+# yaml-language-server: $schema=teams.schema.json
 name: builds-tools
 description: Team to work on conda-build and other build tools in the conda ecosystem
 charter: project
