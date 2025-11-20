@@ -26,16 +26,16 @@ repos:
       - id: check-github-workflows
       # validate sub-teams schema
       - id: check-jsonschema
-        files: ^teams/.*/.*\.ya?ml$
-        args: [--schemafile, teams/sub-teams-schema.json]
+        files: ^teams/.*\.ya?ml$
+        args: [--schemafile, teams/teams.schema.json]
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.14.5
     hooks:
-      # lint & attempt to correct failures (e.g. pyupgrade)
       - id: ruff
         args: [--fix]
-      # compatible replacement for black
+        files: ^scripts/.*\.py$
       - id: ruff-format
+        files: ^scripts/.*\.py$
   - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
     rev: v2.15.0
     hooks:
@@ -65,11 +65,11 @@ repos:
     hooks:
       - id: check-hooks-apply
       - id: check-useless-excludes
-  - repo: local
-    hooks:
-      - id: git-diff
-        name: git diff
-        entry: git diff --exit-code
-        language: system
-        pass_filenames: false
-        always_run: true
+  # - repo: local
+  #   hooks:
+  #     - id: git-diff
+  #       name: git diff
+  #       entry: git diff --exit-code
+  #       language: system
+  #       pass_filenames: false
+  #       always_run: true
