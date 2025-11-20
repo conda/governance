@@ -4,7 +4,7 @@ python = ">=3.12.4,<3.13"
 requests = ">=2.32.3,<2.33"
 "ruamel.yaml" = ">=0.18,<0.19"
 
-[project]
+[workspace]
 authors = ["conda steering council <steering@conda.org>"]
 channels = ["conda-forge"]
 name = "governance"
