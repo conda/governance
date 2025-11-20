@@ -1,0 +1,62 @@
+name: New Sub-team/Project Team
+description: Use this template to request a new sub-team or project team.
+title: Requesting New Sub-team/Project Team
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Basic Information
+        > [!NOTE]
+        > To learn more about the different types of teams and their charters, please see [Teams & Roles in Conda Governance](https://github.com/conda/governance#teams--roles).
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type of Team
+      description: Select the type of team you are requesting.
+      options:
+        - Sub-team (Dynamic Charter)
+        - Sub-team (Static Charter)
+        - Project Team
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Team Name
+      description: Provide the name of the new sub-team or project team.
+    validations:
+      required: true
+  - type: input
+    id: handle
+    attributes:
+      label: Team Handle
+      description: Provide the handle of the new sub-team or project team.
+    validations:
+      required: true
+  - type: textarea
+    id: members
+    attributes:
+      label: Members
+      description: List the GitHub usernames of the members who should be part of this team.
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Charter and Responsibilities
+  - type: textarea
+    id: charter
+    attributes:
+      label: Charter
+      description: Provide the charter for the new sub-team or project team.
+  - type: textarea
+    id: responsibilities
+    attributes:
+      label: Responsibilities
+      description: Outline the responsibilities and work areas of the new sub-team or project team.
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: Define the scope of the new sub-team or project team.
