@@ -15,7 +15,14 @@ from ruamel.yaml import YAML
 HERE = Path(__file__).parent
 ROOT = HERE.parent
 yaml = YAML(typ="safe")
-GH_TOKEN = os.environ.get("GITHUB_TOKEN", "")
+
+
+def token(org):
+    if org == "conda":
+        return os.environ.get("CONDA_ORG_WIDE_TOKEN", "")
+    if org == "conda-incubator":
+        return os.environ.get("CONDA_INCUBATOR_ORG_TOKEN", "")
+    return os.environ.get("GITHUB_TOKEN")
 
 
 def team_members(org: str, name: str) -> list[str]:
@@ -23,7 +30,7 @@ def team_members(org: str, name: str) -> list[str]:
 
     # Headers for authentication and proper API versioning
     headers = {
-        "Authorization": f"Bearer {GH_TOKEN}",
+        "Authorization": f"Bearer {token(org)}",
         "Accept": "application/vnd.github.v3+json",
         "X-GitHub-Api-Version": "2022-11-28",
     }
@@ -38,7 +45,7 @@ def teams_in_org(org):
 
     # Headers for authentication and proper API versioning
     headers = {
-        "Authorization": f"Bearer {GH_TOKEN}",
+        "Authorization": f"Bearer {token(org)}",
         "Accept": "application/vnd.github.v3+json",
         "X-GitHub-Api-Version": "2022-11-28",
     }
