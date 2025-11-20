@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=teams.schema.json
-name:
+name: code-of-conduct
 description: The Code of Conduct Committee
 charter: dynamic
 requirements:

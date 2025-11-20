@@ -48,26 +48,12 @@
   "description": "Model for defining Conda Sub-Teams based on the governance structure.",
   "properties": {
     "name": {
-      "anyOf": [
-        {
-          "type": "string"
-        },
-        {
-          "type": "null"
-        }
-      ],
-      "title": "Name"
+      "title": "Name",
+      "type": "string"
     },
     "description": {
-      "anyOf": [
-        {
-          "type": "string"
-        },
-        {
-          "type": "null"
-        }
-      ],
-      "title": "Description"
+      "title": "Description",
+      "type": "string"
     },
     "charter": {
       "enum": [
@@ -90,14 +76,7 @@
       "title": "Requirements"
     },
     "scopes": {
-      "anyOf": [
-        {
-          "$ref": "#/$defs/Scopes"
-        },
-        {
-          "type": "null"
-        }
-      ]
+      "$ref": "#/$defs/Scopes"
     },
     "links": {
       "items": {
