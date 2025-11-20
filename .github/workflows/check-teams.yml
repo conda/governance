@@ -8,6 +8,7 @@ on:
       - teams/*.yaml
       - teams/*.schema.json
       - scripts/schemas.py
+      - .github/workflows/check-teams.yml
 
 jobs:
   check:
