@@ -101,7 +101,8 @@ def access_to_repos(org, team):
     return [
         repo["full_name"]
         for repo in r.json()
-        if repo["permissions"]["admin"] or repo["permissions"]["push"]
+        if (repo["permissions"]["admin"] or repo["permissions"]["push"])
+        and "-ghsa-" not in repo["name"]
     ]
 
 

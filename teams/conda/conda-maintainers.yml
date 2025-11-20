@@ -8,7 +8,6 @@ scopes:
     - conda/conda
     - conda/conda-libmamba-solver
     - conda/conda-classic-solver
-    - conda/conda-ghsa-3f43-h8hv-p2jv
   other:
 links:
 members:
