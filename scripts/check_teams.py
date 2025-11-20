@@ -17,6 +17,32 @@ ROOT = HERE.parent
 yaml = YAML(typ="safe")
 
 
+def report_diff(**entries: list[str]):
+    if len(entries) != 2:
+        raise ValueError("Must only pass two keyword arguments")
+    names = list(entries.keys())
+    values = list(entries.values())
+    print(
+        f"Contents in {names[0]} do not match {names[1]}:",
+        file=sys.stderr,
+    )
+    values0 = sorted(values[0], key=str.lower)
+    values1 = sorted(values[1], key=str.lower)
+    print(f"{names[0]}:", values0, file=sys.stderr)
+    print(f"{names[1]}:", values1, file=sys.stderr)
+    print(
+        "Diff:",
+        *unified_diff(
+            values0,
+            values1,
+            fromfile=names[0],
+            tofile=names[1],
+        ),
+        sep="\n",
+    )
+    print("----", file=sys.stderr)
+
+
 def token(org):
     return os.environ.get("GITHUB_TOKEN")
     if org == "conda":
@@ -79,6 +105,7 @@ teams_in_github = [*teams_in_org("conda"), *teams_in_org("conda-incubator")]
 seen_teams = []
 
 for path in chain(ROOT.glob("teams/*.yml"), ROOT.glob("teams/*.yaml")):
+    print("Checking", path.name, file=sys.stderr)
     with open(path) as f:
         team = yaml.load(path)
     name_components = team["name"].split("/")
@@ -92,6 +119,7 @@ for path in chain(ROOT.glob("teams/*.yml"), ROOT.glob("teams/*.yaml")):
             f"Name {team['name']} must be '<team_name>' or '<org>/<team_name>'",
             file=sys.stderr,
         )
+        exit_code = 1
     try:
         members = team_members(org, name)
     except Exception as exc:
@@ -103,59 +131,19 @@ for path in chain(ROOT.glob("teams/*.yml"), ROOT.glob("teams/*.yaml")):
     if set(members) != set(team["members"]):
         members_in_file = sorted(team["members"], key=str.lower)
         members_in_gh = sorted(members, key=str.lower)
-        print(
-            f"Members in '{path.name}' are not in sync with team '@{org}/{name}':",
-            file=sys.stderr,
-        )
-        print("File:", members_in_file, file=sys.stderr)
-        print("Github:", members_in_gh, file=sys.stderr)
-        print(
-            "Diff:",
-            *unified_diff(
-                members_in_file, members_in_gh, fromfile=path.name, tofile="Github"
-            ),
-            sep="\n",
-        )
-        print("----", file=sys.stderr)
+        report_diff(file=members_in_file, github=members_in_gh)
         exit_code = 1
     repos_in_file = sorted(team["scopes"]["codeowners"] or [], key=str.lower)
     repos_in_gh = sorted(access_to_repos(org, name), key=str.lower)
     if set(repos_in_file) != set(repos_in_gh):
-        print(
-            f"Repos in '{path.name}' are not in sync with Github permissions for team '@{org}/{name}':",
-            file=sys.stderr,
-        )
-        print("File:", repos_in_file, file=sys.stderr)
-        print("Github:", repos_in_gh, file=sys.stderr)
-        print(
-            "Diff:",
-            *unified_diff(
-                repos_in_file, repos_in_gh, fromfile=path.name, tofile="Github"
-            ),
-            sep="\n",
-        )
-        print("----", file=sys.stderr)
+        report_diff(file=repos_in_file, github=repos_in_gh)
         exit_code = 1
 
 
 if set(seen_teams) != set(teams_in_github):
     teams_in_repo = sorted(seen_teams, key=str.lower)
     teams_in_gh = sorted(teams_in_github, key=str.lower)
-    print("Teams in repo do not match Github teams:", file=sys.stderr)
-    print("Repo:", teams_in_repo, file=sys.stderr)
-    print("Github:", teams_in_gh, file=sys.stderr)
-    print(
-        "Diff:",
-        *unified_diff(
-            teams_in_repo,
-            teams_in_gh,
-            fromfile="Repo",
-            tofile="Github",
-        ),
-        sep="\n",
-    )
-
-    print("----", file=sys.stderr)
+    report_diff(repo=teams_in_repo, github=teams_in_gh)
     exit_code = 1
 
 sys.exit(exit_code)
