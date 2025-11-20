@@ -11,7 +11,7 @@ class Scopes(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     codeowners: list[str] | None = ...
-    """The GitHub projects this team owns"""
+    """The GitHub projects this team owns or has write access to."""
 
     other: list[HttpUrl] | None = ...
     """Other responsibilities of this team"""
