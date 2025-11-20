@@ -2,6 +2,7 @@
 Checks whether the members defined in the teams/*.yaml files correspond to their Github definitions.
 It also makes sure that all teams in conda and conda-incubator are collected here.
 """
+
 import os
 import sys
 from itertools import chain
@@ -100,7 +101,12 @@ if set(seen_teams) != set(teams_in_github):
     print("Github:", teams_in_gh, file=sys.stderr)
     print(
         "Diff:",
-        *unified_diff(teams_in_repo, teams_in_gh, fromfile="Repo", tofile="Github",),
+        *unified_diff(
+            teams_in_repo,
+            teams_in_gh,
+            fromfile="Repo",
+            tofile="Github",
+        ),
         sep="\n",
     )
 
