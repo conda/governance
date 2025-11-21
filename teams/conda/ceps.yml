@@ -1,10 +1,11 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda/ceps
-description:
+description: Editorial team for CEPs
 charter:
 requirements:
 scopes:
-  codeowners: []
+  codeowners:
+    - conda/ceps
   other:
 links:
 members:

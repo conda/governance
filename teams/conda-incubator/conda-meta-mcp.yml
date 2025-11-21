@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/conda-meta-mcp
-description:
+description: Maintainers of `conda-meta-mcp`
 charter:
 requirements:
 scopes:

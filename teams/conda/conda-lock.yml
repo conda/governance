@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda/conda-lock
-description:
+description: Maintainers of conda-lock
 charter:
 requirements:
 scopes:

@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda/quansight
-description:
+description: Contributors working for Quansight
 charter:
 requirements:
 scopes:

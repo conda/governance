@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/conda-libmamba-solver
-description:
+description: Maintainers of `conda-libmamba-solver`
 charter:
 requirements:
 scopes:

@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/installer
-description:
+description: Maintainers of the `installer` Github Action
 charter:
 requirements:
 scopes:

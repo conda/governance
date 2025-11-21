@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda/packaging-tools
-description:
+description: Maintainers of conda-package-handling and related projects
 charter:
 requirements:
 scopes:

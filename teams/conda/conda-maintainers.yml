@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda/conda-maintainers
-description:
+description: Maintainers of `conda` and related core plugins
 charter:
 requirements:
 scopes:

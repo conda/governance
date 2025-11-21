@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/builds-tools
-description:
+description: Deprecated.
 charter:
 requirements:
 scopes:

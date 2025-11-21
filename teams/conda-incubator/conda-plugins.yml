@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/conda-plugins
-description:
+description: Maintainers of `conda-plugins`
 charter:
 requirements:
 scopes:

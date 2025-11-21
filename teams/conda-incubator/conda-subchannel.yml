@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/conda-subchannel
-description:
+description: Maintainers of `conda-subchannel`
 charter:
 requirements:
 scopes:

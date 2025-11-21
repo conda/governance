@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/hatch-conda-build
-description:
+description: Maintainers of the `hatch-conda-build` plugin
 charter:
 requirements:
 scopes:

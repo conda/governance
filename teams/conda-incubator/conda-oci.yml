@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/conda-oci
-description:
+description: Maintainers of `conda-oci`
 charter:
 requirements:
 scopes:

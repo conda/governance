@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda/conda-index
-description:
+description: Maintainers of conda-index
 charter:
 requirements:
 scopes:

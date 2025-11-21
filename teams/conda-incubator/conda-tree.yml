@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/conda-tree
-description:
+description: Maintainers of `conda-tree`
 charter:
 requirements:
 scopes:

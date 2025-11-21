@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/pre-commit
-description:
+description: Maintainers of pre-commit repositories
 charter:
 requirements:
 scopes:

@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/conda-dot-org
-description:
+description: Maintainers of the conda.org website
 charter:
 requirements:
 scopes:

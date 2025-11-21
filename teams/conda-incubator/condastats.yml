@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/condastats
-description:
+description: Maintainers of `condastats`
 charter:
 requirements:
 scopes:

@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/docs
-description:
+description: Maintainers of common documentation infrastructure
 charter:
 requirements:
 scopes:

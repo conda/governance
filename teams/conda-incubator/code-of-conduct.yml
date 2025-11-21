@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/code-of-conduct
-description:
+description: Code of conduct commitee
 charter:
 requirements:
 scopes:

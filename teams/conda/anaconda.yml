@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda/anaconda
-description:
+description: People working at Anaconda.
 charter:
 requirements:
 scopes:
