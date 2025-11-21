@@ -11,7 +11,7 @@ class Scopes(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     codeowners: list[str] | None = ...
-    """The GitHub projects this team owns"""
+    """The GitHub projects this team owns or has write access to."""
 
     other: list[HttpUrl] | None = ...
     """Other responsibilities of this team"""
@@ -27,7 +27,7 @@ class CondaSubTeam(BaseModel):
     name: str = ...
     """The team name in GitHub"""
 
-    description: str = ...
+    description: str = Field(..., min_length=1, max_length=128)
     """The team description in GitHub"""
 
     charter: Literal["dynamic", "static", "project"] = ...
@@ -41,7 +41,7 @@ class CondaSubTeam(BaseModel):
     """Special requirements for team membership"""
 
     scopes: Scopes = ...
-    """Team responsibilities"""
+    """Team responsibilities and owned resources"""
 
     links: list[HttpUrl] = ...
     """Important links, e.g. the issue/PR proposing the team creation"""

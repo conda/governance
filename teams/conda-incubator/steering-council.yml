@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/steering-council
+description:
+charter:
+requirements:
+scopes:
+  codeowners: []
+  other:
+links:
+members:
+  jezdez:
+  msarahan:
+  xhochy:
+  mariusvniekerk:
+  minrk:
+  teoliphant:
+  scopatz:
+  dharhas:
+  wolfv:
+  ocefpaf:
+  sodre:
+  csoja:
+  jaimergp:
+  mcg1969:
+  jakirkham:
+  raydouglass:
+  chenghlee:
+  goanpeca:
+  kkraus14:
+  prusse-martin:
+  beckermr:
+  ericdill:
+  CJ-Wright:
+  angloyna:
+  marcelotrevisani:
+  mbargull:
+  awwad:
+  conda-bot:
+  trallard:
+  cjmartian:
+  Hind-M:
+emeritus:

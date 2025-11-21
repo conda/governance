@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda/conda-maintainers
+description: Maintainers of `conda` and related core plugins
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda/conda
+    - conda/conda-libmamba-solver
+    - conda/conda-classic-solver
+  other:
+links:
+members:
+  jezdez:
+  dholth:
+  ryanskeith:
+  travishathaway:
+  soapy1:
+  jjhelmus:
+  jaimergp:
+  chenghlee:
+  kenodegard:
+  george-lorch:
+  danyeaw:
+  mbargull:
+  beeankha:
+  ForgottenProgramme:
+emeritus:

@@ -52,6 +52,8 @@
       "type": "string"
     },
     "description": {
+      "maxLength": 128,
+      "minLength": 1,
       "title": "Description",
       "type": "string"
     },

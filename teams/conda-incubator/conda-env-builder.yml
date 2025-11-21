@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/conda-env-builder
+description: Maintainers of `conda-env-builder`
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda-incubator/conda-env-builder
+  other:
+links:
+members:
+  jezdez:
+  nh13:
+emeritus:

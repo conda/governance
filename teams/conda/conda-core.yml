@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda/conda-core
+description:
+charter:
+requirements:
+scopes:
+  codeowners:
+    - conda/menuinst
+    - conda/pycosat
+    - conda/conda-build
+    - conda/conda-docs
+    - conda/constructor
+    - conda/conda_build_test_recipe
+    - conda/conda-verify
+    - conda/cookiecutter-conda-python
+    - conda/conda-pack
+    - conda/conda-benchmarks
+    - conda/conda-prefix-replacement
+    - conda/conda-content-trust
+    - conda/schemas
+    - conda/infrastructure
+    - conda/actions
+    - conda/conda-plugin-template
+    - conda/.github
+  other:
+links:
+members:
+  jezdez:
+  dholth:
+  travishathaway:
+  chenghlee:
+  kenodegard:
+  pseudoyim:
+  marcoesters:
+  beeankha:
+  ForgottenProgramme:
+emeritus:
