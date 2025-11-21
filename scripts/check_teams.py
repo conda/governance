@@ -18,20 +18,22 @@ yaml = YAML()
 yaml.indent(mapping=2, sequence=4, offset=2)
 
 
-def report_diff(**entries: list[str]):
+def eprint(*args, **kwargs):
+    kwargs.setdefault("file", sys.stderr)
+    print(*args, **kwargs)
+
+
+def report_diff(field: str, **entries: list[str]):
     if len(entries) != 2:
-        raise ValueError("Must only pass two keyword arguments")
+        raise ValueError("Must pass exactly two keyword arguments")
     names = list(entries.keys())
     values = list(entries.values())
-    print(
-        f"Contents in {names[0]} do not match {names[1]}:",
-        file=sys.stderr,
-    )
+    eprint(f"Contents for {field} in {names[0]} do not match {names[1]}:")
     values0 = sorted(values[0], key=str.lower)
     values1 = sorted(values[1], key=str.lower)
-    print(f"{names[0]}:", values0, file=sys.stderr)
-    print(f"{names[1]}:", values1, file=sys.stderr)
-    print(
+    eprint(f"{names[0]}:", values0)
+    eprint(f"{names[1]}:", values1)
+    eprint(
         "Diff:",
         *unified_diff(
             values0,
@@ -41,66 +43,54 @@ def report_diff(**entries: list[str]):
         ),
         sep="\n",
     )
-    print("----", file=sys.stderr)
+    eprint("----")
 
 
-def token(org: str) -> str:
+def gh(org, apipath):
+    api_url = f"https://api.github.com/{apipath}"
+
     if org == "conda":
-        return os.environ.get("CONDA_ORG_WIDE_TOKEN") or os.environ.get(
-            "GITHUB_TOKEN", ""
-        )
+        token = os.environ.get("CONDA_ORG_WIDE_TOKEN")
     if org == "conda-incubator":
-        return os.environ.get("CONDA_INCUBATOR_ORG_WIDE_TOKEN") or os.environ.get(
-            "GITHUB_TOKEN", ""
-        )
-    return os.environ.get("GITHUB_TOKEN", "")
+        token = os.environ.get("CONDA_INCUBATOR_ORG_WIDE_TOKEN")
+    token = token or os.environ.get("GITHUB_TOKEN") or ""
+
+    # Headers for authentication and proper API versioning
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/vnd.github.v3+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+    }
+
+    r = requests.get(api_url, headers=headers, params={"per_page": 100})
+    r.raise_for_status()
+    return r.json()
+
+
+def team_details(org: str, team: str) -> list[str]:
+    return gh(org, f"orgs/{org}/teams/{team}")
 
 
 def team_members(org: str, team: str) -> list[str]:
-    api_url = f"https://api.github.com/orgs/{org}/teams/{team}/members"
-
-    # Headers for authentication and proper API versioning
-    headers = {
-        "Authorization": f"Bearer {token(org)}",
-        "Accept": "application/vnd.github.v3+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-    }
-
-    r = requests.get(api_url, headers=headers, params={"per_page": 100})
-    r.raise_for_status()
-    return [member["login"] for member in r.json()]
+    result = gh(org, f"orgs/{org}/teams/{team}/members")
+    return [member["login"] for member in result]
 
 
 def teams_in_org(org):
-    api_url = f"https://api.github.com/orgs/{org}/teams"
+    result = gh(org, f"orgs/{org}/teams")
+    return [f"{org}/{team['slug']}" for team in result]
 
-    # Headers for authentication and proper API versioning
-    headers = {
-        "Authorization": f"Bearer {token(org)}",
-        "Accept": "application/vnd.github.v3+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-    }
 
-    r = requests.get(api_url, headers=headers, params={"per_page": 100})
-    r.raise_for_status()
-    return [f"{org}/{team['slug']}" for team in r.json()]
+def repos_in_org(org):
+    result = gh(org, f"orgs/{org}/repos")
+    return [repo["full_name"] for repo in result]
 
 
 def access_to_repos(org, team):
-    api_url = f"https://api.github.com/orgs/{org}/teams/{team}/repos"
-
-    # Headers for authentication and proper API versioning
-    headers = {
-        "Authorization": f"Bearer {token(org)}",
-        "Accept": "application/vnd.github.v3+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-    }
-
-    r = requests.get(api_url, headers=headers, params={"per_page": 100})
-    r.raise_for_status()
+    result = gh(org, f"orgs/{org}/teams/{team}/repos")
     return [
         repo["full_name"]
-        for repo in r.json()
+        for repo in result
         if (repo["permissions"]["admin"] or repo["permissions"]["push"])
         and "-ghsa-" not in repo["name"]
     ]
@@ -116,9 +106,11 @@ def check_teams() -> int:
     seen_teams = []
 
     for path in all_yamls():
-        print("Checking", path.relative_to(ROOT), file=sys.stderr)
+        eprint("Checking", path.relative_to(ROOT))
         with open(path) as f:
             team = yaml.load(f)
+
+        # 0. Validate team name
         name_components = team["name"].split("/")
         if len(name_components) == 2:
             org, name = name_components
@@ -126,35 +118,62 @@ def check_teams() -> int:
             org = "conda"
             name = name_components[0]
         else:
-            print(
-                f"Name {team['name']} must be '<team_name>' or '<org>/<team_name>'",
-                file=sys.stderr,
+            eprint(f"Name {team['name']} must be '<team_name>' or '<org>/<team_name>'")
+            exit_code = 1
+            continue
+        if org not in ("conda", "conda-incubator"):
+            eprint("Team must belong to the `conda` or `conda-incubator` orgs.")
+            exit_code = 1
+            continue
+
+        details = team_details(org, name)
+
+        # 1. Validate descriptions
+        if team["description"] != details["description"]:
+            report_diff(
+                "descriptions",
+                file=[team["description"]],
+                github=[details["description"]],
             )
             exit_code = 1
+
+        # 2. Validate team members
         try:
             members = team_members(org, name)
         except Exception as exc:
-            print(type(exc).__name__, "-", exc, file=sys.stderr)
-            print("----", file=sys.stderr)
+            eprint(type(exc).__name__, "-", exc)
+            eprint("----")
             exit_code = 1
             continue
         seen_teams.append(f"{org}/{name}")
         if set(members) != set(team["members"]):
             members_in_file = sorted(team["members"], key=str.lower)
             members_in_gh = sorted(members, key=str.lower)
-            report_diff(file=members_in_file, github=members_in_gh)
+            report_diff("members", file=members_in_file, github=members_in_gh)
             exit_code = 1
+
+        # 3. Validate access to repositories
         repos_in_file = sorted(team["scopes"]["codeowners"] or [], key=str.lower)
         repos_in_gh = sorted(access_to_repos(org, name), key=str.lower)
         if set(repos_in_file) != set(repos_in_gh):
-            report_diff(file=repos_in_file, github=repos_in_gh)
+            report_diff("repositories", file=repos_in_file, github=repos_in_gh)
             exit_code = 1
 
+    # 4. Check all teams are described
     if set(seen_teams) != set(teams_in_github):
         teams_in_repo = sorted(seen_teams, key=str.lower)
         teams_in_gh = sorted(teams_in_github, key=str.lower)
-        report_diff(repo=teams_in_repo, github=teams_in_gh)
+        report_diff("teams", repo=teams_in_repo, github=teams_in_gh)
         exit_code = 1
+
+    # 5. Check no individuals are granted access directly (everything must be a team)
+    for repo in chain(repos_in_org("conda"), repos_in_org("conda-incubator")):
+        access = repo_access(*repo.split("/"))
+        if access["usernames"]:
+            eprint(f"Some users have direct access to `{repo}`:", access["usernames"])
+            eprint("Repository access must be granted through teams only!")
+            exit_code = 1
+
     return exit_code
 
 
@@ -169,9 +188,10 @@ def generate():
         if team in team_to_fn:
             continue
         org, team_name = team.split("/")
+        details = team_details(org, team_name)
         data = {
             "name": team,
-            "description": None,
+            "description": details["description"],
             "charter": None,
             "requirements": None,
             "scopes": {"codeowners": access_to_repos(*team.split("/")), "other": None},

@@ -27,7 +27,7 @@ class CondaSubTeam(BaseModel):
     name: str = ...
     """The team name in GitHub"""
 
-    description: str = ...
+    description: str = Field(..., min_length=1, max_length=128)
     """The team description in GitHub"""
 
     charter: Literal["dynamic", "static", "project"] = ...
@@ -41,7 +41,7 @@ class CondaSubTeam(BaseModel):
     """Special requirements for team membership"""
 
     scopes: Scopes = ...
-    """Team responsibilities"""
+    """Team responsibilities and owned resources"""
 
     links: list[HttpUrl] = ...
     """Important links, e.g. the issue/PR proposing the team creation"""
