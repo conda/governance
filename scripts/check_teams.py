@@ -27,7 +27,7 @@ def report_diff(field: str, **entries: list[str]):
     if len(entries) != 2:
         raise ValueError("Must pass exactly two keyword arguments")
     names = list(entries.keys())
-    values = list(entries.values())
+    values = list([value or "" for value in entries.values()])
     eprint(f"Contents for {field} in {names[0]} do not match {names[1]}:")
     values0 = sorted(values[0], key=str.lower)
     values1 = sorted(values[1], key=str.lower)
