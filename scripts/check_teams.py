@@ -27,10 +27,10 @@ def report_diff(field: str, **entries: list[str]):
     if len(entries) != 2:
         raise ValueError("Must pass exactly two keyword arguments")
     names = list(entries.keys())
-    values = list([value or "" for value in entries.values()])
+    values = list(entries.values())
     eprint(f"Contents for {field} in {names[0]} do not match {names[1]}:")
-    values0 = sorted(values[0], key=str.lower)
-    values1 = sorted(values[1], key=str.lower)
+    values0 = sorted([str(val) for val in values[0]], key=str.lower)
+    values1 = sorted([str(val) for val in values[1]], key=str.lower)
     eprint(f"{names[0]}:", values0)
     eprint(f"{names[1]}:", values1)
     eprint(
@@ -51,8 +51,10 @@ def gh(org, apipath):
 
     if org == "conda":
         token = os.environ.get("CONDA_ORG_WIDE_TOKEN")
-    if org == "conda-incubator":
+    elif org == "conda-incubator":
         token = os.environ.get("CONDA_INCUBATOR_ORG_WIDE_TOKEN")
+    else:
+        token = None
     token = token or os.environ.get("GITHUB_TOKEN") or ""
 
     # Headers for authentication and proper API versioning
@@ -94,6 +96,10 @@ def access_to_repos(org, team):
         if (repo["permissions"]["admin"] or repo["permissions"]["push"])
         and "-ghsa-" not in repo["name"]
     ]
+
+def collaborators(org, repo):
+    result = gh(org, f"repos/{org}/{repo}/collaborators?affiliation=direct")
+    return {user["login"]: user["role_name"] for user in result}
 
 
 def all_yamls() -> list[Path]:
@@ -166,13 +172,21 @@ def check_teams() -> int:
         report_diff("teams", repo=teams_in_repo, github=teams_in_gh)
         exit_code = 1
 
-    # # 5. Check no individuals are granted access directly (everything must be a team)
-    # for repo in chain(repos_in_org("conda"), repos_in_org("conda-incubator")):
-    #     access = repo_access(*repo.split("/"))
-    #     if access["usernames"]:
-    #         eprint(f"Some users have direct access to `{repo}`:", access["usernames"])
-    #         eprint("Repository access must be granted through teams only!")
-    #         exit_code = 1
+    # 5. Check no individuals are granted access directly (everything must be a team)
+    repos_with_direct_access = {}
+    for repo in chain(repos_in_org("conda"), repos_in_org("conda-incubator")):
+        if "-ghsa-" in repo:
+            continue 
+        if users := collaborators(*repo.split("/")):
+            repos_with_direct_access[repo] = users
+    if repos_with_direct_access:
+        eprint("Some users have direct access to repositories.")
+        eprint("Repository access must be granted through teams only!")
+        for repo, users in repos_with_direct_access.items():
+            print(f"- {repo}:")
+            for user, level in sorted(users.items()):
+                print(f"  - {user}: {level}")
+        exit_code = 1
 
     return exit_code
 
