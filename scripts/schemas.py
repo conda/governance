@@ -1,5 +1,11 @@
 from typing import Literal
-from pydantic import BaseModel, HttpUrl, ConfigDict, Field
+from pydantic import (
+    BaseModel,
+    ConfigDict,
+    Field,
+    EmailStr,
+    HttpUrl,
+)
 
 
 class Scopes(BaseModel):
@@ -15,6 +21,25 @@ class Scopes(BaseModel):
 
     other: list[HttpUrl] | None = ...
     """Other responsibilities of this team"""
+
+
+class MemberDetails(BaseModel):
+    """
+    Defines the contact details of a team member.
+    """
+
+    model_config = ConfigDict(extra="forbid")
+
+    full_name: str | None = ...
+    """Full name of the member."""
+    email: EmailStr | None = ...
+    """Email address of the member."""
+    funder: str | None = ...
+    """Employer or sponsor for the time allocated to the project."""
+    pronouns: str | None = ...
+    """Pronouns of the member."""
+    decision: HttpUrl | list[HttpUrl] | None = ...
+    """URL pointing to the record of the membership decision"""
 
 
 class CondaSubTeam(BaseModel):
@@ -46,11 +71,17 @@ class CondaSubTeam(BaseModel):
     links: list[HttpUrl] = ...
     """Important links, e.g. the issue/PR proposing the team creation"""
 
-    members: dict[str, HttpUrl | None] = Field(..., min_length=1)
-    """Maps username to a record of the decision adding them to the team"""
+    members: dict[str, MemberDetails | HttpUrl | None] = ...
+    """
+    Maps username to its details or, in its simplified form, a URL pointing
+    to the record of the decision adding them to the team.
+    """
 
-    emeritus: dict[str, HttpUrl | None] | None = Field(..., min_length=1)
-    """Maps username to a record of the decision removing them from the team"""
+    emeritus: dict[str, MemberDetails | list[HttpUrl] | HttpUrl | None] | None = ...
+    """
+    Maps username to its details or, in its simplified form, a URL pointing
+    to the record of the decision removing them from the team.
+    """
 
 
 if __name__ == "__main__":

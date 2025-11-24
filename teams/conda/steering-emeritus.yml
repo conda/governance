@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda/steering-emeritus
-description: Emeritus members of the conda steering council.
+description: Former members of the steering council
 charter: static
 requirements:
 scopes:
@@ -10,20 +10,120 @@ scopes:
     - conda/ceps
     - conda/cla
   other:
-links:
+links: []
 members:
-  minrk:
-  dharhas:
-  sodre:
-  jjhelmus:
-  csoja:
-  mcg1969:
   raydouglass:
-  goanpeca:
-  prusse-martin:
-  beckermr:
-  ericdill:
+    full_name: Ray Douglass
+    email: ray@raydouglass.com
+    funder:
+    pronouns:
+    decision:
+  sodre:
+    full_name: Patrick Sodré
+    email: psodre@gmail.com
+    funder:
+    pronouns:
+    decision:
+  minrk:
+    full_name: Min Ragan-Kelley
+    email: benjaminrk@gmail.com
+    funder:
+    pronouns:
+    decision:
+  scopatz:
+    full_name: Anthony Scopatz
+    email: scopatz@gmail.com
+    funder:
+    pronouns:
+    decision:
   angloyna:
-  awwad:
+    full_name: Angela Gloyna
+    email: angela.gloyna@gmail.com
+    funder:
+    pronouns:
+    decision:
+  jjhelmus:
+    full_name: Jonathan Helmus
+    email: jjhelmus@gmail.com
+    funder:
+    pronouns:
+    decision:
+  prusse-martin:
+    full_name: Martin Prüsse
+    email: prusse.martin@gmail.com
+    funder:
+    pronouns:
+    decision:
+  myancy-anaconda:
+    full_name: Megan Yancy
+    email: Megan.C.Yancy@gmail.com
+    funder:
+    pronouns:
+    decision:
+  teoliphant:
+    full_name: Travis Oliphant
+    email: teoliphant@gmail.com
+    funder:
+    pronouns:
+    decision:
+  dharhas:
+    full_name: Dharhas Pothina
+    email: dharhas@gmail.com
+    funder:
+    pronouns:
+    decision:
   cjmartian:
+    full_name: Connor Martin
+    email: connormartin7@gmail.com
+    funder:
+    pronouns:
+    decision:
+  mcg1969:
+    full_name: Michael Grant
+    email: mgrant@anaconda.com
+    funder:
+    pronouns:
+    decision:
+  csoja:
+    full_name: Crystal Soja
+    email: csoja@anaconda.com
+    funder:
+    pronouns:
+    decision:
+  awwad:
+    full_name: Sebastien Awwad
+    email: sebastien.awwad@gmail.com
+    funder:
+    pronouns:
+    decision:
+  ericdill:
+    full_name: Eric Dill
+    email: ericdill@pm.me
+    funder:
+    pronouns:
+    decision:
+  goanpeca:
+    full_name: Gonzalo Peña-Castellanos
+    email: goanpeca@gmail.com
+    funder: Quansight
+    pronouns: he/him
+    decision:
+  kkraus14:
+    full_name: Keith Kraus
+    email: keith.j.kraus@gmail.com
+    funder:
+    pronouns: he/him
+    decision:
+  beckermr:
+    full_name: Matthew R. Becker
+    email: becker.mr@gmail.com
+    funder:
+    pronouns: he/him
+    decision:
+  trallard:
+    full_name: Tania Allard
+    email: taniar.allard@gmail.com
+    funder: Quansight
+    pronouns: she/her
+    decision:
 emeritus:

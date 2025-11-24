@@ -1,5 +1,88 @@
 {
   "$defs": {
+    "MemberDetails": {
+      "additionalProperties": false,
+      "description": "Defines the contact details of a team member.",
+      "properties": {
+        "full_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Full Name"
+        },
+        "email": {
+          "anyOf": [
+            {
+              "format": "email",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Email"
+        },
+        "funder": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Funder"
+        },
+        "pronouns": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Pronouns"
+        },
+        "decision": {
+          "anyOf": [
+            {
+              "format": "uri",
+              "maxLength": 2083,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "items": {
+                "format": "uri",
+                "maxLength": 2083,
+                "minLength": 1,
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Decision"
+        }
+      },
+      "required": [
+        "full_name",
+        "email",
+        "funder",
+        "pronouns",
+        "decision"
+      ],
+      "title": "MemberDetails",
+      "type": "object"
+    },
     "Scopes": {
       "additionalProperties": false,
       "description": "Defines the responsibilities of a Conda sub-team.\nThis structure is nested within the main CondaSubTeam model.",
@@ -94,6 +177,9 @@
       "additionalProperties": {
         "anyOf": [
           {
+            "$ref": "#/$defs/MemberDetails"
+          },
+          {
             "format": "uri",
             "maxLength": 2083,
             "minLength": 1,
@@ -104,7 +190,6 @@
           }
         ]
       },
-      "minProperties": 1,
       "title": "Members",
       "type": "object"
     },
@@ -113,6 +198,18 @@
         {
           "additionalProperties": {
             "anyOf": [
+              {
+                "$ref": "#/$defs/MemberDetails"
+              },
+              {
+                "items": {
+                  "format": "uri",
+                  "maxLength": 2083,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "type": "array"
+              },
               {
                 "format": "uri",
                 "maxLength": 2083,
@@ -124,7 +221,6 @@
               }
             ]
           },
-          "minProperties": 1,
           "type": "object"
         },
         {
