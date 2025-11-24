@@ -12,21 +12,21 @@ scopes:
 links:
   - https://github.com/conda/governance/issues/106
 members:
-  gabalafou: https://github.com/conda/governance/issues/106
   dharhas: https://github.com/conda/governance/issues/106
-  soapy1:
+  gabalafou: https://github.com/conda/governance/issues/106
   jaimergp: https://github.com/conda/governance/issues/106
-  peytondmurray:
   kcpevey: https://github.com/conda/governance/issues/106
-  trallard: https://github.com/conda/governance/issues/106
   pavithraes: https://github.com/conda/governance/issues/106
+  peytondmurray:
   smeragoel: https://github.com/conda/governance/issues/106
+  soapy1:
+  trallard: https://github.com/conda/governance/issues/106
   viniciusdc: https://github.com/conda-incubator/conda-store/issues/1115
 emeritus:
-  pierrotsmnrd:
-  costrouc:
   aktech:
   anirrudh:
-  iameskild:
-  steff456:
   asmeurer:
+  costrouc:
+  iameskild:
+  pierrotsmnrd:
+  steff456:

@@ -1,3 +1,8 @@
+# /// script
+# dependencies = [
+#   "pydantic>=2,<3",
+# ]
+
 from typing import Literal
 from pydantic import (
     BaseModel,

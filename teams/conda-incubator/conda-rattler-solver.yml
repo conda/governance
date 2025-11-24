@@ -10,6 +10,6 @@ scopes:
 links:
   - https://github.com/conda/governance/issues/246
 members:
-  jezdez: https://github.com/conda-incubator/conda-rattler-solver/issues/18
   jaimergp: https://github.com/conda/governance/issues/246
+  jezdez: https://github.com/conda-incubator/conda-rattler-solver/issues/18
 emeritus:

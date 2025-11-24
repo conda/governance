@@ -11,8 +11,8 @@ links:
   - https://github.com/conda/conda-build/issues/4472
   - https://github.com/conda/conda-index/issues/59
 members:
-  jezdez: https://github.com/conda/conda-build/issues/4472
-  dholth: https://github.com/conda/conda-build/issues/4472
-  jjhelmus:
   chenghlee: https://github.com/conda/conda-build/issues/4472
+  dholth: https://github.com/conda/conda-build/issues/4472
+  jezdez: https://github.com/conda/conda-build/issues/4472
+  jjhelmus:
 emeritus:

@@ -9,6 +9,11 @@ CONDA_INCUBATOR_ORG_WIDE_TOKEN), with permissions:
 - Organization, metadata (read-only)
 """
 
+# /// script
+# dependencies = [
+#   "requests",
+#   "ruamel.yaml",
+# ]
 import os
 import sys
 from itertools import chain

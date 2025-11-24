@@ -12,8 +12,8 @@ scopes:
 links:
   - https://github.com/conda/governance/issues/225
 members:
-  soapy1: https://github.com/conda/governance/issues/225
   jaimergp: https://github.com/conda/governance/issues/225
   peytondmurray: https://github.com/conda/governance/issues/225
+  soapy1: https://github.com/conda/governance/issues/225
   trallard: https://github.com/conda/governance/issues/225
 emeritus:

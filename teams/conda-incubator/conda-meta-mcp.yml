@@ -10,6 +10,6 @@ scopes:
 links:
   - https://github.com/conda/governance/issues/277
 members:
-  jezdez: https://github.com/conda/governance/issues/277
   dbast: https://github.com/conda/governance/issues/277
+  jezdez: https://github.com/conda/governance/issues/277
 emeritus:

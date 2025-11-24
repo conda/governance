@@ -10,13 +10,13 @@ scopes:
 links:
   - https://github.com/conda/governance/issues/142
 members:
-  jezdez: https://github.com/conda/governance/issues/142
-  ryanskeith: https://github.com/conda-incubator/conda-pypi/issues/75
-  travishathaway: https://github.com/conda-incubator/conda-pypi/issues/51
-  jjhelmus: https://github.com/conda-incubator/conda-pypi/issues/46
-  jaimergp: https://github.com/conda/governance/issues/142
-  kenodegard:
   danyeaw: https://github.com/conda-incubator/conda-pypi/issues/52
   ForgottenProgramme: https://github.com/conda-incubator/conda-pypi/issues/161
+  jaimergp: https://github.com/conda/governance/issues/142
+  jezdez: https://github.com/conda/governance/issues/142
+  jjhelmus: https://github.com/conda-incubator/conda-pypi/issues/46
+  kenodegard:
+  ryanskeith: https://github.com/conda-incubator/conda-pypi/issues/75
   soapy1: https://github.com/conda-incubator/conda-pypi/issues/167
+  travishathaway: https://github.com/conda-incubator/conda-pypi/issues/51
 emeritus:

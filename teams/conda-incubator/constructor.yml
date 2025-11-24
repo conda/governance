@@ -9,15 +9,15 @@ scopes:
 links:
   - https://github.com/conda/governance/issues/53
 members:
-  jezdez:
-  hmaarrfk:
   bkreider:
-  hoechenberger:
-  larsoner:
-  jaimergp:
-  mcg1969:
   chenghlee:
   goanpeca:
+  hmaarrfk:
+  hoechenberger:
   isuruf:
+  jaimergp:
+  jezdez:
+  larsoner:
+  mcg1969:
   pseudoyim:
 emeritus:

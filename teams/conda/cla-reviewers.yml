@@ -2,7 +2,8 @@
 name: conda/cla-reviewers
 description: The team reviewing incoming CLA documents
 charter: static
-requirements: All team members must only consist of steering council members for compliance reasons.
+requirements: All team members must only consist of steering council members for
+  compliance reasons.
 scopes:
   codeowners:
     - conda/cla

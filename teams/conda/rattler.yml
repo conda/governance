@@ -11,9 +11,9 @@ links:
   - https://github.com/conda/governance/issues/145
   - https://github.com/conda/rattler/issues/799
 members:
-  wolfv: https://github.com/conda/governance/issues/145
   baszalmstra: https://github.com/conda/governance/issues/145
-  ruben-arts: https://github.com/conda/governance/issues/145
-  nichmor: https://github.com/conda/governance/issues/145
   Hofer-Julian:
+  nichmor: https://github.com/conda/governance/issues/145
+  ruben-arts: https://github.com/conda/governance/issues/145
+  wolfv: https://github.com/conda/governance/issues/145
 emeritus:

@@ -12,18 +12,18 @@ scopes:
 links:
   - https://github.com/conda/conda/issues/13526
 members:
-  jezdez: https://github.com/conda/conda/issues/13526
-  dholth: https://github.com/conda/conda/issues/13526
-  ryanskeith:
-  travishathaway: https://github.com/conda/conda/issues/13526
-  soapy1: https://github.com/conda/governance/issues/258
-  jjhelmus: https://github.com/conda/governance/issues/219
-  jaimergp: https://github.com/conda/conda/issues/13526
-  chenghlee: https://github.com/conda/conda/issues/13526
-  kenodegard: https://github.com/conda/conda/issues/13526
-  george-lorch: https://github.com/conda/governance/issues/216
-  danyeaw: https://github.com/conda/governance/issues/265
-  mbargull: https://github.com/conda/conda/issues/13526
   beeankha: https://github.com/conda/conda/issues/13526
+  chenghlee: https://github.com/conda/conda/issues/13526
+  danyeaw: https://github.com/conda/governance/issues/265
+  dholth: https://github.com/conda/conda/issues/13526
   ForgottenProgramme: https://github.com/conda/conda/issues/13526
+  george-lorch: https://github.com/conda/governance/issues/216
+  jaimergp: https://github.com/conda/conda/issues/13526
+  jezdez: https://github.com/conda/conda/issues/13526
+  jjhelmus: https://github.com/conda/governance/issues/219
+  kenodegard: https://github.com/conda/conda/issues/13526
+  mbargull: https://github.com/conda/conda/issues/13526
+  ryanskeith:
+  soapy1: https://github.com/conda/governance/issues/258
+  travishathaway: https://github.com/conda/conda/issues/13526
 emeritus:

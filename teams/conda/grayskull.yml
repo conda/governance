@@ -10,8 +10,8 @@ scopes:
 links:
   - https://github.com/conda/grayskull/issues/436
 members:
-  jezdez:
-  ocefpaf:
-  marcelotrevisani:
   ForgottenProgramme:
+  jezdez:
+  marcelotrevisani:
+  ocefpaf:
 emeritus:
