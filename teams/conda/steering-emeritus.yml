@@ -18,112 +18,158 @@ members:
     funder:
     pronouns:
     decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/32
   sodre:
     full_name: Patrick Sodré
     email: psodre@gmail.com
     funder:
     pronouns:
     decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/33
   minrk:
     full_name: Min Ragan-Kelley
     email: benjaminrk@gmail.com
     funder:
     pronouns:
     decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/34
   scopatz:
     full_name: Anthony Scopatz
     email: scopatz@gmail.com
     funder:
     pronouns:
     decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/36
   angloyna:
     full_name: Angela Gloyna
     email: angela.gloyna@gmail.com
     funder:
     pronouns:
     decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/36
   jjhelmus:
     full_name: Jonathan Helmus
     email: jjhelmus@gmail.com
     funder:
     pronouns:
     decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/36
   prusse-martin:
     full_name: Martin Prüsse
     email: prusse.martin@gmail.com
     funder:
     pronouns:
     decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/36
   myancy-anaconda:
     full_name: Megan Yancy
     email: Megan.C.Yancy@gmail.com
     funder:
     pronouns:
-    decision:
+    decision: https://github.com/conda/governance/pull/39
   teoliphant:
     full_name: Travis Oliphant
     email: teoliphant@gmail.com
     funder:
     pronouns:
     decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/6
+      - https://github.com/conda/governance/pull/64
   dharhas:
     full_name: Dharhas Pothina
     email: dharhas@gmail.com
     funder:
     pronouns:
     decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/2
+      - https://github.com/conda/governance/pull/64
   cjmartian:
     full_name: Connor Martin
     email: connormartin7@gmail.com
     funder:
     pronouns:
     decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/3
+      - https://github.com/conda/governance/pull/65
   mcg1969:
     full_name: Michael Grant
     email: mgrant@anaconda.com
     funder:
     pronouns:
     decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/7
+      - https://github.com/conda/governance/pull/65
   csoja:
     full_name: Crystal Soja
     email: csoja@anaconda.com
     funder:
     pronouns:
     decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/16
+      - https://github.com/conda/governance/pull/65
   awwad:
     full_name: Sebastien Awwad
     email: sebastien.awwad@gmail.com
     funder:
     pronouns:
     decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/17
+      - https://github.com/conda/governance/pull/65
   ericdill:
     full_name: Eric Dill
     email: ericdill@pm.me
     funder:
     pronouns:
     decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/83
   goanpeca:
     full_name: Gonzalo Peña-Castellanos
     email: goanpeca@gmail.com
     funder: Quansight
     pronouns: he/him
     decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/163
   kkraus14:
     full_name: Keith Kraus
     email: keith.j.kraus@gmail.com
     funder:
     pronouns: he/him
     decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/59
+      - https://github.com/conda/governance/pull/74
+      - https://github.com/conda/governance/pull/205
   beckermr:
     full_name: Matthew R. Becker
     email: becker.mr@gmail.com
     funder:
     pronouns: he/him
     decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/28
+      - https://github.com/conda/governance/pull/169
+      - https://github.com/conda/governance/pull/252
   trallard:
     full_name: Tania Allard
     email: taniar.allard@gmail.com
     funder: Quansight
     pronouns: she/her
     decision:
+      - https://github.com/conda/governance/pull/172
+      - https://github.com/conda/governance/pull/310
 emeritus:

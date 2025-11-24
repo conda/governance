@@ -90,5 +90,5 @@ if __name__ == "__main__":
 
     schema = CondaSubTeam.model_json_schema()
     (Path(__file__).parents[1] / "teams" / "teams.schema.json").write_text(
-        json.dumps(schema, indent=2)
+        json.dumps(schema, indent=2) + "\n"
     )
