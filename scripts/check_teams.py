@@ -1,6 +1,12 @@
 """
 Checks whether the members defined in the teams/*.yaml files correspond to their Github definitions.
 It also makes sure that all teams in conda and conda-incubator are collected here.
+
+We need one fine-grained token per organization (CONDA_ORG_WIDE_TOKEN,
+CONDA_INCUBATOR_ORG_WIDE_TOKEN), with permissions:
+
+- All repositories, metadata (read-only)
+- Organization, metadata (read-only)
 """
 
 import os
