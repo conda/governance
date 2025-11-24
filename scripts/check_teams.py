@@ -97,6 +97,7 @@ def access_to_repos(org, team):
         and "-ghsa-" not in repo["name"]
     ]
 
+
 def collaborators(org, repo):
     result = gh(org, f"repos/{org}/{repo}/collaborators?affiliation=direct")
     return {user["login"]: user["role_name"] for user in result}
@@ -176,7 +177,7 @@ def check_teams() -> int:
     repos_with_direct_access = {}
     for repo in chain(repos_in_org("conda"), repos_in_org("conda-incubator")):
         if "-ghsa-" in repo:
-            continue 
+            continue
         if users := collaborators(*repo.split("/")):
             repos_with_direct_access[repo] = users
     if repos_with_direct_access:
