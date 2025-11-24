@@ -10,9 +10,9 @@ scopes:
     - https://conda.discourse.group/
     - https://www.linkedin.com/company/condacommunity
     - https://fosstodon.org/@conda
-    - https://matrix.to/#/#conda-communications:matrix.org # public
+    - https://conda.zulipchat.com/#narrow/channel/471276-communications
     - https://x.com/condaproject
-    - https://bsky.app/profile/condaproject.bsky.social
+    - https://bsky.app/profile/conda.org
 links:
   - https://github.com/conda/governance/issues/53
 members:

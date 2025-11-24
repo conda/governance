@@ -1,14 +1,15 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/conda-rich
 description: Maintainers of `conda-rich`
-charter:
+charter: dynamic
 requirements:
 scopes:
   codeowners:
     - conda-incubator/conda-rich
   other:
 links:
+  - https://github.com/conda/governance/issues/191
 members:
-  jezdez:
-  travishathaway:
+  jezdez: https://github.com/conda/governance/issues/191
+  travishathaway: https://github.com/conda/governance/issues/191
 emeritus:

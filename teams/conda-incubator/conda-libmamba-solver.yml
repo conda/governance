@@ -7,6 +7,7 @@ scopes:
   codeowners: []
   other:
 links:
+  - https://github.com/conda/conda/issues/15166
 members:
   jezdez:
   wolfv:

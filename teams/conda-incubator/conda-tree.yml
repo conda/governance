@@ -1,13 +1,14 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/conda-tree
 description: Maintainers of `conda-tree`
-charter:
+charter: project
 requirements:
 scopes:
   codeowners:
     - conda-incubator/conda-tree
   other:
 links:
+  - https://github.com/conda-incubator/conda-tree/issues/20
 members:
-  rvalieris:
+  rvalieris: https://github.com/conda-incubator/conda-tree/issues/20
 emeritus:

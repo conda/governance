@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda/conda-maintainers-project-management
 description: Support team for @conda/conda-maintainers, with triage permissions only
-charter:
+charter: dynamic
 requirements:
 scopes:
   codeowners: []

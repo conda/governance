@@ -1,17 +1,18 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/conda-self
 description: Maintainers of `conda-self`
-charter:
+charter: dynamic
 requirements:
 scopes:
   codeowners:
     - conda-incubator/conda-self
   other:
 links:
+  - https://github.com/conda/governance/issues/264
 members:
   jezdez:
   soapy1:
-  jaimergp:
-  danyeaw:
+  jaimergp: https://github.com/conda/governance/issues/264
+  danyeaw: https://github.com/conda-incubator/conda-self/issues/39
   ForgottenProgramme:
 emeritus:

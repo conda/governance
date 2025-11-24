@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda/steering-emeritus
-description:
-charter:
+description: Emeritus members of the conda steering council.
+charter: static
 requirements:
 scopes:
   codeowners:

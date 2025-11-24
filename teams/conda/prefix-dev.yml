@@ -1,17 +1,18 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda/prefix-dev
 description: Contributors working for Prefix.dev
-charter:
-requirements:
+charter: dynamic
+requirements: Being employed by Prefix.dev
 scopes:
   codeowners: []
   other:
 links:
+  - https://github.com/conda/governance/issues/226
 members:
-  tdejager:
-  wolfv:
-  baszalmstra:
-  ruben-arts:
-  nichmor:
-  Hofer-Julian:
+  tdejager: https://github.com/conda/governance/issues/225
+  wolfv: https://github.com/conda/governance/issues/225
+  baszalmstra: https://github.com/conda/governance/issues/225
+  ruben-arts: https://github.com/conda/governance/issues/225
+  nichmor: https://github.com/conda/governance/issues/225
+  Hofer-Julian: https://github.com/conda/governance/issues/225
 emeritus:

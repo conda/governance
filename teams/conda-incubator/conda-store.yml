@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/conda-store
 description: Maintainers of `conda-store` and related projects
-charter:
+charter: dynamic
 requirements:
 scopes:
   codeowners:
@@ -10,14 +10,22 @@ scopes:
     - conda-incubator/jupyterlab-conda-store
   other:
 links:
+  - https://github.com/conda/governance/issues/106
 members:
-  gabalafou:
-  dharhas:
+  gabalafou: https://github.com/conda/governance/issues/106
+  dharhas: https://github.com/conda/governance/issues/106
   soapy1:
-  jaimergp:
+  jaimergp: https://github.com/conda/governance/issues/106
   peytondmurray:
-  kcpevey:
-  trallard:
-  pavithraes:
-  smeragoel:
+  kcpevey: https://github.com/conda/governance/issues/106
+  trallard: https://github.com/conda/governance/issues/106
+  pavithraes: https://github.com/conda/governance/issues/106
+  smeragoel: https://github.com/conda/governance/issues/106
 emeritus:
+  pierrotsmnrd:
+  costrouc:
+  aktech:
+  anirrudh:
+  iameskild:
+  steff456:
+  asmeurer:

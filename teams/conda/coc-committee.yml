@@ -7,12 +7,13 @@ scopes:
   codeowners:
   other:
     - https://github.com/conda-conduct
-    - https://matrix.to/#/!jLRCFFbpabFtdYvfeO:matrix.org  # private
+    - https://conda.zulipchat.com/#narrow/channel/469892-code-of-conduct  # private
 links:
   - https://github.com/conda/governance/issues/46
   - https://github.com/conda/governance/pull/49
   - https://github.com/conda/governance/pull/121
   - https://github.com/conda/governance/pull/158
+  - https://github.com/conda/infrastructure/issues/974
 members:
   beeankha: https://github.com/conda/governance/pull/49
   csoja: https://github.com/conda/governance/issues/46

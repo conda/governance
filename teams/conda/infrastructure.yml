@@ -11,7 +11,8 @@ scopes:
     - conda/issue-tracker
   other:
     - https://github.com/conda-bot
-    - https://matrix.to/#/!tpEQSUGYWHNdgpDFNc:matrix.org # private
+    - https://conda.zulipchat.com/#narrow/channel/487124-infrastructure
+    - https://conda.zulipchat.com/#narrow/channel/471360-infrastructure-private # private
 links:
   - https://github.com/conda/governance/issues/84
 members:

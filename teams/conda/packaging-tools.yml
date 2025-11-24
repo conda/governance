@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda/packaging-tools
 description: Maintainers of conda-package-handling and related projects
-charter:
+charter: project
 requirements:
 scopes:
   codeowners:
@@ -9,12 +9,13 @@ scopes:
     - conda/conda-package-streaming
   other:
 links:
+  - https://github.com/conda/infrastructure/issues/1007
 members:
-  jezdez:
-  dholth:
-  travishathaway:
-  chenghlee:
-  kenodegard:
-  marcelotrevisani:
-  marcoesters:
+  jezdez: https://github.com/conda/infrastructure/issues/1007
+  dholth: https://github.com/conda/infrastructure/issues/1007
+  travishathaway: https://github.com/conda/infrastructure/issues/1007
+  chenghlee: https://github.com/conda/infrastructure/issues/1007
+  kenodegard: https://github.com/conda/infrastructure/issues/1007
+  marcelotrevisani: https://github.com/conda/infrastructure/issues/1007
+  marcoesters: https://github.com/conda/infrastructure/issues/1007
 emeritus:

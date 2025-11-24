@@ -1,14 +1,15 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/conda-protect
 description: Maintainers of `conda-protect`
-charter:
+charter: dynamic
 requirements:
 scopes:
   codeowners:
     - conda-incubator/conda-protect
   other:
 links:
+  - https://github.com/conda/governance/issues/138
 members:
-  jezdez:
-  travishathaway:
+  jezdez: https://github.com/conda/governance/issues/138
+  travishathaway: https://github.com/conda/governance/issues/138
 emeritus:

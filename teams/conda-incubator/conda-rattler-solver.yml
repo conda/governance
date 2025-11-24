@@ -1,14 +1,15 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/conda-rattler-solver
 description: Maintainers of `conda-rattler-solver`
-charter:
+charter: dynamic
 requirements:
 scopes:
   codeowners:
     - conda-incubator/conda-rattler-solver
   other:
 links:
+  - https://github.com/conda/governance/issues/246
 members:
-  jezdez:
-  jaimergp:
+  jezdez: https://github.com/conda-incubator/conda-rattler-solver/issues/18
+  jaimergp: https://github.com/conda/governance/issues/246
 emeritus:

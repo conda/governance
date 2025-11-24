@@ -1,17 +1,19 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda/conda-dot-org
 description: Team responsible for the conda.org website maintenance
-charter:
+charter: dynamic
 requirements:
 scopes:
   codeowners:
     - conda/conda-dot-org
   other:
 links:
+  - https://github.com/conda/governance/issues/76
+  - https://github.com/conda/conda-dot-org/issues/110
 members:
-  jezdez:
-  travishathaway:
-  jaimergp:
-  beeankha:
-  kathatherine:
+  jezdez: https://github.com/conda/conda-dot-org/issues/110
+  travishathaway: https://github.com/conda/conda-dot-org/issues/110
+  jaimergp: https://github.com/conda/conda-dot-org/issues/110
+  beeankha: https://github.com/conda/conda-dot-org/issues/110
+  kathatherine: https://github.com/conda/conda-dot-org/issues/110
 emeritus:

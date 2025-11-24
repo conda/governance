@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda/conda-maintainers
 description: Maintainers of `conda` and related core plugins
-charter:
+charter: project
 requirements:
 scopes:
   codeowners:
@@ -10,19 +10,20 @@ scopes:
     - conda/conda-classic-solver
   other:
 links:
+  - https://github.com/conda/conda/issues/13526
 members:
-  jezdez:
-  dholth:
+  jezdez: https://github.com/conda/conda/issues/13526
+  dholth: https://github.com/conda/conda/issues/13526
   ryanskeith:
-  travishathaway:
-  soapy1:
-  jjhelmus:
-  jaimergp:
-  chenghlee:
-  kenodegard:
-  george-lorch:
-  danyeaw:
-  mbargull:
-  beeankha:
-  ForgottenProgramme:
+  travishathaway: https://github.com/conda/conda/issues/13526
+  soapy1: https://github.com/conda/governance/issues/258
+  jjhelmus: https://github.com/conda/governance/issues/219
+  jaimergp: https://github.com/conda/conda/issues/13526
+  chenghlee: https://github.com/conda/conda/issues/13526
+  kenodegard: https://github.com/conda/conda/issues/13526
+  george-lorch: https://github.com/conda/governance/issues/216
+  danyeaw: https://github.com/conda/governance/issues/265
+  mbargull: https://github.com/conda/conda/issues/13526
+  beeankha: https://github.com/conda/conda/issues/13526
+  ForgottenProgramme: https://github.com/conda/conda/issues/13526
 emeritus:

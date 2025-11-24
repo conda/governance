@@ -1,16 +1,18 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda/conda-index
 description: Maintainers of conda-index
-charter:
+charter: project
 requirements:
 scopes:
   codeowners:
     - conda/conda-index
   other:
 links:
+  - https://github.com/conda/conda-build/issues/4472
+  - https://github.com/conda/conda-index/issues/59
 members:
-  jezdez:
-  dholth:
+  jezdez: https://github.com/conda/conda-build/issues/4472
+  dholth: https://github.com/conda/conda-build/issues/4472
   jjhelmus:
-  chenghlee:
+  chenghlee: https://github.com/conda/conda-build/issues/4472
 emeritus:

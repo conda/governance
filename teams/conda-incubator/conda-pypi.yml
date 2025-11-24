@@ -1,21 +1,22 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/conda-pypi
-description:
-charter:
+description: Maintainers of `conda-pypi`
+charter: dynamic
 requirements:
 scopes:
   codeowners:
     - conda-incubator/conda-pypi
   other:
 links:
+  - https://github.com/conda/governance/issues/142
 members:
-  jezdez:
-  ryanskeith:
-  travishathaway:
-  jjhelmus:
-  jaimergp:
+  jezdez: https://github.com/conda/governance/issues/142
+  ryanskeith: https://github.com/conda-incubator/conda-pypi/issues/75
+  travishathaway: https://github.com/conda-incubator/conda-pypi/issues/51
+  jjhelmus: https://github.com/conda-incubator/conda-pypi/issues/46
+  jaimergp: https://github.com/conda/governance/issues/142
   kenodegard:
-  danyeaw:
-  ForgottenProgramme:
+  danyeaw: https://github.com/conda-incubator/conda-pypi/issues/52
+  ForgottenProgramme: https://github.com/conda-incubator/conda-pypi/issues/161
   soapy1: https://github.com/conda-incubator/conda-pypi/issues/167
 emeritus:

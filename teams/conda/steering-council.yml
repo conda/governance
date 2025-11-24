@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda/steering-council
 description:
-charter:
+charter: static
 requirements:
 scopes:
   codeowners:

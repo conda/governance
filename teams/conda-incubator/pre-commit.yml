@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../teams.schema.json
 name: conda-incubator/pre-commit
-description: Maintainers of pre-commit repositories
-charter:
+description: Maintainers of conda-based pre-commit hooks
+charter: dynamic
 requirements:
 scopes:
   codeowners:
@@ -38,6 +38,7 @@ scopes:
     - conda-incubator/pre-commit-mirrors-taplo
   other:
 links:
+  - https://github.com/conda/governance/issues/255
 members:
   xhochy:
   ytausch:
