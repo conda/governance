@@ -4,10 +4,14 @@ on:
   workflow_dispatch:
   pull_request:
     paths:
+      - teams/**/*.yml
       - teams/*.yml
+      - teams/**/*.yaml
       - teams/*.yaml
       - teams/*.schema.json
+      - scripts/check_teams.py
       - scripts/schemas.py
+      - scripts/sort_team_yaml.py
       - .github/workflows/check-teams.yml
 
 jobs:
