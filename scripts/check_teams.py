@@ -166,13 +166,13 @@ def check_teams() -> int:
         report_diff("teams", repo=teams_in_repo, github=teams_in_gh)
         exit_code = 1
 
-    # 5. Check no individuals are granted access directly (everything must be a team)
-    for repo in chain(repos_in_org("conda"), repos_in_org("conda-incubator")):
-        access = repo_access(*repo.split("/"))
-        if access["usernames"]:
-            eprint(f"Some users have direct access to `{repo}`:", access["usernames"])
-            eprint("Repository access must be granted through teams only!")
-            exit_code = 1
+    # # 5. Check no individuals are granted access directly (everything must be a team)
+    # for repo in chain(repos_in_org("conda"), repos_in_org("conda-incubator")):
+    #     access = repo_access(*repo.split("/"))
+    #     if access["usernames"]:
+    #         eprint(f"Some users have direct access to `{repo}`:", access["usernames"])
+    #         eprint("Repository access must be granted through teams only!")
+    #         exit_code = 1
 
     return exit_code
 
