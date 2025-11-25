@@ -57,6 +57,7 @@ repos:
     rev: v2.4.1
     hooks:
       - id: codespell
+        exclude: ^teams/.*/.*\.ya?ml$
         exclude_types:
           - csv
         args: [--write-changes]
@@ -67,6 +68,12 @@ repos:
       - id: check-useless-excludes
   - repo: local
     hooks:
+      - id: sort-team-yaml
+        name: Check ordering in teams/**/*.yml
+        language: python
+        entry: python scripts/sort_team_yaml.py
+        files: ^teams/.*/.*\.ya?ml$
+        additional_dependencies: [ruamel.yaml, email-validator, pydantic]
       - id: git-diff
         name: git diff
         entry: git diff --exit-code

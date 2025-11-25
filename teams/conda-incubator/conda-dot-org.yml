@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/conda-dot-org
+description: Maintainers of the conda.org website
+charter:
+requirements:
+scopes:
+  codeowners: []
+  other:
+links:
+members:
+  ang852:
+  asmitbm:
+  barabo:
+  beeankha:
+  chenghlee:
+  eakbulut:
+  goanpeca:
+  jaimergp:
+  jakirkham:
+  JeremiahSifuentes:
+  jezdez:
+  kathatherine:
+  kenodegard:
+  Pinak-Datta:
+  tnabtaf:
+  travishathaway:
+emeritus:

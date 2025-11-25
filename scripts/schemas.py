@@ -1,5 +1,16 @@
+# /// script
+# dependencies = [
+#   "pydantic>=2,<3",
+# ]
+
 from typing import Literal
-from pydantic import BaseModel, HttpUrl, ConfigDict, Field
+from pydantic import (
+    BaseModel,
+    ConfigDict,
+    Field,
+    EmailStr,
+    HttpUrl,
+)
 
 
 class Scopes(BaseModel):
@@ -11,10 +22,29 @@ class Scopes(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     codeowners: list[str] | None = ...
-    """The GitHub projects this team owns"""
+    """The GitHub projects this team owns or has write access to."""
 
     other: list[HttpUrl] | None = ...
     """Other responsibilities of this team"""
+
+
+class MemberDetails(BaseModel):
+    """
+    Defines the contact details of a team member.
+    """
+
+    model_config = ConfigDict(extra="forbid")
+
+    full_name: str | None = ...
+    """Full name of the member."""
+    email: EmailStr | None = ...
+    """Email address of the member."""
+    funder: str | None = ...
+    """Employer or sponsor for the time allocated to the project."""
+    pronouns: str | None = ...
+    """Pronouns of the member."""
+    decision: HttpUrl | list[HttpUrl] | None = ...
+    """URL pointing to the record of the membership decision"""
 
 
 class CondaSubTeam(BaseModel):
@@ -27,7 +57,7 @@ class CondaSubTeam(BaseModel):
     name: str = ...
     """The team name in GitHub"""
 
-    description: str = ...
+    description: str = Field(..., min_length=1, max_length=128)
     """The team description in GitHub"""
 
     charter: Literal["dynamic", "static", "project"] = ...
@@ -41,16 +71,22 @@ class CondaSubTeam(BaseModel):
     """Special requirements for team membership"""
 
     scopes: Scopes = ...
-    """Team responsibilities"""
+    """Team responsibilities and owned resources"""
 
     links: list[HttpUrl] = ...
     """Important links, e.g. the issue/PR proposing the team creation"""
 
-    members: dict[str, HttpUrl | None] = Field(..., min_length=1)
-    """Maps username to a record of the decision adding them to the team"""
+    members: dict[str, MemberDetails | HttpUrl | None] = ...
+    """
+    Maps username to its details or, in its simplified form, a URL pointing
+    to the record of the decision adding them to the team.
+    """
 
-    emeritus: dict[str, HttpUrl | None] | None = Field(..., min_length=1)
-    """Maps username to a record of the decision removing them from the team"""
+    emeritus: dict[str, MemberDetails | list[HttpUrl] | HttpUrl | None] | None = ...
+    """
+    Maps username to its details or, in its simplified form, a URL pointing
+    to the record of the decision removing them from the team.
+    """
 
 
 if __name__ == "__main__":
@@ -59,5 +95,5 @@ if __name__ == "__main__":
 
     schema = CondaSubTeam.model_json_schema()
     (Path(__file__).parents[1] / "teams" / "teams.schema.json").write_text(
-        json.dumps(schema, indent=2)
+        json.dumps(schema, indent=2) + "\n"
     )

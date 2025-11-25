@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda-incubator/builds-tools
+description: Deprecated.
+charter:
+requirements:
+scopes:
+  codeowners: []
+  other:
+links:
+  - https://github.com/conda/governance/issues/128
+members:
+  beckermr:
+  beeankha:
+  chenghlee:
+  dbast:
+  dholth:
+  isuruf:
+  jaimergp:
+  jakirkham:
+  jezdez:
+  kenodegard:
+  marcelotrevisani:
+  mbargull:
+  msarahan:
+  ryanskeith:
+  schuylermartin45:
+  travishathaway:
+  wolfv:
+emeritus:

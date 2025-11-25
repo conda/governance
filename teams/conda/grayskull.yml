@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda/grayskull
+description: Maintainers of `grayskull`
+charter: project
+requirements:
+scopes:
+  codeowners:
+    - conda/grayskull
+  other:
+links:
+  - https://github.com/conda/grayskull/issues/436
+members:
+  ForgottenProgramme:
+  jezdez:
+  marcelotrevisani:
+  ocefpaf:
+emeritus:

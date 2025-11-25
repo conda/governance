@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=../teams.schema.json
+name: conda/distribution-contractors
+description:
+charter:
+requirements:
+scopes:
+  codeowners: []
+  other:
+links:
+members:
+  M-Waszkiewicz-Anaconda:
+  skupr-anaconda:
+  yshmatov-anaconda:
+emeritus:
