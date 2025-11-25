@@ -34,14 +34,22 @@ def eprint(*args, **kwargs):
     print(*args, **kwargs)
 
 
-def report_diff(field: str, **entries: list[str]):
+def report_diff(field: str, **entries: str | list[str]):
     if len(entries) != 2:
         raise ValueError("Must pass exactly two keyword arguments")
     names = list(entries.keys())
     values = list(entries.values())
     eprint(f"Contents for {field} in {names[0]} do not match {names[1]}:")
-    values0 = sorted([str(val) for val in values[0]], key=str.lower)
-    values1 = sorted([str(val) for val in values[1]], key=str.lower)
+    values0 = (
+        [str(val) for val in values[0]]
+        if isinstance(values[0], (list, tuple))
+        else [values[0] or ""]
+    )
+    values1 = (
+        [str(val) for val in values[1]]
+        if isinstance(values[1], (list, tuple))
+        else [values[1] or ""]
+    )
     eprint(f"{names[0]}:", values0)
     eprint(f"{names[1]}:", values1)
     eprint(
@@ -150,8 +158,8 @@ def check_teams() -> int:
         if team["description"] != details["description"]:
             report_diff(
                 "descriptions",
-                file=[team["description"]],
-                github=[details["description"]],
+                file=team["description"],
+                github=details["description"],
             )
             exit_code = 1
 
