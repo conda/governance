@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda/grayskull
+name: grayskull
 description: Maintainers of `grayskull`
 charter: project
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda/grayskull
+  repos:
     - conda/grayskull
   other:
 links:

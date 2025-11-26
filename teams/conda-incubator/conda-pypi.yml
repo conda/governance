@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/conda-pypi
+name: conda-pypi
 description: Maintainers of `conda-pypi`
 charter: dynamic
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda-incubator/conda-pypi
+  repos:
     - conda-incubator/conda-pypi
   other:
 links:

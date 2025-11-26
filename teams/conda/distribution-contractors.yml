@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda/distribution-contractors
+name: distribution-contractors
 description:
 charter:
 requirements:
-scopes:
-  codeowners: []
+resources:
+  teams:
+    - conda/distribution-contractors
+  repos: []
   other:
 links:
 members:

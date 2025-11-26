@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/conda-checkpoints
+name: conda-checkpoints
 description: Maintainers of `conda-checkpoints`
 charter: dynamic
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda-incubator/conda-checkpoints
+  repos:
     - conda-incubator/conda-checkpoints
   other:
 links:

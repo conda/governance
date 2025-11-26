@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/conda-tutorial
+name: conda-tutorial
 description: Maintainers of the `conda-tutorial` repository
 charter:
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda-incubator/conda-tutorial
+  repos:
     - conda-incubator/conda-tutorial
   other:
 links:

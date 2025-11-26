@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/steering-council
+name: steering-council
 description:
 charter:
 requirements:
-scopes:
-  codeowners: []
+resources:
+  teams:
+    - conda-incubator/steering-council
+  repos: []
   other:
 links:
 members:

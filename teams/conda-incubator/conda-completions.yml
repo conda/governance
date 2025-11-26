@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/conda-completions
+name: conda-completions
 description: Maintainers of conda shell completions
 charter:
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda-incubator/conda-completions
+  repos:
     - conda-incubator/conda-zsh-completion
   other:
 links:

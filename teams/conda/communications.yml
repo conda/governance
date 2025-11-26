@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda/communications
+name: communications
 description: Handles communications across the organization
 charter: dynamic
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda/communications
+  repos:
     - conda/communications
   other:
     - https://conda.discourse.group/

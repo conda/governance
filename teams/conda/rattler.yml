@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda/rattler
+name: rattler
 description: Maintainers of `rattler`
 charter: dynamic
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda/rattler
+  repos:
     - conda/rattler
   other:
 links:

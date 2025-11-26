@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/rattler
+name: rattler
 description:
 charter:
 requirements:
-scopes:
-  codeowners: []
+resources:
+  teams:
+    - conda-incubator/rattler
+  repos: []
   other:
 links:
 members:

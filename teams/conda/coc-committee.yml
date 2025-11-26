@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda/coc-committee
+name: coc-committee
 description: The Code of Conduct Committee
 charter: dynamic
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda/coc-committee
+  repos:
   other:
     - https://github.com/conda-conduct
     - https://conda.zulipchat.com/#narrow/channel/469892-code-of-conduct  # private

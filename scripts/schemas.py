@@ -13,7 +13,7 @@ from pydantic import (
 )
 
 
-class Scopes(BaseModel):
+class Resources(BaseModel):
     """
     Defines the responsibilities of a Conda sub-team.
     This structure is nested within the main CondaSubTeam model.
@@ -21,8 +21,10 @@ class Scopes(BaseModel):
 
     model_config = ConfigDict(extra="forbid")
 
-    codeowners: list[str] | None = ...
-    """The GitHub projects this team owns or has write access to."""
+    teams: list[str] | None = ...
+    "The Github team (or teams, across different organizations) representing this team."
+    repos: list[str] | None = ...
+    """The GitHub repositories this team owns or has write access to."""
 
     other: list[HttpUrl] | None = ...
     """Other responsibilities of this team"""
@@ -55,7 +57,7 @@ class CondaSubTeam(BaseModel):
     model_config = ConfigDict(title="Conda Sub-Teams", extra="forbid")
 
     name: str = ...
-    """The team name in GitHub"""
+    """The team name as per the governance"""
 
     description: str = Field(..., min_length=1, max_length=128)
     """The team description in GitHub"""
@@ -70,7 +72,7 @@ class CondaSubTeam(BaseModel):
     requirements: str | None = ...
     """Special requirements for team membership"""
 
-    scopes: Scopes = ...
+    resources: Resources = ...
     """Team responsibilities and owned resources"""
 
     links: list[HttpUrl] = ...

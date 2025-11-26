@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda/quansight
+name: quansight
 description: Contributors working for Quansight
 charter: dynamic
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda/quansight
+  repos:
     - conda/menuinst
     - conda/constructor
     - conda/conda-planning

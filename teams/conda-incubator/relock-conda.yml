@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/relock-conda
+name: relock-conda
 description: Maintainers of `relock-conda`
 charter:
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda-incubator/relock-conda
+  repos:
     - conda-incubator/relock-conda
   other:
 links:

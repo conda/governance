@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/implementation
+name: implementation
 description:
 charter:
 requirements:
-scopes:
-  codeowners: []
+resources:
+  teams:
+    - conda-incubator/implementation
+  repos: []
   other:
 links:
 members:

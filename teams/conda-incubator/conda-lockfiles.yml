@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/conda-lockfiles
+name: conda-lockfiles
 description: Maintainers of `conda-lockfiles`
 charter:
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda-incubator/conda-lockfiles
+  repos:
     - conda-incubator/conda-lockfiles
   other:
 links:

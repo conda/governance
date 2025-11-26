@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/constructor
+name: constructor
 description:
 charter:
 requirements:
-scopes:
-  codeowners: []
+resources:
+  teams:
+    - conda-incubator/constructor
+  repos: []
   other:
 links:
   - https://github.com/conda/governance/issues/53

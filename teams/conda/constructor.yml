@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda/constructor
+name: constructor
 description: The team maintaining constructor and related projects
 charter: project
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda/constructor
+  repos:
     - conda/conda-pack
     - conda/constructor
     - conda/menuinst

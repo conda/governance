@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/pre-commit
+name: pre-commit
 description: Maintainers of conda-based pre-commit hooks
 charter: dynamic
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda-incubator/pre-commit
+  repos:
     - conda-incubator/pre-commit-mirrors-black
     - conda-incubator/pre-commit-mirrors-flake8
     - conda-incubator/pre-commit-mirrors-mypy

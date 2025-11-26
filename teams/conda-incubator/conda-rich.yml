@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/conda-rich
+name: conda-rich
 description: Maintainers of `conda-rich`
 charter: dynamic
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda-incubator/conda-rich
+  repos:
     - conda-incubator/conda-rich
   other:
 links:

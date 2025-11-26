@@ -1,11 +1,13 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/bots
+name: bots
 description: Special team to permission bots and automations across 
   repositories.
 charter:
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda-incubator/bots
+  repos:
     - conda-incubator/conda-lockfiles
   other:
 links:

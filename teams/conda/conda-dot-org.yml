@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda/conda-dot-org
+name: conda-dot-org
 description: Team responsible for the conda.org website maintenance
 charter: dynamic
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda/conda-dot-org
+  repos:
     - conda/conda-dot-org
   other:
 links:

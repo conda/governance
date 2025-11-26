@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/builds-tools
+name: builds-tools
 description: Deprecated.
 charter:
 requirements:
-scopes:
-  codeowners: []
+resources:
+  teams:
+    - conda-incubator/builds-tools
+  repos: []
   other:
 links:
   - https://github.com/conda/governance/issues/128

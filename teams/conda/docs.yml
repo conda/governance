@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda/docs
+name: docs
 description: The team working on all-things docs
 charter: project
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda/docs
+  repos:
     - conda/conda
     - conda/conda-build
     - conda/conda-docs

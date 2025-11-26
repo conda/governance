@@ -1,11 +1,13 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda/builds-tools
+name: builds-tools
 description: Team to work on conda-build and other build tools in the conda 
   ecosystem
 charter: project
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda/builds-tools
+  repos:
     - conda-incubator/conda-recipe-manager
     - conda/conda-build
   other:

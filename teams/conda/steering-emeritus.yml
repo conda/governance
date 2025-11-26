@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda/steering-emeritus
+name: steering-emeritus
 description: Former members of the steering council
 charter: static
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda/steering-emeritus
+  repos:
     - conda/governance
     - conda/assets
     - conda/ceps

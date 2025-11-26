@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/conda-protect
+name: conda-protect
 description: Maintainers of `conda-protect`
 charter: dynamic
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda-incubator/conda-protect
+  repos:
     - conda-incubator/conda-protect
   other:
 links:

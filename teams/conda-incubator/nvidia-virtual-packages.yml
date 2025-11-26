@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/nvidia-virtual-packages
+name: nvidia-virtual-packages
 description: Maintainers of virtual packages related to Nvidia
 charter: dynamic
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda-incubator/nvidia-virtual-packages
+  repos:
     - conda-incubator/nvidia-virtual-packages
   other:
 links:

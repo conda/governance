@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/conda-self
+name: conda-self
 description: Maintainers of `conda-self`
 charter: dynamic
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda-incubator/conda-self
+  repos:
     - conda-incubator/conda-self
   other:
 links:

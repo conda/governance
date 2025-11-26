@@ -31,12 +31,17 @@ for path in sys.argv[1:]:
         # .pop() removes the key/value but RETAINS the comment in 'ca'
         val = data.pop(key, None)
         data.insert(0, key, val)
-    
+
     for key in "members", "emeritus":
         if members := data.get(key):
             for key in sorted(members.keys(), reverse=True, key=str.lower):
                 val = members.pop(key, None)
                 members.insert(0, key, val)
+    data["resources"].setdefault("teams", []).append(data["name"])
+    data["name"] = data["name"].split("/")[-1]
+    for key in reversed(("teams", "repos", "other")):
+        val = data["resources"].pop(key, None)
+        data["resources"].insert(0, key, val)
 
     with open(path, "w") as f:
         yaml.dump(data, f)

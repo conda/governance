@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda/community-contributors
+name: community-contributors
 description:
 charter:
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda/community-contributors
+  repos:
     - conda/conda-build
     - conda/conda-docs
     - conda/conda-pack

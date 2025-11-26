@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda/infrastructure
+name: infrastructure
 description: The team working on conda community infrastructure
 charter: static
 requirements: Any steering council member may join without approval
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda/infrastructure
+  repos:
     - conda/.github
     - conda/actions
     - conda/infrastructure

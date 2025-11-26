@@ -179,7 +179,7 @@ def check_teams() -> int:
             exit_code = 1
 
         # 3. Validate access to repositories
-        repos_in_file = sorted(team["scopes"]["codeowners"] or [], key=str.lower)
+        repos_in_file = sorted(team["resources"]["repos"] or [], key=str.lower)
         repos_in_gh = sorted(access_to_repos(org, name), key=str.lower)
         if set(repos_in_file) != set(repos_in_gh):
             report_diff("repositories", file=repos_in_file, github=repos_in_gh)
@@ -228,7 +228,7 @@ def generate():
             "description": details["description"],
             "charter": None,
             "requirements": None,
-            "scopes": {"codeowners": access_to_repos(*team.split("/")), "other": None},
+            "resources": {"repos": access_to_repos(*team.split("/")), "other": None},
             "links": None,
             "members": {member: None for member in team_members(*team.split("/"))},
             "emeritus": None,

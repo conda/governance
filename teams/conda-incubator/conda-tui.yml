@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/conda-tui
+name: conda-tui
 description: Maintainers of `conda-tui`
 charter: dynamic
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda-incubator/conda-tui
+  repos:
     - conda-incubator/conda-tui
   other:
 links:

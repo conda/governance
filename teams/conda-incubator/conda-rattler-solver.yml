@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/conda-rattler-solver
+name: conda-rattler-solver
 description: Maintainers of `conda-rattler-solver`
 charter: dynamic
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda-incubator/conda-rattler-solver
+  repos:
     - conda-incubator/conda-rattler-solver
   other:
 links:

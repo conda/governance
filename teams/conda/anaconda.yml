@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda/anaconda
+name: anaconda
 description: People working at Anaconda.
 charter: dynamic
 requirements: Members must be employed by Anaconda.
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda/anaconda
+  repos:
     - conda/conda-planning
   other:
 links:

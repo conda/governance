@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/conda-store
+name: conda-store
 description: Maintainers of `conda-store` and related projects
 charter: dynamic
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda-incubator/conda-store
+  repos:
     - conda-incubator/conda-store
     - conda-incubator/conda-store-ui
     - conda-incubator/jupyterlab-conda-store

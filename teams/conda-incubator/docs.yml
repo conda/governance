@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/docs
+name: docs
 description: Maintainers of common documentation infrastructure
 charter:
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda-incubator/docs
+  repos:
     - conda-incubator/conda-sphinx-theme
   other:
 links:

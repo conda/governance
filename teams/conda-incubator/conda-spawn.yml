@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/conda-spawn
+name: conda-spawn
 description: Maintainers of `conda-spawn`
 charter: dynamic
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda-incubator/conda-spawn
+  repos:
     - conda-incubator/conda-spawn
   other:
 links:

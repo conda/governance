@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/conda-mirror
+name: conda-mirror
 description: Maintainers of `conda-mirror`
 charter:
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda-incubator/conda-mirror
+  repos:
     - conda-incubator/conda-mirror
   other:
 links:

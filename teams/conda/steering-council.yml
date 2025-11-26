@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda/steering-council
+name: steering-council
 description: Steering council of the conda ecosystem
 charter: static
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda/steering-council
+  repos:
     - conda/governance
     - conda/assets
     - conda/ceps

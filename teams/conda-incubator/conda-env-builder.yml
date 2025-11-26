@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=../teams.schema.json
-name: conda-incubator/conda-env-builder
+name: conda-env-builder
 description: Maintainers of `conda-env-builder`
 charter:
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda-incubator/conda-env-builder
+  repos:
     - conda-incubator/conda-env-builder
   other:
 links:

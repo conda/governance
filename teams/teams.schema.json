@@ -83,11 +83,11 @@
       "title": "MemberDetails",
       "type": "object"
     },
-    "Scopes": {
+    "Resources": {
       "additionalProperties": false,
       "description": "Defines the responsibilities of a Conda sub-team.\nThis structure is nested within the main CondaSubTeam model.",
       "properties": {
-        "codeowners": {
+        "teams": {
           "anyOf": [
             {
               "items": {
@@ -99,7 +99,21 @@
               "type": "null"
             }
           ],
-          "title": "Codeowners"
+          "title": "Teams"
+        },
+        "repos": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Repos"
         },
         "other": {
           "anyOf": [
@@ -120,10 +134,11 @@
         }
       },
       "required": [
-        "codeowners",
+        "teams",
+        "repos",
         "other"
       ],
-      "title": "Scopes",
+      "title": "Resources",
       "type": "object"
     }
   },
@@ -160,8 +175,8 @@
       ],
       "title": "Requirements"
     },
-    "scopes": {
-      "$ref": "#/$defs/Scopes"
+    "resources": {
+      "$ref": "#/$defs/Resources"
     },
     "links": {
       "items": {
@@ -235,7 +250,7 @@
     "description",
     "charter",
     "requirements",
-    "scopes",
+    "resources",
     "links",
     "members",
     "emeritus"
