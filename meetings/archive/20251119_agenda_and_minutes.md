@@ -11,7 +11,7 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 
 | Name                   | Initials | Affiliation  | GH Username      |
 | ---------------------- | -------- | ------------ | ---------------- |
-|                        |          |              |                  |
+| Bas Zalmstra           | BZ       | Prefix.dev   | baszalmstra      |
 |                        |          |              |                  |
 |                        |          |              |                  |
 |                        |          |              |                  |
