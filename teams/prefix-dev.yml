@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: prefix-dev
+description: Contributors working for Prefix.dev
+charter: dynamic
+requirements: Being employed by Prefix.dev
+resources:
+  teams:
+    - conda/prefix-dev
+  repos: []
+  other:
+links:
+  - https://github.com/conda/governance/issues/226
+members:
+  baszalmstra: https://github.com/conda/governance/issues/225
+  Hofer-Julian: https://github.com/conda/governance/issues/225
+  nichmor: https://github.com/conda/governance/issues/225
+  ruben-arts: https://github.com/conda/governance/issues/225
+  tdejager: https://github.com/conda/governance/issues/225
+  wolfv: https://github.com/conda/governance/issues/225
+emeritus:

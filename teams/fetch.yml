@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: fetch
+description:
+charter:
+requirements:
+resources:
+  teams:
+    - conda-incubator/fetch
+  repos:
+    - conda-incubator/conda-auth
+  other:
+links:
+members:
+  dholth:
+  jezdez:
+  kenodegard:
+  travishathaway:
+emeritus:

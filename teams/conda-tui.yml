@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-tui
+description: Maintainers of `conda-tui`
+charter: dynamic
+requirements:
+resources:
+  teams:
+    - conda-incubator/conda-tui
+  repos:
+    - conda-incubator/conda-tui
+  other:
+links:
+  - https://github.com/conda/governance/issues/108
+members:
+  chenghlee: https://github.com/conda/governance/issues/108
+  mattkram: https://github.com/conda/governance/issues/108
+emeritus:

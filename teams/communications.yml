@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: communications
+description: Handles communications across the organization
+charter: dynamic
+requirements:
+resources:
+  teams:
+    - conda/communications
+  repos:
+    - conda/communications
+  other:
+    - https://conda.discourse.group/
+    - https://www.linkedin.com/company/condacommunity
+    - https://fosstodon.org/@conda
+    - https://conda.zulipchat.com/#narrow/channel/471276-communications
+    - https://x.com/condaproject
+    - https://bsky.app/profile/conda.org
+links:
+  - https://github.com/conda/governance/issues/53
+members:
+  jaimergp: https://github.com/conda/governance/issues/81
+  jezdez: https://github.com/conda/governance/issues/81
+emeritus:
+  tnabtaf: https://github.com/conda/governance/issues/81

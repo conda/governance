@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: community-contributors
+description:
+charter:
+requirements:
+resources:
+  teams:
+    - conda/community-contributors
+  repos:
+    - conda/conda-build
+    - conda/conda-docs
+    - conda/conda-pack
+  other:
+links:
+members:
+  marcelotrevisani:
+  mbargull:
+emeritus:

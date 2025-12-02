@@ -14,6 +14,7 @@ CONDA_INCUBATOR_ORG_WIDE_TOKEN), with permissions:
 #   "requests",
 #   "ruamel.yaml",
 # ]
+
 import os
 import sys
 from itertools import chain
@@ -29,17 +30,22 @@ yaml = YAML()
 yaml.indent(mapping=2, sequence=4, offset=2)
 
 
-def eprint(*args, **kwargs):
+def eprint(*args, indent=0, **kwargs):
     kwargs.setdefault("file", sys.stderr)
-    print(*args, **kwargs)
+    if indent:
+        print(indent * " ", *args, **kwargs)
+    else:
+        print(*args, **kwargs)
 
 
-def report_diff(field: str, **entries: str | list[str]):
+def report_diff(field: str, indent: int = 2, **entries: str | list[str]):
     if len(entries) != 2:
         raise ValueError("Must pass exactly two keyword arguments")
     names = list(entries.keys())
     values = list(entries.values())
-    eprint(f"Contents for {field} in {names[0]} do not match {names[1]}:")
+    eprint(
+        f"! Contents for {field} in {names[0]} do not match {names[1]}:", indent=indent
+    )
     values0 = (
         [str(val) for val in values[0]]
         if isinstance(values[0], (list, tuple))
@@ -50,19 +56,15 @@ def report_diff(field: str, **entries: str | list[str]):
         if isinstance(values[1], (list, tuple))
         else [values[1] or ""]
     )
-    eprint(f"{names[0]}:", values0)
-    eprint(f"{names[1]}:", values1)
-    eprint(
-        "Diff:",
-        *unified_diff(
-            values0,
-            values1,
-            fromfile=names[0],
-            tofile=names[1],
-        ),
-        sep="\n",
-    )
-    eprint("----")
+    eprint(f"{names[0]}:", values0, indent=indent)
+    eprint(f"{names[1]}:", values1, indent=indent)
+    for line in unified_diff(
+        values0,
+        values1,
+        fromfile=names[0],
+        tofile=names[1],
+    ):
+        eprint(line, indent=indent)
 
 
 def gh(org, apipath):
@@ -117,6 +119,11 @@ def access_to_repos(org, team):
     ]
 
 
+def teams_with_access_to_repo(org, repo):
+    result = gh(org, f"repos/{org}/{repo}/teams")
+    return [team["slug"] for team in result]
+
+
 def collaborators(org, repo):
     result = gh(org, f"repos/{org}/{repo}/collaborators?affiliation=direct")
     return {user["login"]: user["role_name"] for user in result}
@@ -130,75 +137,99 @@ def check_teams() -> int:
     exit_code = 0
     teams_in_github = [*teams_in_org("conda"), *teams_in_org("conda-incubator")]
     seen_teams = []
+    seen_repos = []
 
     for path in all_yamls():
-        eprint("Checking", path.relative_to(ROOT))
+        print("Checking", path.relative_to(ROOT), "...")
         with open(path) as f:
             team = yaml.load(f)
 
-        # 0. Validate team name
-        name_components = team["name"].split("/")
-        if len(name_components) == 2:
-            org, name = name_components
-        elif len(name_components) == 1:
-            org = "conda"
-            name = name_components[0]
-        else:
-            eprint(f"Name {team['name']} must be '<team_name>' or '<org>/<team_name>'")
-            exit_code = 1
-            continue
-        if org not in ("conda", "conda-incubator"):
-            eprint("Team must belong to the `conda` or `conda-incubator` orgs.")
-            exit_code = 1
-            continue
+        for team_name in team.get("resources", {}).get("teams", ()):
+            print("  Checking Github team", team_name, "...")
+            # 0. Validate team names
+            org, name = team_name.split("/")
+            if org not in ("conda", "conda-incubator"):
+                eprint(
+                    "Team must belong to the `conda` or `conda-incubator` orgs.",
+                    indent=4,
+                )
+                exit_code = 1
+                continue
 
-        details = team_details(org, name)
+            details = team_details(org, name)
 
-        # 1. Validate descriptions
-        if team["description"] != details["description"]:
-            report_diff(
-                "descriptions",
-                file=team["description"],
-                github=details["description"],
+            # 1. Validate descriptions
+            if team["description"] != details["description"]:
+                report_diff(
+                    "descriptions",
+                    file=team["description"],
+                    github=details["description"],
+                    indent=4,
+                )
+                exit_code = 1
+
+            # 2. Validate team members
+            try:
+                members = team_members(org, name)
+            except Exception as exc:
+                eprint(type(exc).__name__, "-", exc, indent=4)
+                exit_code = 1
+                continue
+            seen_teams.append(f"{org}/{name}")
+            if set(members) != set(team["members"]):
+                members_in_file = sorted(team["members"], key=str.lower)
+                members_in_gh = sorted(members, key=str.lower)
+                report_diff(
+                    "members", file=members_in_file, github=members_in_gh, indent=4
+                )
+                exit_code = 1
+
+            # 3. Validate access to repositories
+            repos_in_file = sorted(
+                [
+                    repo
+                    for repo in team["resources"]["repos"] or []
+                    if repo.startswith(f"{org}/")
+                ],
+                key=str.lower,
             )
-            exit_code = 1
-
-        # 2. Validate team members
-        try:
-            members = team_members(org, name)
-        except Exception as exc:
-            eprint(type(exc).__name__, "-", exc)
-            eprint("----")
-            exit_code = 1
-            continue
-        seen_teams.append(f"{org}/{name}")
-        if set(members) != set(team["members"]):
-            members_in_file = sorted(team["members"], key=str.lower)
-            members_in_gh = sorted(members, key=str.lower)
-            report_diff("members", file=members_in_file, github=members_in_gh)
-            exit_code = 1
-
-        # 3. Validate access to repositories
-        repos_in_file = sorted(team["resources"]["repos"] or [], key=str.lower)
-        repos_in_gh = sorted(access_to_repos(org, name), key=str.lower)
-        if set(repos_in_file) != set(repos_in_gh):
-            report_diff("repositories", file=repos_in_file, github=repos_in_gh)
-            exit_code = 1
+            seen_repos.extend(repos_in_file)
+            repos_in_gh = sorted(access_to_repos(org, name), key=str.lower)
+            if set(repos_in_file) != set(repos_in_gh):
+                report_diff(
+                    "repositories", file=repos_in_file, github=repos_in_gh, indent=4
+                )
+                exit_code = 1
+            print("  ---")
+        print("---")
 
     # 4. Check all teams are described
     if set(seen_teams) != set(teams_in_github):
         teams_in_repo = sorted(seen_teams, key=str.lower)
         teams_in_gh = sorted(teams_in_github, key=str.lower)
-        report_diff("teams", repo=teams_in_repo, github=teams_in_gh)
+        report_diff("teams", yamls=teams_in_repo, github=teams_in_gh, indent=2)
         exit_code = 1
+        print("---")
 
     # 5. Check no individuals are granted access directly (everything must be a team)
     repos_with_direct_access = {}
     for repo in chain(repos_in_org("conda"), repos_in_org("conda-incubator")):
         if "-ghsa-" in repo:
             continue
-        if users := collaborators(*repo.split("/")):
-            repos_with_direct_access[repo] = users
+        if repo not in seen_repos:
+            eprint(f"Repository '{repo}' is not annotated in any local team YAMLs.")
+            eprint(
+                "These teams have access:", teams_with_access_to_repo(*repo.split("/"))
+            )
+            exit_code = 1
+        try:
+            if users := collaborators(*repo.split("/")):
+                repos_with_direct_access[repo] = users
+        except requests.HTTPError as exc:
+            eprint(
+                f"Could not check collaborators for {repo} (HTTPError: {exc}), skipping..."
+            )
+            continue
     if repos_with_direct_access:
         eprint("Some users have direct access to repositories.")
         eprint("Repository access must be granted through teams only!")
@@ -224,18 +255,22 @@ def generate():
         org, team_name = team.split("/")
         details = team_details(org, team_name)
         data = {
-            "name": team,
+            "name": team_name,
             "description": details["description"],
             "charter": None,
             "requirements": None,
-            "resources": {"repos": access_to_repos(*team.split("/")), "other": None},
+            "resources": {
+                "teams": [team],
+                "repos": access_to_repos(org, team_name),
+                "other": None,
+            },
             "links": None,
-            "members": {member: None for member in team_members(*team.split("/"))},
+            "members": {member: None for member in team_members(org, team_name)},
             "emeritus": None,
         }
         Path("teams", org).mkdir(parents=True, exist_ok=True)
         output_path = Path("teams", org, f"{team_name.replace('.', '-')}.yml")
-        output_path.write_text("# yaml-language-server: $schema=../teams.schema.json\n")
+        output_path.write_text("# yaml-language-server: $schema=./teams.schema.json\n")
         with open(output_path, "a") as f:
             yaml.dump(data, f)
 

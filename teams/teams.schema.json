@@ -91,6 +91,7 @@
           "anyOf": [
             {
               "items": {
+                "pattern": "[a-zA-Z0-9\\-_\\.\\+]{1,128}/[a-zA-Z0-9\\-_]{1,128}",
                 "type": "string"
               },
               "type": "array"
@@ -105,6 +106,7 @@
           "anyOf": [
             {
               "items": {
+                "pattern": "[a-zA-Z0-9\\-_\\.\\+]{1,128}/[a-zA-Z0-9\\-_\\.\\+]{1,128}",
                 "type": "string"
               },
               "type": "array"
@@ -146,6 +148,7 @@
   "description": "Model for defining Conda Sub-Teams based on the governance structure.",
   "properties": {
     "name": {
+      "pattern": "[a-zA-Z0-9\\-_]{1,128}",
       "title": "Name",
       "type": "string"
     },

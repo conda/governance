@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-subchannel
+description: Maintainers of `conda-subchannel`
+charter: dynamic
+requirements:
+resources:
+  teams:
+    - conda-incubator/conda-subchannel
+  repos:
+    - conda-incubator/conda-subchannel
+  other:
+links:
+  - https://github.com/conda/governance/issues/143
+members:
+  jaimergp: https://github.com/conda/governance/issues/143
+  jezdez: https://github.com/conda/governance/issues/143
+emeritus:

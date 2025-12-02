@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-oci
+description: Maintainers of `conda-oci`
+charter:
+requirements:
+resources:
+  teams:
+    - conda-incubator/conda-oci
+  repos:
+    - conda-incubator/conda-oci
+  other:
+links:
+members:
+  beckermr:
+  jezdez:
+emeritus:

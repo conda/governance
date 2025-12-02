@@ -1,0 +1,134 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: steering-council
+description: Steering council of the conda ecosystem
+charter: static
+requirements:
+resources:
+  teams:
+    - conda/steering-council
+    - conda-incubator/steering-council
+  repos:
+    - conda/governance
+    - conda/assets
+    - conda/ceps
+    - conda/cla
+  other:
+links: []
+members:
+  baszalmstra:
+    full_name: Bas Zalmstra
+    email: zalmstra.bas@gmail.com
+    funder: prefix.dev
+    pronouns: he/him
+    decision: https://github.com/conda/governance/commit/03f21ae79dc1525eae0091ee3cf1e8f26856c6d6
+  chenghlee:
+    full_name: Cheng H. Lee
+    email: clee@anaconda.com
+    funder: Anaconda
+    pronouns: he/him
+    decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/8
+  cj-wright:
+    full_name: Christopher J. 'CJ' Wright
+    email: cjwright4242@gmail.com
+    funder:
+    pronouns:
+    decision: https://github.com/conda/governance/issues/1
+  Hind-M:
+    full_name: Hind Montassif
+    email: hind.montassif@gmail.com
+    funder: QuantStack
+    pronouns: she/her
+    decision: https://github.com/conda/governance/pull/171
+  jaimergp:
+    full_name: Jaime Rodríguez-Guerra
+    email: jaime.rogue@gmail.com
+    funder: Quansight
+    pronouns: he/him
+    decision: https://github.com/conda/governance/pull/45
+  jakirkham:
+    full_name: John Kirkham
+    email: jakirkham@gmail.com
+    funder: NVIDIA
+    pronouns: he/him
+    decision:
+      - https://github.com/conda/governance/pull/21
+  jezdez:
+    full_name: Jannis Leidel
+    email: jannis@leidel.info
+    funder: Anaconda
+    pronouns: he/him
+    decision: https://github.com/conda/governance/pull/37
+  marcelotrevisani:
+    full_name: Marcelo Duarte Trevisani
+    email: marceloduartetrevisani@gmail.com
+    funder:
+    pronouns: he/him
+    decision:
+      - https://github.com/conda/governance/issues/1
+  mariusvniekerk:
+    full_name: Marius van Niekerk
+    email: marius.v.niekerk@gmail.com
+    funder:
+    pronouns:
+    decision: https://github.com/conda/governance/issues/1
+  mbargull:
+    full_name: Marcel Bargull
+    email: marcel.bargull@udo.edu
+    funder:
+    pronouns:
+    decision: https://github.com/conda/governance/issues/1
+  msarahan:
+    full_name: Michael Sarahan
+    email: msarahan@gmail.com
+    funder: NVIDIA
+    pronouns: he/him
+    decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/15
+  ocefpaf:
+    full_name: Filipe Fernandes
+    email: ocefpaf@gmail.com
+    funder:
+    pronouns: he/him
+    decision:
+      - https://github.com/conda/governance/issues/1
+  pavelzw:
+    full_name: Pavel Zwerschke
+    email: pavelzw@gmail.com
+    funder: QuantCo
+    pronouns: he/him
+    decision: https://github.com/conda/governance/pull/241
+  wolfv:
+    full_name: Wolf Vollprecht
+    email: w.vollprecht@gmail.com
+    funder: prefix.dev
+    pronouns: he/him
+    decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/44
+  xhochy:
+    full_name: Uwe Korn
+    email: mail@uwekorn.com
+    funder: QuantCo
+    pronouns: he/him
+    decision: https://github.com/conda/governance/issues/1
+emeritus:
+  # FIX: These are still "part" of steering because emeritus is a subteam of steering, which
+  # inherit the permissions.
+  angloyna:
+  awwad:
+  beckermr:
+  cjmartian:
+  csoja:
+  dharhas:
+  ericdill:
+  goanpeca:
+  jjhelmus:
+  mcg1969:
+  minrk:
+  prusse-martin:
+  raydouglass:
+  sodre:
+  trallard:

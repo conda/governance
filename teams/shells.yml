@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: shells
+description: Maintainers of conda-shell and other shell-related projects
+charter:
+requirements:
+resources:
+  teams:
+    - conda-incubator/shells
+  repos:
+    - conda-incubator/conda-shell
+  other:
+links:
+members:
+  jezdez:
+  kalawac:
+  kenodegard:
+emeritus:

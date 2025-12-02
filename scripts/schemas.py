@@ -3,7 +3,7 @@
 #   "pydantic>=2,<3",
 # ]
 
-from typing import Literal
+from typing import Annotated, Literal
 from pydantic import (
     BaseModel,
     ConfigDict,
@@ -20,12 +20,25 @@ class Resources(BaseModel):
     """
 
     model_config = ConfigDict(extra="forbid")
-
-    teams: list[str] | None = ...
+    teams: (
+        list[
+            Annotated[
+                str, Field(pattern=r"[a-zA-Z0-9\-_\.\+]{1,128}/[a-zA-Z0-9\-_]{1,128}")
+            ]
+        ]
+        | None
+    ) = ...
     "The Github team (or teams, across different organizations) representing this team."
-    repos: list[str] | None = ...
+    repos: (
+        list[
+            Annotated[
+                str,
+                Field(pattern=r"[a-zA-Z0-9\-_\.\+]{1,128}/[a-zA-Z0-9\-_\.\+]{1,128}"),
+            ]
+        ]
+        | None
+    ) = ...
     """The GitHub repositories this team owns or has write access to."""
-
     other: list[HttpUrl] | None = ...
     """Other responsibilities of this team"""
 
@@ -56,8 +69,8 @@ class CondaSubTeam(BaseModel):
 
     model_config = ConfigDict(title="Conda Sub-Teams", extra="forbid")
 
-    name: str = ...
-    """The team name as per the governance"""
+    name: str = Field(..., pattern=r"[a-zA-Z0-9\-_]{1,128}")
+    """The team name as per the governance (no organization name!)."""
 
     description: str = Field(..., min_length=1, max_length=128)
     """The team description in GitHub"""

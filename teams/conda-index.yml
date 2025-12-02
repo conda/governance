@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-index
+description: Maintainers of conda-index
+charter: project
+requirements:
+resources:
+  teams:
+    - conda/conda-index
+  repos:
+    - conda/conda-index
+  other:
+links:
+  - https://github.com/conda/conda-build/issues/4472
+  - https://github.com/conda/conda-index/issues/59
+members:
+  chenghlee: https://github.com/conda/conda-build/issues/4472
+  dholth: https://github.com/conda/conda-build/issues/4472
+  jezdez: https://github.com/conda/conda-build/issues/4472
+  jjhelmus:
+emeritus:

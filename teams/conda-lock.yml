@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-lock
+description: Maintainers of conda-lock
+charter: project
+requirements:
+resources:
+  teams:
+    - conda/conda-lock
+  repos:
+    - conda/conda-lock
+  other:
+links:
+  - https://github.com/conda/conda-lock/issues/319
+members:
+  ericdill:
+  jezdez:
+  marcelotrevisani:
+  maresb:
+  mariusvniekerk:
+  ocefpaf:
+emeritus:

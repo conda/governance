@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: setup-miniconda
+description: Maintainers of the setup-miniconda action
+charter:
+requirements:
+resources:
+  teams:
+    - conda-incubator/setup-miniconda
+  repos:
+    - conda-incubator/setup-miniconda
+    - conda-incubator/setup-miniforge
+  other:
+links:
+members:
+  bollwyvl:
+  conda-bot:
+  dbast:
+  goanpeca:
+  jaimergp:
+  jezdez:
+emeritus:

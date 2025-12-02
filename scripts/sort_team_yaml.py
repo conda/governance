@@ -17,7 +17,7 @@ TEAM_KEY_ORDER = list(CondaSubTeam.model_fields.keys())
 
 yaml = YAML(typ="rt")
 yaml.preserve_quotes = True
-yaml.line_break = 10000
+yaml.width = 10000
 yaml.indent(mapping=2, sequence=4, offset=2)
 
 for path in sys.argv[1:]:
@@ -37,8 +37,7 @@ for path in sys.argv[1:]:
             for key in sorted(members.keys(), reverse=True, key=str.lower):
                 val = members.pop(key, None)
                 members.insert(0, key, val)
-    data["resources"].setdefault("teams", []).append(data["name"])
-    data["name"] = data["name"].split("/")[-1]
+
     for key in reversed(("teams", "repos", "other")):
         val = data["resources"].pop(key, None)
         data["resources"].insert(0, key, val)
