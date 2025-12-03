@@ -13,7 +13,7 @@ resources:
     - conda/conda-recipe-manager
     - conda/conda-recipe-manager-test-data
   other:
-    - https://conda.zulipchat.com/#narrow/channel/471111-builds-tools
+    - https://conda.zulipchat.com/#narrow/channel/471111-build-tools
 links:
   - https://github.com/conda/conda-build/issues/4698
   - https://github.com/conda/governance/issues/128
