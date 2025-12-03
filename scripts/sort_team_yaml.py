@@ -42,5 +42,10 @@ for path in sys.argv[1:]:
         val = data["resources"].pop(key, None)
         data["resources"].insert(0, key, val)
 
-    with open(path, "w") as f:
+    path.write_text(
+        "# NOTE: This file is a work in progress.\n"
+        "# The information here reflected is provisional\n"
+        "# and must not be interpreted as the ground truth.\n"
+    )
+    with open(path, "a") as f:
         yaml.dump(data, f)
