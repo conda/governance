@@ -16,7 +16,7 @@ Various parts of the conda community gather on a regular basis. This meeting bri
 | Jaime Rodríguez-Guerra | JRG      | Quansight/cf | jaimergp         |
 | Jannis Leidel          | JL       | Anaconda/cf  | jezdez           |
 | Sylvain Corlay         | SC       | QuantStack   | sylvaincorlay    |
-|                        |          |              |                  |
+| John Kirkham           | JK       | NVIDIA/cf    | jakirkham        |
 |                        |          |              |                  |
 |                        |          |              |                  |
 |                        |          |              |                  |
