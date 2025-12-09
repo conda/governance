@@ -1,0 +1,51 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: pre-commit
+description: Maintainers of conda-based pre-commit hooks
+charter: dynamic
+requirements:
+resources:
+  teams:
+    - conda-incubator/pre-commit
+  repos:
+    - conda-incubator/pre-commit-mirrors-black
+    - conda-incubator/pre-commit-mirrors-flake8
+    - conda-incubator/pre-commit-mirrors-mypy
+    - conda-incubator/pre-commit-mirrors-isort
+    - conda-incubator/pre-commit-mirrors-pyupgrade
+    - conda-incubator/pre-commit-mirrors-jupytext
+    - conda-incubator/pre-commit-mirrors-nbstripout
+    - conda-incubator/pre-commit-mirrors-shellcheck
+    - conda-incubator/pre-commit-mirrors-prettier
+    - conda-incubator/pre-commit-mirrors-eslint
+    - conda-incubator/pre-commit-mirrors-bandit
+    - conda-incubator/pre-commit-mirrors-sqlfluff
+    - conda-incubator/pre-commit-mirrors-docformatter
+    - conda-incubator/pre-commit-mirrors-pre-commit-hooks
+    - conda-incubator/pre-commit-mirrors-ruff
+    - conda-incubator/pre-commit-mirrors-pyright
+    - conda-incubator/pre-commit-mirrors-typos
+    - conda-incubator/pre-commit-mirrors-cython-lint
+    - conda-incubator/pre-commit-mirrors-ansible-lint
+    - conda-incubator/pre-commit-mirrors-hclfmt
+    - conda-incubator/pre-commit-mirrors-rust
+    - conda-incubator/pre-commit-mirrors-tflint
+    - conda-incubator/pre-commit-mirrors-clang-format
+    - conda-incubator/pre-commit-mirrors-clang-tidy
+    - conda-incubator/pre-commit-mirrors-checkov
+    - conda-incubator/pre-commit-mirrors-insert-license
+    - conda-incubator/pre-commit-mirrors-polars-upgrade
+    - conda-incubator/copier-template-pre-commit-mirrors
+    - conda-incubator/pre-commit-mirrors-yamllint
+    - conda-incubator/pre-commit-mirrors-typstfmt
+    - conda-incubator/pre-commit-mirrors-taplo
+  other:
+links:
+  - https://github.com/conda/governance/issues/255
+members:
+  pavelzw:
+  xhochy:
+  ytausch:
+emeritus:

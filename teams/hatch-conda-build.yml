@@ -1,0 +1,20 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: hatch-conda-build
+description: Maintainers of the `hatch-conda-build` plugin
+charter:
+requirements:
+resources:
+  teams:
+    - conda-incubator/hatch-conda-build
+  repos:
+    - conda-incubator/hatch-conda-build
+  other:
+links:
+members:
+  AlbertDeFusco:
+  costrouc:
+  jezdez:
+emeritus:

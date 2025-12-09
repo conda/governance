@@ -1,0 +1,19 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-checkpoints
+description: Maintainers of `conda-checkpoints`
+charter: dynamic
+requirements:
+resources:
+  teams:
+    - conda-incubator/conda-checkpoints
+  repos:
+    - conda-incubator/conda-checkpoints
+  other:
+links:
+  - https://github.com/conda/governance/issues/144
+members:
+  jaimergp:
+emeritus:
