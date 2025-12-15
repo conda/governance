@@ -18,7 +18,7 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 1. ...
 1. ...
 
-<!-- Delete sections that do not apply before commiting to repo -->
+<!-- Delete sections that do not apply before committing to repo -->
 <!-- Every agenda item must use the initials of the person adding the item -->
 
 
