@@ -59,7 +59,7 @@ This group encompasses all others who are not on the [Steering Council](#steerin
 
 ### Emeritus Steering
 
-[Steering Council](#steering-council) members that are inactive (commits, GitHub comments/issues/reviews, dev meetings, and voting on polls) in the past six months will be asked if they want to become **Emeritus Steering** members. One week after asking, if the inactive Steering Council member has not responded, they will be automatically moved to emeritus status. Any Steering Council member can also request to become Emeritus if they wish to do so (e.g. taking a sabbatical or long vacation). Emeritus Steering members can be brought back to active Steering Council membership at anytime, assuming there is space and no other policies (e.g., [shared funding](#shared-funding-membership-restrictions), [council size](#steering-council-size), etc.) are violated. Emeritus Steering Council members cannot vote. When the status of a member changes, the [`steering.csv`](steering.csv) and [`emeritus.csv`](emeritus.csv) files should be immediately updated to reflect the member's new position.
+[Steering Council](#steering-council) members that are inactive (commits, GitHub comments/issues/reviews, dev meetings, and voting on polls) in the past six months will be asked if they want to become **Emeritus Steering** members. One week after asking, if the inactive Steering Council member has not responded, they will be automatically moved to emeritus status. Any Steering Council member can also request to become Emeritus if they wish to do so (e.g. taking a sabbatical or long vacation). Emeritus Steering members can be brought back to active Steering Council membership at anytime, assuming there is space and no other policies (e.g., [shared funding](#shared-funding-membership-restrictions), [council size](#steering-council-size), etc.) are violated. Emeritus Steering Council members cannot vote. When the status of a member changes, the corresponding `teams/` YAML files should be immediately updated to reflect the member's new position.
 
 
 ## Community, Federated & Archive Maintenance
@@ -234,7 +234,7 @@ This section presents descriptions and criteria for voting items in the conda Or
 * Steering Council members must explicitly abstain from a vote via making a comment on the PR/issue or selecting the "abstain" option. Simply not voting at all doesn't count as an abstention.
 * Abstentions count towards the [quorum](#quorum) but are excluded when computing if a vote passes.
 
-Voting items are labeled as either **standard** or **sensitive**. Standard items are ones where public record and discourse is preferable. Sensitive voting items are ones where the results of the vote should remain private to the voters after the vote has occurred. Sensitive votes should take place on a secure anonymous voting platform in order to retain election integrity and anonymity. (We may use [`Polys`](https://polys.me) and the [`Helios voting system`](https://vote.heliosvoting.org/), but are open to any secure, anonymous system.) The email capability of your chosen voting platform should be used for sending voting invitations and reminders if possible. All votes should be sent to the appropriate people using their email listed in `steering.csv` as applicable.
+Voting items are labeled as either **standard** or **sensitive**. Standard items are ones where public record and discourse is preferable. Sensitive voting items are ones where the results of the vote should remain private to the voters after the vote has occurred. Sensitive votes should take place on a secure anonymous voting platform in order to retain election integrity and anonymity. (We may use [`Polys`](https://polys.me) and the [`Helios voting system`](https://vote.heliosvoting.org/), but are open to any secure, anonymous system.) The email capability of your chosen voting platform should be used for sending voting invitations and reminders if possible. All votes should be sent to the appropriate people using their email listed in `steering-council.yml` as applicable.
 
 The default voting period is 1 week (7 days). This may be modified at the time when a vote is called, but may never be less than one week modulo exceptions for some time-sensitive votes below.
 
@@ -310,7 +310,7 @@ To post a timeout reminder, here is a template comment:
 
     If you have questions concerning the proposal, you may also leave a comment or code review.
 
-To declare a standard vote "timed out," the person making such a declaration must post a pull-request adding a vote record to the [`vote-results`](vote-results/]) folder. The declaration PR should be merged by the first Steering Council member who is available to verify that the requirements for the timeout have been met, based on their own personal records.
+To declare a standard vote "timed out," the person making such a declaration must post a pull-request adding a vote record to the [`vote-results`](vote-results/) folder. The declaration PR should be merged by the first Steering Council member who is available to verify that the requirements for the timeout have been met, based on their own personal records.
 
 ### Voting Total Examples
 

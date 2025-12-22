@@ -1,0 +1,20 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: shells
+description: Maintainers of conda-shell and other shell-related projects
+charter:
+requirements:
+resources:
+  teams:
+    - conda-incubator/shells
+  repos:
+    - conda-incubator/conda-shell
+  other:
+links:
+members:
+  jezdez:
+  kalawac:
+  kenodegard:
+emeritus:

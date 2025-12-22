@@ -1,0 +1,25 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-dot-org
+description: Team responsible for the conda.org website maintenance
+charter: dynamic
+requirements:
+resources:
+  teams:
+    - conda/conda-dot-org
+    - conda-incubator/conda-dot-org
+  repos:
+    - conda/conda-dot-org
+  other:
+links:
+  - https://github.com/conda/governance/issues/76
+  - https://github.com/conda/conda-dot-org/issues/110
+members:
+  beeankha: https://github.com/conda/conda-dot-org/issues/110
+  jaimergp: https://github.com/conda/conda-dot-org/issues/110
+  jezdez: https://github.com/conda/conda-dot-org/issues/110
+  kathatherine: https://github.com/conda/conda-dot-org/issues/110
+  travishathaway: https://github.com/conda/conda-dot-org/issues/110
+emeritus:
