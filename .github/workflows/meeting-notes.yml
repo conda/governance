@@ -30,7 +30,7 @@ jobs:
     with:
       date: ${{ github.event_name == 'schedule' && 'next Wednesday' || (inputs.date || 'now') }}
       template_path: meetings/agenda_template.md
-      output_path: meetings/archive/%Y-%m-%d-conda-ecosystem.md
+      output_path: meetings/archive/%Y%m%d-conda-ecosystem.md
       hackmd_team: conda-community
       force_push: false
       pr_body: |

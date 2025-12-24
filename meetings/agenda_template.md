@@ -3,7 +3,7 @@ tags: [meeting-notes]
 ---
 # {{ date.strftime("%Y-%m-%d") }} Conda Ecosystem Meeting
 
-[Zoom link](https://zoom.us/j/9138593505?pwd=SWh3dE1IK05LV01Qa0FJZ1ZpMzJLZz09) · [What time is the meeting in my time zone](https://dateful.com/convert/utc?t=5pm)
+[Zoom link](https://zoom.us/j/9138593505?pwd=SWh3dE1IK05LV01Qa0FJZ1ZpMzJLZz09) · [What time is the meeting in my time zone: 5pm](https://dateful.com/convert/utc?t=5pm), [2pm](https://dateful.com/convert/utc?t=2pm)
 
 Various parts of the conda ecosystem gather on a regular basis. This meeting brings together all of these sub-communities for a community wide call.
 
