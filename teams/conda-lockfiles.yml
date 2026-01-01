@@ -1,0 +1,23 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-lockfiles
+description: Maintainers of `conda-lockfiles`
+charter:
+requirements:
+resources:
+  teams:
+    - conda-incubator/conda-lockfiles
+  repos:
+    - conda-incubator/conda-lockfiles
+  other:
+links:
+members:
+  jaimergp:
+  jezdez:
+  jjhelmus:
+  kenodegard:
+  soapy1:
+  travishathaway:
+emeritus:

@@ -1,0 +1,21 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-tutorial
+description: Maintainers of the `conda-tutorial` repository
+charter:
+requirements:
+resources:
+  teams:
+    - conda-incubator/conda-tutorial
+  repos:
+    - conda-incubator/conda-tutorial
+  other:
+links:
+members:
+  beeankha:
+  jezdez:
+  leriomaggio:
+  tnabtaf:
+emeritus:
