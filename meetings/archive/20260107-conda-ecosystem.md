@@ -9,12 +9,7 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 
 ## Attendees
 
-<!-- Use this syntax:
-* Initials: Full Name (@github-username), Affiliation.
-* SD: Sam Doe (@samdoe), Company
--->
-
-1. JRG, Jaime ROdríguez-Guerra (@jaimergp), Quansight, conda-forge/core
+1. JRG, Jaime Rodríguez-Guerra (@jaimergp), Quansight, conda-forge/core
 2. DY, Dan Yeaw (@danyeaw), Anaconda
 3. BZ, Bas Zalmstra (@baszalmstra), Prefix.dev, conda-forge/core
 4. WV, Wolf Vollprecht, (@wolfv), Prefix.dev, conda-forge/core
@@ -25,15 +20,9 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 9. JK, John Kirkham (@jakirkham), NVIDIA & conda-forge/core
 10. 
 
-<!-- Delete sections that do not apply before committing to repo -->
-<!-- Every agenda item must use the initials of the person adding the item -->
-
-
 ## Announcements
 
-<!-- New releases, upcoming changes, ongoing votes --->
-
-- [X] Jaime: New meeting schedule for 2026! Welcome!
+- [X] JRG: New meeting schedule for 2026! Welcome!
 
 ## New agenda items
 
