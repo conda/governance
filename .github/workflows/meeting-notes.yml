@@ -26,6 +26,7 @@ permissions:
 
 jobs:
   create:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     uses: Quansight-Labs/hackmd-meeting-notes-action/.github/workflows/create-meeting-notes-pr.yml@ba471169f1eb702fc0861a227ce0b232ff5e7149 # @main
     with:
       date: ${{ github.event_name == 'schedule' && 'next Wednesday' || (inputs.date || 'now') }}
