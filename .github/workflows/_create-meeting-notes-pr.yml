@@ -27,7 +27,7 @@ on:
           Also used for the HackMD permalink.
           Accepts `date` command syntax.
         required: false
-        default: "%Y-%m-%d-meeting-notes"
+        default: '%Y-%m-%d-meeting-notes'
         type: string
       hackmd_team:
         description: HackMD team identifier
@@ -36,7 +36,7 @@ on:
       pr_title:
         description: Title to be used in the submitted PR. Accepts `date` command syntax.
         required: false
-        default: "Add meeting notes %Y-%m-%d"
+        default: Add meeting notes %Y-%m-%d
         type: string
       pr_body:
         description: >-
@@ -49,7 +49,7 @@ on:
           New meeting notes available at ${env.hackmd_doc_url}
 
           Once done with the meeting, sync the note back to the repository using the `sync-meeting-notes-pr` workflow.
-          We recommend adding a job that is triggered by adding a label or posting a comment. 
+          We recommend adding a job that is triggered by adding a label or posting a comment.
           Labels are usually better because the permissions are usually restricted to maintainers.
       date:
         description: >-
@@ -58,7 +58,7 @@ on:
           (e.g. use ISO8601 format in UTC `2023-01-11T09:00:00Z`).
         required: false
         type: string
-        default: "now"
+        default: now
       force_push:
         description: Whether to `git push -f` if the target branch already exists
         required: false
@@ -85,7 +85,7 @@ jobs:
       - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
       - uses: actions/setup-python@83679a892e2d95755f2dac6acb0bfd1e9ac5d548 # v6.1.0
         with:
-          python-version: "3.12"
+          python-version: '3.12'
       - name: Set up dependencies
         run: |
           python3 -V
@@ -193,7 +193,7 @@ jobs:
               base: "main",
               title: env.pr_title,
             });
-            let pr_body = 
+            let pr_body =
 
             await github.rest.pulls.update({
               owner: context.repo.owner,
@@ -212,5 +212,5 @@ jobs:
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          template_path: "${{ inputs.template_path }}"
-          hackmd_team: "${{ inputs.hackmd_team }}"
+          template_path: ${{ inputs.template_path }}
+          hackmd_team: ${{ inputs.hackmd_team }}
