@@ -1,4 +1,4 @@
-# Reusable workflow for conda/governance only. Outside usage is not supported.
+# Reusable workflow for conda/governance only. External usage is not supported.
 # Vendored from https://github.com/Quansight-Labs/hackmd-meeting-notes-action@e4b7132
 name: HackMD Sync Meeting Notes Action
 
