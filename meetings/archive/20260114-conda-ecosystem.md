@@ -29,6 +29,7 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
         - MvN: Can we add an import test (or similar) to make sure this doesn't happen?
         - KZ: You do get a warning. Maybe we can turn into an error?
         - MvN: There's an env var that forces the GIL not to be re-enabled and error out. https://docs.python.org/3/using/cmdline.html#envvar-PYTHON_GIL
+        - Action item: https://github.com/regro/cf-scripts/issues/5373
 - [X] KZ: qt-webengine cross-compiled builds for Linux ARM in the GPU x64 server doesn't work. Alternatives to get this rolling?
     - JRG: 
         - Get cirrus runners for linux ARM (needs credit card by NF)
