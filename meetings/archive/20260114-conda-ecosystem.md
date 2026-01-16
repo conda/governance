@@ -36,4 +36,4 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
             - MRB: Sent email to NF
         - Implement multistage builds with in-progress artifacts passing.
             - MRB: Maybe not worth the hassle for the small % of packages that need it.
-        - Invoke CFEP-05 with local builds compiled on Docker on Apple Silicon
+        - Invoke CFEP-03 with local builds compiled on Docker on Apple Silicon.
