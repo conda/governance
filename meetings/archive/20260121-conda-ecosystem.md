@@ -9,13 +9,8 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 
 ## Attendees
 
-<!-- Use this syntax:
-* Initials: Full Name (@github-username), Affiliation.
-* SD: Sam Doe (@samdoe), Company
--->
-
 1. JRG: Jaime Rodríguez-Guerra (@jaimergp), Quansight, conda-forge/core
-1. ME: Marco Esters (@marcoesters), Anaconda.
+1. ME: Marco Esters (@marcoesters), Anaconda
 1. DW: Dawn Wages (@dawnwages), Anaconda
 1. TH: Travis Hathaway (@travishathaway), Anaconda
 1. DY: Dan Yeaw (@danyeaw), Anaconda 
@@ -24,20 +19,9 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 1. WV: Wolf Vollprecht, (@wolfv), Prefix.dev, conda-forge/core
 1. IF: Isuruf Fernando (@isuruf), OpenTeams, conda-forge/core
 
-<!-- Delete sections that do not apply before committing to repo -->
-<!-- Every agenda item must use the initials of the person adding the item -->
-
-
-## Introductions
-
-- [ ] ...
-
 ## Announcements
 
-<!-- New releases, upcoming changes, ongoing votes --->
-
-- [ ] JRG: conda-rattler-solver 0.0.4 is out with pretty decent compatibility with conda's UX expectations.
-
+- [X] JRG: conda-rattler-solver 0.0.4 is out with pretty decent compatibility with conda's UX expectations.
 
 ## New agenda items
 
@@ -60,7 +44,8 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
     - https://github.com/conda/ceps/pull/142
     - IF: What happens when the logs expire in GHA?
         - WV: Sigstore logs are kept in transparency logs permanently, but the actual build logs will indeed expire. Would need to think about ways of storing those somewhere else.
-    - https://sigstore.github.io/sigstore-conformance/
+            - https://sigstore.github.io/sigstore-conformance/
+    - Example preview: https://prefix.dev/channels/sigstore-example/packages/signed-package
 - [X] (TH) Idea for a new blog post series: You can do that with conda? Highlights some of the lesser known use cases for conda and helps promote our packaging ecosystem (first post here: https://github.com/conda/conda-dot-org/pull/309).
     - Preview at https://deploy-preview-309--conda-dot-org.netlify.app/blog/2025-12-28-you-can-install-postgresql-with-conda
 
