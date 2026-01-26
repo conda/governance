@@ -21,7 +21,7 @@ repos:
       # catch git merge/rebase problems
       - id: check-merge-conflict
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.36.0
+    rev: 0.36.1
     hooks:
       - id: check-github-workflows
       # validate sub-teams schema
@@ -29,7 +29,7 @@ repos:
         files: ^teams/.*\.ya?ml$
         args: [--schemafile, teams/teams.schema.json]
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.13
+    rev: v0.14.14
     hooks:
       - id: ruff
         args: [--fix]
@@ -48,7 +48,7 @@ repos:
         # ruamel.yaml doesn't line wrap correctly (?) so set width to 1M to avoid issues
         args: [--mapping=2, --offset=2, --sequence=4, --width=1000000, --implicit_start]
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.36.0
+    rev: 0.36.1
     hooks:
       # verify github syntaxes
       - id: check-github-workflows
