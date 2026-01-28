@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=teams.schema.json
+name: conda-pypi
+description: The team maintaining conda-pypi and related PyPI integration projects
+charter: project
+requirements:
+scopes:
+  codeowners:
+    - conda/conda-pypi
+  other:
+links:
+  - https://github.com/conda/governance/issues/331
+members:
+  danyeaw: https://github.com/conda/governance/issues/331
+  dholth: https://github.com/conda/governance/issues/331
+  ForgottenProgramme: https://github.com/conda/governance/issues/331
+  jaimergp: https://github.com/conda/governance/issues/331
+  jezdez: https://github.com/conda/governance/issues/331
+  jjhelmus: https://github.com/conda/governance/issues/331
+  kenodegard: https://github.com/conda/governance/issues/331
+  ryanskeith: https://github.com/conda/governance/issues/331
+  soapy1: https://github.com/conda/governance/issues/331
+  travishathaway: https://github.com/conda/governance/issues/331
+emeritus:
