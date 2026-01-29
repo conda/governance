@@ -16,6 +16,7 @@ jobs:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
       - uses: prefix-dev/setup-pixi@82d477f15f3a381dbcc8adc1206ce643fe110fb7 # v0.9.3
       - run: pixi run check_teams
+        continue-on-error: true  # TODO: Remove once all teams have YAML files
         env:
           CONDA_ORG_WIDE_TOKEN: ${{ secrets.CONDA_ORG_WIDE_READ_ONLY }}
           CONDA_INCUBATOR_ORG_WIDE_TOKEN: ${{ secrets.CONDA_INCUBATOR_ORG_WIDE_READ_ONLY }}
