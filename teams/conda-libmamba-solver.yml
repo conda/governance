@@ -1,0 +1,22 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-libmamba-solver
+description: Maintainers of `conda-libmamba-solver`
+charter:
+requirements:
+resources:
+  teams:
+    - conda-incubator/conda-libmamba-solver
+  repos: []
+  other:
+links:
+  - https://github.com/conda/conda/issues/15166
+members:
+  conda-bot:
+  jaimergp:
+  jezdez:
+  jjhelmus:
+  wolfv:
+emeritus:

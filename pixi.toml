@@ -1,15 +1,9 @@
 [dependencies]
+email-validator = ">=2.3.0,<3"
 pydantic = ">=2,<3"
 python = ">=3.12.4,<3.13"
 requests = ">=2.32.3,<2.33"
 "ruamel.yaml" = ">=0.18,<0.19"
-
-[project]
-authors = ["conda steering council <steering@conda.org>"]
-channels = ["conda-forge"]
-name = "governance"
-platforms = ["osx-64", "osx-arm64", "win-64", "linux-64"]
-version = "0.1.0"
 
 [tasks]
 check_teams = "python scripts/check_teams.py"
@@ -17,3 +11,10 @@ collect_emails = "python scripts/collect_emails.py"
 count_votes = "python scripts/count_votes.py"
 schemas = "python scripts/schemas.py"
 vote_markdown = "python scripts/to_vote.py"
+
+[workspace]
+authors = ["conda steering council <steering@conda.org>"]
+channels = ["conda-forge"]
+name = "governance"
+platforms = ["osx-64", "osx-arm64", "win-64", "linux-64"]
+version = "0.1.0"

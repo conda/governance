@@ -1,0 +1,27 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-pypi
+description: Maintainers of `conda-pypi`
+charter: dynamic
+requirements:
+resources:
+  teams:
+    - conda-incubator/conda-pypi
+  repos:
+    - conda-incubator/conda-pypi
+  other:
+links:
+  - https://github.com/conda/governance/issues/142
+members:
+  danyeaw: https://github.com/conda-incubator/conda-pypi/issues/52
+  ForgottenProgramme: https://github.com/conda-incubator/conda-pypi/issues/161
+  jaimergp: https://github.com/conda/governance/issues/142
+  jezdez: https://github.com/conda/governance/issues/142
+  jjhelmus: https://github.com/conda-incubator/conda-pypi/issues/46
+  kenodegard:
+  ryanskeith: https://github.com/conda-incubator/conda-pypi/issues/75
+  soapy1: https://github.com/conda-incubator/conda-pypi/issues/167
+  travishathaway: https://github.com/conda-incubator/conda-pypi/issues/51
+emeritus:
