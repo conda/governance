@@ -16,6 +16,7 @@ scopes:
 links:
   - https://github.com/conda/governance/issues/53
 members:
+  dashagurova: # added to match GitHub team
   jaimergp: https://github.com/conda/governance/issues/81
   jezdez: https://github.com/conda/governance/issues/81
 emeritus:
