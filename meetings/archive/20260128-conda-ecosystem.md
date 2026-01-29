@@ -39,7 +39,7 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
     - All done client-side
     - Includes AI Chat widgets
     - Supports snapshotting notebook states and generating links from it so it can be shared easily
-        - Example: https://notebook.link/@SylvainCorlay/demo-conda
+        - Example: https://notebook.link/@SylvainCorlay/demo
     - Issues and reports can be posted in notebook.link's Zulip or repo.
         - https://notebook.zulipchat.com/
     - Very useful for lessons and courses! Served 1000s students concurrently at almost no cost. Replaced massive JupyterHub deployment.
