@@ -1,0 +1,216 @@
+# Reusable workflow for conda/governance only. External usage is not supported.
+# Vendored from https://github.com/Quansight-Labs/hackmd-meeting-notes-action@e4b7132
+name: HackMD Create Meeting Notes Action
+
+permissions:
+  contents: write
+  pull-requests: write
+
+on:
+  workflow_call:
+    inputs:
+      template_path:
+        description: >-
+          Path (relative to the repository root) to the HackMD template. Supports Jinja.
+          Environment variables available in the `env` dict.
+          Date available in the `date` datetime object.
+          It MUST contain a one-line `# H1 header`.
+        required: true
+        type: string
+      output_path:
+        description: Output path for the rendered template. Accepts `date` command syntax.
+        required: true
+        type: string
+      branch_name:
+        description: >-
+          Name for the branch that will be created with the new document.
+          Also used for the HackMD permalink.
+          Accepts `date` command syntax.
+        required: false
+        default: '%Y-%m-%d-meeting-notes'
+        type: string
+      hackmd_team:
+        description: HackMD team identifier
+        required: true
+        type: string
+      pr_title:
+        description: Title to be used in the submitted PR. Accepts `date` command syntax.
+        required: false
+        default: Add meeting notes %Y-%m-%d
+        type: string
+      pr_body:
+        description: >-
+          Body to be used in the submitted PR.
+          Environment variables available in `${env.XXXX}`.
+          Other options for interpolated strings `${...}` at https://github.com/actions/github-script
+        required: false
+        type: string
+        default: |
+          New meeting notes available at ${env.hackmd_doc_url}
+
+          Once done with the meeting, sync the note back to the repository using the `sync-meeting-notes-pr` workflow.
+          We recommend adding a job that is triggered by adding a label or posting a comment.
+          Labels are usually better because the permissions are usually restricted to maintainers.
+      date:
+        description: >-
+          Date to use for `date` syntax interpolation in strings. Defaults to date when running.
+          MUST be understood by `date --date`, but probably better to stick a known standard
+          (e.g. use ISO8601 format in UTC `2023-01-11T09:00:00Z`).
+        required: false
+        type: string
+        default: now
+      force_push:
+        description: Whether to `git push -f` if the target branch already exists
+        required: false
+        default: false
+        type: boolean
+      dry_run:
+        description: If true, do not actually push
+        required: false
+        default: false
+        type: boolean
+    secrets:
+      GITHUB_USER_TOKEN:
+        description: A token with sufficient permissions to commit and push to the target repository
+        required: false
+      HACKMD_TOKEN:
+        description: API token for HackMD.io
+        required: true
+
+jobs:
+  main:
+    name: Create meeting notes PR
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/setup-python@83679a892e2d95755f2dac6acb0bfd1e9ac5d548 # v6.1.0
+        with:
+          python-version: '3.12'
+      - name: Set up dependencies
+        run: |
+          python3 -V
+          python3 -m pip install jinja2 requests
+      - name: Prepare date
+        run: |
+          chosen_date="$(date -I -u --date "${{ inputs.date || 'now' }}")"
+          echo "chosen_date=${chosen_date}" >> $GITHUB_ENV
+      - name: Prepare branch
+        run: |
+          # Create new branch
+          branch_name=$(date --date "$chosen_date" "+${{ inputs.branch_name || '%Y-%m-%d-meeting-notes' }}")
+          if [[ "${{ inputs.force_push }}" == "true" ]]; then
+            git checkout -b "${branch_name}" || git checkout "${branch_name}"
+          else
+            git checkout -b "${branch_name}"
+          fi
+          echo "branch_name=$branch_name" >> $GITHUB_ENV
+      - name: Render template
+        run: |
+          # Render template
+          output_path=$(date --date "$chosen_date" "+${{ inputs.output_path ||  'meeting-notes/%Y-%m-%d.md' }}")
+          export output_path
+          mkdir -p "$(dirname "$output_path")"
+          python3 > "$output_path" <<EOF
+          from jinja2 import Template, DebugUndefined
+          import sys
+          import os
+          from datetime import datetime
+          from pathlib import Path
+          template = Template(Path("${{ inputs.template_path || 'meeting-notes/TEMPLATE.md' }}").read_text(), undefined=DebugUndefined)
+          print(
+            template.render(
+              env=os.environ,
+              date=datetime.fromisoformat(os.environ["chosen_date"]),
+            )
+          )
+          EOF
+          echo "output_path=$output_path" >> $GITHUB_ENV
+          note_title="$(awk '/^# .*/{print substr($0,3); exit}' "$output_path")"
+          echo "note_title=$note_title" >> $GITHUB_ENV
+      - name: Commit changes
+        run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+
+          git add "$output_path"
+          git commit -m "Add $output_path"
+      - name: Sync with HackMD
+        if: ${{ !inputs.dry_run }}
+        env:
+          HACKMD_TOKEN: ${{ secrets.HACKMD_TOKEN }}
+        shell: python
+        run: |
+          import os
+          from pathlib import Path
+          import requests
+          url = "https://api.hackmd.io/v1/teams/${{ inputs.hackmd_team }}/notes"
+          headers = {"Authorization": f"Bearer {os.environ['HACKMD_TOKEN']}"}
+          data = {
+            "title": os.environ["note_title"],
+            "content": Path(os.environ["output_path"]).read_text(errors="replace"),
+            "readPermission": "guest",
+            "writePermission": "signed_in",
+          }
+          r = requests.post(url, json=data, headers=headers)
+          if not r.ok:
+            print(r.content)
+            r.raise_for_status()
+          data = r.json()
+          print(data)
+          with open(os.environ["GITHUB_ENV"], "a") as f:
+            print(f"hackmd_doc_id={data['id']}", file=f)
+            print(f"hackmd_doc_url={data['publishLink']}", file=f)
+      - name: (Force) Push
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git config push.default upstream
+          if [[ "${{ inputs.force_push }}" == "true" ]]; then
+            git push -f origin "${branch_name}"
+          else
+            git push origin "${branch_name}"
+          fi
+      - name: Prepare PR contents
+        run: |
+          echo "pr_title=$(date --date "$chosen_date" "+${{ inputs.pr_title || 'Meeting notes for %Y-%m-%d' }}")" >> $GITHUB_ENV
+          # We need to escape the backticks in markdown so JS interpolation does not choke
+          cat <<'EOF' > "$RUNNER_TEMP/pr-body"
+          ${{ inputs.pr_body || 'PR BODY TEXT EXAMPLE' }}
+          EOF
+          EOV=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          echo "pr_body<<$EOV" >> $GITHUB_ENV
+          sed 's/`/\\`/g' "$RUNNER_TEMP/pr-body" >> $GITHUB_ENV
+          echo "$EOV" >> $GITHUB_ENV
+      - name: Create PR
+        if: ${{ !inputs.dry_run }}
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            let env = process.env
+            const resp = await github.rest.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: env.branch_name,
+              base: "main",
+              title: env.pr_title,
+            });
+            let pr_body =
+
+            await github.rest.pulls.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: resp.data.number,
+              body: `
+            <!--
+            DO NOT EDIT THIS BLOCK
+            HACKMDURL=${env.hackmd_doc_url}
+            HACKMDID=${env.hackmd_doc_id}
+            DOCPATH=${env.output_path}
+            -->
+            ${{ env.pr_body || 'PR BODY TEXT EXAMPLE' }}
+            `
+            })
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          template_path: ${{ inputs.template_path }}
+          hackmd_team: ${{ inputs.hackmd_team }}
