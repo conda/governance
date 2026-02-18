@@ -9,37 +9,23 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 
 ## Attendees
 
-<!-- Use this syntax:
-* Initials: Full Name (@github-username), Affiliation.
-* SD: Sam Doe (@samdoe), Company
--->
-
-1. ...
-1. ...
-1. ...
-
-<!-- Delete sections that do not apply before committing to repo -->
-<!-- Every agenda item must use the initials of the person adding the item -->
-
-
-## Introductions
-
-- [ ] ...
+1. JRG: Jaime Rodríguez-Guerra (@jaimergp), Quansight, CF/C, C/SC.
+2. BM: Ben Moss.
 
 ## Announcements
 
-<!-- New releases, upcoming changes, ongoing votes --->
-
-- [ ] ...
-
-## From previous meetings
-
-- [ ] ...
+- [X] JRG: [RFC period for foundationals standards CEPs](https://github.com/conda/ceps/issues/147) ending this week. Vote to start next Monday.
 
 ## New agenda items
 
-- [ ] ...
+- [X] BM: How to become more involved in conda-forge after contributing a few feedstocks?
+    - JRG: Two good starting points:
+        - Help out by reviewing recipe types you are familiar in staged-recipes (check "review request" threads in the General channel in Zulip)
+        - Flag omissions / out-of-date pieces in documentation.
 
 ## Deferred to next meeting
 
-- [ ] ...
+- [ ] JRG (conda-forge): Idea to request [OSS sponsorship for blacksmith.sh](https://www.blacksmith.sh/pricing) runners.
+- [ ] JRG: [Bug in CEP 19](https://github.com/conda/ceps/issues/150)
+- [ ] DH: Plan to discontinue `current_repodata.json` on conda-forge; it can't be used by modern solvers and is slow to generate.
+- [ ] DH: CEPs regarding development policy for the Python implementation of conda. 14-day comment period has elapsed for "[use Python API conventions in conda instead of deprecation policy](https://github.com/conda/ceps/pull/143)"; alternate new CEP "[retract deprecation policy; move policy to conda developer documentation](https://github.com/conda/ceps/pull/152)"
