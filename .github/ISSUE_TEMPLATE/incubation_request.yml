@@ -1,6 +1,6 @@
 name: Request for Incubation
 description: Request to add a project to the conda-incubator organization.
-title: "Request for incubation: <project name>"
+title: 'Request for incubation: <project name>'
 labels: [incubation]
 body:
   - type: markdown
@@ -51,7 +51,7 @@ body:
     attributes:
       label: Initial team members
       description: GitHub usernames of the initial project team members.
-      placeholder: "@user1, @user2"
+      placeholder: '@user1, @user2'
     validations:
       required: true
   - type: textarea
