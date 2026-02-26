@@ -1,0 +1,61 @@
+name: Request for Incubation
+description: Request to add a project to the conda-incubator organization.
+title: "Request for incubation: <project name>"
+labels: [incubation]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Request for Incubation
+
+        Per the [conda governance policy](https://github.com/conda/governance#incubation),
+        any single Steering Council member may add a project to the incubator, given the
+        knowledge and consent of the author(s).
+
+        The sponsoring Steering Council member is responsible for ensuring that basic legal
+        requirements have been met, including
+        [trademark usage and license terms](https://github.com/conda/governance#trademarks).
+        All conda projects must use an
+        [OSI-approved software license](https://opensource.org/).
+  - type: input
+    id: project_name
+    attributes:
+      label: Project name
+      description: The name of the project to be incubated.
+      placeholder: e.g. conda-example
+    validations:
+      required: true
+  - type: input
+    id: project_url
+    attributes:
+      label: Existing repository URL
+      description: Link to the existing repository, if any. Leave blank if requesting a new empty repo.
+      placeholder: e.g. https://github.com/user/project
+  - type: textarea
+    id: description
+    attributes:
+      label: Project description
+      description: A brief description of what the project does and why it belongs in conda-incubator.
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: License
+      description: The OSI-approved license used by the project.
+      placeholder: e.g. BSD-3-Clause
+    validations:
+      required: true
+  - type: textarea
+    id: team_members
+    attributes:
+      label: Initial team members
+      description: GitHub usernames of the initial project team members.
+      placeholder: "@user1, @user2"
+    validations:
+      required: true
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description: Any other relevant information (e.g. related CEPs, prior art, motivation).
