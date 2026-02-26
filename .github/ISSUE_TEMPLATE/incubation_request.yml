@@ -42,7 +42,7 @@ body:
     id: license
     attributes:
       label: License
-      description: The OSI-approved license used by the project. BSD-family licenses are recommended.
+      description: The OSI-approved license used by the project. Permissive, BSD-family licenses are recommended.
       placeholder: e.g. BSD-3-Clause
     validations:
       required: true
