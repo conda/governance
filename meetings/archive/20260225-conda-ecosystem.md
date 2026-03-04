@@ -9,37 +9,22 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 
 ## Attendees
 
-<!-- Use this syntax:
-* Initials: Full Name (@github-username), Affiliation.
-* SD: Sam Doe (@samdoe), Company
--->
-
-1. ...
-1. ...
-1. ...
-
-<!-- Delete sections that do not apply before committing to repo -->
-<!-- Every agenda item must use the initials of the person adding the item -->
-
-
-## Introductions
-
-- [ ] ...
+1. DY: Dan Yeaw (@danyeaw), Anaconda
+1. KZ: Klaus Zimmermann (@zklaus), Quansight
+1. TH: Travis Hathaway (@travishathaway), Anaconda
+1. JRG: Jaime Rodríguez-Guerra (@jaimergp), Quansight, CF/C, C/SC
+1. WV: Wolf Vollprecht (@wolfv), prefix.dev, CF/C, C/SC
+1. CHL: Cheng H. Lee (@chenghlee), Anaconda, CF/C, C/SC
 
 ## Announcements
 
-<!-- New releases, upcoming changes, ongoing votes --->
-
-- [ ] ...
-
-## From previous meetings
-
-- [ ] ...
+- [X] JRG: @ conda/steering-council, please review [open vote for foundational CEPs](https://github.com/conda/ceps/issues/147#issuecomment-3908100064). Deadline is next Monday EOD AoE (March 2nd). Jaime available for questions at any point if needed. Reach out on Zulip.
+- [X] WV: rattler-build release 0.58 being pushed out
+    - Big refactor, also of the parser (stricter now, supported by a lot of testing in real feedstocks). Brand new Python bindings, sigstore, cache stage, and many bugfixes
+    - Also new Pixi release yesterday.
+    - Working on signing Pixi releases for Windows.
+    - Might integrate artifact signing directly in rattler-build.
 
 ## New agenda items
 
-- [ ] ...
-
-## Deferred to next meeting
-
-- [ ] ...
+- [x] JRG: conda-forge soon to have access to extended concurrency in Github Actions. Still figuring out how to prevent self-DOS for our infra and automation.
