@@ -9,37 +9,18 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 
 ## Attendees
 
-<!-- Use this syntax:
-* Initials: Full Name (@github-username), Affiliation.
-* SD: Sam Doe (@samdoe), Company
--->
-
-1. ...
-1. ...
-1. ...
-
-<!-- Delete sections that do not apply before committing to repo -->
-<!-- Every agenda item must use the initials of the person adding the item -->
-
-
-## Introductions
-
-- [ ] ...
+1. JRG: Jaime Rodríguez-Guerra (@jaimergp), Quansight, CF/C, C/SC
+1. PZ: Pavel Zwerschke (@pavelzw), QuantCo, C/SC
 
 ## Announcements
 
 <!-- New releases, upcoming changes, ongoing votes --->
 
-- [ ] ...
-
-## From previous meetings
-
-- [ ] ...
+- [X] PZ: pixi-browse available now: https://github.com/pavelzw/pixi-browse
+    - `pixi exec pixi-browse`
+    - Like conda-metadata-app, but as a TUI in the terminal
+    - JRG: Some feature requests that resulted in these tickets https://github.com/pavelzw/pixi-browse/issues?q=sort%3Aupdated-desc%20is%3Aissue%20is%3Aopen%20created%3A2026-03-11
 
 ## New agenda items
 
-- [ ] ...
-
-## Deferred to next meeting
-
-- [ ] ...
+- [X] JRG: Low attendance in the last few 2PM UTC meetings. Maybe time to reconsider whether this timeslot fits its intended purpose. What about an earlier time to cater to APAC a bit better? 9am UTC? Probably need to run a survey.
