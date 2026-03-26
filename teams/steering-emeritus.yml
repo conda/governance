@@ -53,6 +53,14 @@ members:
       - https://github.com/conda/governance/issues/1
       - https://github.com/conda/governance/pull/3
       - https://github.com/conda/governance/pull/65
+  cj-wright:
+    full_name: Christopher J. 'CJ' Wright
+    email: cjwright4242@gmail.com
+    funder:
+    pronouns:
+    decision:
+      - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/366
   csoja:
     full_name: Crystal Soja
     email: csoja@anaconda.com
