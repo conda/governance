@@ -42,5 +42,5 @@ for path in sys.argv[1:]:
         val = data["resources"].pop(key, None)
         data["resources"].insert(0, key, val)
 
-    with open(path, "a") as f:
+    with open(path, "w") as f:
         yaml.dump(data, f)
