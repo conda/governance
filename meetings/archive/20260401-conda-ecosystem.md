@@ -3,43 +3,23 @@ tags: [meeting-notes]
 ---
 # 2026-04-01 Conda Ecosystem Meeting
 
-[Zoom link](https://zoom.us/j/9138593505?pwd=SWh3dE1IK05LV01Qa0FJZ1ZpMzJLZz09) · [What time is the meeting in my time zone: 5pm](https://dateful.com/convert/utc?t=5pm), [2pm](https://dateful.com/convert/utc?t=2pm)
+[Zoom link](https://zoom.us/j/9138593505?pwd=SWh3dE1IK05LV01Qa0FJZ1ZpMzJLZz09) · [What time is the meeting in my time zone: 5pm UTC](https://dateful.com/convert/utc?t=5pm)
 
 Various parts of the conda ecosystem gather on a regular basis. This meeting brings together all of these sub-communities for a community wide call.
 
 ## Attendees
 
-<!-- Use this syntax:
-* Initials: Full Name (@github-username), Affiliation.
-* SD: Sam Doe (@samdoe), Company
--->
+- WV: Wolf Vollprecht (@wolfv), prefix.dev
+- DY: Dan Yeaw (@danyeaw), Anaconda
+- LC: Lucas Colley (@lucascolley), University of Oxford
+- IF: Isuru Fernando (@isuruf), OpenTeams
 
-1. ...
-1. ...
-1. ...
+## Items discussed
 
-<!-- Delete sections that do not apply before committing to repo -->
-<!-- Every agenda item must use the initials of the person adding the item -->
-
-
-## Introductions
-
-- [ ] ...
-
-## Announcements
-
-<!-- New releases, upcoming changes, ongoing votes --->
-
-- [ ] ...
-
-## From previous meetings
-
-- [ ] ...
-
-## New agenda items
-
-- [ ] ...
-
-## Deferred to next meeting
-
-- [ ] ...
+- WV: RFC period closed for 3 CEPs
+    - Repodata update strategy: https://github.com/conda/ceps/pull/146
+        - w/ https://github.com/conda/ceps/pull/111
+    - Staging cache output: https://github.com/conda/ceps/pull/102
+    - Repodata channel relationships: https://github.com/conda/ceps/pull/155
+- WV: Supply chain security items
+    - https://github.com/prefix-dev/pixi/issues/4545
