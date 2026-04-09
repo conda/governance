@@ -2,7 +2,7 @@ name: Request for graduation
 description: >-
   Request a Steering Council vote to move a software project from conda-incubator
   to the main conda organization.
-title: 'Graduate `<project>` from conda-incubator to conda'
+title: Graduate `<project>` from conda-incubator to conda
 labels:
   - vote
 body:
