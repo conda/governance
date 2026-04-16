@@ -1,0 +1,62 @@
+name: Sync steering members
+
+permissions:
+  contents: write
+  actions: read
+  pull-requests: read
+
+on:
+  workflow_run:
+    workflows: [Steering members]
+    types: [completed]
+
+jobs:
+  sync:
+    if: github.event.workflow_run.conclusion == 'failure'
+    runs-on: ubuntu-slim
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: steering-checklist
+          path: steering-sync/
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+      - name: Read and validate PR number
+        id: pr
+        run: |
+          pr_number="$(cat steering-sync/pr_number)"
+          if ! echo "$pr_number" | grep -qE '^[0-9]+$'; then
+            echo "::error::Invalid PR number: $pr_number"
+            exit 1
+          fi
+          echo "number=$pr_number" >> "$GITHUB_OUTPUT"
+      - name: Resolve PR branch
+        id: branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+        run: |
+          pr_json="$(gh api "repos/${{ github.repository }}/pulls/$PR_NUMBER" --jq '{ref: .head.ref, repo: .head.repo.full_name}')"
+          echo "ref=$(echo "$pr_json" | jq -r .ref)" >> "$GITHUB_OUTPUT"
+          echo "repo=$(echo "$pr_json" | jq -r .repo)" >> "$GITHUB_OUTPUT"
+      - name: Check out PR branch
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: ${{ steps.branch.outputs.ref }}
+          repository: ${{ steps.branch.outputs.repo }}
+      - name: Apply updated files
+        run: |
+          cd steering-sync
+          find . -type f ! -name pr_number | while read -r f; do
+            cp "$f" "$GITHUB_WORKSPACE/$f"
+          done
+      - name: Commit and push
+        run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          if ! git diff --quiet; then
+            git add -A
+            git commit -m "Sync steering member checklist from steering.csv"
+            git push
+          fi
