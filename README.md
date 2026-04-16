@@ -505,14 +505,54 @@ Sufficient justification must be given as to why a Project Team member should be
 
 In alphabetical order,
 
-{{ steering_members }}
+<!-- STEERING-TABLE -->
+| Name | GitHub | Funder | Pronouns |
+| --- | --- | --- | --- |
+| Bas Zalmstra | [@baszalmstra](https://github.com/baszalmstra) | prefix.dev | he/him |
+| Cheng H. Lee | [@chenghlee](https://github.com/chenghlee) | Anaconda | he/him |
+| Filipe Fernandes | [@ocefpaf](https://github.com/ocefpaf) | no funding | he/him |
+| Hind Montassif | [@Hind-M](https://github.com/Hind-M) | QuantStack | she/her |
+| Jaime Rodríguez-Guerra | [@jaimergp](https://github.com/jaimergp) | Quansight | he/him |
+| Jannis Leidel | [@jezdez](https://github.com/jezdez) | Anaconda | he/him |
+| John Kirkham | [@jakirkham](https://github.com/jakirkham) | NVIDIA | he/him |
+| Marcel Bargull | [@mbargull](https://github.com/mbargull) |  |  |
+| Marcelo Duarte Trevisani | [@marcelotrevisani](https://github.com/marcelotrevisani) | no funding | he/him |
+| Marius van Niekerk | [@mariusvniekerk](https://github.com/mariusvniekerk) |  |  |
+| Michael Sarahan | [@msarahan](https://github.com/msarahan) | NVIDIA | he/him |
+| Pavel Zwerschke | [@pavelzw](https://github.com/pavelzw) | QuantCo | he/him |
+| Uwe Korn | [@xhochy](https://github.com/xhochy) | QuantCo | he/him |
+| Wolf Vollprecht | [@wolfv](https://github.com/wolfv) | prefix.dev | he/him |
+<!-- END-OF-STEERING-TABLE -->
 
 
 ## Emeritus Steering members
 
 In alphabetical order,
 
-{{ emeritus_members }}
+<!-- EMERITUS-TABLE -->
+| Name | GitHub | Funder | Pronouns |
+| --- | --- | --- | --- |
+| Angela Gloyna | [@angloyna](https://github.com/angloyna) |  |  |
+| Anthony Scopatz | [@scopatz](https://github.com/scopatz) |  |  |
+| Christopher J. 'CJ' Wright | [@cj-wright](https://github.com/cj-wright) |  |  |
+| Connor Martin | [@cjmartian](https://github.com/cjmartian) |  |  |
+| Crystal Soja | [@csoja](https://github.com/csoja) |  |  |
+| Dharhas Pothina | [@dharhas](https://github.com/dharhas) |  |  |
+| Eric Dill | [@ericdill](https://github.com/ericdill) |  |  |
+| Gonzalo Peña-Castellanos | [@goanpeca](https://github.com/goanpeca) | Quansight | he/him |
+| Jonathan Helmus | [@jjhelmus](https://github.com/jjhelmus) |  |  |
+| Keith Kraus | [@kkraus14](https://github.com/kkraus14) | no funding | he/him |
+| Martin Prüsse | [@prusse-martin](https://github.com/prusse-martin) |  |  |
+| Matthew R. Becker | [@beckermr](https://github.com/beckermr) | no funding | he/him |
+| Megan Yancy | [@myancy-anaconda](https://github.com/myancy-anaconda) |  |  |
+| Michael Grant | [@mcg1969](https://github.com/mcg1969) |  |  |
+| Min Ragan-Kelley | [@minrk](https://github.com/minrk) |  |  |
+| Patrick Sodré | [@sodre](https://github.com/sodre) |  |  |
+| Ray Douglass | [@raydouglass](https://github.com/raydouglass) |  |  |
+| Sebastien Awwad | [@awwad](https://github.com/awwad) |  |  |
+| Tania Allard | [@trallard](https://github.com/trallard) | Quansight | she/her |
+| Travis Oliphant | [@teoliphant](https://github.com/teoliphant) |  |  |
+<!-- END-OF-EMERITUS-TABLE -->
 
 
 ## Document History

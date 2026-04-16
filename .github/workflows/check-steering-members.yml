@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - steering.csv
+      - emeritus.csv
 permissions:
   contents: read
 jobs:
