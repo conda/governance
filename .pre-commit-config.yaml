@@ -1,75 +1,101 @@
-# disable autofixing PRs, commenting "pre-commit.ci autofix" on a pull request triggers a autofix
-ci:
-  autofix_prs: false
 # ignore meeting notes since they are synced as is from HackMD
 exclude: |
   (?x)^(
     meetings/archive
   )/
 repos:
-  # generic verification and formatting
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v6.0.0
-    hooks:
-      # standard end of line/end of file cleanup
-      - id: mixed-line-ending
-      - id: end-of-file-fixer
-      - id: trailing-whitespace
-      # ensure syntaxes are valid
-      - id: check-toml
-      - id: check-yaml
-      # catch git merge/rebase problems
-      - id: check-merge-conflict
-  - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.37.1
-    hooks:
-      - id: check-github-workflows
-      # validate sub-teams schema
-      - id: check-jsonschema
-        files: ^teams/.*\.ya?ml$
-        args: [--schemafile, teams/teams.schema.json]
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.12
-    hooks:
-      - id: ruff
-        args: [--fix]
-        files: ^scripts/.*\.py$
-      - id: ruff-format
-        files: ^scripts/.*\.py$
-  - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
-    rev: v2.16.0
-    hooks:
-      - id: pretty-format-toml
-        args: [--autofix, --trailing-commas]
-  - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
-    rev: 0.2.3
-    hooks:
-      - id: yamlfmt
-        # ruamel.yaml doesn't line wrap correctly (?) so set width to 1M to avoid issues
-        args: [--mapping=2, --offset=2, --sequence=4, --width=1000000, --implicit_start]
-  - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.37.1
-    hooks:
-      # verify github syntaxes
-      - id: check-github-workflows
-  - repo: https://github.com/codespell-project/codespell
-    # see pyproject.toml
-    rev: v2.4.2
-    hooks:
-      - id: codespell
-        exclude_types:
-          - csv
-        args: [--write-changes]
-  - repo: meta
-    # see https://pre-commit.com/#meta-hooks
-    hooks:
-      - id: check-hooks-apply
-      - id: check-useless-excludes
   - repo: local
     hooks:
-      - id: git-diff
-        name: git diff
-        entry: git diff --exit-code
+      - id: pixi-install
+        name: pixi-install
+        entry: pixi install
         language: system
-        pass_filenames: false
         always_run: true
+        require_serial: true
+        pass_filenames: false
+      # ruff
+      - id: ruff
+        name: ruff
+        entry: pixi run ruff check --fix --exit-non-zero-on-fix --force-exclude
+        language: system
+        types_or: [python, pyi]
+        require_serial: true
+      - id: ruff-format
+        name: ruff-format
+        entry: pixi run ruff format --force-exclude
+        language: system
+        types_or: [python, pyi]
+        require_serial: true
+      # pre-commit-hooks
+      - id: trailing-whitespace-fixer
+        name: trailing-whitespace-fixer
+        entry: pixi run trailing-whitespace-fixer
+        language: system
+        types: [text]
+      - id: end-of-file-fixer
+        name: end-of-file-fixer
+        entry: pixi run end-of-file-fixer
+        language: system
+        types: [text]
+      - id: check-merge-conflict
+        name: check-merge-conflict
+        entry: pixi run check-merge-conflict --assume-in-merge
+        language: system
+        types: [text]
+      - id: mixed-line-ending
+        name: mixed-line-ending
+        entry: pixi run mixed-line-ending
+        language: system
+        types: [text]
+      - id: check-toml
+        name: check-toml
+        entry: pixi run check-toml
+        language: system
+        types: [toml]
+      - id: check-yaml
+        name: check-yaml
+        entry: pixi run check-yaml
+        language: system
+        types: [yaml]
+      # check-jsonschema
+      - id: check-jsonschema
+        name: check-jsonschema
+        entry: pixi run check-jsonschema
+        language: system
+        types: [json,yaml]
+        files: ^teams/.*\.ya?ml$
+        args: [--schemafile, teams/teams.schema.json]
+      - id: check-github-workflows
+        name: check-github-workflows
+        entry: pixi run check-jsonschema --builtin-schema vendor.github-workflows
+        language: system
+        types: [yaml]
+        files: ^\.github/workflows/[^/]+$
+      # codespell
+      - id: codespell
+        name: codespell
+        entry: pixi run codespell
+        language: system
+        exclude_types: [csv]
+        types: [text]
+        args: [--write-changes]
+      # zizmor
+      - id: zizmor
+        name: zizmor
+        entry: pixi run zizmor --min-severity high --fix .
+        language: system
+        types: [yaml]
+        pass_filenames: false
+
+
+  # - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+  #   rev: v2.16.0
+  #   hooks:
+  #     - id: pretty-format-toml
+  #       args: [--autofix, --trailing-commas]
+  # - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
+  #   rev: 0.2.3
+  #   hooks:
+  #     - id: yamlfmt
+  #       # ruamel.yaml doesn't line wrap correctly (?) so set width to 1M to avoid issues
+  #       args: [--mapping=2, --offset=2, --sequence=4, --width=1000000, --implicit_start]
