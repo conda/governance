@@ -62,7 +62,6 @@ repos:
         name: check-jsonschema
         entry: pixi run check-jsonschema
         language: system
-        types: [json,yaml]
         files: ^teams/.*\.ya?ml$
         args: [--schemafile, teams/teams.schema.json]
       - id: check-github-workflows
