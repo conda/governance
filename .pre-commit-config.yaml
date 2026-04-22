@@ -98,7 +98,7 @@ repos:
       # zizmor
       - id: zizmor
         name: zizmor
-        entry: pixi run zizmor --min-severity high --fix .
+        entry: pixi run zizmor --no-progress --min-severity high --fix .
         language: system
         types: [yaml]
         pass_filenames: false
