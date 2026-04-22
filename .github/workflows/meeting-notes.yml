@@ -1,5 +1,4 @@
 name: Create PR for meeting notes
-
 on:
   workflow_dispatch:
     inputs:
@@ -17,7 +16,6 @@ on:
   pull_request:
     types:
       - labeled
-
 jobs:
   create:
     permissions:
@@ -37,7 +35,6 @@ jobs:
         Once done with the meeting, sync the note back to the repository by adding the `sync-hackmd-notes` label.
     secrets:
       HACKMD_TOKEN: ${{ secrets.HACKMD_TOKEN }}
-
   sync:
     if: github.event.label.name == 'sync-hackmd-notes'
     uses: ./.github/workflows/_sync-meeting-notes-pr.yml

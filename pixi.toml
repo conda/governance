@@ -16,6 +16,8 @@ check-jsonschema = "*"
 ruff = "*"
 codespell = "*"
 zizmor = "*"
+yamlfmt = ">=0.21.0,<0.22"
+tombi = ">=0.9.17,<0.10"
 
 [tasks]
 lint = "pre-commit run --all-files"

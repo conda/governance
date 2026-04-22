@@ -1,11 +1,9 @@
 # Reusable workflow for conda/governance only. External usage is not supported.
 # Vendored from https://github.com/Quansight-Labs/hackmd-meeting-notes-action@e4b7132
 name: HackMD Sync Meeting Notes Action
-
 permissions:
   contents: write
   pull-requests: write
-
 on:
   workflow_call:
     inputs:
@@ -28,7 +26,6 @@ on:
       HACKMD_TOKEN:
         description: API token for HackMD.io
         required: true
-
 jobs:
   main:
     name: Sync notes from HackMD

@@ -1,5 +1,4 @@
 name: Teams
-
 on:
   workflow_dispatch:
   pull_request_target: # zizmor: ignore[dangerous-triggers] uses base-branch context intentionally for now
@@ -8,7 +7,6 @@ on:
       - teams/*.yaml
       - teams/*.schema.json
       - scripts/schemas.py
-
 jobs:
   check:
     runs-on: ubuntu-latest

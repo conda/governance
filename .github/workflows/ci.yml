@@ -4,12 +4,10 @@ on:
   push:
     branches:
       - main
-
 # Automatically stop old builds on the same branch/PR
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-
 jobs:
   lint:
     permissions:

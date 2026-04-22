@@ -70,6 +70,23 @@ repos:
         language: system
         types: [yaml]
         files: ^\.github/workflows/[^/]+$
+      # yamlfmt
+      - id: yamlfmt
+        name: yamlfmt
+        entry: pixi run yamlfmt
+        language: system
+        types: [yaml]
+      # tombi
+      - id: tombi-format
+        name: tombi-format
+        entry: pixi run tombi format
+        language: system
+        types: [toml]
+      - id: tombi-lint
+        name: tombi-lint
+        entry: pixi run tombi lint
+        language: system
+        types: [toml]
       # codespell
       - id: codespell
         name: codespell
@@ -85,16 +102,3 @@ repos:
         language: system
         types: [yaml]
         pass_filenames: false
-
-
-  # - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
-  #   rev: v2.16.0
-  #   hooks:
-  #     - id: pretty-format-toml
-  #       args: [--autofix, --trailing-commas]
-  # - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
-  #   rev: 0.2.3
-  #   hooks:
-  #     - id: yamlfmt
-  #       # ruamel.yaml doesn't line wrap correctly (?) so set width to 1M to avoid issues
-  #       args: [--mapping=2, --offset=2, --sequence=4, --width=1000000, --implicit_start]
