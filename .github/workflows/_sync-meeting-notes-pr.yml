@@ -100,6 +100,8 @@ jobs:
           sys.exit(0)
       - name: Commit changes (if any)
         if: ${{ !inputs.dry_run }}
+        env:
+          BRANCH: ${{ github.head_ref || github.ref_name }}
         run: |
           set -x
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -109,7 +111,7 @@ jobs:
           if ! git diff --exit-code "$DOCPATH"; then
             git add "$DOCPATH"
             git commit -m "Update $DOCPATH"
-            git push origin ${{ github.head_ref || github.ref_name }}
+            git push origin $BRANCH
           else
             echo "No changes detected."
           fi

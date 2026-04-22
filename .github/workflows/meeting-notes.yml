@@ -18,14 +18,11 @@ on:
     types:
       - labeled
 
-permissions:
-  contents: write
-  pull-requests: write
-# You need to enable 'Allow GitHub Actions to create and approve pull requests'
-# in your Actions Settings too
-
 jobs:
   create:
+    permissions:
+      contents: write
+      pull-requests: write
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     uses: ./.github/workflows/_create-meeting-notes-pr.yml
     with:
@@ -44,6 +41,9 @@ jobs:
   sync:
     if: github.event.label.name == 'sync-hackmd-notes'
     uses: ./.github/workflows/_sync-meeting-notes-pr.yml
+    permissions:
+      contents: write
+      pull-requests: write
     with:
       pr_number: ${{ github.event.number }}
       hackmd_team: conda-community
