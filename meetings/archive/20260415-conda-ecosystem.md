@@ -14,7 +14,9 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 * SD: Sam Doe (@samdoe), Company
 -->
 
-1. ...
+<!-- JRG (Jaime): I'll miss the call this week, sorry. Attending a conference. Delete this comment after the call :) -->
+
+1. Daniel Ching (@carterbox), NVIDIA/Conda-forge
 1. ...
 1. ...
 
@@ -38,7 +40,8 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 
 ## New agenda items
 
-- [ ] ...
+- [ ] (DJC) __cuda_arch virtual package RFC Q&A
+    - [ ] https://github.com/conda/ceps/pull/157
 
 ## Deferred to next meeting
 
