@@ -9,7 +9,7 @@ We deeply appreciate all good faith contributions.
 ## Quick Links
 
 - [Request for Incubation](https://github.com/conda/governance/issues/new?template=incubation_request.yml)
-- [Request for graduation](https://github.com/conda/governance/issues/new?template=graduation_request.yml)
+- [Request for Graduation](https://github.com/conda/governance/issues/new?template=graduation_request.yml)
 - [New Sub-team/Project Team](https://github.com/conda/governance/issues/new?template=new_team.yml)
 
 ## Code of Conduct
