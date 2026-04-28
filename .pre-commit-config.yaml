@@ -7,6 +7,7 @@ exclude: |
 ci:
   skip:
     - pixi-install
+    - sync-steering-members
     - ruff
     - ruff-format
     - trailing-whitespace-fixer
@@ -32,6 +33,13 @@ repos:
         always_run: true
         require_serial: true
         pass_filenames: false
+      - id: sync-steering-members
+        name: sync-steering-members
+        entry: pixi run sync_steering_members
+        language: system
+        pass_filenames: false
+        always_run: true
+        require_serial: true
       # ruff
       - id: ruff
         name: ruff
