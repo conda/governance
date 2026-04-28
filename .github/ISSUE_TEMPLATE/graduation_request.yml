@@ -1,0 +1,193 @@
+name: Request for graduation
+description: >-
+  Request a Steering Council vote to move a software project from conda-incubator
+  to the main conda organization.
+title: Graduate `<project>` from conda-incubator to conda
+labels:
+  - vote
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Request for graduation
+
+        Per the [conda governance policy](https://github.com/conda/governance#incubation), a Steering Council vote is required to move a project into the main [`conda`](https://github.com/conda/) org. This vote uses the policy **[Incorporate a Software Project into the main `conda` Organization](https://github.com/conda/governance#incorporate-a-software-project-into-the-main-conda-organization)** (standard, **60%**). State the [initial Project Team](https://github.com/conda/governance#project-teams-details) in this issue. See [Voting](https://github.com/conda/governance#voting) (≥7 days default, end date in [AoE](https://time.is/Anywhere_on_Earth)).
+
+        [Community](https://github.com/conda/governance#community-projects) projects: [Trademarks](https://github.com/conda/governance#trademarks).
+
+  - type: input
+    id: project_name
+    attributes:
+      label: Project name
+      description: Name of the project to graduate.
+      placeholder: e.g. conda-example
+    validations:
+      required: true
+
+  - type: input
+    id: incubator_repo_url
+    attributes:
+      label: Primary incubator repository URL
+      description: Repository to transfer (usually under conda-incubator).
+      placeholder: e.g. https://github.com/conda-incubator/my-project
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_assets
+    attributes:
+      label: Additional repositories or org assets
+      description: Optional. Other repos, boards, or URLs to move (one per line).
+      placeholder: |
+        https://github.com/conda-incubator/my-project-test-data
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale for graduation
+      description: Why the project is ready for the main conda org (stability, specs, maintenance).
+    validations:
+      required: true
+
+  - type: textarea
+    id: project_team
+    attributes:
+      label: Initial Project Team
+      description: >-
+        Org team slug (`org/team`, use `@` when mentioning) and/or maintainer usernames.
+        The team should accept being the Project Team after the move.
+      placeholder: e.g. my-org/my-team or usernames (use @mentions when you submit)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: maintenance_model
+    attributes:
+      label: Maintenance model after the move
+      description: >-
+        [Community](https://github.com/conda/governance#community-projects) or
+        [Federated](https://github.com/conda/governance#federated-projects).
+      options:
+        - Community project
+        - Federated project
+    validations:
+      required: true
+
+  - type: input
+    id: discussion_link
+    attributes:
+      label: Related discussion (optional)
+      description: Link to a prior issue or thread on the project repo, if any.
+      placeholder: e.g. https://github.com/conda-incubator/my-project/issues/1
+
+  - type: input
+    id: proposed_repo_name
+    attributes:
+      label: Proposed repository name (optional)
+      description: New name after the move if not keeping the current one (e.g. `conda/new-name`).
+      placeholder: e.g. conda/setup-action
+
+  - type: input
+    id: vote_end_date
+    attributes:
+      label: Vote end date (AoE)
+      description: >-
+        Last voting day, end of day [Anywhere on Earth](https://time.is/Anywhere_on_Earth).
+        Format YYYY-MM-DD; use this date in the vote call text.
+      placeholder: e.g. 2026-04-30
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Vote call
+
+        Replace `YYYY-MM-DD` with the vote end date, then post this text as normal markdown (for example in a comment) so `@conda/steering-council` notifies.
+
+        ```markdown
+        @conda/steering-council
+
+        This vote falls under the **Incorporate a Software Project into the main `conda` Organization** policy of the [conda governance policy](https://github.com/conda/governance),
+        please vote and/or comment on this proposal at your earliest convenience.
+
+        It needs **60%** of the Steering Council to vote `yes` to pass.
+
+        If you have questions concerning the proposal, you may also leave a comment or code review.
+
+        **This vote will end on YYYY-MM-DD, End of Day, [Anywhere on Earth](https://time.is/Anywhere_on_Earth) (AoE).**
+
+        <!-- STEERING-MEMBERS -->
+        @xhochy (Uwe Korn)
+        - [ ]  yes
+        - [ ]  no
+        - [ ]  abstain
+
+        @mariusvniekerk (Marius van Niekerk)
+        - [ ]  yes
+        - [ ]  no
+        - [ ]  abstain
+
+        @chenghlee (Cheng H. Lee)
+        - [ ]  yes
+        - [ ]  no
+        - [ ]  abstain
+
+        @ocefpaf (Filipe Fernandes)
+        - [ ]  yes
+        - [ ]  no
+        - [ ]  abstain
+
+        @marcelotrevisani (Marcelo Duarte Trevisani)
+        - [ ]  yes
+        - [ ]  no
+        - [ ]  abstain
+
+        @msarahan (Michael Sarahan)
+        - [ ]  yes
+        - [ ]  no
+        - [ ]  abstain
+
+        @mbargull (Marcel Bargull)
+        - [ ]  yes
+        - [ ]  no
+        - [ ]  abstain
+
+        @jakirkham (John Kirkham)
+        - [ ]  yes
+        - [ ]  no
+        - [ ]  abstain
+
+        @jezdez (Jannis Leidel)
+        - [ ]  yes
+        - [ ]  no
+        - [ ]  abstain
+
+        @wolfv (Wolf Vollprecht)
+        - [ ]  yes
+        - [ ]  no
+        - [ ]  abstain
+
+        @jaimergp (Jaime Rodríguez-Guerra)
+        - [ ]  yes
+        - [ ]  no
+        - [ ]  abstain
+
+        @baszalmstra (Bas Zalmstra)
+        - [ ]  yes
+        - [ ]  no
+        - [ ]  abstain
+
+        @Hind-M (Hind Montassif)
+        - [ ]  yes
+        - [ ]  no
+        - [ ]  abstain
+
+        @pavelzw (Pavel Zwerschke)
+        - [ ]  yes
+        - [ ]  no
+        - [ ]  abstain
+        <!-- END-OF-STEERING-MEMBERS -->
+        ```
+
+        **If quorum may be low:** before using [timeout](https://github.com/conda/governance#quorum) rules, the vote must run ≥2 weeks, be discussed at a Steering Council meeting, and get ≥3 Slack + ≥3 email reminders (see `steering.csv` emails). Timeout outcomes need a PR under [`vote-results/`](https://github.com/conda/governance/tree/main/vote-results).
