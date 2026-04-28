@@ -103,7 +103,7 @@ body:
 
         **This vote will end on YYYY-MM-DD, End of Day, [Anywhere on Earth](https://time.is/Anywhere_on_Earth) (AoE).**
 
-        <!-- STEERING-MEMBERS -->
+        <!-- STEERING-CHECKLIST -->
         @xhochy (Uwe Korn)
         - [ ]  yes
         - [ ]  no
@@ -173,7 +173,7 @@ body:
         - [ ]  yes
         - [ ]  no
         - [ ]  abstain
-        <!-- END-OF-STEERING-MEMBERS -->
+        <!-- END-OF-STEERING-CHECKLIST -->
         ```
 
         **If quorum may be low:** before using [timeout](https://github.com/conda/governance#quorum) rules, the vote must run ≥2 weeks, be discussed at a Steering Council meeting, and get ≥3 Slack + ≥3 email reminders (see `steering.csv` emails). Timeout outcomes need a PR under [`vote-results/`](https://github.com/conda/governance/tree/main/vote-results).
