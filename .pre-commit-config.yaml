@@ -3,6 +3,25 @@ exclude: |
   (?x)^(
     meetings/archive
   )/
+# pre-commit.ci has no pixi; linting runs in GitHub Actions via `pixi run lint`
+ci:
+  skip:
+    - pixi-install
+    - ruff
+    - ruff-format
+    - trailing-whitespace-fixer
+    - end-of-file-fixer
+    - check-merge-conflict
+    - mixed-line-ending
+    - check-toml
+    - check-yaml
+    - check-jsonschema
+    - check-github-workflows
+    - yamlfmt
+    - tombi-format
+    - tombi-lint
+    - codespell
+    - zizmor
 repos:
   - repo: local
     hooks:
