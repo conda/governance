@@ -1,15 +1,12 @@
 name: Sync steering members
-
 permissions:
   contents: write
   actions: read
   pull-requests: read
-
 on:
-  workflow_run:
+  workflow_run: # zizmor: ignore[dangerous-triggers] artifact-only consumer, no PR code executed
     workflows: [Steering members]
     types: [completed]
-
 jobs:
   sync:
     if: github.event.workflow_run.conclusion == 'failure'
