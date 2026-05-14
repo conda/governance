@@ -15,10 +15,6 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 1. DY: Dan Yeaw (@danyeaw), Anaconda
 1. AS: Ahmed Shifa
 
-## Introductions
-
-- [ ] ...
-
 ## Announcements
 
 - [x] Recently closed votes, vote count and minting to take place tomorrow:
