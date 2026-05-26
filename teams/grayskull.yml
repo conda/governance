@@ -1,0 +1,22 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: grayskull
+description: Maintainers of `grayskull`
+charter: project
+requirements:
+resources:
+  teams:
+    - conda/grayskull
+  repos:
+    - conda/grayskull
+  other:
+links:
+  - https://github.com/conda/grayskull/issues/436
+members:
+  ForgottenProgramme:
+  jezdez:
+  marcelotrevisani:
+  ocefpaf:
+emeritus:

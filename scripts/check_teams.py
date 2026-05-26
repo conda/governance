@@ -1,7 +1,19 @@
 """
 Checks whether the members defined in the teams/*.yaml files correspond to their Github definitions.
 It also makes sure that all teams in conda and conda-incubator are collected here.
+
+We need one fine-grained token per organization (CONDA_ORG_WIDE_TOKEN,
+CONDA_INCUBATOR_ORG_WIDE_TOKEN), with permissions:
+
+- All repositories, metadata (read-only)
+- Organization, metadata (read-only)
 """
+
+# /// script
+# dependencies = [
+#   "requests",
+#   "ruamel.yaml",
+# ]
 
 import os
 import sys
@@ -14,110 +26,256 @@ from ruamel.yaml import YAML
 
 HERE = Path(__file__).parent
 ROOT = HERE.parent
-yaml = YAML(typ="safe")
+yaml = YAML()
+yaml.indent(mapping=2, sequence=4, offset=2)
 
 
-def token(org):
+def eprint(*args, indent=0, **kwargs):
+    kwargs.setdefault("file", sys.stderr)
+    if indent:
+        print(indent * " ", *args, **kwargs)
+    else:
+        print(*args, **kwargs)
+
+
+def report_diff(field: str, indent: int = 2, **entries: str | list[str]):
+    if len(entries) != 2:
+        raise ValueError("Must pass exactly two keyword arguments")
+    names = list(entries.keys())
+    values = list(entries.values())
+    eprint(
+        f"! Contents for {field} in {names[0]} do not match {names[1]}:", indent=indent
+    )
+    values0 = (
+        [str(val) for val in values[0]]
+        if isinstance(values[0], (list, tuple))
+        else [values[0] or ""]
+    )
+    values1 = (
+        [str(val) for val in values[1]]
+        if isinstance(values[1], (list, tuple))
+        else [values[1] or ""]
+    )
+    eprint(f"{names[0]}:", values0, indent=indent)
+    eprint(f"{names[1]}:", values1, indent=indent)
+    for line in unified_diff(
+        values0,
+        values1,
+        fromfile=names[0],
+        tofile=names[1],
+    ):
+        eprint(line, indent=indent)
+
+
+def gh(org, apipath):
+    api_url = f"https://api.github.com/{apipath}"
+
     if org == "conda":
-        return os.environ.get("CONDA_ORG_WIDE_TOKEN", "")
-    if org == "conda-incubator":
-        return os.environ.get("CONDA_INCUBATOR_ORG_WIDE_TOKEN", "")
-    return os.environ.get("GITHUB_TOKEN")
-
-
-def team_members(org: str, name: str) -> list[str]:
-    api_url = f"https://api.github.com/orgs/{org}/teams/{name}/members"
+        token = os.environ.get("CONDA_ORG_WIDE_TOKEN")
+    elif org == "conda-incubator":
+        token = os.environ.get("CONDA_INCUBATOR_ORG_WIDE_TOKEN")
+    else:
+        token = None
+    token = token or os.environ.get("GITHUB_TOKEN") or ""
 
     # Headers for authentication and proper API versioning
     headers = {
-        "Authorization": f"Bearer {token(org)}",
+        "Authorization": f"Bearer {token}",
         "Accept": "application/vnd.github.v3+json",
         "X-GitHub-Api-Version": "2022-11-28",
     }
 
     r = requests.get(api_url, headers=headers, params={"per_page": 100})
     r.raise_for_status()
-    return [member["login"] for member in r.json()]
+    return r.json()
+
+
+def team_details(org: str, team: str) -> list[str]:
+    return gh(org, f"orgs/{org}/teams/{team}")
+
+
+def team_members(org: str, team: str) -> list[str]:
+    result = gh(org, f"orgs/{org}/teams/{team}/members")
+    return [member["login"] for member in result]
 
 
 def teams_in_org(org):
-    api_url = f"https://api.github.com/orgs/{org}/teams"
-
-    # Headers for authentication and proper API versioning
-    headers = {
-        "Authorization": f"Bearer {token(org)}",
-        "Accept": "application/vnd.github.v3+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-    }
-
-    r = requests.get(api_url, headers=headers, params={"per_page": 100})
-    r.raise_for_status()
-    return [f"{org}/{team['slug']}" for team in r.json()]
+    result = gh(org, f"orgs/{org}/teams")
+    return [f"{org}/{team['slug']}" for team in result]
 
 
-exit_code = 0
-teams_in_github = [*teams_in_org("conda"), *teams_in_org("conda-incubator")]
-seen_teams = []
+def repos_in_org(org):
+    result = gh(org, f"orgs/{org}/repos")
+    return [repo["full_name"] for repo in result]
 
-for path in chain(ROOT.glob("teams/*.yml"), ROOT.glob("teams/*.yaml")):
-    with open(path) as f:
-        team = yaml.load(path)
-    name_components = team["name"].split("/")
-    if len(name_components) == 2:
-        org, name = name_components
-    elif len(name_components) == 1:
-        org = "conda"
-        name = name_components[0]
-    else:
-        print(
-            f"Name {team['name']} must be '<team_name>' or '<org>/<team_name>'",
-            file=sys.stderr,
-        )
-    try:
-        members = team_members(org, name)
-    except Exception as exc:
-        print(type(exc).__name__, "-", exc, file=sys.stderr)
-        print("----", file=sys.stderr)
+
+def access_to_repos(org, team):
+    result = gh(org, f"orgs/{org}/teams/{team}/repos")
+    return [
+        repo["full_name"]
+        for repo in result
+        if (repo["permissions"]["admin"] or repo["permissions"]["push"])
+        and "-ghsa-" not in repo["name"]
+    ]
+
+
+def teams_with_access_to_repo(org, repo):
+    result = gh(org, f"repos/{org}/{repo}/teams")
+    return [team["slug"] for team in result]
+
+
+def collaborators(org, repo):
+    result = gh(org, f"repos/{org}/{repo}/collaborators?affiliation=direct")
+    return {user["login"]: user["role_name"] for user in result}
+
+
+def all_yamls() -> list[Path]:
+    return sorted(chain(ROOT.glob("teams/**/*.yml"), ROOT.glob("teams/**/*.yaml")))
+
+
+def check_teams() -> int:
+    exit_code = 0
+    teams_in_github = [*teams_in_org("conda"), *teams_in_org("conda-incubator")]
+    seen_teams = []
+    seen_repos = []
+
+    for path in all_yamls():
+        print("Checking", path.relative_to(ROOT), "...")
+        with open(path) as f:
+            team = yaml.load(f)
+
+        for team_name in team.get("resources", {}).get("teams", ()):
+            print("  Checking Github team", team_name, "...")
+            # 0. Validate team names
+            org, name = team_name.split("/")
+            if org not in ("conda", "conda-incubator"):
+                eprint(
+                    "Team must belong to the `conda` or `conda-incubator` orgs.",
+                    indent=4,
+                )
+                exit_code = 1
+                continue
+
+            details = team_details(org, name)
+
+            # 1. Validate descriptions
+            if team["description"] != details["description"]:
+                report_diff(
+                    "descriptions",
+                    file=team["description"],
+                    github=details["description"],
+                    indent=4,
+                )
+                exit_code = 1
+
+            # 2. Validate team members
+            try:
+                members = team_members(org, name)
+            except Exception as exc:
+                eprint(type(exc).__name__, "-", exc, indent=4)
+                exit_code = 1
+                continue
+            seen_teams.append(f"{org}/{name}")
+            if set(members) != set(team["members"]):
+                members_in_file = sorted(team["members"], key=str.lower)
+                members_in_gh = sorted(members, key=str.lower)
+                report_diff(
+                    "members", file=members_in_file, github=members_in_gh, indent=4
+                )
+                exit_code = 1
+
+            # 3. Validate access to repositories
+            repos_in_file = sorted(
+                [
+                    repo
+                    for repo in team["resources"]["repos"] or []
+                    if repo.startswith(f"{org}/")
+                ],
+                key=str.lower,
+            )
+            seen_repos.extend(repos_in_file)
+            repos_in_gh = sorted(access_to_repos(org, name), key=str.lower)
+            if set(repos_in_file) != set(repos_in_gh):
+                report_diff(
+                    "repositories", file=repos_in_file, github=repos_in_gh, indent=4
+                )
+                exit_code = 1
+            print("  ---")
+        print("---")
+
+    # 4. Check all teams are described
+    if set(seen_teams) != set(teams_in_github):
+        teams_in_repo = sorted(seen_teams, key=str.lower)
+        teams_in_gh = sorted(teams_in_github, key=str.lower)
+        report_diff("teams", yamls=teams_in_repo, github=teams_in_gh, indent=2)
         exit_code = 1
-        continue
-    seen_teams.append(f"{org}/{name}")
-    if set(members) != set(team["members"]):
-        members_in_file = sorted(team["members"], key=str.lower)
-        members_in_gh = sorted(members, key=str.lower)
-        print(
-            f"Members in '{path.name}' are not in sync with team '@{org}/{name}':",
-            file=sys.stderr,
-        )
-        print("File:", members_in_file, file=sys.stderr)
-        print("Github:", members_in_gh, file=sys.stderr)
-        print(
-            "Diff:",
-            *unified_diff(
-                members_in_file, members_in_gh, fromfile=path.name, tofile="Github"
-            ),
-            sep="\n",
-        )
-        print("----", file=sys.stderr)
+        print("---")
+
+    # 5. Check no individuals are granted access directly (everything must be a team)
+    repos_with_direct_access = {}
+    for repo in chain(repos_in_org("conda"), repos_in_org("conda-incubator")):
+        if "-ghsa-" in repo:
+            continue
+        if repo not in seen_repos:
+            eprint(f"Repository '{repo}' is not annotated in any local team YAMLs.")
+            eprint(
+                "These teams have access:", teams_with_access_to_repo(*repo.split("/"))
+            )
+            exit_code = 1
+        try:
+            if users := collaborators(*repo.split("/")):
+                repos_with_direct_access[repo] = users
+        except requests.HTTPError as exc:
+            eprint(
+                f"Could not check collaborators for {repo} (HTTPError: {exc}), skipping..."
+            )
+            continue
+    if repos_with_direct_access:
+        eprint("Some users have direct access to repositories.")
+        eprint("Repository access must be granted through teams only!")
+        for repo, users in repos_with_direct_access.items():
+            print(f"- {repo}:")
+            for user, level in sorted(users.items()):
+                print(f"  - {user}: {level}")
         exit_code = 1
 
-if set(seen_teams) != set(teams_in_github):
-    teams_in_repo = sorted(seen_teams, key=str.lower)
-    teams_in_gh = sorted(teams_in_github, key=str.lower)
-    print("Teams in repo do not match Github teams:", file=sys.stderr)
-    print("Repo:", teams_in_repo, file=sys.stderr)
-    print("Github:", teams_in_gh, file=sys.stderr)
-    print(
-        "Diff:",
-        *unified_diff(
-            teams_in_repo,
-            teams_in_gh,
-            fromfile="Repo",
-            tofile="Github",
-        ),
-        sep="\n",
-    )
+    return exit_code
 
-    print("----", file=sys.stderr)
-    exit_code = 1
 
-sys.exit(exit_code)
+def generate():
+    team_to_fn = {}
+    for path in all_yamls():
+        with open(path) as f:
+            team = yaml.load(f)
+            team_to_fn[team["name"]] = path
+
+    for team in chain(teams_in_org("conda"), teams_in_org("conda-incubator")):
+        if team in team_to_fn:
+            continue
+        org, team_name = team.split("/")
+        details = team_details(org, team_name)
+        data = {
+            "name": team_name,
+            "description": details["description"],
+            "charter": None,
+            "requirements": None,
+            "resources": {
+                "teams": [team],
+                "repos": access_to_repos(org, team_name),
+                "other": None,
+            },
+            "links": None,
+            "members": {member: None for member in team_members(org, team_name)},
+            "emeritus": None,
+        }
+        Path("teams", org).mkdir(parents=True, exist_ok=True)
+        output_path = Path("teams", org, f"{team_name.replace('.', '-')}.yml")
+        output_path.write_text("# yaml-language-server: $schema=./teams.schema.json\n")
+        with open(output_path, "a") as f:
+            yaml.dump(data, f)
+
+
+if __name__ == "__main__":
+    if sys.argv[1:] and sys.argv[1] == "generate":
+        sys.exit(generate())
+    sys.exit(check_teams())

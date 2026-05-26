@@ -1,10 +1,16 @@
-# yaml-language-server: $schema=teams.schema.json
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
 name: constructor
 description: The team maintaining constructor and related projects
 charter: project
 requirements:
-scopes:
-  codeowners:
+resources:
+  teams:
+    - conda/constructor
+    - conda-incubator/constructor
+  repos:
     - conda/conda-pack
     - conda/constructor
     - conda/menuinst
@@ -17,14 +23,15 @@ members:
   bkreider: https://github.com/conda/governance/issues/53
   chenghlee: https://github.com/conda/governance/issues/53
   goanpeca: https://github.com/conda/governance/issues/53
-  hmaarrfk: https://github.com/conda/governance/issues/53 # missing from team?
+  hmaarrfk: https://github.com/conda/governance/issues/53
   hoechenberger: https://github.com/conda/governance/issues/53
   isuruf: https://github.com/conda/governance/issues/53
   jaimergp: https://github.com/conda/governance/issues/53
   jezdez: https://github.com/conda/governance/issues/53
   larsoner: https://github.com/conda/governance/issues/53
-  marcoesters: # missing record of decision?
-  mcg1969: https://github.com/conda/governance/issues/53 # missing from team?
+  lrandersson: https://github.com/conda/governance/issues/332
+  marcoesters: https://github.com/conda/constructor/issues/790
   pseudoyim: https://github.com/conda/governance/issues/53
   travishathaway: # missing record of decision?
 emeritus:
+  mcg1969: https://github.com/conda/governance/issues/53
