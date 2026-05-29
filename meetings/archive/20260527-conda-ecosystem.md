@@ -17,7 +17,8 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 1. JS: Jakov Smolic (@jsmolic), Quansight
 1. MRB: Matthew Becker (@beckermr), CF/C
 1. JL: Jannis Leidel (@jezdez), Anaconda, CF/C, C/SC
-2. SG: Shahaf Golan, JFrog Artifactory
+1. SG: Shahaf Golan, JFrog Artifactory
+1. JK: John Kirkham (@jakirkham), NVIDIA/CF/CFC
 
 
 ## Introductions
