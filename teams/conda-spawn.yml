@@ -1,0 +1,19 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-spawn
+description: Maintainers of `conda-spawn`
+charter: dynamic
+requirements:
+resources:
+  teams:
+    - conda-incubator/conda-spawn
+  repos:
+    - conda-incubator/conda-spawn
+  other:
+links:
+  - https://github.com/conda/governance/issues/202
+members:
+  jaimergp: https://github.com/conda/governance/issues/202
+emeritus:

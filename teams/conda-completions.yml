@@ -1,0 +1,19 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-completions
+description: Maintainers of conda shell completions
+charter:
+requirements:
+resources:
+  teams:
+    - conda-incubator/conda-completions
+  repos:
+    - conda-incubator/conda-zsh-completion
+  other:
+links:
+members:
+  esc:
+  jezdez:
+emeritus:
