@@ -1,20 +1,15 @@
 # Reusable workflow for conda/governance only. External usage is not supported.
 # Vendored from https://github.com/Quansight-Labs/hackmd-meeting-notes-action@e4b7132
 name: HackMD Create Meeting Notes Action
-
 permissions:
   contents: write
   pull-requests: write
-
 on:
   workflow_call:
     inputs:
       template_path:
         description: >-
-          Path (relative to the repository root) to the HackMD template. Supports Jinja.
-          Environment variables available in the `env` dict.
-          Date available in the `date` datetime object.
-          It MUST contain a one-line `# H1 header`.
+          Path (relative to the repository root) to the HackMD template. Supports Jinja. Environment variables available in the `env` dict. Date available in the `date` datetime object. It MUST contain a one-line `# H1 header`.
         required: true
         type: string
       output_path:
@@ -23,9 +18,7 @@ on:
         type: string
       branch_name:
         description: >-
-          Name for the branch that will be created with the new document.
-          Also used for the HackMD permalink.
-          Accepts `date` command syntax.
+          Name for the branch that will be created with the new document. Also used for the HackMD permalink. Accepts `date` command syntax.
         required: false
         default: '%Y-%m-%d-meeting-notes'
         type: string
@@ -40,9 +33,7 @@ on:
         type: string
       pr_body:
         description: >-
-          Body to be used in the submitted PR.
-          Environment variables available in `${env.XXXX}`.
-          Other options for interpolated strings `${...}` at https://github.com/actions/github-script
+          Body to be used in the submitted PR. Environment variables available in `${env.XXXX}`. Other options for interpolated strings `${...}` at https://github.com/actions/github-script
         required: false
         type: string
         default: |
@@ -53,9 +44,7 @@ on:
           Labels are usually better because the permissions are usually restricted to maintainers.
       date:
         description: >-
-          Date to use for `date` syntax interpolation in strings. Defaults to date when running.
-          MUST be understood by `date --date`, but probably better to stick a known standard
-          (e.g. use ISO8601 format in UTC `2023-01-11T09:00:00Z`).
+          Date to use for `date` syntax interpolation in strings. Defaults to date when running. MUST be understood by `date --date`, but probably better to stick a known standard (e.g. use ISO8601 format in UTC `2023-01-11T09:00:00Z`).
         required: false
         type: string
         default: now
@@ -76,7 +65,6 @@ on:
       HACKMD_TOKEN:
         description: API token for HackMD.io
         required: true
-
 jobs:
   main:
     name: Create meeting notes PR
@@ -91,13 +79,17 @@ jobs:
           python3 -V
           python3 -m pip install jinja2 requests
       - name: Prepare date
+        env:
+          DATE: ${{ inputs.date || 'now' }}
         run: |
-          chosen_date="$(date -I -u --date "${{ inputs.date || 'now' }}")"
+          chosen_date="$(date -I -u --date "${DATE}")"
           echo "chosen_date=${chosen_date}" >> $GITHUB_ENV
       - name: Prepare branch
+        env:
+          BRANCH: ${{ inputs.branch_name || '%Y-%m-%d-meeting-notes' }}
         run: |
           # Create new branch
-          branch_name=$(date --date "$chosen_date" "+${{ inputs.branch_name || '%Y-%m-%d-meeting-notes' }}")
+          branch_name=$(date --date "$chosen_date" "+$BRANCH")
           if [[ "${{ inputs.force_push }}" == "true" ]]; then
             git checkout -b "${branch_name}" || git checkout "${branch_name}"
           else
@@ -105,9 +97,12 @@ jobs:
           fi
           echo "branch_name=$branch_name" >> $GITHUB_ENV
       - name: Render template
+        env:
+          TEMPLATE_PATH: ${{ inputs.template_path || 'meeting-notes/TEMPLATE.md' }}
+          OUTPUT_PATH: ${{ inputs.output_path || 'meeting-notes/%Y-%m-%d.md' }}
         run: |
           # Render template
-          output_path=$(date --date "$chosen_date" "+${{ inputs.output_path ||  'meeting-notes/%Y-%m-%d.md' }}")
+          output_path=$(date --date "$chosen_date" "+$OUTPUT_PATH")
           export output_path
           mkdir -p "$(dirname "$output_path")"
           python3 > "$output_path" <<EOF
@@ -116,7 +111,7 @@ jobs:
           import os
           from datetime import datetime
           from pathlib import Path
-          template = Template(Path("${{ inputs.template_path || 'meeting-notes/TEMPLATE.md' }}").read_text(), undefined=DebugUndefined)
+          template = Template(Path("$TEMPLATE_PATH").read_text(), undefined=DebugUndefined)
           print(
             template.render(
               env=os.environ,
@@ -138,12 +133,13 @@ jobs:
         if: ${{ !inputs.dry_run }}
         env:
           HACKMD_TOKEN: ${{ secrets.HACKMD_TOKEN }}
+          HACKMD_TEAM: ${{ inputs.hackmd_team }}
         shell: python
         run: |
           import os
           from pathlib import Path
           import requests
-          url = "https://api.hackmd.io/v1/teams/${{ inputs.hackmd_team }}/notes"
+          url = "https://api.hackmd.io/v1/teams/${HACKMD_TEAM}/notes"
           headers = {"Authorization": f"Bearer {os.environ['HACKMD_TOKEN']}"}
           data = {
             "title": os.environ["note_title"],
@@ -170,11 +166,14 @@ jobs:
             git push origin "${branch_name}"
           fi
       - name: Prepare PR contents
+        env:
+          PR_BODY: ${{ inputs.pr_body || 'PR BODY TEXT EXAMPLE' }}
+          PR_TITLE: ${{ inputs.pr_title || 'Meeting notes for %Y-%m-%d' }}
         run: |
-          echo "pr_title=$(date --date "$chosen_date" "+${{ inputs.pr_title || 'Meeting notes for %Y-%m-%d' }}")" >> $GITHUB_ENV
+          echo "pr_title=$(date --date "$chosen_date" "+$PR_TITLE")" >> $GITHUB_ENV
           # We need to escape the backticks in markdown so JS interpolation does not choke
           cat <<'EOF' > "$RUNNER_TEMP/pr-body"
-          ${{ inputs.pr_body || 'PR BODY TEXT EXAMPLE' }}
+          $PR_BODY
           EOF
           EOV=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
           echo "pr_body<<$EOV" >> $GITHUB_ENV
@@ -209,7 +208,6 @@ jobs:
             ${{ env.pr_body || 'PR BODY TEXT EXAMPLE' }}
             `
             })
-
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           template_path: ${{ inputs.template_path }}

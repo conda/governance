@@ -1,11 +1,9 @@
 # Reusable workflow for conda/governance only. External usage is not supported.
 # Vendored from https://github.com/Quansight-Labs/hackmd-meeting-notes-action@e4b7132
 name: HackMD Sync Meeting Notes Action
-
 permissions:
   contents: write
   pull-requests: write
-
 on:
   workflow_call:
     inputs:
@@ -28,7 +26,6 @@ on:
       HACKMD_TOKEN:
         description: API token for HackMD.io
         required: true
-
 jobs:
   main:
     name: Sync notes from HackMD
@@ -100,6 +97,8 @@ jobs:
           sys.exit(0)
       - name: Commit changes (if any)
         if: ${{ !inputs.dry_run }}
+        env:
+          BRANCH: ${{ github.head_ref || github.ref_name }}
         run: |
           set -x
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -109,7 +108,7 @@ jobs:
           if ! git diff --exit-code "$DOCPATH"; then
             git add "$DOCPATH"
             git commit -m "Update $DOCPATH"
-            git push origin ${{ github.head_ref || github.ref_name }}
+            git push origin $BRANCH
           else
             echo "No changes detected."
           fi
