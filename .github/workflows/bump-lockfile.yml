@@ -39,7 +39,11 @@ jobs:
           git commit -m "Update pixi lockfile"
           git push origin update-pixi --force
 
-          # 4. Create the Pull Request
+          # 4. Create the Pull Request if needed
+          if gh pr view update-pixi &>/dev/null; then
+              echo "PR already exists. Updating existing PR branch suffices."
+              exit 0  
+          fi
           gh pr create \
             --title "Update pixi lockfile" \
             --body-file diff.md \
