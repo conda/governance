@@ -9,35 +9,11 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 
 ## Attendees
 
-<!-- Use this syntax:
-* Initials: Full Name (@github-username), Affiliation.
-* SD: Sam Doe (@samdoe), Company
--->
-
 1. DJC: Daniel Ching (@carterbox), NVIDIA, CF/SR
 1. DY: Dan Yeaw (@danyeaw), Anaconda.
 1. JK: John Kirkham (@jakirkham), NVIDIA/CF/CFC
 1. CHL: Cheng H. Lee (@chenghlee), Anaconda, C/SC, CF/C
 1. SC: Sophia Castellarin (@soapy1), Openteams
-1. ... 
-
-<!-- Delete sections that do not apply before committing to repo -->
-<!-- Every agenda item must use the initials of the person adding the item -->
-
-
-## Introductions
-
-- [ ] ...
-
-## Announcements
-
-<!-- New releases, upcoming changes, ongoing votes --->
-
-- [ ] ...
-
-## From previous meetings
-
-- [ ] ...
 
 ## New agenda items
 
@@ -50,8 +26,3 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
         - (CHL): Maybe? I'm not really sure what the behavior would be if trying to install into a non-`base` environment.
         - Unclear what the original purpose(s) of the `__conda` virtual package was
         - (JK) How would other package managers implement similar solutions?
-
-
-## Deferred to next meeting
-
-- [ ] ...
