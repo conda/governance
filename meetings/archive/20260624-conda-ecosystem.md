@@ -14,9 +14,12 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 * SD: Sam Doe (@samdoe), Company
 -->
 
-1. ...
-1. ...
-1. ...
+1. DJC: Daniel Ching (@carterbox), NVIDIA, CF/SR
+1. DY: Dan Yeaw (@danyeaw), Anaconda.
+1. JK: John Kirkham (@jakirkham), NVIDIA/CF/CFC
+1. CHL: Cheng H. Lee (@chenghlee), Anaconda, C/SC, CF/C
+1. SC: Sophia Castellarin (@soapy1), Openteams
+1. ... 
 
 <!-- Delete sections that do not apply before committing to repo -->
 <!-- Every agenda item must use the initials of the person adding the item -->
@@ -38,7 +41,16 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 
 ## New agenda items
 
-- [ ] ...
+- [x] (DJC) (Solver and virtual packages in run_constrained)[https://github.com/conda/conda/issues/10803]
+    - Any updates on accepting fixes to this bug?
+    - (DY) Timing on classic solver isn't ideal, since we're in the process of splitting the classic solver out of the core conda code base.  Would like to avoid any major changes to the classic solver right now.
+    - (DJC) Have proposed fixes for both classic and libmamba solver; would like at least one solver that doesn't have this bug.
+    - (DY) Planning on releasing libmamba this week; could consider holding off until PR fixing this bug gets in.
+    - (DJC) Related: how would I prevent installations of packages using solvers that have this bug? Could we, e.g., have a depends on `__conda >=<some version>`?
+        - (CHL): Maybe? I'm not really sure what the behavior would be if trying to install into a non-`base` environment.
+        - Unclear what the original purpose(s) of the `__conda` virtual package was
+        - (JK) How would other package managers implement similar solutions?
+
 
 ## Deferred to next meeting
 
