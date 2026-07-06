@@ -7,39 +7,9 @@ tags: [meeting-notes]
 
 Various parts of the conda ecosystem gather on a regular basis. This meeting brings together all of these sub-communities for a community wide call.
 
-## Attendees
-
-<!-- Use this syntax:
-* Initials: Full Name (@github-username), Affiliation.
-* SD: Sam Doe (@samdoe), Company
--->
-
-1. ...
-1. ...
-1. ...
-
-<!-- Delete sections that do not apply before committing to repo -->
-<!-- Every agenda item must use the initials of the person adding the item -->
-
-
-## Introductions
-
-- [ ] ...
-
-## Announcements
-
-<!-- New releases, upcoming changes, ongoing votes --->
-
-- [ ] ...
-
-## From previous meetings
-
-- [ ] ...
-
-## New agenda items
-
-- [ ] ...
+1. JS: Jakov Smolić (@jsmolic), Quansight
 
 ## Deferred to next meeting
 
-- [ ] ...
+- [ ] JS: conda-skeleton deprecation (https://github.com/conda/conda-build/pull/6023)
+    - [ ] rattler-build R recipe generation improvements: https://github.com/prefix-dev/rattler-build/issues/2563
