@@ -15,8 +15,8 @@ pre-commit-hooks = "*"
 check-jsonschema = "*"
 ruff = "*"
 codespell = "*"
-yamlfmt = ">=0.21.0,<0.22"
-tombi = ">=0.9.17,<0.10"
+yamlfmt = "*"
+tombi = "*"
 
 [tasks]
 lint = "pre-commit run --all-files"
