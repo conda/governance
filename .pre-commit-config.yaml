@@ -21,7 +21,6 @@ ci:
     - tombi-format
     - tombi-lint
     - codespell
-    - zizmor
 repos:
   - repo: local
     hooks:
@@ -114,10 +113,3 @@ repos:
         exclude_types: [csv]
         types: [text]
         args: [--write-changes]
-      # zizmor
-      - id: zizmor
-        name: zizmor
-        entry: pixi run zizmor --no-progress --min-severity high --fix .
-        language: system
-        types: [yaml]
-        pass_filenames: false

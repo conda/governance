@@ -1,7 +1,7 @@
 name: Teams
 on:
   workflow_dispatch:
-  pull_request_target: # zizmor: ignore[dangerous-triggers] uses base-branch context intentionally for now
+  pull_request_target:
     paths:
       - teams/*.yml
       - teams/*.yaml

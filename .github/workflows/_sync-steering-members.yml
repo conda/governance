@@ -4,7 +4,7 @@ permissions:
   actions: read
   pull-requests: read
 on:
-  workflow_run: # zizmor: ignore[dangerous-triggers] artifact-only consumer, no PR code executed
+  workflow_run:
     workflows: [Steering members]
     types: [completed]
 jobs:
