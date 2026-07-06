@@ -2,7 +2,7 @@ name: Update lockfiles
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 5 1 * *  # monthly
+    - cron: 0 5 1 * * # monthly
 jobs:
   pixi-update:
     permissions:
@@ -42,7 +42,7 @@ jobs:
           # 4. Create the Pull Request if needed
           if gh pr view update-pixi &>/dev/null; then
               echo "PR already exists. Updating existing PR branch suffices."
-              exit 0  
+              exit 0
           fi
           gh pr create \
             --title "Update pixi lockfile" \
