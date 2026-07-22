@@ -40,7 +40,6 @@ body:
       description: List the GitHub usernames of the members who should be part of this team.
     validations:
       required: true
-
   - type: markdown
     attributes:
       value: |
