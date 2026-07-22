@@ -9,37 +9,33 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 
 ## Attendees
 
-<!-- Use this syntax:
-* Initials: Full Name (@github-username), Affiliation.
-* SD: Sam Doe (@samdoe), Company
--->
-
-1. ...
-1. ...
-1. ...
-
-<!-- Delete sections that do not apply before committing to repo -->
-<!-- Every agenda item must use the initials of the person adding the item -->
-
-
-## Introductions
-
-- [ ] ...
+1. TH: Travis Hathaway (@travishathaway), Anaconda
+1. JRG: Jaime Rodríguez-Guerra (@jaimergp), Quansight
+1. SM: Schuyler Martin (@schuylermartin45), Anaconda 
+1. DJC: Daniel Ching (@carterbox), NVIDIA, CF/SR
+1. CHL: Cheng H. Lee (@chenghlee), Anaconda, C/SC, CF/C
+1. JK: John Kirkham (@jakirkham), NVIDIA/CF/CFC
+1. WV: Wolf Volprecht (@wolfv), Prefix.dev, CF/C, C/SC
+1. IF: Isuru Fernando (@isuruf), OpenTeams, CF/C
+1. NB: Nick Bollweg (@bollwyvl)
 
 ## Announcements
 
-<!-- New releases, upcoming changes, ongoing votes --->
-
-- [ ] ...
-
-## From previous meetings
-
-- [ ] ...
+- [X] Some CEP drafts worth your attention:
+    - Prefix replacement: https://github.com/conda/ceps/pull/180
+    - Prefix placeholder positions: https://github.com/conda/ceps/pull/179
+    - Repodata v3: https://github.com/conda/ceps/pull/146
+    - Sigstore attestation: https://github.com/conda/ceps/pull/142
 
 ## New agenda items
 
-- [ ] ...
+- [X] (SM) Temperature-check on shared community V1 recipe linter.
+    - xref: https://github.com/conda-forge/conda-smithy/issues/2234
+    - JRG: Supportive of the idea, or at least sharing the rules. If we can reuse a library that makes linting implementation easier (source file, line numbers, etc), nice. Nice if we can arrive to a shared schema for the output that gets adapted to different frontends (CLI, Github comments)
+    - NB: Linters are great, language servers are better (see https://github.com/conda-forge/conda-forge.github.io/issues/2523)! The more declarative it could be, the better. Wishlist: make it runnable on a browser.
+        - Also mentioned: https://github.com/semgrep/semgrep, https://github.com/biomejs/gritql
+    - WV: rattler-build could also have a linter.
+    - Discussion about Python or other languages: preference for Python, but Rust + something interpreted on top (like [rhai](https://rhai.rs))
 
-## Deferred to next meeting
+- [X] (TH): conda-sigstore prototype demo :rocket: ([conda-sigstore](https://github.com/travishathaway/conda-sigstore))
 
-- [ ] ...
