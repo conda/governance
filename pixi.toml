@@ -17,6 +17,7 @@ ruff = "*"
 codespell = "*"
 yamlfmt = "*"
 tombi = "*"
+zizmor = "*"
 
 [tasks]
 lint = "pre-commit run --all-files"

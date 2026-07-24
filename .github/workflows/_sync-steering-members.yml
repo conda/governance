@@ -4,7 +4,7 @@ permissions:
   actions: read
   pull-requests: read
 on:
-  workflow_run:
+  workflow_run: # zizmor: ignore[dangerous-triggers] intentional: privileged sync must run after the untrusted "Steering members" workflow completes
     workflows: [Steering members]
     types: [completed]
 jobs:

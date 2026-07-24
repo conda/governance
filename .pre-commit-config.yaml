@@ -95,3 +95,10 @@ repos:
         exclude_types: [csv]
         types: [text]
         args: [--write-changes]
+      # zizmor
+      - id: zizmor
+        name: zizmor
+        entry: pixi run zizmor --min-severity high --fix .
+        language: system
+        types: [yaml]
+        pass_filenames: false
