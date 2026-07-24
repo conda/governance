@@ -102,3 +102,11 @@ repos:
         language: system
         types: [yaml]
         pass_filenames: false
+      # custom hooks
+      - id: sync-steering-members
+        name: Sync steering members
+        entry: pixi run sync_steering_members
+        language: system
+        always_run: true
+        pass_filenames: false
+        require_serial: true
