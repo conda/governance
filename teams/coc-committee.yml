@@ -7,7 +7,7 @@ scopes:
   codeowners:
   other:
     - https://github.com/conda-conduct
-    - https://matrix.to/#/!jLRCFFbpabFtdYvfeO:matrix.org  # private
+    - https://matrix.to/#/!jLRCFFbpabFtdYvfeO:matrix.org # private
 links:
   - https://github.com/conda/governance/issues/46
   - https://github.com/conda/governance/pull/49
