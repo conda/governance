@@ -12,6 +12,7 @@ scopes:
   other:
     - https://github.com/conda-bot
     - https://matrix.to/#/!tpEQSUGYWHNdgpDFNc:matrix.org # private
+    - https://pypi.org/org/conda/
 links:
   - https://github.com/conda/governance/issues/84
 members:
