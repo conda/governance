@@ -9,37 +9,32 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 
 ## Attendees
 
-<!-- Use this syntax:
-* Initials: Full Name (@github-username), Affiliation.
-* SD: Sam Doe (@samdoe), Company
--->
 
-1. ...
-1. ...
-1. ...
-
-<!-- Delete sections that do not apply before committing to repo -->
-<!-- Every agenda item must use the initials of the person adding the item -->
-
-
-## Introductions
-
-- [ ] ...
+1. JRG: Jaime Rodríguez-Guerra (@jaimergp), Quansight, CF/C, C/SC
+1. CHL: Cheng H. Lee (@chenghlee), Anaconda, C/SC, CF/C
+1. WV: Wolf Vollprecht (@wolfv), prefix.dev, C/SC, CF/C
+1. IF: Isuru Fernando (@isuruf), OpenTeams, C/SC
+1. DJC: Daniel Ching (@carterbox), NVIDIA
 
 ## Announcements
 
 <!-- New releases, upcoming changes, ongoing votes --->
 
-- [ ] ...
-
-## From previous meetings
-
-- [ ] ...
+- [X] Ongoing votes/RFCs:
+    - Repodata v3 CEP vote:  https://github.com/conda/ceps/pull/146
+    - PURL spec amendment RFC: https://github.com/conda/ceps/pull/159
+    - conda-forge/staged-recipes member: check Helios
+    - conda-forge/core member: check Helios
 
 ## New agenda items
 
-- [ ] ...
+- [X] WV: We are preparing a CEP for virtual package plugins, currently on HackMD, soon on Github: https://hackmd.io/Rwig0llBQiunHx2l2qISxQ
+    - IF/DJC: Questions about security concerns and user-channel contracts. Differences with concerns in post-link scripts? Pixi already prevents those from being executed.
+    - JRG: Discovery is useful (mapping of virtual packages to their providers), and an interface of the returned values too. No need to couple this to automated installation and arbitrary execution, that's for the client UX to decide. e.g. the same metadata can be used to simply tell the user what they need to do on their own, or how to override manually.
+    - JRG: Motivation for more virtual packages now? Thought this had plateaud already.
+        - WV: Client with interest in several accelerators, needs a federated mechanism
+    - _Conversation was cut short because WV had to hop onto another call. To be continued._
 
 ## Deferred to next meeting
 
-- [ ] ...
+- [ ] Continue talking about [virtual packages proposal](https://hackmd.io/Rwig0llBQiunHx2l2qISxQ)
