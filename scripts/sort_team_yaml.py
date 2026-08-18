@@ -25,21 +25,30 @@ for path in sys.argv[1:]:
         data = yaml.load(f)
 
     # NOTE: We use reversed pop + insert to preserve comments
+    if path.name.startswith("__"):
+        for key in sorted(data.keys(), reverse=True):
+            val = data.pop(key, None)
+            if hasattr(val, "keys"):
+                for subkey in sorted(val.keys(), reverse=True):
+                    subval = val.pop(subkey, None)
+                    val.insert(0, subkey, subval)
+            data.insert(0, key, val)
+    else:
+        for key in reversed(TEAM_KEY_ORDER):
+            # .pop() removes the key/value but RETAINS the comment in 'ca'
+            val = data.pop(key, None)
+            data.insert(0, key, val)
 
-    for key in reversed(TEAM_KEY_ORDER):
-        # .pop() removes the key/value but RETAINS the comment in 'ca'
-        val = data.pop(key, None)
-        data.insert(0, key, val)
+        for key in "members", "emeritus":
+            if members := data.get(key):
+                for key in sorted(members.keys(), reverse=True, key=str.lower):
+                    val = members.pop(key, None)
+                    members.insert(0, key, val)
 
-    for key in "members", "emeritus":
-        if members := data.get(key):
-            for key in sorted(members.keys(), reverse=True, key=str.lower):
-                val = members.pop(key, None)
-                members.insert(0, key, val)
-
-    for key in reversed(("teams", "repos", "other")):
-        val = data["resources"].pop(key, None)
-        data["resources"].insert(0, key, val)
+        if "resources" in data:
+            for key in reversed(("teams", "repos", "other")):
+                val = data["resources"].pop(key, None)
+                data["resources"].insert(0, key, val)
 
     with open(path, "w") as f:
         yaml.dump(data, f)
