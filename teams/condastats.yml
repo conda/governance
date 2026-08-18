@@ -3,7 +3,7 @@
 # and must not be interpreted as the ground truth.
 # yaml-language-server: $schema=./teams.schema.json
 name: condastats
-description: Maintainers of `condastats`
+description: Conda package stats CLI
 charter:
 requirements:
 resources:
@@ -11,6 +11,7 @@ resources:
     - conda-incubator/condastats
   repos:
     - conda-incubator/condastats
+    - conda-incubator/condastats-data
   other:
 links: []
 members:

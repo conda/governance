@@ -3,7 +3,7 @@
 # and must not be interpreted as the ground truth.
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-maintainers
-description: Maintainers of `conda` and related core plugins
+description: The team maintaining the conda CLI and some related packages
 charter: project
 requirements:
 resources:
@@ -11,11 +11,21 @@ resources:
     - conda/conda-maintainers
   repos:
     - conda/conda
-    - conda/conda-libmamba-solver
     - conda/conda-classic-solver
+    - conda/conda-index
+    - conda/conda-libmamba-solver
+    - conda/conda-lockfiles
+    - conda/conda-maintainers-team-planning
+    - conda/conda-pypi
+    - conda/conda-rattler-solver
+    - conda/conda-self
+    - conda/conda-spawn
   other:
 links:
   - https://github.com/conda/conda/issues/13526
+  - https://github.com/conda/conda-index/issues/249
+  - https://github.com/conda/conda-maintainers-team-planning/issues/115
+  - https://github.com/conda/conda-maintainers-team-planning/issues/116
 members:
   beeankha: https://github.com/conda/conda/issues/13526
   chenghlee: https://github.com/conda/conda/issues/13526
@@ -25,10 +35,10 @@ members:
   george-lorch: https://github.com/conda/governance/issues/216
   jaimergp: https://github.com/conda/conda/issues/13526
   jezdez: https://github.com/conda/conda/issues/13526
-  jjhelmus: https://github.com/conda/governance/issues/219
   kenodegard: https://github.com/conda/conda/issues/13526
   mbargull: https://github.com/conda/conda/issues/13526
   ryanskeith:
   soapy1: https://github.com/conda/governance/issues/258
   travishathaway: https://github.com/conda/conda/issues/13526
 emeritus:
+  jjhelmus: https://github.com/conda/governance/issues/219

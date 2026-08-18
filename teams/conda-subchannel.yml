@@ -3,7 +3,7 @@
 # and must not be interpreted as the ground truth.
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-subchannel
-description: Maintainers of `conda-subchannel`
+description: Maintainers of the conda-subchannel project
 charter: dynamic
 requirements:
 resources:

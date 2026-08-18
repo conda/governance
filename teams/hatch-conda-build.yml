@@ -3,7 +3,7 @@
 # and must not be interpreted as the ground truth.
 # yaml-language-server: $schema=./teams.schema.json
 name: hatch-conda-build
-description: Maintainers of the `hatch-conda-build` plugin
+description: The team working on hatch-conda-build
 charter:
 requirements:
 resources:

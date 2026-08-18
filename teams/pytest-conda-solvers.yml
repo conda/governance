@@ -1,0 +1,20 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: pytest-conda-solvers
+description: Maintainers of pytest-conda-solvers
+charter: project
+requirements:
+resources:
+  teams:
+    - conda-incubator/pytest-conda-solvers
+  repos:
+    - conda-incubator/pytest-conda-solvers
+  other:
+links:
+  - https://github.com/conda/infrastructure/issues/1433
+members:
+  jaimergp: https://github.com/conda/infrastructure/issues/1433
+  jezdez: https://github.com/conda/infrastructure/issues/1433
+emeritus:

@@ -15,6 +15,8 @@ resources:
     - conda/actions
     - conda/infrastructure
     - conda/issue-tracker
+    - conda-incubator/.cirun
+    - conda-incubator/renovate-config
   other:
     - https://github.com/conda-bot
     - https://conda.zulipchat.com/#narrow/channel/487124-infrastructure
@@ -26,6 +28,7 @@ links:
 members:
   beckermr: https://github.com/conda/governance/issues/84
   chenghlee: # missing record of decision?
+  danyeaw: https://github.com/conda/governance/issues/372
   dbast: https://github.com/conda/governance/issues/84
   jaimergp: # added to match GitHub team
   jezdez: https://github.com/conda/governance/issues/84

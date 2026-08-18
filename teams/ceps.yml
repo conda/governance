@@ -3,15 +3,13 @@
 # and must not be interpreted as the ground truth.
 # yaml-language-server: $schema=./teams.schema.json
 name: ceps
-description: Editorial team for CEPs
+description: A team able to triage issues for the CEPs
 charter:
 requirements:
 resources:
   teams:
     - conda/ceps
-    - conda-incubator/ceps
   repos:
-    - conda/ceps
   other:
 links: []
 members:
@@ -19,3 +17,4 @@ members:
   jezdez:
   kenodegard:
 emeritus:
+  awwad:

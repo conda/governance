@@ -3,7 +3,7 @@
 # and must not be interpreted as the ground truth.
 # yaml-language-server: $schema=./teams.schema.json
 name: quansight
-description: Contributors working for Quansight
+description: A team for Quansight staff to work on conda
 charter: dynamic
 requirements:
 resources:
@@ -12,10 +12,11 @@ resources:
   repos:
     - conda/menuinst
     - conda/constructor
-    - conda/conda-maintainers-team-planning
   other:
+    - conda/conda-maintainers-team-planning
 links:
   - https://github.com/conda/governance/issues/225
+  - https://github.com/conda/conda-maintainers-team-planning/issues/119
 members:
   jaimergp: https://github.com/conda/governance/issues/225
   peytondmurray: https://github.com/conda/governance/issues/225

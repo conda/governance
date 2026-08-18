@@ -3,7 +3,7 @@
 # and must not be interpreted as the ground truth.
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-core
-description:
+description: Core conda team. Can merge PRs into main-line feature release branches.
 charter:
 requirements:
 resources:
@@ -18,7 +18,6 @@ resources:
     - conda/conda_build_test_recipe
     - conda/conda-verify
     - conda/cookiecutter-conda-python
-    - conda/conda-pack
     - conda/conda-benchmarks
     - conda/conda-prefix-replacement
     - conda/conda-content-trust

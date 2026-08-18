@@ -3,7 +3,7 @@
 # and must not be interpreted as the ground truth.
 # yaml-language-server: $schema=./teams.schema.json
 name: communications
-description: Handles communications across the organization
+description: Team for conda communications work
 charter: dynamic
 requirements:
 resources:
@@ -11,6 +11,7 @@ resources:
     - conda/communications
   repos:
     - conda/communications
+    - conda/conda-dot-org
   other:
     - https://conda.discourse.group/
     - https://www.linkedin.com/company/condacommunity
@@ -22,7 +23,10 @@ links:
   - https://github.com/conda/governance/issues/53
 members:
   dashagurova: # added to match GitHub team
+  dbouquin: https://github.com/conda/communications/issues/46
   jaimergp: https://github.com/conda/governance/issues/81
   jezdez: https://github.com/conda/governance/issues/81
-emeritus:
+  kenodegard: https://github.com/conda/governance/issues/425
   tnabtaf: https://github.com/conda/governance/issues/81
+  travishathaway: https://github.com/conda/governance/issues/391
+emeritus:

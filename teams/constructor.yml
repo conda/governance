@@ -9,9 +9,7 @@ requirements:
 resources:
   teams:
     - conda/constructor
-    - conda-incubator/constructor
   repos:
-    - conda/conda-pack
     - conda/constructor
     - conda/menuinst
     - conda/conda-standalone
@@ -22,8 +20,8 @@ links:
 members:
   bkreider: https://github.com/conda/governance/issues/53
   chenghlee: https://github.com/conda/governance/issues/53
+  conda-bot:
   goanpeca: https://github.com/conda/governance/issues/53
-  hmaarrfk: https://github.com/conda/governance/issues/53
   hoechenberger: https://github.com/conda/governance/issues/53
   isuruf: https://github.com/conda/governance/issues/53
   jaimergp: https://github.com/conda/governance/issues/53
@@ -32,6 +30,7 @@ members:
   lrandersson: https://github.com/conda/governance/issues/332
   marcoesters: https://github.com/conda/constructor/issues/790
   pseudoyim: https://github.com/conda/governance/issues/53
-  travishathaway: # missing record of decision?
+  travishathaway:
 emeritus:
+  hmaarrfk: https://github.com/conda/governance/issues/53
   mcg1969: https://github.com/conda/governance/issues/53

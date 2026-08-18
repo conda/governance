@@ -1,0 +1,25 @@
+teams:
+  conda/conda-lockfiles: https://github.com/conda/conda-maintainers-team-planning/issues/116
+  conda-incubator/conda-lockfiles: https://github.com/conda/conda-maintainers-team-planning/issues/116
+  conda-incubator/conda-pypi: https://github.com/conda/conda-maintainers-team-planning/issues/115
+  conda-incubator/conda-self: https://github.com/conda/conda-maintainers-team-planning/issues/115
+  conda-incubator/conda-spawn: https://github.com/conda/conda-maintainers-team-planning/issues/115
+  conda-incubator/content:
+  conda-incubator/design:
+  conda-incubator/implementation:
+  conda-incubator/bots:
+  conda-incubator/build-tools:
+  conda-incubator/ceps:
+  conda-incubator/conda-dot-org:
+  conda-incubator/constructor:
+  conda-incubator/docs:
+repos:
+  conda/conda_build_single_folder_test:
+  conda-incubator/conda-press:
+  conda-incubator/conda-press-docs:
+  conda-incubator/libronda:
+  conda-incubator/asht:
+  conda-incubator/conda-docker:
+  conda-incubator/ensureconda:
+  conda-incubator/conda-suggest:
+  conda-incubator/.cirun:
