@@ -22,6 +22,7 @@ from itertools import chain
 from pathlib import Path
 
 import requests
+from requests.exceptions import HTTPError
 from ruamel.yaml import YAML
 
 HERE = Path(__file__).parent
@@ -156,7 +157,14 @@ def check_teams() -> int:
                 exit_code = 1
                 continue
 
-            details = team_details(org, name)
+            try:
+                details = team_details(org, name)
+            except HTTPError as exc:
+                exit_code = 1
+                if exc.response.status_code == 404:
+                    eprint("Team does not exist!", indent=4)
+                else:
+                    eprint("Could not fetch team details:", exc)
 
             # 1. Validate descriptions
             if team["description"] != details["description"]:
