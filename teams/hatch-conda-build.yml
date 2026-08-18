@@ -12,7 +12,7 @@ resources:
   repos:
     - conda-incubator/hatch-conda-build
   other:
-links:
+links: []
 members:
   AlbertDeFusco:
   costrouc:

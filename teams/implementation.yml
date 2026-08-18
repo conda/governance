@@ -11,7 +11,7 @@ resources:
     - conda-incubator/implementation
   repos: []
   other:
-links:
+links: []
 members:
   barabo:
   beeankha:

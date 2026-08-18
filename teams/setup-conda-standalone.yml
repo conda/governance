@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: setup-conda-standalone
+description: Maintaineres of setup-conda-standalone action
+charter:
+requirements:
+resources:
+  teams:
+    - conda-incubator/setup-conda-standalone
+  repos:
+    - conda-incubator/setup-conda-standalone
+  other:
+links: []
+members:
+  jaimergp:
+  marcoesters:
+emeritus:

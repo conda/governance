@@ -12,7 +12,7 @@ resources:
   repos:
     - conda-incubator/conda-plugins
   other:
-links:
+links: []
 members:
   beeankha:
   jezdez:

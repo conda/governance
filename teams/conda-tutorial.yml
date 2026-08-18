@@ -12,7 +12,7 @@ resources:
   repos:
     - conda-incubator/conda-tutorial
   other:
-links:
+links: []
 members:
   beeankha:
   jezdez:

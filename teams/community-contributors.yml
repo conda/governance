@@ -14,7 +14,7 @@ resources:
     - conda/conda-docs
     - conda/conda-pack
   other:
-links:
+links: []
 members:
   marcelotrevisani:
   mbargull:

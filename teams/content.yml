@@ -11,7 +11,7 @@ resources:
     - conda-incubator/content
   repos: []
   other:
-links:
+links: []
 members:
   ang852:
   beeankha:

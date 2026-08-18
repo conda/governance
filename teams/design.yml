@@ -11,7 +11,7 @@ resources:
     - conda-incubator/design
   repos: []
   other:
-links:
+links: []
 members:
   ang852:
   eakbulut:

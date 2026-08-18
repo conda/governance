@@ -11,7 +11,7 @@ resources:
     - conda/conda-maintainers-project-management
   repos: []
   other:
-links:
+links: []
 members:
   george-lorch:
   jaimergp:

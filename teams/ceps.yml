@@ -13,7 +13,7 @@ resources:
   repos:
     - conda/ceps
   other:
-links:
+links: []
 members:
   beeankha:
   jezdez:

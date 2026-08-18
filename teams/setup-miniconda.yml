@@ -13,7 +13,7 @@ resources:
     - conda-incubator/setup-miniconda
     - conda-incubator/setup-miniforge
   other:
-links:
+links: []
 members:
   bollwyvl:
   conda-bot:

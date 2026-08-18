@@ -12,7 +12,7 @@ resources:
   repos:
     - conda-incubator/conda-zsh-completion
   other:
-links:
+links: []
 members:
   esc:
   jezdez:

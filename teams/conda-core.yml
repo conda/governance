@@ -28,7 +28,7 @@ resources:
     - conda/conda-plugin-template
     - conda/.github
   other:
-links:
+links: []
 members:
   beeankha:
   chenghlee:

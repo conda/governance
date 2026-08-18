@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-global
+description: The team working on conda-global
+charter:
+requirements:
+resources:
+  teams:
+    - conda-incubator/conda-global
+  repos:
+    - conda-incubator/conda-global
+  other:
+links: []
+members:
+  jezdez:
+emeritus:

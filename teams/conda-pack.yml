@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-pack
+description: The team maintaining conda-pack
+charter:
+requirements:
+resources:
+  teams:
+    - conda/conda-pack
+  repos:
+    - conda/conda-pack
+  other:
+links: []
+members:
+  msarahan:
+  ryanskeith:
+  xhochy:
+emeritus:

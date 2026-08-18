@@ -12,7 +12,7 @@ resources:
   repos:
     - conda-incubator/condacolab
   other:
-links:
+links: []
 members:
   jaimergp:
   ssurbhi560:

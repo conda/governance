@@ -227,7 +227,8 @@ def check_teams() -> int:
             eprint(f"Repository '{repo}' is not annotated in any local team YAMLs.")
             try:
                 eprint(
-                    "These teams have access:", teams_with_access_to_repo(*repo.split("/"))
+                    "These teams have access:",
+                    teams_with_access_to_repo(*repo.split("/")),
                 )
             except requests.HTTPError as exc:
                 eprint(
@@ -265,10 +266,14 @@ def generate():
         if team in team_to_fn:
             continue
         org, team_name = team.split("/")
+        Path("teams").mkdir(parents=True, exist_ok=True)
+        output_path = Path("teams", f"{team_name.replace('.', '-')}.yml")
+        if output_path.exists():
+            continue
         details = team_details(org, team_name)
         data = {
             "name": team_name,
-            "description": details["description"],
+            "description": details["description"] or "",
             "charter": None,
             "requirements": None,
             "resources": {
@@ -276,12 +281,10 @@ def generate():
                 "repos": access_to_repos(org, team_name),
                 "other": None,
             },
-            "links": None,
+            "links": [],
             "members": {member: None for member in team_members(org, team_name)},
             "emeritus": None,
         }
-        Path("teams", org).mkdir(parents=True, exist_ok=True)
-        output_path = Path("teams", org, f"{team_name.replace('.', '-')}.yml")
         output_path.write_text("# yaml-language-server: $schema=./teams.schema.json\n")
         with open(output_path, "a") as f:
             yaml.dump(data, f)

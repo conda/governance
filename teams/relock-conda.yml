@@ -12,7 +12,7 @@ resources:
   repos:
     - conda-incubator/relock-conda
   other:
-links:
+links: []
 members:
   beckermr:
 emeritus:

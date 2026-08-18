@@ -10,7 +10,7 @@ resources:
   teams:
     - conda/anaconda
   repos:
-    - conda/conda-planning
+    - conda/conda-maintainers-team-planning
   other:
 links:
   - https://github.com/conda/governance/issues/222

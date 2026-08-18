@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-quality
+description: A team working on Q&A topics
+charter:
+requirements:
+resources:
+  teams:
+    - conda-incubator/conda-quality
+  repos:
+    - conda-incubator/conda-quality
+  other:
+links: []
+members:
+  heksein:
+  jezdez:
+  nishita-beeraka:
+  RidaZubair:
+  vcannam:
+  vvemulapalli11:
+  waqasanjum6:
+emeritus:

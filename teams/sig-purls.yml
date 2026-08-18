@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: sig-purls
+description: Special Interest Group of maintainers interested in PURLs
+charter:
+requirements:
+resources:
+  teams:
+    - conda-incubator/sig-purls
+  repos:
+    - conda-incubator/sig-purls
+  other:
+links: []
+members:
+  baszalmstra:
+  chenghlee:
+  Hind-M:
+  jaimergp:
+  jezdez:
+  lucascolley:
+  mgorny:
+  pavelzw:
+  travishathaway:
+  wolfv:
+emeritus:

@@ -12,7 +12,7 @@ resources:
   repos:
     - conda-incubator/conda.sh
   other:
-links:
+links: []
 members:
   Carreau:
   jaimergp:

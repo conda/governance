@@ -9,6 +9,7 @@ requirements:
 resources:
   teams:
     - conda/conda-pypi
+    - conda-incubator/conda-pypi
   repos:
     - conda/conda-pypi
   other:

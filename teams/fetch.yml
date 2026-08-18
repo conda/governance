@@ -12,7 +12,7 @@ resources:
   repos:
     - conda-incubator/conda-auth
   other:
-links:
+links: []
 members:
   dholth:
   jezdez:

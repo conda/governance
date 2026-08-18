@@ -12,7 +12,7 @@ resources:
   repos:
     - conda-incubator/installer
   other:
-links:
+links: []
 members:
   chenghlee:
   dbast:

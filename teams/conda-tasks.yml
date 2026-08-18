@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-tasks
+description: The teams that maintains conda-tasks
+charter:
+requirements:
+resources:
+  teams:
+    - conda-incubator/conda-tasks
+  repos: []
+  other:
+links: []
+members:
+  jezdez:
+emeritus:

@@ -12,7 +12,7 @@ resources:
   repos:
     - conda-incubator/conda-env-builder
   other:
-links:
+links: []
 members:
   jezdez:
   nh13:

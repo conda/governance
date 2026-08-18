@@ -12,7 +12,7 @@ resources:
   repos:
     - conda-incubator/conda-project
   other:
-links:
+links: []
 members:
   AlbertDeFusco:
   jbednar:

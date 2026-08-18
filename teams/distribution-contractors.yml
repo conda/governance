@@ -11,7 +11,7 @@ resources:
     - conda/distribution-contractors
   repos: []
   other:
-links:
+links: []
 members:
   M-Waszkiewicz-Anaconda:
   skupr-anaconda:
