@@ -5,11 +5,11 @@ regenerates content between them, preserving the surrounding indentation.
 
 Supported markers:
     <!-- STEERING-CHECKLIST --> / <!-- END-OF-STEERING-CHECKLIST -->
-        Vote checklist (yes/no/abstain per member) from steering.csv
+        Vote checklist (yes/no/abstain per member) from teams/steering-council.csv
     <!-- STEERING-TABLE --> / <!-- END-OF-STEERING-TABLE -->
-        Markdown table of current members from steering.csv
+        Markdown table of current members from teams/steering-council.csv
     <!-- EMERITUS-TABLE --> / <!-- END-OF-EMERITUS-TABLE -->
-        Markdown table of emeritus members from emeritus.csv
+        Markdown table of emeritus members from teams/steering-emeritus.csv
 
 Usage:
     python scripts/sync_steering_members.py           # update files in-place
