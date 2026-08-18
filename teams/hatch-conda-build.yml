@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: hatch-conda-build
 description: The team working on hatch-conda-build
-charter:
-requirements:
+charter: federated-project
+details:
 resources:
   teams:
     - conda-incubator/hatch-conda-build

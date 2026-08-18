@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: quansight
 description: A team for Quansight staff to work on conda
-charter: dynamic
-requirements:
+charter: unknown
+details:
 resources:
   teams:
     - conda/quansight

@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-pack
 description: The team maintaining conda-pack
-charter:
-requirements:
+charter: federated-project
+details:
 resources:
   teams:
     - conda/conda-pack

@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-store
 description: Maintainers of the conda-store project
-charter: dynamic
-requirements:
+charter: federated-project
+details:
 resources:
   teams:
     - conda-incubator/conda-store

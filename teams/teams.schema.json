@@ -160,14 +160,17 @@
     },
     "charter": {
       "enum": [
-        "dynamic",
-        "static",
-        "project"
+        "council",
+        "dynamic-subteam",
+        "static-subteam",
+        "community-project",
+        "federated-project",
+        "unknown"
       ],
       "title": "Charter",
       "type": "string"
     },
-    "requirements": {
+    "details": {
       "anyOf": [
         {
           "type": "string"
@@ -176,7 +179,7 @@
           "type": "null"
         }
       ],
-      "title": "Requirements"
+      "title": "Details"
     },
     "resources": {
       "$ref": "#/$defs/Resources"
@@ -252,7 +255,7 @@
     "name",
     "description",
     "charter",
-    "requirements",
+    "details",
     "resources",
     "links",
     "members",

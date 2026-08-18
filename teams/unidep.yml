@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: unidep
 description: The team working on unidep
-charter:
-requirements:
+charter: federated-project
+details:
 resources:
   teams:
     - conda-incubator/unidep

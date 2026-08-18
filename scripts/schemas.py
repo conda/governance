@@ -76,18 +76,28 @@ class CondaSubTeam(BaseModel):
     description: str = Field(..., min_length=1, max_length=255)
     """The team description in GitHub"""
 
-    charter: Literal["dynamic", "static", "project"] = ...
+    charter: Literal[
+        "council",
+        "dynamic-subteam",
+        "static-subteam",
+        "community-project",
+        "federated-project",
+        "unknown",
+    ] = ...
     """
-    The team charter type, see [dynamic](https://github.com/conda/governance#dynamic-charter),
+    The team and charter type, see [dynamic](https://github.com/conda/governance#dynamic-charter),
     [static](https://github.com/conda/governance#static-charter),
     and [project](https://github.com/conda/governance#project-teams-details) requirements.
     """
 
-    requirements: str | None = ...
-    """Special requirements for team membership"""
+    details: str | None = ...
+    """
+    Additional documentation for the team (membership requirements, responsibilities,
+    onboarding guides, escalation procedures, etc)
+    """
 
     resources: Resources = ...
-    """Team responsibilities and owned resources"""
+    """Resources owned by the team (Github teams, repos, service accounts, etc)"""
 
     links: list[HttpUrl] = ...
     """Important links, e.g. the issue/PR proposing the team creation"""

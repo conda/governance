@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: installer
 description: The team maintaining the installer repo
-charter:
-requirements:
+charter: federated-project
+details:
 resources:
   teams:
     - conda-incubator/installer

@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: docs
 description: The team working on all-things docs
-charter: project
-requirements:
+charter: dynamic-subteam
+details:
 resources:
   teams:
     - conda/docs

@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-maintainers-project-management
 description: A team for organizing the project management for conda-maintainers
-charter: dynamic
-requirements:
+charter: federated-project
+details:
 resources:
   teams:
     - conda/conda-maintainers-project-management

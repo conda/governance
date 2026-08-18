@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-project
 description: Tool for encapsulating, running, and reproducing projects with Conda environments (not conda itself)
-charter:
-requirements:
+charter: federated-project
+details:
 resources:
   teams:
     - conda-incubator/conda-project

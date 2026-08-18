@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-subchannel
 description: Maintainers of the conda-subchannel project
-charter: dynamic
-requirements:
+charter: federated-project
+details:
 resources:
   teams:
     - conda-incubator/conda-subchannel

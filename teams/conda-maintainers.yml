@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-maintainers
 description: The team maintaining the conda CLI and some related packages
-charter: project
-requirements:
+charter: federated-project
+details:
 resources:
   teams:
     - conda/conda-maintainers

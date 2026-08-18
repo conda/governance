@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-core
 description: Core conda team. Can merge PRs into main-line feature release branches.
-charter:
-requirements:
+charter: unknown
+details:
 resources:
   teams:
     - conda/conda-core

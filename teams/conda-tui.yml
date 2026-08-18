@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-tui
 description: Core developers of the conda-tui project
-charter: dynamic
-requirements:
+charter: federated-project
+details:
 resources:
   teams:
     - conda-incubator/conda-tui

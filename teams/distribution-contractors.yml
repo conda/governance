@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: distribution-contractors
 description: Gives access to Distribution team resources for contractors
-charter:
-requirements:
+charter: unknown
+details:
 resources:
   teams:
     - conda/distribution-contractors

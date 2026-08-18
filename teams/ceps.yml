@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: ceps
 description: A team able to triage issues for the CEPs
-charter:
-requirements:
+charter: dynamic-subteam
+details:
 resources:
   teams:
     - conda/ceps

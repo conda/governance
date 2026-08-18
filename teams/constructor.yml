@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: constructor
 description: The team maintaining constructor and related projects
-charter: project
-requirements:
+charter: community-project
+details:
 resources:
   teams:
     - conda/constructor

@@ -5,8 +5,8 @@
 name: build-tools
 description: |
   Team to work on conda-build and other build tools in the conda ecosystem. Public chat room: https://conda.zulipchat.com/#narrow/channel/471111-builds-tools
-charter: project
-requirements:
+charter: community-project
+details:
 resources:
   teams:
     - conda/build-tools

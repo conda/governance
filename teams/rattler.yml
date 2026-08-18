@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: rattler
 description: The rattler team
-charter: dynamic
-requirements:
+charter: federated-project
+details:
 resources:
   teams:
     - conda/rattler

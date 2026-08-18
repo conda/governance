@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-rich
 description: Maintainers of `conda-rich`
-charter: dynamic
-requirements:
+charter: federated-project
+details:
 resources:
   teams:
     - conda-incubator/conda-rich

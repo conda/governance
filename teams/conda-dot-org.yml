@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-dot-org
 description: Team responsible for the conda.org website maintenance
-charter: dynamic
-requirements:
+charter: dynamic-subteam
+details:
 resources:
   teams:
     - conda/conda-dot-org

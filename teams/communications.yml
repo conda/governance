@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: communications
 description: Team for conda communications work
-charter: dynamic
-requirements:
+charter: dynamic-subteam
+details:
 resources:
   teams:
     - conda/communications

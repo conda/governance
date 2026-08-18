@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: prefix-dev
 description: A team for prefix.dev staff to work on conda
-charter: dynamic
-requirements: Being employed by Prefix.dev
+charter: unknown
+details: Being employed by Prefix.dev
 resources:
   teams:
     - conda/prefix-dev

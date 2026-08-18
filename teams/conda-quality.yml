@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-quality
 description: A team working on Q&A topics
-charter:
-requirements:
+charter: federated-project
+details:
 resources:
   teams:
     - conda-incubator/conda-quality

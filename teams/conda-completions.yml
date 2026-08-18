@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-completions
 description: A team to work on shell completions for conda
-charter:
-requirements:
+charter: federated-project
+details:
 resources:
   teams:
     - conda-incubator/conda-completions

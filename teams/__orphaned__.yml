@@ -13,6 +13,7 @@ teams:
   conda-incubator/build-tools:
   conda-incubator/ceps:
   conda-incubator/conda-dot-org:
+  conda-incubator/conda-libmamba-solver:
   conda-incubator/conda-lockfiles: https://github.com/conda/conda-maintainers-team-planning/issues/116
   conda-incubator/conda-pypi: https://github.com/conda/conda-maintainers-team-planning/issues/115
   conda-incubator/conda-self: https://github.com/conda/conda-maintainers-team-planning/issues/115

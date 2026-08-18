@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: grayskull
 description: The team maintaining Grayskull
-charter: project
-requirements:
+charter: federated-project
+details:
 resources:
   teams:
     - conda/grayskull

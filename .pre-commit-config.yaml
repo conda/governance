@@ -63,6 +63,7 @@ repos:
         entry: pixi run check-jsonschema
         language: system
         files: ^teams/.*\.ya?ml$
+        exclude: ^teams/__\S+__\.ya?ml$
         args: [--schemafile, teams/teams.schema.json]
       - id: check-github-workflows
         name: check-github-workflows

@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-tree
 description: Maintainers of `conda-tree`
-charter: project
-requirements:
+charter: federated-project
+details:
 resources:
   teams:
     - conda-incubator/conda-tree

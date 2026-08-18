@@ -4,8 +4,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: packaging-tools
 description: The team working on packaging tools
-charter: project
-requirements:
+charter: community-project
+details:
 resources:
   teams:
     - conda/packaging-tools

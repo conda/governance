@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-exec
 description: The team maintaining conda-exec
-charter:
-requirements:
+charter: federated-project
+details:
 resources:
   teams:
     - conda-incubator/conda-exec
