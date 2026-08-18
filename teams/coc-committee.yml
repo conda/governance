@@ -13,7 +13,8 @@ resources:
   repos:
   other:
     - https://github.com/conda-conduct
-    - https://conda.zulipchat.com/#narrow/channel/469892-code-of-conduct  # private
+    - https://conda.zulipchat.com/#narrow/channel/469892-code-of-conduct # private
+    - https://matrix.to/#/!jLRCFFbpabFtdYvfeO:matrix.org # private
 links:
   - https://github.com/conda/governance/issues/46
   - https://github.com/conda/governance/pull/49

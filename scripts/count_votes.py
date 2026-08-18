@@ -1,4 +1,5 @@
 import sys
+
 import requests
 
 
@@ -19,7 +20,7 @@ def fetch_github_comment(comment_url):
     if response.status_code == 200:
         return response.json()["body"]
     else:
-        raise Exception(f"Failed to fetch comment: {response.status_code}")
+        raise RuntimeError(f"Failed to fetch comment: {response.status_code}")
 
 
 def parse_votes(text):
@@ -41,17 +42,16 @@ def parse_votes(text):
                 not_voted.append(current_voter)
             current_voter = line
             vote_count = 0
-        elif line.startswith("- [x]") or line.startswith("- [ ]"):
+        elif line.startswith(("- [x]", "- [ ]")):
             # This line contains a vote
-            if current_voter:
-                if "[x]" in line:
-                    vote_count += 1
-                    if "yes" in line.lower():
-                        yes_votes.append(current_voter)
-                    elif "no" in line.lower():
-                        no_votes.append(current_voter)
-                    elif "abstain" in line.lower():
-                        abstain_votes.append(current_voter)
+            if current_voter and "[x]" in line:
+                vote_count += 1
+                if "yes" in line.lower():
+                    yes_votes.append(current_voter)
+                elif "no" in line.lower():
+                    no_votes.append(current_voter)
+                elif "abstain" in line.lower():
+                    abstain_votes.append(current_voter)
         else:
             # If we encounter any other type of line, check if the previous voter's vote was valid
             if current_voter:
@@ -128,5 +128,5 @@ try:
         comment_text
     )
     print_results(yes_votes, no_votes, abstain_votes, not_voted, invalid_votes)
-except Exception as e:
+except Exception as e:  # noqa
     print(f"An error occurred: {e}")

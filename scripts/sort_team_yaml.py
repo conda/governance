@@ -10,7 +10,6 @@ import sys
 from pathlib import Path
 
 from ruamel.yaml import YAML
-
 from schemas import CondaSubTeam
 
 TEAM_KEY_ORDER = list(CondaSubTeam.model_fields.keys())

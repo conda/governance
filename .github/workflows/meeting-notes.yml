@@ -1,5 +1,4 @@
 name: Create PR for meeting notes
-
 on:
   workflow_dispatch:
     inputs:
@@ -17,16 +16,15 @@ on:
   pull_request:
     types:
       - labeled
-
-permissions:
-  contents: write
-  pull-requests: write
 # You need to enable 'Allow GitHub Actions to create and approve pull requests'
 # in your Actions Settings too
 
 jobs:
   create:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    permissions:
+      contents: write
+      pull-requests: write
     uses: ./.github/workflows/_create-meeting-notes-pr.yml
     with:
       date: ${{ github.event_name == 'schedule' && 'next Wednesday' || (inputs.date || 'now') }}
@@ -40,9 +38,11 @@ jobs:
         Once done with the meeting, sync the note back to the repository by adding the `sync-hackmd-notes` label.
     secrets:
       HACKMD_TOKEN: ${{ secrets.HACKMD_TOKEN }}
-
   sync:
     if: github.event.label.name == 'sync-hackmd-notes'
+    permissions:
+      contents: write
+      pull-requests: write
     uses: ./.github/workflows/_sync-meeting-notes-pr.yml
     with:
       pr_number: ${{ github.event.number }}

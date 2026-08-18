@@ -17,8 +17,8 @@ CONDA_INCUBATOR_ORG_WIDE_TOKEN), with permissions:
 
 import os
 import sys
-from itertools import chain
 from difflib import unified_diff
+from itertools import chain
 from pathlib import Path
 
 import requests
@@ -171,7 +171,7 @@ def check_teams() -> int:
             # 2. Validate team members
             try:
                 members = team_members(org, name)
-            except Exception as exc:
+            except Exception as exc:  # noqa
                 eprint(type(exc).__name__, "-", exc, indent=4)
                 exit_code = 1
                 continue

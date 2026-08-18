@@ -1,5 +1,4 @@
 name: Teams
-
 on:
   workflow_dispatch:
   pull_request:
@@ -13,7 +12,6 @@ on:
       - scripts/schemas.py
       - scripts/sort_team_yaml.py
       - .github/workflows/check-teams.yml
-
 jobs:
   check:
     runs-on: ubuntu-latest

@@ -19,6 +19,8 @@ resources:
     - https://github.com/conda-bot
     - https://conda.zulipchat.com/#narrow/channel/487124-infrastructure
     - https://conda.zulipchat.com/#narrow/channel/471360-infrastructure-private # private
+    - https://matrix.to/#/!tpEQSUGYWHNdgpDFNc:matrix.org # private
+    - https://pypi.org/org/conda/
 links:
   - https://github.com/conda/governance/issues/84
 members:

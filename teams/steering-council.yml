@@ -60,19 +60,13 @@ members:
   marcelotrevisani:
     full_name: Marcelo Duarte Trevisani
     email: marceloduartetrevisani@gmail.com
-    funder:
+    funder: no funding
     pronouns: he/him
     decision:
       - https://github.com/conda/governance/issues/1
   mariusvniekerk:
     full_name: Marius van Niekerk
     email: marius.v.niekerk@gmail.com
-    funder:
-    pronouns:
-    decision: https://github.com/conda/governance/issues/1
-  mbargull:
-    full_name: Marcel Bargull
-    email: marcel.bargull@udo.edu
     funder:
     pronouns:
     decision: https://github.com/conda/governance/issues/1
@@ -87,7 +81,7 @@ members:
   ocefpaf:
     full_name: Filipe Fernandes
     email: ocefpaf@gmail.com
-    funder:
+    funder: no funding
     pronouns: he/him
     decision:
       - https://github.com/conda/governance/issues/1
@@ -123,6 +117,7 @@ emeritus:
   ericdill:
   goanpeca:
   jjhelmus:
+  mbargull:
   mcg1969:
   minrk:
   prusse-martin:

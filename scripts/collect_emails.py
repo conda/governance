@@ -1,13 +1,16 @@
+from ruamel.yaml import YAML
+
+yaml = YAML()
+
 emails = []
-for fname in ["steering.csv"]:
+for fname in ["teams/steering-council.yml"]:
     with open(fname) as fp:
-        for line in fp:
-            email = line.split(",")[1].strip()
-            if email != "email":
-                emails.append(email)
+        data = yaml.load(fp)
+    for details in data["members"].values():
+        emails.append(details["email"])
 
 
-print("%d people:" % len(emails))
+print(f"{len(emails)} people:")
 
 for email in emails:
     print(email)
