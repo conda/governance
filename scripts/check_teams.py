@@ -22,7 +22,6 @@ from itertools import chain
 from pathlib import Path
 
 import requests
-from requests.exceptions import HTTPError
 from ruamel.yaml import YAML
 
 HERE = Path(__file__).parent
@@ -159,7 +158,7 @@ def check_teams() -> int:
 
             try:
                 details = team_details(org, name)
-            except HTTPError as exc:
+            except requests.HTTPError as exc:
                 exit_code = 1
                 if exc.response.status_code == 404:
                     eprint("Team does not exist!", indent=4)
@@ -226,9 +225,14 @@ def check_teams() -> int:
             continue
         if repo not in seen_repos:
             eprint(f"Repository '{repo}' is not annotated in any local team YAMLs.")
-            eprint(
-                "These teams have access:", teams_with_access_to_repo(*repo.split("/"))
-            )
+            try:
+                eprint(
+                    "These teams have access:", teams_with_access_to_repo(*repo.split("/"))
+                )
+            except requests.HTTPError as exc:
+                eprint(
+                    f"Could not check teams with access to {repo} (HTTPError: {exc}), skipping..."
+                )
             exit_code = 1
         try:
             if users := collaborators(*repo.split("/")):
