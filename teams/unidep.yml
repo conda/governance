@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: unidep
 description: The team working on unidep
-charter: federated-project
+charter: community-project
 details:
 resources:
   teams:

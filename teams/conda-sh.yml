@@ -4,7 +4,7 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-sh
 description: Maintainers of the conda.sh website
-charter: federated-project
+charter: community-project
 details:
 resources:
   teams:

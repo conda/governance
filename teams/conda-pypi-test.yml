@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-pypi-test
 description: A team to maintain conda-pypi-test
-charter: federated-project
+charter: community-project
 details:
 resources:
   teams:

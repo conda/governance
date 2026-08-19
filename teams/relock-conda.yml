@@ -4,7 +4,7 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: relock-conda
 description: Maintainers of `relock-conda`
-charter: federated-project
+charter: community-project
 details:
 resources:
   teams:

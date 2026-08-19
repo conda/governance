@@ -4,7 +4,7 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: fetch
 description: A team to work on network I/O related topics
-charter: federated-project
+charter: community-project
 details:
 resources:
   teams:

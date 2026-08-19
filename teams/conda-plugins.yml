@@ -4,7 +4,7 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-plugins
 description: A team to work on plugin topics
-charter: federated-project
+charter: community-project
 details:
 resources:
   teams:

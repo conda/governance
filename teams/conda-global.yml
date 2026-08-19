@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-global
 description: The team working on conda-global
-charter: federated-project
+charter: community-project
 details:
 resources:
   teams:
