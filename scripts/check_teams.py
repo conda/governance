@@ -323,7 +323,7 @@ def generate():
         data = {
             "name": team_name,
             "description": details["description"] or "",
-            "charter": None,
+            "charter": "unknown",
             "requirements": None,
             "resources": {
                 "teams": [team],
