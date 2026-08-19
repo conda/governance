@@ -1,5 +1,4 @@
 repos:
-  conda-incubator/.cirun:
   conda-incubator/asht:
   conda-incubator/conda-docker:
   conda-incubator/conda-press:
