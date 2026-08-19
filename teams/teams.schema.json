@@ -13,6 +13,7 @@
               "type": "null"
             }
           ],
+          "description": "Full name of the member.",
           "title": "Full Name"
         },
         "email": {
@@ -25,6 +26,7 @@
               "type": "null"
             }
           ],
+          "description": "Email address of the member.",
           "title": "Email"
         },
         "funder": {
@@ -36,6 +38,7 @@
               "type": "null"
             }
           ],
+          "description": "Employer or sponsor for the time allocated to the project.",
           "title": "Funder"
         },
         "pronouns": {
@@ -47,6 +50,7 @@
               "type": "null"
             }
           ],
+          "description": "Pronouns of the member.",
           "title": "Pronouns"
         },
         "decision": {
@@ -70,6 +74,7 @@
               "type": "null"
             }
           ],
+          "description": "URL pointing to the record of the membership decision",
           "title": "Decision"
         }
       },
@@ -100,6 +105,7 @@
               "type": "null"
             }
           ],
+          "description": "The Github team (or teams, across different organizations) representing this team.",
           "title": "Teams"
         },
         "repos": {
@@ -115,6 +121,7 @@
               "type": "null"
             }
           ],
+          "description": "The GitHub repositories this team owns or has write access to.",
           "title": "Repos"
         },
         "other": {
@@ -132,6 +139,7 @@
               "type": "null"
             }
           ],
+          "description": "Other responsibilities of this team",
           "title": "Other"
         }
       },
@@ -148,17 +156,20 @@
   "description": "Model for defining Conda Sub-Teams based on the governance structure.",
   "properties": {
     "name": {
+      "description": "The team name as per the governance (no organization name!).",
       "pattern": "[a-zA-Z0-9\\-_]{1,128}",
       "title": "Name",
       "type": "string"
     },
     "description": {
+      "description": "The team description in GitHub",
       "maxLength": 255,
       "minLength": 1,
       "title": "Description",
       "type": "string"
     },
     "charter": {
+      "description": "The team and charter type, see [dynamic](https://github.com/conda/governance#dynamic-charter),\n[static](https://github.com/conda/governance#static-charter),\nand [project](https://github.com/conda/governance#project-teams-details) requirements.",
       "enum": [
         "council",
         "dynamic-subteam",
@@ -179,12 +190,15 @@
           "type": "null"
         }
       ],
+      "description": "Additional documentation for the team (membership requirements, responsibilities,\nonboarding guides, escalation procedures, etc) or a reference to the location\nwhere such information is discussed.",
       "title": "Details"
     },
     "resources": {
-      "$ref": "#/$defs/Resources"
+      "$ref": "#/$defs/Resources",
+      "description": "Resources owned by the team (Github teams, repos, service accounts, etc)"
     },
     "links": {
+      "description": "Important links, e.g. the issue/PR proposing the team creation",
       "items": {
         "format": "uri",
         "maxLength": 2083,
@@ -211,6 +225,7 @@
           }
         ]
       },
+      "description": "Maps username to its details or, in its simplified form, a URL pointing\nto the record of the decision adding them to the team.",
       "title": "Members",
       "type": "object"
     },
@@ -248,6 +263,7 @@
           "type": "null"
         }
       ],
+      "description": "Maps username to its details or, in its simplified form, a URL pointing\nto the record of the decision removing them from the team.",
       "title": "Emeritus"
     }
   },

@@ -20,7 +20,7 @@ class Resources(BaseModel):
     This structure is nested within the main CondaSubTeam model.
     """
 
-    model_config = ConfigDict(extra="forbid")
+    model_config = ConfigDict(extra="forbid", use_attribute_docstrings=True)
     teams: (
         list[
             Annotated[
@@ -49,7 +49,7 @@ class MemberDetails(BaseModel):
     Defines the contact details of a team member.
     """
 
-    model_config = ConfigDict(extra="forbid")
+    model_config = ConfigDict(extra="forbid", use_attribute_docstrings=True)
 
     full_name: str | None = ...
     """Full name of the member."""
@@ -68,7 +68,9 @@ class CondaSubTeam(BaseModel):
     Model for defining Conda Sub-Teams based on the governance structure.
     """
 
-    model_config = ConfigDict(title="Conda Sub-Teams", extra="forbid")
+    model_config = ConfigDict(
+        title="Conda Sub-Teams", extra="forbid", use_attribute_docstrings=True
+    )
 
     name: str = Field(..., pattern=r"[a-zA-Z0-9\-_]{1,128}")
     """The team name as per the governance (no organization name!)."""
@@ -93,7 +95,8 @@ class CondaSubTeam(BaseModel):
     details: str | None = ...
     """
     Additional documentation for the team (membership requirements, responsibilities,
-    onboarding guides, escalation procedures, etc)
+    onboarding guides, escalation procedures, etc) or a reference to the location
+    where such information is discussed.
     """
 
     resources: Resources = ...
