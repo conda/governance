@@ -13,6 +13,14 @@ repos:
         always_run: true
         require_serial: true
         pass_filenames: false
+      # generate some files
+      - id: generate-schemas
+        name: Generate JSON schemas
+        entry: pixi run schemas
+        language: system
+        always_run: true
+        pass_filenames: false
+        require_serial: true
       # ruff
       - id: ruff
         name: ruff
