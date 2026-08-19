@@ -297,9 +297,9 @@ def check_teams() -> int:
                 print(f"  - {user}: {level}")
         n_errors += 1
 
-    print("===================", "=" * n_errors, sep="")
+    print("===================", "=" * len(str(n_errors)), sep="")
     print("Number of errors:", n_errors)
-    print("===================", "=" * n_errors, sep="")
+    print("===================", "=" * len(str(n_errors)), sep="")
 
     return n_errors
 
