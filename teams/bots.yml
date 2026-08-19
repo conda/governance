@@ -1,0 +1,53 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: bots
+description: Special team to permission bots and automations across repositories
+charter: unknown
+details:
+resources:
+  teams:
+    - conda/bots
+    - conda-incubator/bots
+  repos:
+    - conda/.github
+    - conda/actions
+    - conda/communications
+    - conda/conda
+    - conda/conda-benchmarks
+    - conda/conda-build
+    - conda/conda-classic-solver
+    - conda/conda-content-trust
+    - conda/conda-docs
+    - conda/conda-dot-org
+    - conda/conda-index
+    - conda/conda-libmamba-solver
+    - conda/conda-lock
+    - conda/conda-lockfiles
+    - conda/conda-pack
+    - conda/conda-package-handling
+    - conda/conda-package-streaming
+    - conda/conda-plugin-template
+    - conda/conda-prefix-replacement
+    - conda/conda-pypi
+    - conda/conda-rattler-solver
+    - conda/conda-recipe-manager
+    - conda/conda-recipe-manager-test-data
+    - conda/conda-self
+    - conda/conda-spawn
+    - conda/conda-standalone
+    - conda/conda-verify
+    - conda/constructor
+    - conda/cookiecutter-conda-python
+    - conda/grayskull
+    - conda/infrastructure
+    - conda/issue-tracker
+    - conda/menuinst
+    - conda/pycosat
+    - conda/schemas
+  other:
+links: []
+members:
+  conda-bot:
+emeritus:

@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: unidep
+description: The team working on unidep
+charter: community-project
+details:
+resources:
+  teams:
+    - conda-incubator/unidep
+  repos:
+    - conda-incubator/unidep
+  other:
+links: []
+members:
+  basnijholt:
+emeritus:

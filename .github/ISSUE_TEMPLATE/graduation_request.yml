@@ -103,13 +103,10 @@ body:
 
         **This vote will end on YYYY-MM-DD, End of Day, [Anywhere on Earth](https://time.is/Anywhere_on_Earth) (AoE).**
 
-        <!-- STEERING-CHECKLIST -->
-        @xhochy (Uwe Korn)
-        - [ ]  yes
-        - [ ]  no
-        - [ ]  abstain
+        In alphabetic order:
 
-        @mariusvniekerk (Marius van Niekerk)
+        <!-- STEERING-CHECKLIST -->
+        @baszalmstra (Bas Zalmstra)
         - [ ]  yes
         - [ ]  no
         - [ ]  abstain
@@ -124,27 +121,7 @@ body:
         - [ ]  no
         - [ ]  abstain
 
-        @marcelotrevisani (Marcelo Duarte Trevisani)
-        - [ ]  yes
-        - [ ]  no
-        - [ ]  abstain
-
-        @msarahan (Michael Sarahan)
-        - [ ]  yes
-        - [ ]  no
-        - [ ]  abstain
-
-        @jakirkham (John Kirkham)
-        - [ ]  yes
-        - [ ]  no
-        - [ ]  abstain
-
-        @jezdez (Jannis Leidel)
-        - [ ]  yes
-        - [ ]  no
-        - [ ]  abstain
-
-        @wolfv (Wolf Vollprecht)
+        @Hind-M (Hind Montassif)
         - [ ]  yes
         - [ ]  no
         - [ ]  abstain
@@ -154,12 +131,27 @@ body:
         - [ ]  no
         - [ ]  abstain
 
-        @baszalmstra (Bas Zalmstra)
+        @jezdez (Jannis Leidel)
         - [ ]  yes
         - [ ]  no
         - [ ]  abstain
 
-        @Hind-M (Hind Montassif)
+        @jakirkham (John Kirkham)
+        - [ ]  yes
+        - [ ]  no
+        - [ ]  abstain
+
+        @marcelotrevisani (Marcelo Duarte Trevisani)
+        - [ ]  yes
+        - [ ]  no
+        - [ ]  abstain
+
+        @mariusvniekerk (Marius van Niekerk)
+        - [ ]  yes
+        - [ ]  no
+        - [ ]  abstain
+
+        @msarahan (Michael Sarahan)
         - [ ]  yes
         - [ ]  no
         - [ ]  abstain
@@ -168,7 +160,17 @@ body:
         - [ ]  yes
         - [ ]  no
         - [ ]  abstain
+
+        @xhochy (Uwe Korn)
+        - [ ]  yes
+        - [ ]  no
+        - [ ]  abstain
+
+        @wolfv (Wolf Vollprecht)
+        - [ ]  yes
+        - [ ]  no
+        - [ ]  abstain
         <!-- END-OF-STEERING-CHECKLIST -->
         ```
 
-        **If quorum may be low:** before using [timeout](https://github.com/conda/governance#quorum) rules, the vote must run ≥2 weeks, be discussed at a Steering Council meeting, and get ≥3 Slack + ≥3 email reminders (see `steering.csv` emails). Timeout outcomes need a PR under [`vote-results/`](https://github.com/conda/governance/tree/main/vote-results).
+        **If quorum may be low:** before using [timeout](https://github.com/conda/governance#quorum) rules, the vote must run ≥2 weeks, be discussed at a Steering Council meeting, and get ≥3 Slack + ≥3 email reminders (see `team/steering-council.yml` emails). Timeout outcomes need a PR under [`vote-results/`](https://github.com/conda/governance/tree/main/vote-results).

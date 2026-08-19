@@ -1,0 +1,25 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: quansight
+description: A team for Quansight staff to work on conda
+charter: unknown
+details:
+resources:
+  teams:
+    - conda/quansight
+  repos:
+    - conda/menuinst
+    - conda/constructor
+  other:
+    - conda/conda-maintainers-team-planning
+links:
+  - https://github.com/conda/governance/issues/225
+  - https://github.com/conda/conda-maintainers-team-planning/issues/119
+members:
+  jaimergp: https://github.com/conda/governance/issues/225
+  peytondmurray: https://github.com/conda/governance/issues/225
+  soapy1: https://github.com/conda/governance/issues/225
+  trallard: https://github.com/conda/governance/issues/225
+emeritus:
