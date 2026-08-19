@@ -164,7 +164,7 @@
     "description": {
       "description": "The team description in GitHub",
       "maxLength": 255,
-      "minLength": 1,
+      "minLength": 0,
       "title": "Description",
       "type": "string"
     },

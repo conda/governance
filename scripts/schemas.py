@@ -75,7 +75,7 @@ class CondaSubTeam(BaseModel):
     name: str = Field(..., pattern=r"[a-zA-Z0-9\-_]{1,128}")
     """The team name as per the governance (no organization name!)."""
 
-    description: str = Field(..., min_length=1, max_length=255)
+    description: str = Field(..., min_length=0, max_length=255)
     """The team description in GitHub"""
 
     charter: Literal[
