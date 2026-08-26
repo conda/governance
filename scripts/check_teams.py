@@ -162,6 +162,27 @@ def check_teams() -> int:
         with open(path) as f:
             team = yaml.load(f)
 
+        # Governance says:
+        #   Proposers must specify the name, role & responsibility, members,
+        #   and charter (dynamic or static) of any new sub-teams.
+        # Name, charter and members are in the schema. Role and responsibility need to be enforced
+        # in the free text field 'details':
+        if team["charter"] in ("static-subteam", "dynamic-subteam"):
+            details_lines = (team.get("details") or "").splitlines()
+            for section, is_error in (
+                ("Role", True),
+                ("Responsibility", True),
+                ("Membership", False),
+            ):
+                if f"## {section}" not in details_lines:
+                    eprint(
+                        f"'{team['charter']}' teams {'MUST' if is_error else 'SHOULD'} "
+                        f"include a '## {section}' section under `details`.",
+                        indent=4,
+                    )
+                    if is_error:
+                        n_errors += 1
+
         for team_name in team.get("resources", {}).get("teams", ()):
             print("  Checking Github team name", team_name)
             # 0. Validate team names
