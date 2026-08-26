@@ -76,6 +76,9 @@ class CondaSubTeam(BaseModel):
     name: str = Field(..., pattern=r"[a-zA-Z0-9\-_]{1,128}")
     """The team name as per the governance (no organization name!)."""
 
+    dissolved: bool = False
+    """Whether the team has been dissolved"""
+
     description: str = Field(..., min_length=0, max_length=255)
     """The team description in GitHub"""
 

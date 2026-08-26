@@ -162,6 +162,8 @@ def check_teams() -> int:
         print(f"{i}/{n_yamls}: Checking", path.relative_to(ROOT), "...")
         with open(path) as f:
             team = yaml.load(f)
+        if team.get("dissolved"):
+            continue
 
         # Governance says:
         #   Proposers must specify the name, role & responsibility, members,

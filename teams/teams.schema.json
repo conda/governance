@@ -161,6 +161,12 @@
       "title": "Name",
       "type": "string"
     },
+    "dissolved": {
+      "default": false,
+      "description": "Whether the team has been dissolved",
+      "title": "Dissolved",
+      "type": "boolean"
+    },
     "description": {
       "description": "The team description in GitHub",
       "maxLength": 255,
