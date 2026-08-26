@@ -173,4 +173,4 @@ body:
         <!-- END-OF-STEERING-CHECKLIST -->
         ```
 
-        **If quorum may be low:** before using [timeout](https://github.com/conda/governance#quorum) rules, the vote must run ≥2 weeks, be discussed at a Steering Council meeting, and get ≥3 Slack + ≥3 email reminders (see `team/steering-council.yml` emails). Timeout outcomes need a PR under [`vote-results/`](https://github.com/conda/governance/tree/main/vote-results).
+        **If quorum may be low:** before using [timeout](https://github.com/conda/governance#quorum) rules, the vote must run ≥2 weeks, be discussed at a Steering Council meeting, and get ≥3 Slack + ≥3 email reminders (see `teams/steering-council.yml` emails). Timeout outcomes need a PR under [`vote-results/`](https://github.com/conda/governance/tree/main/vote-results).

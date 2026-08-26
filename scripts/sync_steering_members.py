@@ -109,7 +109,7 @@ def main() -> int:
             continue
         if path.suffix not in EXTENSIONS:
             continue
-        if ".git" in path.parts:
+        if ".git" in path.parts or ".pixi" in path.parts:
             continue
         if sync_file(path, contents, check=check):
             changed.append(path)

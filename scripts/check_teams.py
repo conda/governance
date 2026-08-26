@@ -14,6 +14,7 @@ CONDA_INCUBATOR_ORG_WIDE_TOKEN), with permissions:
 #   "requests",
 #   "ruamel.yaml",
 # ]
+# ///
 
 import os
 import sys
@@ -333,9 +334,9 @@ def generate():
             team_to_fn[team["name"]] = path
 
     for team in chain(teams_in_org("conda"), teams_in_org("conda-incubator")):
-        if team in team_to_fn:
-            continue
         org, team_name = team.split("/")
+        if team_name in team_to_fn:
+            continue
         Path("teams").mkdir(parents=True, exist_ok=True)
         output_path = Path("teams", f"{team_name.replace('.', '-')}.yml")
         if output_path.exists():
@@ -345,7 +346,7 @@ def generate():
             "name": team_name,
             "description": details["description"] or "",
             "charter": "unknown",
-            "requirements": None,
+            "details": None,
             "resources": {
                 "teams": [team],
                 "repos": access_to_repos(org, team_name),

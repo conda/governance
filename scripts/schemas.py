@@ -2,6 +2,7 @@
 # dependencies = [
 #   "pydantic>=2,<3",
 # ]
+# ///
 
 from typing import Annotated, Literal
 

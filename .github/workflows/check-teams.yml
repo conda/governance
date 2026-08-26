@@ -4,9 +4,7 @@ on:
   pull_request:
     paths:
       - teams/**/*.yml
-      - teams/*.yml
       - teams/**/*.yaml
-      - teams/*.yaml
       - teams/*.schema.json
       - scripts/check_teams.py
       - scripts/schemas.py
