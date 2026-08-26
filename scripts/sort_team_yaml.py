@@ -37,6 +37,8 @@ for path in sys.argv[1:]:
         for key in reversed(TEAM_KEY_ORDER):
             # .pop() removes the key/value but RETAINS the comment in 'ca'
             val = data.pop(key, None)
+            if key == "dissolved" and not val:
+                continue
             data.insert(0, key, val)
 
         for key in "members", "emeritus":
