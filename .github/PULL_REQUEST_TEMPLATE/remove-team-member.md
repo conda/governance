@@ -1,6 +1,7 @@
 # Checklist
 
 - [x] I want to remove an existing member from a team
+- [ ] I have started this PR from a branch, not a fork
 - [ ] I have modified the relevant `teams/*.yml` file
 - [ ] Choose one of these:
   - [ ] I'm moving myself to emeritus
