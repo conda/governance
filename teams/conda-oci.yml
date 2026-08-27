@@ -4,7 +4,7 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-oci
 description: Maintainers of `conda-oci`
-charter: community-project
+charter: incubated-project
 details:
 resources:
   teams:

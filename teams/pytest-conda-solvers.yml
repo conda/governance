@@ -4,7 +4,7 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: pytest-conda-solvers
 description: Maintainers of pytest-conda-solvers
-charter: community-project
+charter: incubated-project
 details:
 resources:
   teams:

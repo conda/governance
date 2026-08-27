@@ -88,6 +88,7 @@ class CondaSubTeam(BaseModel):
         "static-subteam",
         "community-project",
         "federated-project",
+        "incubated-project",
         "unknown",
     ] = ...
     """

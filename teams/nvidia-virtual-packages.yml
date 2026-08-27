@@ -4,7 +4,7 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: nvidia-virtual-packages
 description: Maintainers of the Nvidia virtual packages plug-in(s)
-charter: community-project
+charter: incubated-project
 details:
 resources:
   teams:

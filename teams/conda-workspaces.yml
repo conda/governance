@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-workspaces
 description: The team maintaining conda-workspaces
-charter: community-project
+charter: incubated-project
 details:
 resources:
   teams:

@@ -4,7 +4,7 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-meta-mcp
 description: An MCP (Model Context Protocol) server exposing authoritative, read-only Conda ecosystem metadata for AI agents.
-charter: community-project
+charter: incubated-project
 details:
 resources:
   teams:

@@ -4,7 +4,7 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-env-builder
 description: Build and maintain multiple custom conda environments all in one place.
-charter: community-project
+charter: incubated-project
 details:
 resources:
   teams:

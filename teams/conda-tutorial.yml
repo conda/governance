@@ -4,7 +4,7 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-tutorial
 description: The team for maintaining a conda tutorial
-charter: community-project
+charter: incubated-project
 details:
 resources:
   teams:

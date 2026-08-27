@@ -182,6 +182,7 @@
         "static-subteam",
         "community-project",
         "federated-project",
+        "incubated-project",
         "unknown"
       ],
       "title": "Charter",
