@@ -8,8 +8,8 @@ charter: dynamic-subteam
 details:
 resources:
   teams:
-    - conda/coc-committee
     - conda-incubator/code-of-conduct
+    - conda/coc-committee
   repos:
   other:
     - https://github.com/conda-conduct

@@ -10,8 +10,8 @@ resources:
   teams:
     - conda/quansight
   repos:
-    - conda/menuinst
     - conda/constructor
+    - conda/menuinst
   other:
     - conda/conda-maintainers-team-planning
 links:

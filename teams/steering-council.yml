@@ -8,13 +8,13 @@ charter: council
 details:
 resources:
   teams:
-    - conda/steering-council
     - conda-incubator/steering-council
+    - conda/steering-council
   repos:
-    - conda/governance
     - conda/assets
     - conda/ceps
     - conda/cla
+    - conda/governance
   other:
 links: []
 members:

@@ -10,9 +10,9 @@ resources:
   teams:
     - conda/constructor
   repos:
+    - conda/conda-standalone
     - conda/constructor
     - conda/menuinst
-    - conda/conda-standalone
     - conda/nsis-mirror
   other:
 links:

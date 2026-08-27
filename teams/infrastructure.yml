@@ -8,15 +8,15 @@ charter: static-subteam
 details: Any steering council member may join without approval
 resources:
   teams:
-    - conda/infrastructure
     - conda-incubator/infrastructure
+    - conda/infrastructure
   repos:
+    - conda-incubator/.cirun
+    - conda-incubator/renovate-config
     - conda/.github
     - conda/actions
     - conda/infrastructure
     - conda/issue-tracker
-    - conda-incubator/.cirun
-    - conda-incubator/renovate-config
   other:
     - https://github.com/conda-bot
     - https://conda.zulipchat.com/#narrow/channel/487124-infrastructure

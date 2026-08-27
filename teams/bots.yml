@@ -8,8 +8,8 @@ charter: unknown
 details:
 resources:
   teams:
-    - conda/bots
     - conda-incubator/bots
+    - conda/bots
   repos:
     - conda/.github
     - conda/actions

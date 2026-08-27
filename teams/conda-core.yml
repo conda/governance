@@ -10,22 +10,22 @@ resources:
   teams:
     - conda/conda-core
   repos:
+    - conda/.github
+    - conda/actions
+    - conda/conda-benchmarks
+    - conda/conda-build
+    - conda/conda-content-trust
+    - conda/conda-docs
+    - conda/conda-plugin-template
+    - conda/conda-prefix-replacement
+    - conda/conda-verify
+    - conda/conda_build_test_recipe
+    - conda/constructor
+    - conda/cookiecutter-conda-python
+    - conda/infrastructure
     - conda/menuinst
     - conda/pycosat
-    - conda/conda-build
-    - conda/conda-docs
-    - conda/constructor
-    - conda/conda_build_test_recipe
-    - conda/conda-verify
-    - conda/cookiecutter-conda-python
-    - conda/conda-benchmarks
-    - conda/conda-prefix-replacement
-    - conda/conda-content-trust
     - conda/schemas
-    - conda/infrastructure
-    - conda/actions
-    - conda/conda-plugin-template
-    - conda/.github
   other:
 links: []
 members:

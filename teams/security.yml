@@ -26,11 +26,11 @@ details: |
   For more information see https://github.com/conda/security.
 resources:
   teams:
-    - conda/security
     - conda-incubator/security
+    - conda/security
   repos:
-    - conda/security
     - conda-incubator/security
+    - conda/security
   other:
 links:
   - PENDING

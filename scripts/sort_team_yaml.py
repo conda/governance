@@ -51,6 +51,8 @@ for path in sys.argv[1:]:
             for key in reversed(("teams", "repos", "other")):
                 val = data["resources"].pop(key, None)
                 data["resources"].insert(0, key, val)
+                if key != "other" and isinstance(val, list):
+                    val.sort()
 
     with open(path, "w") as f:
         yaml.dump(data, f)

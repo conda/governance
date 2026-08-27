@@ -8,16 +8,16 @@ charter: dynamic-subteam
 details:
 resources:
   teams:
-    - conda/docs
     - conda-incubator/docs
+    - conda/docs
   repos:
+    - conda-incubator/conda-sphinx-theme
     - conda/conda
     - conda/conda-build
     - conda/conda-docs
     - conda/constructor
     - conda/infrastructure
     - conda/menuinst
-    - conda-incubator/conda-sphinx-theme
   other:
 links:
   - https://github.com/conda/conda-docs/issues/780
