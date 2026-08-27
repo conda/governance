@@ -7,6 +7,7 @@ on:
       - teams/**/*.yaml
       - teams/*.schema.json
       - scripts/check_teams.py
+      - scripts/create_new_team.py
       - scripts/schemas.py
       - scripts/sort_team_yaml.py
       - .github/workflows/check-teams.yml
