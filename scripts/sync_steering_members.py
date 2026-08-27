@@ -1,15 +1,15 @@
-"""Sync steering council data from CSV files into marker-delimited sections.
+"""Sync steering council data from team files into marker-delimited sections.
 
 Scans .yml, .yaml, and .md files under the repo root for marker pairs and
 regenerates content between them, preserving the surrounding indentation.
 
 Supported markers:
     <!-- STEERING-CHECKLIST --> / <!-- END-OF-STEERING-CHECKLIST -->
-        Vote checklist (yes/no/abstain per member) from teams/steering-council.csv
+        Vote checklist (yes/no/abstain per member) from teams/steering-council.yml
     <!-- STEERING-TABLE --> / <!-- END-OF-STEERING-TABLE -->
-        Markdown table of current members from teams/steering-council.csv
+        Markdown table of current members from teams/steering-council.yml
     <!-- EMERITUS-TABLE --> / <!-- END-OF-EMERITUS-TABLE -->
-        Markdown table of emeritus members from teams/steering-emeritus.csv
+        Markdown table of emeritus members from teams/steering-emeritus.yml
 
 Usage:
     python scripts/sync_steering_members.py           # update files in-place
