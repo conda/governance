@@ -186,7 +186,7 @@ def check_teams() -> int:
                     if is_error:
                         n_errors += 1
 
-        for team_name in team.get("resources", {}).get("teams", ()):
+        for team_name in team.get("resources", {}).get("teams") or ():
             print("  Checking Github team name", team_name)
             # 0. Validate team names
             org, name = team_name.split("/")

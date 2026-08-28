@@ -25,7 +25,8 @@ class Resources(BaseModel):
     teams: (
         list[
             Annotated[
-                str, Field(pattern=r"[a-zA-Z0-9\-_\.\+]{1,128}/[a-zA-Z0-9\-_]{1,128}")
+                str,
+                Field(pattern=r"^[a-zA-Z0-9\-_\.\+]{1,128}/[a-zA-Z0-9\-_]{1,128}$"),
             ]
         ]
         | None
@@ -35,7 +36,7 @@ class Resources(BaseModel):
         list[
             Annotated[
                 str,
-                Field(pattern=r"[a-zA-Z0-9\-_\.\+]{1,128}/[a-zA-Z0-9\-_\.\+]{1,128}"),
+                Field(pattern=r"^[a-zA-Z0-9\-_\.\+]{1,128}/[a-zA-Z0-9\-_\.\+]{1,128}$"),
             ]
         ]
         | None
@@ -73,7 +74,7 @@ class CondaSubTeam(BaseModel):
         title="Conda Sub-Teams", extra="forbid", use_attribute_docstrings=True
     )
 
-    name: str = Field(..., pattern=r"[a-zA-Z0-9\-_]{1,128}")
+    name: str = Field(..., pattern=r"^[a-zA-Z0-9\-_]{1,128}$")
     """The team name as per the governance (no organization name!)."""
 
     dissolved: bool = False

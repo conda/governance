@@ -4,7 +4,7 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: prefix-dev
 description: A team for prefix.dev staff to work on conda
-charter: unknown
+charter: dynamic-subteam
 details: Being employed by Prefix.dev
 resources:
   teams:
@@ -14,10 +14,10 @@ resources:
 links:
   - https://github.com/conda/governance/issues/226
 members:
-  baszalmstra: https://github.com/conda/governance/issues/225
-  Hofer-Julian: https://github.com/conda/governance/issues/225
-  nichmor: https://github.com/conda/governance/issues/225
-  ruben-arts: https://github.com/conda/governance/issues/225
-  tdejager: https://github.com/conda/governance/issues/225
-  wolfv: https://github.com/conda/governance/issues/225
+  baszalmstra: https://github.com/conda/governance/issues/226
+  Hofer-Julian: https://github.com/conda/governance/issues/226
+  nichmor: https://github.com/conda/governance/issues/226
+  ruben-arts: https://github.com/conda/governance/issues/226
+  tdejager: https://github.com/conda/governance/issues/226
+  wolfv: https://github.com/conda/governance/issues/226
 emeritus:
