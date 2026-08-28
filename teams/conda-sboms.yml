@@ -1,0 +1,19 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-sboms
+description: The team maintaining conda-sboms
+charter: incubated-project
+details:
+resources:
+  teams:
+    - conda-incubator/conda-sboms
+  repos:
+    - conda-incubator/conda-sboms
+  other:
+links:
+  - https://github.com/conda/governance/issues/433
+members:
+  jezdez: https://github.com/conda/governance/issues/433
+emeritus:
