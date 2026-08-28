@@ -158,6 +158,7 @@ def check_teams() -> int:
     list_of_yamls = all_yamls()
     n_yamls = len(list_of_yamls)
     n_errors = 0
+    n_warnings = 0
     for i, path in enumerate(list_of_yamls, 1):
         print(f"{i}/{n_yamls}: Checking", path.relative_to(ROOT), "...")
         with open(path) as f:
@@ -313,16 +314,18 @@ def check_teams() -> int:
     print("Check no individuals are granted access directly")
     print("================================================")
     if repos_with_direct_access:
-        eprint("Some users have direct access to repositories.")
+        eprint("::warning::Some users have direct access to repositories.")
         eprint("Direct repository access is reported for review.")
         for repo, users in repos_with_direct_access.items():
+            n_warnings += 1
             print(f"- {repo}:")
             for user, level in sorted(users.items()):
                 print(f"  - {user}: {level}")
 
-    print("===================", "=" * len(str(n_errors)), sep="")
+    print("====================", "=" * len(str(max([n_warnings, n_errors]))), sep="")
     print("Number of errors:", n_errors)
-    print("===================", "=" * len(str(n_errors)), sep="")
+    print("Number of warnings:", n_warnings)
+    print("====================", "=" * len(str(max([n_warnings, n_errors]))), sep="")
 
     return n_errors
 
