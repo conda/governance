@@ -96,7 +96,7 @@
           "anyOf": [
             {
               "items": {
-                "pattern": "[a-zA-Z0-9\\-_\\.\\+]{1,128}/[a-zA-Z0-9\\-_]{1,128}",
+                "pattern": "^[a-zA-Z0-9\\-_\\.\\+]{1,128}/[a-zA-Z0-9\\-_]{1,128}$",
                 "type": "string"
               },
               "type": "array"
@@ -112,7 +112,7 @@
           "anyOf": [
             {
               "items": {
-                "pattern": "[a-zA-Z0-9\\-_\\.\\+]{1,128}/[a-zA-Z0-9\\-_\\.\\+]{1,128}",
+                "pattern": "^[a-zA-Z0-9\\-_\\.\\+]{1,128}/[a-zA-Z0-9\\-_\\.\\+]{1,128}$",
                 "type": "string"
               },
               "type": "array"
@@ -157,7 +157,7 @@
   "properties": {
     "name": {
       "description": "The team name as per the governance (no organization name!).",
-      "pattern": "[a-zA-Z0-9\\-_]{1,128}",
+      "pattern": "^[a-zA-Z0-9\\-_]{1,128}$",
       "title": "Name",
       "type": "string"
     },
