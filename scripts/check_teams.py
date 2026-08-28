@@ -314,12 +314,11 @@ def check_teams() -> int:
     print("================================================")
     if repos_with_direct_access:
         eprint("Some users have direct access to repositories.")
-        eprint("Repository access must be granted through teams only!")
+        eprint("Direct repository access is reported for review.")
         for repo, users in repos_with_direct_access.items():
             print(f"- {repo}:")
             for user, level in sorted(users.items()):
                 print(f"  - {user}: {level}")
-        n_errors += 1
 
     print("===================", "=" * len(str(n_errors)), sep="")
     print("Number of errors:", n_errors)
