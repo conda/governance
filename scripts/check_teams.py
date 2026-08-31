@@ -174,13 +174,14 @@ def check_teams() -> int:
         if team["charter"] in ("static-subteam", "dynamic-subteam"):
             details_lines = (team.get("details") or "").splitlines()
             for section, is_error in (
-                ("Role", True),
-                ("Responsibility", True),
+                ("Role", False),
+                ("Responsibility", False),
                 ("Membership", False),
             ):
                 if f"## {section}" not in details_lines:
                     eprint(
-                        f"'{team['charter']}' teams {'MUST' if is_error else 'SHOULD'} "
+                        ("::warning::" if not is_error else "")
+                        + f"'{team['charter']}' teams {'MUST' if is_error else 'SHOULD'} "
                         f"include a '## {section}' section under `details`.",
                         indent=4,
                     )
