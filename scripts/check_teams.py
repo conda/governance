@@ -40,13 +40,17 @@ def eprint(*args, indent=0, **kwargs):
         print(*args, **kwargs)
 
 
-def report_diff(field: str, indent: int = 2, **entries: str | list[str]):
+def report_diff(
+    field: str, indent: int = 2, warning: bool = False, **entries: str | list[str]
+):
     if len(entries) != 2:
         raise ValueError("Must pass exactly two keyword arguments")
     names = list(entries.keys())
     values = list(entries.values())
     eprint(
-        f"! Contents for {field} in {names[0]} do not match {names[1]}:", indent=indent
+        f"::{'warning' if warning else 'error'}::"
+        f"Contents for {field} in {names[0]} do not match {names[1]}:",
+        indent=indent,
     )
     values0 = (
         [str(val) for val in values[0]]
@@ -180,8 +184,8 @@ def check_teams() -> int:
             ):
                 if f"## {section}" not in details_lines:
                     eprint(
-                        ("::warning::" if not is_error else "")
-                        + f"'{team['charter']}' teams {'MUST' if is_error else 'SHOULD'} "
+                        f"{'::error::' if is_error else '::warning::'}"
+                        f"'{team['charter']}' teams {'MUST' if is_error else 'SHOULD'} "
                         f"include a '## {section}' section under `details`.",
                         indent=4,
                     )
@@ -196,7 +200,7 @@ def check_teams() -> int:
             org, name = team_name.split("/")
             if org not in ("conda", "conda-incubator"):
                 eprint(
-                    "Team must belong to the `conda` or `conda-incubator` orgs.",
+                    "::error::Team must belong to the `conda` or `conda-incubator` orgs.",
                     indent=4,
                 )
                 n_errors += 1
@@ -206,9 +210,9 @@ def check_teams() -> int:
                 details = team_details(org, name)
             except requests.HTTPError as exc:
                 if exc.response.status_code == 404:
-                    eprint("Team does not exist!", indent=4)
+                    eprint("::error::Team does not exist!", indent=4)
                 else:
-                    eprint("Could not fetch team details:", exc, indent=4)
+                    eprint("::error::Could not fetch team details:", exc, indent=4)
                 n_errors += 1
                 continue
 
@@ -230,7 +234,7 @@ def check_teams() -> int:
             try:
                 members = team_members(org, name)
             except Exception as exc:  # noqa
-                eprint(type(exc).__name__, "-", exc, indent=4)
+                eprint("::error::", type(exc).__name__, "-", exc, indent=4)
                 n_errors += 1
                 continue
             seen_teams.add(f"{org}/{name}")
@@ -254,7 +258,9 @@ def check_teams() -> int:
                 )
                 n_errors += 1
             if inherited_members:
-                inherited_members_dashed = [f"  - {m}" for m in sorted(set(inherited_members))]
+                inherited_members_dashed = [
+                    f"  - {m}" for m in sorted(set(inherited_members))
+                ]
                 eprint(
                     f"::error::Team {org}/{name} has inherited members coming from nested teams:",
                     *inherited_members_dashed,
@@ -310,7 +316,7 @@ def check_teams() -> int:
             continue
         if repo not in seen_repos:
             eprint(
-                f"Repository '{repo}' is not annotated in any local team or orphaned YAMLs."
+                f"::error::Repository '{repo}' is not annotated in any local team or orphaned YAMLs."
             )
             try:
                 eprint(
@@ -320,7 +326,7 @@ def check_teams() -> int:
                 )
             except requests.HTTPError as exc:
                 eprint(
-                    f"Could not check teams with access to {repo} (HTTPError: {exc}), skipping...",
+                    f"::error::Could not check teams with access to {repo} (HTTPError: {exc}), skipping...",
                     indent=2,
                 )
             n_errors += 1
@@ -329,7 +335,7 @@ def check_teams() -> int:
                 repos_with_direct_access[repo] = users
         except requests.HTTPError as exc:
             eprint(
-                f"Could not check collaborators for {repo} (HTTPError: {exc}), skipping...",
+                f"::error::Could not check collaborators for {repo} (HTTPError: {exc}), skipping...",
                 indent=2,
             )
             continue
