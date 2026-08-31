@@ -99,9 +99,9 @@ def team_details(org: str, team: str) -> list[str]:
 
 
 @cache
-def team_members(org: str, team: str) -> list[str]:
+def team_members(org: str, team: str) -> dict[str, bool]:
     result = gh(org, f"orgs/{org}/teams/{team}/members")
-    return [member["login"] for member in result]
+    return {member["login"]: member.get("inherited", False) for member in result}
 
 
 @cache
@@ -231,14 +231,36 @@ def check_teams() -> int:
                 n_errors += 1
                 continue
             seen_teams.add(f"{org}/{name}")
-            if set(members) != set(team["members"]):
+            # Teams can have nested subteams. The member list of the parent team
+            # includes the nested ones by default, but those are marked with inherited=true.
+            # Separate direct membership from inherited to compare separately. By default,
+            # our governance model does not rely on nested teams because it makes permission
+            # management more complicated (e.g. emeritus members must be a separate team instead
+            # of a nested one to facilitate offboarding permissions-wise).
+            direct_members, inherited_members = [], []
+            for member, inherited in members.items():
+                if inherited:
+                    inherited_members.append(member)
+                else:
+                    direct_members.append(member)
+            if set(direct_members) != set(team["members"]):
                 members_in_file = sorted(team["members"], key=str.lower)
-                members_in_gh = sorted(members, key=str.lower)
+                members_in_gh = sorted(direct_members, key=str.lower)
                 report_diff(
                     "members", file=members_in_file, github=members_in_gh, indent=4
                 )
                 n_errors += 1
-
+            if inherited_members:
+                inherited_members_str = "\n".join(
+                    [f"  - {m}" for m in sorted(set(inherited_members))]
+                )
+                eprint(
+                    f"::warning::Team {org}/{name} has inherited members coming from nested teams:",
+                    *inherited_members_str,
+                    sep="\n",
+                    indent=4,
+                )
+                n_warnings += 1
             # 3. Validate access to repositories
             print("  Checking repositories")
             repos_in_file = sorted(
@@ -357,7 +379,11 @@ def generate():
                 "other": None,
             },
             "links": [],
-            "members": {member: None for member in team_members(org, team_name)},
+            "members": {
+                member: None
+                for member, inherited in team_members(org, team_name).items()
+                if not inherited
+            },
             "emeritus": None,
         }
         output_path.write_text("# yaml-language-server: $schema=./teams.schema.json\n")
