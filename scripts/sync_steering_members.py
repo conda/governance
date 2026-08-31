@@ -1,29 +1,32 @@
-"""Sync steering council data from CSV files into marker-delimited sections.
+"""Sync steering council data from team files into marker-delimited sections.
 
 Scans .yml, .yaml, and .md files under the repo root for marker pairs and
 regenerates content between them, preserving the surrounding indentation.
 
 Supported markers:
     <!-- STEERING-CHECKLIST --> / <!-- END-OF-STEERING-CHECKLIST -->
-        Vote checklist (yes/no/abstain per member) from steering.csv
+        Vote checklist (yes/no/abstain per member) from teams/steering-council.yml
     <!-- STEERING-TABLE --> / <!-- END-OF-STEERING-TABLE -->
-        Markdown table of current members from steering.csv
+        Markdown table of current members from teams/steering-council.yml
     <!-- EMERITUS-TABLE --> / <!-- END-OF-EMERITUS-TABLE -->
-        Markdown table of emeritus members from emeritus.csv
+        Markdown table of emeritus members from teams/steering-emeritus.yml
 
 Usage:
-    python scripts/sync_steering_members.py          # update files in-place
+    python scripts/sync_steering_members.py           # update files in-place
     python scripts/sync_steering_members.py --check   # exit 1 if any file would change (for CI)
 """
 
-import csv
 import re
 import sys
 from pathlib import Path
 
+from ruamel.yaml import YAML
+
+yaml = YAML()
+
 REPO_ROOT = Path(__file__).resolve().parents[1]
-STEERING_CSV = REPO_ROOT / "steering.csv"
-EMERITUS_CSV = REPO_ROOT / "emeritus.csv"
+STEERING_YAML = REPO_ROOT / "teams" / "steering-council.yml"
+EMERITUS_YAML = REPO_ROOT / "teams" / "steering-emeritus.yml"
 
 EXTENSIONS = {".yml", ".yaml", ".md"}
 
@@ -35,32 +38,34 @@ MARKER_RE = re.compile(
 )
 
 
-def build_checklist(csv_path: Path) -> str:
+def members(path: Path) -> list[tuple[str, object]]:
+    with path.open(newline="") as f:
+        data = yaml.load(f)
+    return sorted(
+        data["members"].items(), key=lambda kv: kv[1].get("full_name") or kv[0]
+    )
+
+
+def build_checklist(path: Path) -> str:
     """Return per-member vote checklist lines (yes/no/abstain)."""
     lines: list[str] = []
-    with csv_path.open(newline="") as f:
-        for row in csv.DictReader(f):
-            username = row["github_username"]
-            name = row["name"]
-            lines.append(f"@{username} ({name})")
-            lines.append("- [ ]  yes")
-            lines.append("- [ ]  no")
-            lines.append("- [ ]  abstain")
-            lines.append("")
+    for username, details in members(path):
+        name = details["full_name"]
+        lines.append(f"@{username} ({name})")
+        lines.append("- [ ]  yes")
+        lines.append("- [ ]  no")
+        lines.append("- [ ]  abstain")
+        lines.append("")
     return "\n".join(lines)
 
 
-def build_table(csv_path: Path) -> str:
+def build_table(path: Path) -> str:
     """Return a markdown table of members sorted alphabetically by first name."""
-    with csv_path.open(newline="") as f:
-        rows = sorted(csv.DictReader(f), key=lambda r: r["name"].lower())
-
     lines = ["| Name | GitHub | Funder | Pronouns |", "| --- | --- | --- | --- |"]
-    for row in rows:
-        name = row["name"]
-        username = row["github_username"]
-        funder = row.get("funder", "") or ""
-        pronouns = row.get("pronouns", "") or ""
+    for username, details in members(path):
+        name = details["full_name"]
+        funder = details.get("funder", "") or ""
+        pronouns = details.get("pronouns", "") or ""
         lines.append(
             f"| {name} | [@{username}](https://github.com/{username}) | {funder} | {pronouns} |"
         )
@@ -93,9 +98,9 @@ def sync_file(path: Path, contents: dict[str, str], *, check: bool) -> bool:
 def main() -> int:
     check = "--check" in sys.argv
     contents = {
-        "STEERING-CHECKLIST": build_checklist(STEERING_CSV),
-        "STEERING-TABLE": build_table(STEERING_CSV),
-        "EMERITUS-TABLE": build_table(EMERITUS_CSV),
+        "STEERING-CHECKLIST": build_checklist(STEERING_YAML),
+        "STEERING-TABLE": build_table(STEERING_YAML),
+        "EMERITUS-TABLE": build_table(EMERITUS_YAML),
     }
 
     changed: list[Path] = []
@@ -104,7 +109,7 @@ def main() -> int:
             continue
         if path.suffix not in EXTENSIONS:
             continue
-        if ".git" in path.parts:
+        if ".git" in path.parts or ".pixi" in path.parts:
             continue
         if sync_file(path, contents, check=check):
             changed.append(path)

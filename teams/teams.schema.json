@@ -1,13 +1,71 @@
 {
   "$defs": {
-    "Scopes": {
+    "MemberDetails": {
       "additionalProperties": false,
-      "description": "Defines the responsibilities of a Conda sub-team.\nThis structure is nested within the main CondaSubTeam model.",
+      "description": "Defines the contact details of a team member.",
       "properties": {
-        "codeowners": {
+        "full_name": {
           "anyOf": [
             {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Full name of the member.",
+          "title": "Full Name"
+        },
+        "email": {
+          "anyOf": [
+            {
+              "format": "email",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Email address of the member.",
+          "title": "Email"
+        },
+        "funder": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Employer or sponsor for the time allocated to the project.",
+          "title": "Funder"
+        },
+        "pronouns": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Pronouns of the member.",
+          "title": "Pronouns"
+        },
+        "decision": {
+          "anyOf": [
+            {
+              "format": "uri",
+              "maxLength": 2083,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
               "items": {
+                "format": "uri",
+                "maxLength": 2083,
+                "minLength": 1,
                 "type": "string"
               },
               "type": "array"
@@ -16,7 +74,55 @@
               "type": "null"
             }
           ],
-          "title": "Codeowners"
+          "description": "URL pointing to the record of the membership decision",
+          "title": "Decision"
+        }
+      },
+      "required": [
+        "full_name",
+        "email",
+        "funder",
+        "pronouns",
+        "decision"
+      ],
+      "title": "MemberDetails",
+      "type": "object"
+    },
+    "Resources": {
+      "additionalProperties": false,
+      "description": "Defines the responsibilities of a Conda sub-team.\nThis structure is nested within the main CondaSubTeam model.",
+      "properties": {
+        "teams": {
+          "anyOf": [
+            {
+              "items": {
+                "pattern": "^[a-zA-Z0-9\\-_\\.\\+]{1,128}/[a-zA-Z0-9\\-_]{1,128}$",
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "The Github team (or teams, across different organizations) representing this team.",
+          "title": "Teams"
+        },
+        "repos": {
+          "anyOf": [
+            {
+              "items": {
+                "pattern": "^[a-zA-Z0-9\\-_\\.\\+]{1,128}/[a-zA-Z0-9\\-_\\.\\+]{1,128}$",
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "The GitHub repositories this team owns or has write access to.",
+          "title": "Repos"
         },
         "other": {
           "anyOf": [
@@ -33,14 +139,16 @@
               "type": "null"
             }
           ],
+          "description": "Other responsibilities of this team",
           "title": "Other"
         }
       },
       "required": [
-        "codeowners",
+        "teams",
+        "repos",
         "other"
       ],
-      "title": "Scopes",
+      "title": "Resources",
       "type": "object"
     }
   },
@@ -48,23 +156,39 @@
   "description": "Model for defining Conda Sub-Teams based on the governance structure.",
   "properties": {
     "name": {
+      "description": "The team name as per the governance (no organization name!).",
+      "pattern": "^[a-zA-Z0-9\\-_]{1,128}$",
       "title": "Name",
       "type": "string"
     },
+    "dissolved": {
+      "default": false,
+      "description": "Whether the team has been dissolved",
+      "title": "Dissolved",
+      "type": "boolean"
+    },
     "description": {
+      "description": "The team description in GitHub",
+      "maxLength": 255,
+      "minLength": 0,
       "title": "Description",
       "type": "string"
     },
     "charter": {
+      "description": "The team and charter type, see [dynamic](https://github.com/conda/governance#dynamic-charter),\n[static](https://github.com/conda/governance#static-charter),\nand [project](https://github.com/conda/governance#project-teams-details) requirements.",
       "enum": [
-        "dynamic",
-        "static",
-        "project"
+        "council",
+        "dynamic-subteam",
+        "static-subteam",
+        "community-project",
+        "federated-project",
+        "incubated-project",
+        "unknown"
       ],
       "title": "Charter",
       "type": "string"
     },
-    "requirements": {
+    "details": {
       "anyOf": [
         {
           "type": "string"
@@ -73,12 +197,15 @@
           "type": "null"
         }
       ],
-      "title": "Requirements"
+      "description": "Additional documentation for the team (membership requirements, responsibilities,\nonboarding guides, escalation procedures, etc) or a reference to the location\nwhere such information is discussed.",
+      "title": "Details"
     },
-    "scopes": {
-      "$ref": "#/$defs/Scopes"
+    "resources": {
+      "$ref": "#/$defs/Resources",
+      "description": "Resources owned by the team (Github teams, repos, service accounts, etc)"
     },
     "links": {
+      "description": "Important links, e.g. the issue/PR proposing the team creation",
       "items": {
         "format": "uri",
         "maxLength": 2083,
@@ -92,6 +219,9 @@
       "additionalProperties": {
         "anyOf": [
           {
+            "$ref": "#/$defs/MemberDetails"
+          },
+          {
             "format": "uri",
             "maxLength": 2083,
             "minLength": 1,
@@ -102,7 +232,7 @@
           }
         ]
       },
-      "minProperties": 1,
+      "description": "Maps username to its details or, in its simplified form, a URL pointing\nto the record of the decision adding them to the team.",
       "title": "Members",
       "type": "object"
     },
@@ -111,6 +241,18 @@
         {
           "additionalProperties": {
             "anyOf": [
+              {
+                "$ref": "#/$defs/MemberDetails"
+              },
+              {
+                "items": {
+                  "format": "uri",
+                  "maxLength": 2083,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "type": "array"
+              },
               {
                 "format": "uri",
                 "maxLength": 2083,
@@ -122,13 +264,13 @@
               }
             ]
           },
-          "minProperties": 1,
           "type": "object"
         },
         {
           "type": "null"
         }
       ],
+      "description": "Maps username to its details or, in its simplified form, a URL pointing\nto the record of the decision removing them from the team.",
       "title": "Emeritus"
     }
   },
@@ -136,8 +278,8 @@
     "name",
     "description",
     "charter",
-    "requirements",
-    "scopes",
+    "details",
+    "resources",
     "links",
     "members",
     "emeritus"

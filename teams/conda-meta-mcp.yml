@@ -1,0 +1,20 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-meta-mcp
+description: An MCP (Model Context Protocol) server exposing authoritative, read-only Conda ecosystem metadata for AI agents.
+charter: incubated-project
+details:
+resources:
+  teams:
+    - conda-incubator/conda-meta-mcp
+  repos:
+    - conda-incubator/conda-meta-mcp
+  other:
+links:
+  - https://github.com/conda/governance/issues/277
+members:
+  dbast: https://github.com/conda/governance/issues/277
+  jezdez: https://github.com/conda/governance/issues/277
+emeritus:

@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-exec
+description: The team maintaining conda-exec
+charter: incubated-project
+details:
+resources:
+  teams:
+    - conda-incubator/conda-exec
+  repos:
+    - conda-incubator/conda-exec
+  other:
+links: []
+members:
+  jezdez:
+emeritus:

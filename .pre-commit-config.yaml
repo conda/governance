@@ -13,6 +13,14 @@ repos:
         always_run: true
         require_serial: true
         pass_filenames: false
+      # generate some files
+      - id: generate-schemas
+        name: Generate JSON schemas
+        entry: pixi run schemas
+        language: system
+        always_run: true
+        pass_filenames: false
+        require_serial: true
       # ruff
       - id: ruff
         name: ruff
@@ -63,6 +71,7 @@ repos:
         entry: pixi run check-jsonschema
         language: system
         files: ^teams/.*\.ya?ml$
+        exclude: ^teams/__\S+__\.ya?ml$
         args: [--schemafile, teams/teams.schema.json]
       - id: check-github-workflows
         name: check-github-workflows
@@ -92,6 +101,7 @@ repos:
         name: codespell
         entry: pixi run codespell
         language: system
+        exclude: ^teams/.*\.ya?ml$
         exclude_types: [csv]
         types: [text]
         args: [--write-changes]
@@ -110,3 +120,8 @@ repos:
         always_run: true
         pass_filenames: false
         require_serial: true
+      - id: sort-team-yaml
+        name: Check ordering in teams/**/*.yml
+        language: python
+        entry: pixi run sort_team_yaml
+        files: ^teams/.*\.ya?ml$
