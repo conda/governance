@@ -187,6 +187,8 @@ def check_teams() -> int:
                     )
                     if is_error:
                         n_errors += 1
+                    else:
+                        n_warnings += 1
 
         for team_name in team.get("resources", {}).get("teams") or ():
             print("  Checking Github team name", team_name)
@@ -254,12 +256,12 @@ def check_teams() -> int:
             if inherited_members:
                 inherited_members_dashed = [f"  - {m}" for m in sorted(set(inherited_members))]
                 eprint(
-                    f"::warning::Team {org}/{name} has inherited members coming from nested teams:",
+                    f"::error::Team {org}/{name} has inherited members coming from nested teams:",
                     *inherited_members_dashed,
                     sep="\n",
                     indent=4,
                 )
-                n_warnings += 1
+                n_errors += 1
             # 3. Validate access to repositories
             print("  Checking repositories")
             repos_in_file = sorted(
