@@ -252,12 +252,10 @@ def check_teams() -> int:
                 )
                 n_errors += 1
             if inherited_members:
-                inherited_members_str = "\n".join(
-                    [f"  - {m}" for m in sorted(set(inherited_members))]
-                )
+                inherited_members_dashed = [f"  - {m}" for m in sorted(set(inherited_members))]
                 eprint(
                     f"::warning::Team {org}/{name} has inherited members coming from nested teams:",
-                    *inherited_members_str,
+                    *inherited_members_dashed,
                     sep="\n",
                     indent=4,
                 )
