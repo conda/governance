@@ -105,22 +105,4 @@ members:
     funder: QuantCo
     pronouns: he/him
     decision: https://github.com/conda/governance/issues/1
-emeritus:
-  # FIX: These are still "part" of steering because emeritus is a subteam of steering, which
-  # inherit the permissions.
-  angloyna:
-  awwad:
-  beckermr:
-  cjmartian:
-  csoja:
-  dharhas:
-  ericdill:
-  goanpeca:
-  jjhelmus:
-  mbargull:
-  mcg1969:
-  minrk:
-  prusse-martin:
-  raydouglass:
-  sodre:
-  trallard:
+emeritus: # NOTE: Tracked separately in ./steering-emeritus.yml
