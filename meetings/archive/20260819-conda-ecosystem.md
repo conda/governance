@@ -32,7 +32,7 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
     - JL: I’ve put in some effort into Jaime’s PR a while ago, so I think we should just get this merged if it helps to clarify the gaps in the governance process
 - [x] Steering: Repodata v3 vote, last day: https://github.com/conda/ceps/pull/146
 - [x] Steering: PURLs CEP RFC period ending: https://github.com/conda/ceps/pull/159
-- [x] Core: Two membership requests for conda-forge core and staged-recipes, respectively. Please check [Helios](vote.heliosvoting.org).
+- [x] Core: Two membership requests for conda-forge core and staged-recipes, respectively. Please check [Helios](https://vote.heliosvoting.org).
 
 ## New agenda items
 
