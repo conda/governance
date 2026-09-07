@@ -1,22 +1,14 @@
 name: Request for Incubation
 description: Request to add a project to the conda-incubator organization.
-title: 'Request for incubation: <project name>'
+title: 'Request for incubation: '
 labels: [incubation]
 body:
   - type: markdown
     attributes:
       value: |
-        ## Request for Incubation
+        Per the [conda governance policy](https://github.com/conda/governance#incubation), any single Steering Council member may add a project to the incubator, given the knowledge and consent of the author(s).
 
-        Per the [conda governance policy](https://github.com/conda/governance#incubation),
-        any single Steering Council member may add a project to the incubator, given the
-        knowledge and consent of the author(s).
-
-        The sponsoring Steering Council member is responsible for ensuring that basic legal
-        requirements have been met, including
-        [trademark usage and license terms](https://github.com/conda/governance#trademarks).
-        All conda projects must use an
-        [OSI-approved software license](https://opensource.org/).
+        The sponsoring Steering Council member is responsible for ensuring that basic legal requirements have been met, including [trademark usage and license terms](https://github.com/conda/governance#trademarks). All conda projects must use an [OSI-approved software license](https://opensource.org/).
   - type: input
     id: project_name
     attributes:
@@ -46,7 +38,7 @@ body:
       placeholder: e.g. BSD-3-Clause
     validations:
       required: true
-  - type: textarea
+  - type: input
     id: team_members
     attributes:
       label: Initial team members
