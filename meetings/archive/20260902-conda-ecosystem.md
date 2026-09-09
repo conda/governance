@@ -28,17 +28,16 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 
 ## Announcements
 
-<!-- New releases, upcoming changes, ongoing votes --->
+- [x] Happy Birthday to Jaime!
 
-- [ ] ...
+<!-- JRG: I won't be able to attend today, but please observe these announcements on behalf of the SC, thanks! -->
 
-## From previous meetings
-
-- [ ] ...
+- [x] C/SC: CEP vote now open for [Defining Package-URLs (PURLs) for conda packages](https://github.com/conda/ceps/pull/159). Deadline 2026-09-16 EOD AoE.
+- [ ] Team composition across conda and conda-incubator organizations now linted in conda/governance via YAML files, and rendered in conda.org/community/teams. Also new pages render the governance and code of conduct documents in the same section. Same infra coming to conda-forge soon.
 
 ## New agenda items
 
-- [ ] ...
+- [ ] JFrog Artifactory: going to be roll back repodata sharding by default; adding an opt-in option to enable conda repodata shards, which will require re-indexing.
 
 ## Deferred to next meeting
 
