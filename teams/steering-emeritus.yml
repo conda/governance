@@ -151,6 +151,7 @@ members:
     pronouns: he/him
     decision:
       - https://github.com/conda/governance/issues/1
+      - https://github.com/conda/governance/pull/449
   prusse-martin:
     full_name: Martin Prüsse
     email: prusse.martin@gmail.com
