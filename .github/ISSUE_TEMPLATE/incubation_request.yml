@@ -51,3 +51,11 @@ body:
     attributes:
       label: Additional context
       description: Any other relevant information (e.g. related CEPs, prior art, motivation).
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm the following
+      options:
+        - label: Before closing this issue, a new PR adjusting the necessary `teams/*.yml` files will need to be added
+          required: true
