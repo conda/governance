@@ -519,6 +519,7 @@ In alphabetical order,
 | Marius van Niekerk | [@mariusvniekerk](https://github.com/mariusvniekerk) |  |  |
 | Michael Sarahan | [@msarahan](https://github.com/msarahan) | NVIDIA | he/him |
 | Pavel Zwerschke | [@pavelzw](https://github.com/pavelzw) | QuantCo | he/him |
+| Tania Allard | [@trallard](https://github.com/trallard) | Quansight | she/her |
 | Uwe Korn | [@xhochy](https://github.com/xhochy) | QuantCo | he/him |
 | Wolf Vollprecht | [@wolfv](https://github.com/wolfv) | prefix.dev | he/him |
 <!-- END-OF-STEERING-TABLE -->
@@ -550,7 +551,6 @@ In alphabetical order,
 | Patrick Sodré | [@sodre](https://github.com/sodre) |  |  |
 | Ray Douglass | [@raydouglass](https://github.com/raydouglass) |  |  |
 | Sebastien Awwad | [@awwad](https://github.com/awwad) |  |  |
-| Tania Allard | [@trallard](https://github.com/trallard) | Quansight | she/her |
 | Travis Oliphant | [@teoliphant](https://github.com/teoliphant) |  |  |
 <!-- END-OF-EMERITUS-TABLE -->
 

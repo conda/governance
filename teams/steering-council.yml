@@ -91,6 +91,14 @@ members:
     funder: QuantCo
     pronouns: he/him
     decision: https://github.com/conda/governance/pull/241
+  trallard:
+    full_name: Tania Allard
+    email: taniar.allard@gmail.com
+    funder: Quansight
+    pronouns: she/her
+    decision:
+      - https://github.com/conda/governance/pull/172
+      - https://github.com/conda/governance/pull/310
   wolfv:
     full_name: Wolf Vollprecht
     email: w.vollprecht@gmail.com
