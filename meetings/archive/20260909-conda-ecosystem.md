@@ -9,11 +9,6 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 
 ## Attendees
 
-<!-- Use this syntax:
-* Initials: Full Name (@github-username), Affiliation.
-* SD: Sam Doe (@samdoe), Company
--->
-
 1. TH: Travis Hathaway (@travishathaway), Anaconda
 1. DY: Dan Yeaw (@danyeaw), Anaconda
 1. DJC: Daniel Ching (@carterbox), CF/C, NVIDIA
@@ -22,28 +17,16 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 1. BZ: Bas Zalmstra (@baszalmstra), Prefix.dev, C/SC, CF/C
 3. WV: Wolf Vollprecht (@wolfv), Prefix.dev, C/SC, CF/C
 
-<!-- Delete sections that do not apply before committing to repo -->
-<!-- Every agenda item must use the initials of the person adding the item -->
-
-
-## Introductions
-
-- [ ] ...
 
 ## Announcements
 
-<!-- New releases, upcoming changes, ongoing votes --->
 
 - [x] Welcome Daniel Ching to conda-forge/core!
-- [ ] Open votes:
-    - [ ] 2026-09-21: conda-forge/core, new member nomination at https://vote.heliosvoting.org
-    - [ ] 2026-09-16: conda/steering-council, CEP at https://github.com/conda/ceps/pull/159
-- [ ] Python Packaging Council vote is ongoing too
+- [x] Open votes:
+    - [x] 2026-09-21: conda-forge/core, new member nomination at https://vote.heliosvoting.org
+    - [x] 2026-09-16: conda/steering-council, CEP at https://github.com/conda/ceps/pull/159
+- [x] Python Packaging Council vote is ongoing too
     - Might be too late to join PSF if you're not already a member though :grimacing:
-
-## From previous meetings
-
-- [ ] ...
 
 ## New agenda items
 
@@ -78,10 +61,6 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
         - [RISE RISC-V Runners](https://github.com/apps/rise-risc-v-runners); backed by RISE (Linux Foundation project), OSS, free to use, native GitHub integration, used by other projects (CNCF, PyTorch, Llama.cpp, Numpy, ...), not RVA23; Contact: @luhenry
         - OpenEuler, based on OpenStack, would need GitHub integration
 - [x] (WV) Vote opening on sigstore serving CEP proposoal
-    - [ ] {%preview https://github.com/conda/ceps/pull/142 %}
+    - https://github.com/conda/ceps/pull/142
 - [x] (IF) rattler-build v1 recipes not running tests under cross compilation + user space emulation
-    - [ ] https://github.com/prefix-dev/rattler-build/issues/2587
-
-## Deferred to next meeting
-
-- [ ] ...
+    - https://github.com/prefix-dev/rattler-build/issues/2587
