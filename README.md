@@ -510,7 +510,6 @@ In alphabetical order,
 | --- | --- | --- | --- |
 | Bas Zalmstra | [@baszalmstra](https://github.com/baszalmstra) | prefix.dev | he/him |
 | Cheng H. Lee | [@chenghlee](https://github.com/chenghlee) | Anaconda | he/him |
-| Filipe Fernandes | [@ocefpaf](https://github.com/ocefpaf) | no funding | he/him |
 | Hind Montassif | [@Hind-M](https://github.com/Hind-M) | QuantStack | she/her |
 | Jaime Rodríguez-Guerra | [@jaimergp](https://github.com/jaimergp) | Quansight | he/him |
 | Jannis Leidel | [@jezdez](https://github.com/jezdez) | Anaconda | he/him |
@@ -539,6 +538,7 @@ In alphabetical order,
 | Crystal Soja | [@csoja](https://github.com/csoja) |  |  |
 | Dharhas Pothina | [@dharhas](https://github.com/dharhas) |  |  |
 | Eric Dill | [@ericdill](https://github.com/ericdill) |  |  |
+| Filipe Fernandes | [@ocefpaf](https://github.com/ocefpaf) | no funding | he/him |
 | Gonzalo Peña-Castellanos | [@goanpeca](https://github.com/goanpeca) | Quansight | he/him |
 | Jonathan Helmus | [@jjhelmus](https://github.com/jjhelmus) |  |  |
 | Keith Kraus | [@kkraus14](https://github.com/kkraus14) | no funding | he/him |

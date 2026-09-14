@@ -78,13 +78,6 @@ members:
     decision:
       - https://github.com/conda/governance/issues/1
       - https://github.com/conda/governance/pull/15
-  ocefpaf:
-    full_name: Filipe Fernandes
-    email: ocefpaf@gmail.com
-    funder: no funding
-    pronouns: he/him
-    decision:
-      - https://github.com/conda/governance/issues/1
   pavelzw:
     full_name: Pavel Zwerschke
     email: pavelzw@gmail.com
