@@ -1,0 +1,20 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: envscout
+description: Maintainers of The Python environment scanner
+charter: incubated-project
+details:
+resources:
+  teams:
+    - conda-incubator/envscout
+  repos:
+    - conda-incubator/envscout
+  other:
+links:
+  - https://github.com/conda/governance/issues/459
+members:
+  dbast: https://github.com/conda/governance/issues/459
+  jezdez: https://github.com/conda/governance/issues/459
+emeritus:
