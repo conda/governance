@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-pypi
+description: Maintainers of conda-pypi
+charter: incubated-project
+details: Maintains the repodata patches for the conda-pypi channel.
+resources:
+  teams:
+    - conda-incubator/conda-pypi
+  repos:
+    - conda-incubator/conda-pypi-repodata-patches
+  other:
+links:
+  - https://github.com/conda/conda-maintainers-team-planning/issues/115
+  - https://github.com/conda/governance/issues/439
+members:
+  danyeaw:
+  ForgottenProgramme:
+  jaimergp:
+  jezdez:
+  kenodegard:
+  ryanskeith:
+  soapy1:
+  travishathaway:
+emeritus:

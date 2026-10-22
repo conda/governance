@@ -11,11 +11,11 @@ resources:
     - conda/conda-maintainers
   repos:
     - conda/conda
-    - conda/conda-classic-solver
     - conda/conda-index
     - conda/conda-libmamba-solver
     - conda/conda-lockfiles
     - conda/conda-maintainers-team-planning
+    - conda/conda-pycosat-solver
     - conda/conda-pypi
     - conda/conda-rattler-solver
     - conda/conda-self
