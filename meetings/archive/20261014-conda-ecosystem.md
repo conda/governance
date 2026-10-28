@@ -14,9 +14,10 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 * SD: Sam Doe (@samdoe), Company
 -->
 
-1. ...
-1. ...
-1. ...
+1. SM: Schuyler Martin (@schuylermartin45), Anaconda
+1. DJC: Daniel Ching (@carterbox), NVIDIA, conda-forge/core
+1. WV: Wolf Vollprecht (@wolfv), prefix, conda-forge/core
+2. ...
 
 <!-- Delete sections that do not apply before committing to repo -->
 <!-- Every agenda item must use the initials of the person adding the item -->
@@ -30,7 +31,7 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 
 <!-- New releases, upcoming changes, ongoing votes --->
 
-- [ ] ...
+- [ ] (SM) Status update
 
 ## From previous meetings
 
