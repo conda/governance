@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-sigstore
+description: Maintainers of conda-sigstore
+charter: incubated-project
+details:
+resources:
+  teams:
+    - conda-incubator/conda-sigstore
+  repos:
+    - conda-incubator/conda-sigstore
+  other:
+links:
+  - https://github.com/conda/governance/issues/445
+members:
+  jezdez: https://github.com/conda/governance/issues/445
+  travishathaway: https://github.com/conda/governance/issues/445#issuecomment-5660816227
+emeritus:
