@@ -1,9 +1,9 @@
 """
 Checks whether the members defined in the teams/*.yaml files correspond to their Github definitions.
-It also makes sure that all teams in conda and conda-incubator are collected here.
+It also makes sure that all teams in conda, conda-incubator, and conda-sandbox are collected here.
 
 We need one fine-grained token per organization (CONDA_ORG_WIDE_TOKEN,
-CONDA_INCUBATOR_ORG_WIDE_TOKEN), with permissions:
+CONDA_INCUBATOR_ORG_WIDE_TOKEN, CONDA_SANDBOX_ORG_WIDE_TOKEN), with permissions:
 
 - All repositories, metadata (read-only)
 - Organization, metadata (read-only)
@@ -20,7 +20,6 @@ import os
 import sys
 from difflib import unified_diff
 from functools import cache
-from itertools import chain
 from pathlib import Path
 
 import requests
@@ -81,6 +80,8 @@ def gh(org, apipath):
         token = os.environ.get("CONDA_ORG_WIDE_TOKEN")
     elif org == "conda-incubator":
         token = os.environ.get("CONDA_INCUBATOR_ORG_WIDE_TOKEN")
+    elif org == "conda-sandbox":
+        token = os.environ.get("CONDA_SANDBOX_ORG_WIDE_TOKEN")
     else:
         token = None
     token = token or os.environ.get("GITHUB_TOKEN") or ""
@@ -147,7 +148,7 @@ def collaborators(org, repo):
 def all_yamls() -> list[Path]:
     return sorted(
         yml
-        for yml in chain(ROOT.glob("teams/**/*.yml"), ROOT.glob("teams/**/*.yaml"))
+        for yml in (*ROOT.glob("teams/**/*.yml"), *ROOT.glob("teams/**/*.yaml"))
         if not yml.name.startswith("__")
     )
 
@@ -198,9 +199,9 @@ def check_teams() -> int:
             print("  Checking Github team name", team_name)
             # 0. Validate team names
             org, name = team_name.split("/")
-            if org not in ("conda", "conda-incubator"):
+            if org not in ("conda", "conda-incubator", "conda-sandbox"):
                 eprint(
-                    "::error::Team must belong to the `conda` or `conda-incubator` orgs.",
+                    "::error::Team must belong to the `conda`, `conda-incubator`, `conda-sandbox` orgs.",
                     indent=4,
                 )
                 n_errors += 1
@@ -297,7 +298,11 @@ def check_teams() -> int:
     print("=============================")
     print("Check all teams are described")
     print("=============================")
-    teams_in_github = {*teams_in_org("conda"), *teams_in_org("conda-incubator")}
+    teams_in_github = {
+        *teams_in_org("conda"),
+        *teams_in_org("conda-incubator"),
+        *teams_in_org("conda-sandbox"),
+    }
 
     if seen_teams != teams_in_github:
         teams_in_repo = sorted(seen_teams, key=str.lower)
@@ -311,7 +316,11 @@ def check_teams() -> int:
     print("Check all repos are annotated")
     print("=============================")
     repos_with_direct_access = {}
-    for repo in chain(repos_in_org("conda"), repos_in_org("conda-incubator")):
+    for repo in (
+        *repos_in_org("conda"),
+        *repos_in_org("conda-incubator"),
+        *repos_in_org("conda-sandbox"),
+    ):
         if "-ghsa-" in repo:
             continue
         if repo not in seen_repos:
@@ -366,7 +375,11 @@ def generate():
             team = yaml.load(f)
             team_to_fn[team["name"]] = path
 
-    for team in chain(teams_in_org("conda"), teams_in_org("conda-incubator")):
+    for team in (
+        *teams_in_org("conda"),
+        *teams_in_org("conda-incubator"),
+        *teams_in_org("conda-sandbox"),
+    ):
         org, team_name = team.split("/")
         if team_name in team_to_fn:
             continue
