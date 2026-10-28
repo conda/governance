@@ -14,9 +14,11 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 * SD: Sam Doe (@samdoe), Company
 -->
 
-1. ...
-1. ...
-1. ...
+1. DY: Dan Yeaw (@danyeaw), Anaconda
+1. ME: Marco Esters (@marcoesters), Anaconda
+1. TH: Travis Hathaway (@travishathaway), Anaconda
+1. ??: ?????? 
+2. WV: Wolf Vollprecht (@wolfv), prefix.dev, CF/CS
 
 <!-- Delete sections that do not apply before committing to repo -->
 <!-- Every agenda item must use the initials of the person adding the item -->
@@ -30,7 +32,8 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 
 <!-- New releases, upcoming changes, ongoing votes --->
 
-- [ ] ...
+- [ ] conda-rattler-solver and conda 26.10.0, changing default solver to rattler
+- [ ] 
 
 ## From previous meetings
 
@@ -38,7 +41,9 @@ Various parts of the conda ecosystem gather on a regular basis. This meeting bri
 
 ## New agenda items
 
-- [ ] ...
+- [ ] prefix.dev now supports repodata patching
+- [ ] basilisk.prefix.dev for CVE mapping available
+    - [ ] Funding from STA over the next year for security fixes, basilisk improvements
 
 ## Deferred to next meeting
 
