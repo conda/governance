@@ -84,6 +84,14 @@ body:
       placeholder: e.g. 2026-04-30
     validations:
       required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm the following
+      options:
+        - label: Before closing this issue, a new PR adjusting the necessary `teams/*.yml` files will need to be added
+          required: true
   - type: markdown
     attributes:
       value: |
@@ -112,11 +120,6 @@ body:
         - [ ]  abstain
 
         @chenghlee (Cheng H. Lee)
-        - [ ]  yes
-        - [ ]  no
-        - [ ]  abstain
-
-        @ocefpaf (Filipe Fernandes)
         - [ ]  yes
         - [ ]  no
         - [ ]  abstain
@@ -157,6 +160,11 @@ body:
         - [ ]  abstain
 
         @pavelzw (Pavel Zwerschke)
+        - [ ]  yes
+        - [ ]  no
+        - [ ]  abstain
+
+        @trallard (Tania Allard)
         - [ ]  yes
         - [ ]  no
         - [ ]  abstain

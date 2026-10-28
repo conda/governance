@@ -510,7 +510,6 @@ In alphabetical order,
 | --- | --- | --- | --- |
 | Bas Zalmstra | [@baszalmstra](https://github.com/baszalmstra) | prefix.dev | he/him |
 | Cheng H. Lee | [@chenghlee](https://github.com/chenghlee) | Anaconda | he/him |
-| Filipe Fernandes | [@ocefpaf](https://github.com/ocefpaf) | no funding | he/him |
 | Hind Montassif | [@Hind-M](https://github.com/Hind-M) | QuantStack | she/her |
 | Jaime Rodríguez-Guerra | [@jaimergp](https://github.com/jaimergp) | Quansight | he/him |
 | Jannis Leidel | [@jezdez](https://github.com/jezdez) | Anaconda | he/him |
@@ -519,6 +518,7 @@ In alphabetical order,
 | Marius van Niekerk | [@mariusvniekerk](https://github.com/mariusvniekerk) |  |  |
 | Michael Sarahan | [@msarahan](https://github.com/msarahan) | NVIDIA | he/him |
 | Pavel Zwerschke | [@pavelzw](https://github.com/pavelzw) | QuantCo | he/him |
+| Tania Allard | [@trallard](https://github.com/trallard) | Quansight | she/her |
 | Uwe Korn | [@xhochy](https://github.com/xhochy) | QuantCo | he/him |
 | Wolf Vollprecht | [@wolfv](https://github.com/wolfv) | prefix.dev | he/him |
 <!-- END-OF-STEERING-TABLE -->
@@ -538,6 +538,7 @@ In alphabetical order,
 | Crystal Soja | [@csoja](https://github.com/csoja) |  |  |
 | Dharhas Pothina | [@dharhas](https://github.com/dharhas) |  |  |
 | Eric Dill | [@ericdill](https://github.com/ericdill) |  |  |
+| Filipe Fernandes | [@ocefpaf](https://github.com/ocefpaf) | no funding | he/him |
 | Gonzalo Peña-Castellanos | [@goanpeca](https://github.com/goanpeca) | Quansight | he/him |
 | Jonathan Helmus | [@jjhelmus](https://github.com/jjhelmus) |  |  |
 | Keith Kraus | [@kkraus14](https://github.com/kkraus14) | no funding | he/him |
@@ -550,7 +551,6 @@ In alphabetical order,
 | Patrick Sodré | [@sodre](https://github.com/sodre) |  |  |
 | Ray Douglass | [@raydouglass](https://github.com/raydouglass) |  |  |
 | Sebastien Awwad | [@awwad](https://github.com/awwad) |  |  |
-| Tania Allard | [@trallard](https://github.com/trallard) | Quansight | she/her |
 | Travis Oliphant | [@teoliphant](https://github.com/teoliphant) |  |  |
 <!-- END-OF-EMERITUS-TABLE -->
 

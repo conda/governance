@@ -222,6 +222,15 @@
             "$ref": "#/$defs/MemberDetails"
           },
           {
+            "items": {
+              "format": "uri",
+              "maxLength": 2083,
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
             "format": "uri",
             "maxLength": 2083,
             "minLength": 1,
@@ -232,7 +241,7 @@
           }
         ]
       },
-      "description": "Maps username to its details or, in its simplified form, a URL pointing\nto the record of the decision adding them to the team.",
+      "description": "Maps username to its details or, in its simplified form, a URL pointing\nto the record(s) of the decision adding them to the team.",
       "title": "Members",
       "type": "object"
     },
