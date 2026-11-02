@@ -20,6 +20,7 @@ resources:
     - conda/conda-rattler-solver
     - conda/conda-self
     - conda/conda-spawn
+    - conda/conda-verify
   other:
 links:
   - https://github.com/conda/conda-maintainers-team-planning/blob/main/README.md
