@@ -17,7 +17,6 @@ resources:
     - conda/conda
     - conda/conda-benchmarks
     - conda/conda-build
-    - conda/conda-classic-solver
     - conda/conda-content-trust
     - conda/conda-docs
     - conda/conda-dot-org
@@ -30,6 +29,7 @@ resources:
     - conda/conda-package-streaming
     - conda/conda-plugin-template
     - conda/conda-prefix-replacement
+    - conda/conda-pycosat-solver
     - conda/conda-pypi
     - conda/conda-rattler-solver
     - conda/conda-recipe-manager
