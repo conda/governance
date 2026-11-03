@@ -4,7 +4,7 @@
 # yaml-language-server: $schema=./teams.schema.json
 name: conda-maintainers
 description: The team maintaining the conda CLI and some related packages
-charter: federated-project
+charter: community-project
 details:
 resources:
   teams:
@@ -20,8 +20,10 @@ resources:
     - conda/conda-rattler-solver
     - conda/conda-self
     - conda/conda-spawn
+    - conda/pytest-conda-solvers
   other:
 links:
+  - https://github.com/conda/governance/issues/462
   - https://github.com/conda/conda/issues/13526
   - https://github.com/conda/conda-index/issues/249
   - https://github.com/conda/conda-maintainers-team-planning/issues/115
