@@ -2,11 +2,15 @@
 Checks whether the members defined in the teams/*.yaml files correspond to their Github definitions.
 It also makes sure that all teams in conda, conda-incubator, and conda-sandbox are collected here.
 
-We need one fine-grained token per organization (CONDA_ORG_WIDE_TOKEN,
-CONDA_INCUBATOR_ORG_WIDE_TOKEN, CONDA_SANDBOX_ORG_WIDE_TOKEN), with permissions:
+Authentication uses a single GitHub App installed on each organization. The app needs:
 
-- All repositories, metadata (read-only)
-- Organization, metadata (read-only)
+- Repository permissions: Metadata (read-only, implicit), Administration (read-only)
+- Organization permissions: Members (read-only)
+
+Each installation must cover all repositories of its organization. The Teams workflow mints one
+installation token per organization (CONDA_AUDIT_CLIENT_ID / CONDA_AUDIT_PRIVATE_KEY) and passes
+them as CONDA_AUDIT_TOKEN_CONDA, CONDA_AUDIT_TOKEN_CONDA_INCUBATOR and
+CONDA_AUDIT_TOKEN_CONDA_SANDBOX.
 """
 
 # /// script
@@ -77,11 +81,11 @@ def gh(org, apipath):
     api_url = f"https://api.github.com/{apipath}"
 
     if org == "conda":
-        token = os.environ.get("CONDA_ORG_WIDE_TOKEN")
+        token = os.environ.get("CONDA_AUDIT_TOKEN_CONDA")
     elif org == "conda-incubator":
-        token = os.environ.get("CONDA_INCUBATOR_ORG_WIDE_TOKEN")
+        token = os.environ.get("CONDA_AUDIT_TOKEN_CONDA_INCUBATOR")
     elif org == "conda-sandbox":
-        token = os.environ.get("CONDA_SANDBOX_ORG_WIDE_TOKEN")
+        token = os.environ.get("CONDA_AUDIT_TOKEN_CONDA_SANDBOX")
     else:
         token = None
     token = token or os.environ.get("GITHUB_TOKEN") or ""
