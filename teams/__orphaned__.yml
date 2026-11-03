@@ -21,5 +21,6 @@ teams:
   conda-incubator/design:
   conda-incubator/docs:
   conda-incubator/implementation:
+  conda-incubator/pytest-conda-solvers: https://github.com/conda/governance/issues/462
   conda-incubator/rattler: https://github.com/conda/rattler/issues/799
   conda/conda-lockfiles: https://github.com/conda/conda-maintainers-team-planning/issues/116
