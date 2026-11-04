@@ -9,10 +9,19 @@ details: Any steering council member may join without approval
 resources:
   teams:
     - conda-incubator/infrastructure
+    - conda-sandbox/infrastructure
     - conda/infrastructure
   repos:
     - conda-incubator/.cirun
     - conda-incubator/renovate-config
+    - conda-sandbox/cla
+    - conda-sandbox/downstream
+    - conda-sandbox/example
+    - conda-sandbox/infrastructure
+    - conda-sandbox/releases
+    - conda-sandbox/test-check-cla
+    - conda-sandbox/upload-archive
+    - conda-sandbox/upstream
     - conda/.github
     - conda/actions
     - conda/infrastructure
