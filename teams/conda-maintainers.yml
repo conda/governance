@@ -20,7 +20,6 @@ resources:
     - conda/conda-rattler-solver
     - conda/conda-self
     - conda/conda-spawn
-    - conda/conda-verify
     - conda/pytest-conda-solvers
   other:
 links:
