@@ -1,0 +1,29 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: anaconda
+description: A team for Anaconda staff to work on conda
+charter: dynamic-subteam
+details: Members must be employed by Anaconda.
+resources:
+  teams:
+    - conda/anaconda
+  repos:
+  other:
+links:
+  - https://github.com/conda/governance/issues/222
+  - https://github.com/conda/conda-maintainers-team-planning/issues/119
+members:
+  chenghlee: https://github.com/conda/governance/issues/222
+  danyeaw: https://github.com/conda/governance/issues/222
+  dholth: https://github.com/conda/governance/issues/222
+  ForgottenProgramme: https://github.com/conda/governance/issues/222
+  george-lorch: https://github.com/conda/governance/issues/222
+  jezdez: https://github.com/conda/governance/issues/222
+  kenodegard: https://github.com/conda/governance/issues/222
+  marcoesters: https://github.com/conda/governance/issues/222
+  ryanskeith: https://github.com/conda/governance/issues/222
+  schuylermartin45: https://github.com/conda/governance/issues/222
+  travishathaway: https://github.com/conda/governance/issues/222
+emeritus:

@@ -1,41 +1,73 @@
 name: Change Emeritus Steering Status
-description: Use this form to request moving a member to/from Emeritus Steering status.
+description: Request or document a change between active and emeritus Steering Council status.
 title: '[Emeritus Steering Status]: '
-
 body:
   - type: markdown
     attributes:
       value: |
-        ## Change Emeritus Steering Status
+        Use this optional form to request or document a change between active and emeritus status.
+        Emeritus members remain on the Steering Council and do not vote.
 
-        Use this form to request moving a member to/from Emeritus Steering status.
+        Members can request emeritus status without giving personal reasons.
+        Under the [inactivity procedure](https://github.com/conda/governance#emeritus-steering),
+        a member who has been inactive for six months is asked whether they want to become emeritus.
+        If they do not respond within one week, they move to emeritus status.
+        Changes due to funding restrictions follow the
+        [shared funding policy](https://github.com/conda/governance#shared-funding-membership-restrictions).
+        A return to active status remains subject to the current membership and funding requirements.
 
-        > [!NOTE]
-        > To learn more about Emeritus status, please see [Emeritus Steering in Conda Governance](https://github.com/conda/governance#emeritus-steering).
-
+        Once the change takes effect, immediately update
+        [`teams/steering-council.yml`](https://github.com/conda/governance/blob/main/teams/steering-council.yml)
+        and [`teams/steering-emeritus.yml`](https://github.com/conda/governance/blob/main/teams/steering-emeritus.yml)
+        through a pull request, including a link to the request or decision.
+        You may also use a membership pull request directly without opening a separate issue.
   - type: input
     id: username
     attributes:
       label: GitHub Username
-      description: The GitHub username of the person to move to/from Emeritus Steering.
+      description: The GitHub username of the member whose status would change.
     validations:
       required: true
-
   - type: dropdown
     id: status_change
     attributes:
       label: Status Change Type
       description: Select the type of status change being requested.
       options:
-        - Steering Concil → Emeritus Steering
-        - Emeritus Steering → Steering Council
+        - Active Steering → Emeritus Steering
+        - Emeritus Steering → Active Steering
     validations:
       required: true
-
+  - type: dropdown
+    id: request_basis
+    attributes:
+      label: Request Basis
+      description: How was this change requested or decided?
+      options:
+        - Member's own request
+        - Request submitted on the member's behalf
+        - Inactivity follow-up
+        - Funding restriction resolution
+    validations:
+      required: true
   - type: textarea
     id: reason
     attributes:
-      label: Reason for Status Change
-      description: Provide a clear explanation for this status change request.
+      label: Relevant Context
+      description: |
+        Personal reasons are not required. For a request on someone else's behalf, note the member's request or confirmation.
+        For inactivity, identify the inactivity period and when the member was asked.
+        For a funding resolution, reference the agreement or completed vote, as applicable.
+        You do not need to publish private conversations or personal circumstances.
     validations:
-      required: true
+      required: false
+  - type: textarea
+    id: funding
+    attributes:
+      label: Current Funding for a Return to Active Status
+      description: |
+        For a return to active status, list the relevant organizations funding more than 25% of the member's time and the complete funding chain for each source.
+        Enter "no conda-related funding" if applicable. See [Tracking Funding](https://github.com/conda/governance#tracking-funding).
+        Leave this blank when moving to emeritus.
+    validations:
+      required: false

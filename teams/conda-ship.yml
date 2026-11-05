@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-ship
+description: Maintainers of conda-ship
+charter: incubated-project
+details:
+resources:
+  teams:
+    - conda-incubator/conda-ship
+  repos:
+    - conda-incubator/conda-ship
+  other:
+links:
+  - https://github.com/conda/governance/issues/434
+members:
+  jezdez: https://github.com/conda/governance/issues/434
+emeritus:

@@ -1,0 +1,32 @@
+name: Teams
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - teams/**/*.yml
+      - teams/**/*.yaml
+      - teams/*.schema.json
+      - scripts/check_teams.py
+      - scripts/create_new_team.py
+      - scripts/schemas.py
+      - scripts/sort_team_yaml.py
+      - .github/workflows/check-teams.yml
+permissions: {}
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR comes from branch
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
+        run: |
+          echo "::error::Pull Requests from forks are not allowed. Please submit your PR from a branch. If you don't have permissions, check with a member of @conda/infrastructure."
+          exit 1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: prefix-dev/setup-pixi@ad1da6449d9e506fd127fd67ab2d054a769f6a94 # v0.11.2
+      - run: pixi run check_teams
+        env:
+          PYTHONUNBUFFERED: "1"
+          CONDA_ORG_WIDE_TOKEN: ${{ secrets.CONDA_ORG_WIDE_READ_ONLY }}
+          CONDA_INCUBATOR_ORG_WIDE_TOKEN: ${{ secrets.CONDA_INCUBATOR_ORG_WIDE_READ_ONLY }}

@@ -1,0 +1,22 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: cla-reviewers
+description: The team reviewing incoming CLA documents
+charter: static-subteam
+details: All team members must only consist of steering council members for compliance reasons.
+resources:
+  teams:
+    - conda/cla-reviewers
+  repos:
+    - conda/cla
+  other:
+links:
+  - https://github.com/conda/governance/issues/136
+members:
+  chenghlee: https://github.com/conda/governance/issues/136
+  jaimergp: https://github.com/conda/governance/issues/136
+  jezdez: https://github.com/conda/governance/issues/136
+  travishathaway: https://github.com/conda/governance/issues/136
+emeritus:

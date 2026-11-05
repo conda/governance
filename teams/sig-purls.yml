@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: sig-purls
+description: Special Interest Group of maintainers interested in PURLs
+charter: incubated-project
+details:
+resources:
+  teams:
+    - conda-incubator/sig-purls
+  repos:
+    - conda-incubator/sig-purls
+  other:
+links:
+  - https://github.com/conda/governance/issues/393
+members:
+  baszalmstra: https://github.com/conda/governance/issues/393
+  chenghlee: https://github.com/conda/governance/issues/393
+  Hind-M: https://github.com/conda/governance/issues/393
+  jaimergp: https://github.com/conda/governance/issues/393
+  jezdez: https://github.com/conda/governance/issues/393
+  lucascolley: https://github.com/conda/governance/issues/393
+  mgorny: https://github.com/conda/governance/issues/393
+  pavelzw: https://github.com/conda/governance/issues/393
+  travishathaway: https://github.com/conda/governance/issues/393
+  wolfv: https://github.com/conda/governance/issues/393
+emeritus:

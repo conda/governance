@@ -5,13 +5,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## New Sub-team/Project Team
-
-        Use this form to request a new sub-team or project team.
-
+        ## Basic Information
         > [!NOTE]
         > To learn more about the different types of teams and their charters, please see [Teams & Roles in Conda Governance](https://github.com/conda/governance#teams--roles).
-
   - type: dropdown
     id: type
     attributes:
@@ -23,7 +19,6 @@ body:
         - Project Team
     validations:
       required: true
-
   - type: input
     id: name
     attributes:
@@ -31,7 +26,6 @@ body:
       description: Provide the name of the new sub-team or project team.
     validations:
       required: true
-
   - type: input
     id: handle
     attributes:
@@ -39,7 +33,6 @@ body:
       description: Provide the handle of the new sub-team or project team.
     validations:
       required: true
-
   - type: textarea
     id: members
     attributes:
@@ -47,26 +40,30 @@ body:
       description: List the GitHub usernames of the members who should be part of this team.
     validations:
       required: true
-
   - type: markdown
     attributes:
       value: |
         ## Charter and Responsibilities
-
   - type: textarea
     id: charter
     attributes:
       label: Charter
       description: Provide the charter for the new sub-team or project team.
-
   - type: textarea
     id: responsibilities
     attributes:
       label: Responsibilities
       description: Outline the responsibilities and work areas of the new sub-team or project team.
-
   - type: textarea
     id: scope
     attributes:
       label: Scope
       description: Define the scope of the new sub-team or project team.
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm the following
+      options:
+        - label: Before closing this issue, a new PR adjusting the necessary `teams/*.yml` files will need to be added
+          required: true

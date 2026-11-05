@@ -1,0 +1,41 @@
+# NOTE: This file is a work in progress.
+# The information here reflected is provisional
+# and must not be interpreted as the ground truth.
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-core
+description: Core conda team. Can merge PRs into main-line feature release branches.
+charter: unknown
+details:
+resources:
+  teams:
+    - conda/conda-core
+  repos:
+    - conda/.github
+    - conda/actions
+    - conda/conda-benchmarks
+    - conda/conda-build
+    - conda/conda-content-trust
+    - conda/conda-docs
+    - conda/conda-plugin-template
+    - conda/conda-prefix-replacement
+    - conda/conda-verify
+    - conda/conda_build_test_recipe
+    - conda/constructor
+    - conda/cookiecutter-conda-python
+    - conda/infrastructure
+    - conda/menuinst
+    - conda/pycosat
+    - conda/schemas
+  other:
+links: []
+members:
+  beeankha:
+  chenghlee:
+  dholth:
+  ForgottenProgramme:
+  jezdez:
+  kenodegard:
+  marcoesters:
+  pseudoyim:
+  travishathaway:
+emeritus:

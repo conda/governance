@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=./teams.schema.json
+name: conda-pypi-test
+description: A team to maintain conda-pypi-test
+charter: community-project
+details:
+resources:
+  teams:
+    - conda-incubator/conda-pypi-test
+  repos:
+    - conda-incubator/conda-pypi-test
+  other:
+links: []
+members:
+  danyeaw:
+  jezdez:
+emeritus:
