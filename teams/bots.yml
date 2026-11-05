@@ -28,7 +28,6 @@ resources:
     - conda/conda-package-handling
     - conda/conda-package-streaming
     - conda/conda-plugin-template
-    - conda/conda-prefix-replacement
     - conda/conda-pycosat-solver
     - conda/conda-pypi
     - conda/conda-rattler-solver
