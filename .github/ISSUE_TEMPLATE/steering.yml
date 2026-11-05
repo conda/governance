@@ -1,0 +1,34 @@
+name: Steering Council Nomination
+description: Nominate yourself or another person for non-provisional Steering Council membership.
+title: '[Steering Council Nomination]: '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this optional form to nominate yourself or another person under the [Steering Council nomination procedure](https://github.com/conda/governance#nominate-new-steering-council-member). For provisional membership, follow the separate [provisional nomination procedure](https://github.com/conda/governance#nominate-a-provisional-steering-council-member).
+
+        A Steering Council member will arrange the required [sensitive vote](https://github.com/conda/governance#voting) through a secure, anonymous voting system.
+
+        After approval, record the membership and decision link in a pull request updating [`teams/steering-council.yml`](https://github.com/conda/governance/blob/main/teams/steering-council.yml). You may also use a membership pull request directly without opening a separate issue.
+  - type: input
+    id: username
+    attributes:
+      label: GitHub Username
+      description: The GitHub username of the person being nominated.
+    validations:
+      required: true
+  - type: textarea
+    id: funder
+    attributes:
+      label: Funding
+      description: |
+        List the relevant organizations funding more than 25% of the nominee's time and the complete funding chain for each source. Enter "no conda-related funding" if applicable. See [Tracking Funding](https://github.com/conda/governance#tracking-funding).
+    validations:
+      required: true
+  - type: textarea
+    id: qualifications
+    attributes:
+      label: Qualifications & Contributions
+      description: Describe the nominee's contributions to the conda ecosystem and qualifications for the Steering Council.
+    validations:
+      required: true
