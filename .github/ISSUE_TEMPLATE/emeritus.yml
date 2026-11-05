@@ -5,11 +5,23 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this optional form to request or document a change between active and emeritus status. Emeritus members remain on the Steering Council and do not vote.
+        Use this optional form to request or document a change between active and emeritus status.
 
-        Members can request emeritus status without giving personal reasons. Under the [inactivity procedure](https://github.com/conda/governance#emeritus-steering), a member who has been inactive for six months is asked whether they want to become emeritus. If they do not respond within one week, they move to emeritus status. Changes due to funding restrictions follow the [shared funding policy](https://github.com/conda/governance#shared-funding-membership-restrictions). A return to active status remains subject to the current membership and funding requirements.
+        > [!NOTE]
+        > Emeritus members remain on the Steering Council and do not vote.
 
-        Once the change takes effect, immediately update [`teams/steering-council.yml`](https://github.com/conda/governance/blob/main/teams/steering-council.yml) and [`teams/steering-emeritus.yml`](https://github.com/conda/governance/blob/main/teams/steering-emeritus.yml) through a pull request, including a link to the request or decision. You may also use a membership pull request directly without opening a separate issue.
+        ### How status changes work
+
+        - Members can request emeritus status without giving personal reasons.
+        - Under the [inactivity procedure](https://github.com/conda/governance#emeritus-steering), a member who has been inactive for six months is asked whether they want to become emeritus. If they do not respond within one week, they move to emeritus status.
+        - Changes due to funding restrictions follow the [shared funding policy](https://github.com/conda/governance#shared-funding-membership-restrictions).
+        - A return to active status remains subject to the current membership and funding requirements.
+
+        ### Recording the change
+
+        Once the change takes effect, immediately update the [active](https://github.com/conda/governance/blob/main/teams/steering-council.yml) and [emeritus](https://github.com/conda/governance/blob/main/teams/steering-emeritus.yml) membership records through a pull request, including a link to the request or decision.
+
+        You may also use a membership pull request directly without opening a separate issue.
   - type: input
     id: username
     attributes:
