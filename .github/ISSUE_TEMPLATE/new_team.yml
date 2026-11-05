@@ -7,7 +7,7 @@ body:
       value: |
         ## Basic Information
 
-        Use this issue to propose a team, discuss its charter, and follow the applicable approval process.
+        Use this issue to propose a team, discuss its charter, and follow the applicable approval process. A workflow opens a draft team-record PR and updates it when this issue's body changes.
 
         > [!NOTE]
         > To learn more about the different types of teams and their charters, please see [Teams & Roles in Conda Governance](https://github.com/conda/governance#teams--roles).
@@ -26,21 +26,21 @@ body:
     id: name
     attributes:
       label: Team Name
-      description: Provide the name of the new sub-team or project team.
+      description: Use a lowercase name for the team record, starting with a letter or number and containing only letters, numbers, hyphens, or underscores. For example, infrastructure.
     validations:
       required: true
   - type: input
     id: handle
     attributes:
       label: Team Handle
-      description: Provide the handle of the new sub-team or project team.
+      description: Provide the GitHub handle in organization/team format, for example @conda/infrastructure.
     validations:
       required: true
   - type: textarea
     id: members
     attributes:
       label: Members
-      description: List the GitHub usernames of the members who should be part of this team.
+      description: List only the proposed members' GitHub usernames, one per line or separated by commas. An @ prefix is optional.
     validations:
       required: true
   - type: markdown
@@ -67,10 +67,13 @@ body:
       value: |
         ## Recording an approved team
 
-        After approval, open a pull request updating the relevant `teams/*.yml` record:
+        Keep this issue's body up to date as the proposal changes. The draft PR follows those edits until someone changes the generated YAML, marks the PR ready for review, or closes it. Once synchronization stops, complete the PR manually.
+
+        Before marking the PR ready for review:
 
         - Store the approved charter, including the team's role, responsibilities, scope, and any team-specific membership provisions, in `details` or in a Markdown document in this repository linked from `details`. Refer to the applicable governance rules where they already cover these provisions.
-        - Use `charter` for the team type and add the approval link to `links`.
+        - Complete the GitHub team description and repository assignments. For project teams, replace `unknown` in `charter` with the agreed project type.
+        - Add the approval link to `links` and confirm that the proposed members have consented.
 
         Close an approved request as completed once that pull request has merged. Rejected or withdrawn requests can be closed without a team-record pull request.
   - type: checkboxes

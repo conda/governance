@@ -1,0 +1,33 @@
+name: Sync team requests
+on:
+  issues:
+    types:
+      - opened
+      - edited
+      - reopened
+permissions: {}
+concurrency:
+  group: team-request-${{ github.event.issue.number }}
+  cancel-in-progress: false
+jobs:
+  sync-team-request:
+    if: >-
+      github.repository == 'conda/governance' && (github.event.action != 'edited' || github.event.changes.body != null)
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: read
+    timeout-minutes: 10
+    runs-on: ubuntu-slim
+    steps:
+      - name: Checkout trusted default branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+      - name: Set up pixi
+        uses: prefix-dev/setup-pixi@ad1da6449d9e506fd127fd67ab2d054a769f6a94 # v0.11.2
+      - name: Sync team request draft pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: pixi run python scripts/sync_team_request.py
