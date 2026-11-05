@@ -116,8 +116,14 @@ class RenderTeamTests(unittest.TestCase):
         self.assertNotIn("payload", data)
 
     def test_missing_required_fields_in_known_request_are_rejected(self):
-        for heading in ("Type of Team", "Team Name", "Team Handle", "Members"):
-            for value in (None, "", "_No response_"):
+        for heading in (
+            "Type of Team",
+            "Team Name",
+            "Team Handle",
+            "Members",
+            "Charter",
+        ):
+            for value in (None, "", " \n\t ", "_No response_"):
                 with (
                     self.subTest(heading=heading, value=value),
                     self.assertRaises(ValueError),
@@ -220,11 +226,13 @@ class RenderTeamTests(unittest.TestCase):
 
     def test_empty_optional_sections_do_not_become_charter_claims(self):
         _, _, data = self.render(
-            request_body(
-                Charter="_No response_", Responsibilities="", Scope="_No response_"
-            )
+            request_body(Responsibilities="", Scope="_No response_")
         )
-        self.assertNotIn("_No response_", data["details"] or "")
+        self.assertEqual(
+            data["details"],
+            "## Role\n\nMaintain the example tools.\n\n"
+            "Membership follows the governance policy.\n",
+        )
         self.assertEqual(data["links"], [ISSUE_URL])
 
     def test_equivalent_required_field_formatting_is_a_noop(self):
@@ -577,7 +585,7 @@ class SyncIssueTests(unittest.TestCase):
         self.assertEqual(api.writes, [])
         self.assertEqual(len(api.prs), 1)
 
-    def test_closed_merged_and_ready_prs_end_automatic_updates(self):
+    def test_closed_merged_and_ready_prs_receive_no_automatic_updates(self):
         cases = (
             {"state": "closed"},
             {"state": "closed", "merged_at": "2026-11-05T12:00:00Z"},
@@ -588,13 +596,76 @@ class SyncIssueTests(unittest.TestCase):
                 api = self.created_request()
                 api.prs[0].update(changes)
                 api.issue["body"] = request_body(
-                    Scope="Changed after the PR lifecycle ended."
+                    Scope="Changed while the PR cannot receive updates."
                 )
 
                 sync_issue(api, 999)
 
                 self.assertEqual(api.writes, [])
                 self.assertEqual(len(api.prs), 1)
+
+    def test_returning_an_untouched_ready_pr_to_draft_resumes_updates(self):
+        api = self.created_request()
+        head = api.refs[self.branch]
+        api.prs[0]["draft"] = False
+        api.issue["body"] = request_body(Scope="Revised during review.")
+
+        sync_issue(api, 999)
+
+        self.assertEqual(api.writes, [])
+        api.prs[0]["draft"] = True
+
+        sync_issue(api, 999)
+
+        self.assertNotEqual(api.refs[self.branch], head)
+        self.assertEqual(len(api.prs), 1)
+        self.assertFalse(any(path == "pulls" for _, path, _ in api.writes))
+        record = YAML(typ="safe").load(api.files_at(self.branch)[self.team_path])
+        self.assertIn("Revised during review.", record["details"])
+
+    def test_reopening_an_untouched_unmerged_draft_pr_resumes_updates(self):
+        api = self.created_request()
+        head = api.refs[self.branch]
+        api.prs[0]["state"] = "closed"
+        api.issue["body"] = request_body(Scope="Revised while closed.")
+
+        sync_issue(api, 999)
+
+        self.assertEqual(api.writes, [])
+        api.prs[0]["state"] = "open"
+
+        sync_issue(api, 999)
+
+        self.assertNotEqual(api.refs[self.branch], head)
+        self.assertEqual(len(api.prs), 1)
+        self.assertFalse(any(path == "pulls" for _, path, _ in api.writes))
+        record = YAML(typ="safe").load(api.files_at(self.branch)[self.team_path])
+        self.assertIn("Revised while closed.", record["details"])
+
+    def test_returning_to_an_open_draft_does_not_overwrite_human_edits(self):
+        for paused in ({"draft": False}, {"state": "closed"}):
+            with self.subTest(paused=paused):
+                api = self.created_request()
+                api.prs[0].update(paused)
+                manual = (
+                    api.files_at(self.branch)[self.team_path]
+                    + "# A maintainer completed the record.\n"
+                )
+                api.human_commit({self.team_path: manual})
+                head = api.refs[self.branch]
+                api.issue["body"] = request_body(Scope="Revised proposal.")
+
+                sync_issue(api, 999)
+
+                self.assertEqual(api.writes, [])
+                api.prs[0].update(state="open", draft=True)
+
+                with self.assertRaisesRegex(ValueError, "human edits"):
+                    sync_issue(api, 999)
+
+                self.assertEqual(api.writes, [])
+                self.assertEqual(api.refs[self.branch], head)
+                self.assertEqual(api.files_at(self.branch)[self.team_path], manual)
 
     def test_pr_creation_failure_can_recover_without_another_commit(self):
         api = FakeGitHub()
@@ -642,15 +713,20 @@ class SyncIssueTests(unittest.TestCase):
         self.assertNotIn("teams/renamed-team.yml", api.files_at(self.branch))
 
     def test_invalid_issue_edit_preserves_existing_draft(self):
-        api = self.created_request()
-        original = api.files_at(self.branch)[self.team_path]
-        api.issue["body"] = request_body(Members="@alice and anybody else")
+        for edited in (
+            {"Members": "@alice and anybody else"},
+            {"Charter": " \n\t "},
+        ):
+            with self.subTest(edited=edited):
+                api = self.created_request()
+                original = api.files_at(self.branch)[self.team_path]
+                api.issue["body"] = request_body(**edited)
 
-        with self.assertRaises(ValueError):
-            sync_issue(api, 999)
+                with self.assertRaises(ValueError):
+                    sync_issue(api, 999)
 
-        self.assertEqual(api.writes, [])
-        self.assertEqual(api.files_at(self.branch)[self.team_path], original)
+                self.assertEqual(api.writes, [])
+                self.assertEqual(api.files_at(self.branch)[self.team_path], original)
 
     def test_missing_branch_for_existing_pr_is_not_recreated(self):
         api = self.created_request()

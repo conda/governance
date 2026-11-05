@@ -52,6 +52,8 @@ body:
     attributes:
       label: Charter
       description: Provide the charter for the new sub-team or project team.
+    validations:
+      required: true
   - type: textarea
     id: responsibilities
     attributes:
@@ -65,9 +67,15 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Recording an approved team
+        ## Keeping the draft up to date
 
-        Keep this issue's body up to date as the proposal changes. The draft PR follows those edits until someone changes the generated YAML, marks the PR ready for review, or closes it. Once synchronization stops, complete the PR manually.
+        Keep this issue's body up to date as the proposal changes.
+
+        - Updates pause while the issue or PR is closed, the PR is ready for review, or the generated YAML has human edits.
+        - Updates can resume on the next issue-body edit or issue reopening once both the issue and PR are open, the PR is a draft, and the YAML matches the bot's last version. Complete the PR manually if you want to keep human edits to the YAML.
+        - Merging the PR ends synchronization.
+
+        ## Recording an approved team
 
         Before marking the PR ready for review:
 

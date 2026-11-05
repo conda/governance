@@ -68,7 +68,7 @@ def render_team(body: str, issue_url: str) -> tuple[str, str] | None:
     fields = form_fields(body)
     if not fields:
         return None
-    for key in FIELDS[:4]:
+    for key in FIELDS[:5]:
         if not fields.get(key):
             raise ValueError(
                 f"Complete the {key} field before generating a team record."
@@ -225,8 +225,11 @@ def record_pr_body(number):
         template = template.replace(f"- [ ] {completed}", f"- [x] {completed}")
     return (
         f"<!-- team-request:{number} -->\n\nCloses #{number}.\n\n"
-        "This draft records the proposal in the issue body. It updates when the issue body changes. "
-        "Editing the generated YAML pauses synchronization. Marking the PR ready for review or closing it also stops updates.\n\n"
+        "This draft records the proposal in the issue body.\n\n"
+        "- Updates pause while the issue or PR is closed, the PR is ready for review, or the generated YAML has human edits.\n"
+        "- Updates can resume on the next issue-body edit or issue reopening once both the issue and PR are open, "
+        "the PR is a draft, and the YAML matches the bot's last version. Complete the PR manually if you want to keep human edits to the YAML.\n"
+        "- Merging the PR ends synchronization.\n\n"
         "Before marking this PR ready, complete the team record and confirm that it matches the approved proposal. "
         "For project teams, replace `unknown` with the agreed project type. Add repository assignments and the approval link.\n\n"
         f"{template}\n"
@@ -248,8 +251,10 @@ def sync_issue(api, number):
     if len(prs) > 1:
         raise ValueError("Sync paused: multiple PRs use the team-request branch.")
     pr = prs[0] if prs else None
-    if pr and (pr["state"] != "open" or pr.get("merged_at") or not pr["draft"]):
-        return "The record PR is closed, merged, or ready for review. Automatic updates have stopped."
+    if pr and pr.get("merged_at"):
+        return "The record PR has merged. Synchronization has ended."
+    if pr and (pr["state"] != "open" or not pr["draft"]):
+        return "Sync paused: the record PR is closed or ready for review."
     default_branch = api.get("")["default_branch"]
     if pr and (
         marker not in (pr.get("body") or "")
