@@ -17,7 +17,6 @@ resources:
     - conda/conda-content-trust
     - conda/conda-docs
     - conda/conda-plugin-template
-    - conda/conda-prefix-replacement
     - conda/conda-verify
     - conda/conda_build_test_recipe
     - conda/constructor
