@@ -195,12 +195,16 @@ def check_teams() -> int:
                         n_warnings += 1
 
         for team_name in team.get("resources", {}).get("teams") or ():
-            print("  Checking Github team name", team_name)
             # 0. Validate team names
             org, name = team_name.split("/")
+            if org == "conda-archive":
+                # Archive teams are listed for reference. CI has no archive token.
+                print("  Skipping live checks for archive team", team_name)
+                continue
+            print("  Checking Github team name", team_name)
             if org not in ("conda", "conda-incubator"):
                 eprint(
-                    "::error::Team must belong to the `conda` or `conda-incubator` orgs.",
+                    "::error::Team must belong to `conda`, `conda-incubator`, or `conda-archive`.",
                     indent=4,
                 )
                 n_errors += 1

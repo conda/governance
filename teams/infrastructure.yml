@@ -8,6 +8,7 @@ charter: static-subteam
 details: Any steering council member may join without approval
 resources:
   teams:
+    - conda-archive/infrastructure
     - conda-incubator/infrastructure
     - conda/infrastructure
   repos:
