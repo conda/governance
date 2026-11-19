@@ -39,7 +39,7 @@ MARKER_RE = re.compile(
 
 
 def members(path: Path) -> list[tuple[str, object]]:
-    with path.open(newline="") as f:
+    with path.open(encoding="utf-8", newline="") as f:
         data = yaml.load(f)
     return sorted(
         data["members"].items(), key=lambda kv: kv[1].get("full_name") or kv[0]
@@ -74,7 +74,7 @@ def build_table(path: Path) -> str:
 
 def sync_file(path: Path, contents: dict[str, str], *, check: bool) -> bool:
     """Sync one file. Returns True if the file was (or would be) changed."""
-    text = path.read_text()
+    text = path.read_text(encoding="utf-8")
 
     def _replace(m: re.Match) -> str:
         name = m.group("name")
@@ -91,7 +91,7 @@ def sync_file(path: Path, contents: dict[str, str], *, check: bool) -> bool:
         return False
 
     if not check:
-        path.write_text(new_text)
+        path.write_text(new_text, encoding="utf-8")
     return True
 
 
