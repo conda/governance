@@ -37,7 +37,6 @@ resources:
     - conda/conda-self
     - conda/conda-spawn
     - conda/conda-standalone
-    - conda/conda-verify
     - conda/constructor
     - conda/cookiecutter-conda-python
     - conda/grayskull

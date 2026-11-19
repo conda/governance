@@ -30,6 +30,8 @@ links:
   - https://github.com/conda/conda-maintainers-team-planning/issues/116
   - https://github.com/conda/conda-maintainers-team-planning/issues/123
   - https://github.com/conda/governance/pull/471
+  - https://github.com/conda/conda-verify/issues/142
+  - https://github.com/conda/governance/issues/457
 members:
   agriyakhetarpal: https://github.com/conda/governance/pull/473
   chenghlee: https://github.com/conda/conda/issues/13526
