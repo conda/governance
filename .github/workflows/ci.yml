@@ -22,3 +22,5 @@ jobs:
         uses: prefix-dev/setup-pixi@ad1da6449d9e506fd127fd67ab2d054a769f6a94 # v0.11.2
       - name: Run linting
         run: pixi run lint --color=always --show-diff-on-failure
+      - name: Run tests
+        run: pixi run python -m unittest discover -s tests -v
