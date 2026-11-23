@@ -17,6 +17,7 @@ Permissions must be:
 # ]
 # ///
 
+import json
 import os
 import sys
 from difflib import unified_diff
@@ -75,14 +76,17 @@ def report_diff(
     eprint()
 
 
+@cache
+def gh_org_wide_tokens():
+    if tokens := os.environ.get("ORG_WIDE_TOKENS"):
+        return json.loads(tokens)
+    return {}
+
+
 def gh(org, apipath):
     api_url = f"https://api.github.com/{apipath}"
 
-    token = (
-        os.environ.get(f"{org.replace('-', '_').upper()}_ORG_WIDE_TOKEN")
-        or os.environ.get("GITHUB_TOKEN")
-        or ""
-    )
+    token = gh_org_wide_tokens().get(org) or os.environ.get("GITHUB_TOKEN") or ""
 
     # Headers for authentication and proper API versioning
     headers = {
@@ -200,7 +204,7 @@ def check_teams(*organizations: str, teams_dir: str = "teams") -> int:
             org, name = team_name.split("/")
             if org not in organizations:
                 eprint(
-                    f"::error::Team must belong to one of {organizations}.",
+                    f"::error::Team must belong to one of: {', '.join(organizations)}.",
                     indent=4,
                 )
                 n_errors += 1
@@ -417,8 +421,7 @@ def cli():
         "organizations",
         nargs="+",
         help="Github organization(s) to check. Please provide Github tokens for each in "
-        "the form of `<ORG_NAME>_ORG_WIDE_TOKEN`, with <ORG_NAME> being uppercase and "
-        "underscores as dashes",
+        "$ORG_WIDE_TOKENS set to a JSON string mapping org names to tokens",
         metavar="ORG",
     )
     return p
