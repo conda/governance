@@ -1,9 +1,10 @@
 """
 Checks whether the members defined in the teams/*.yaml files correspond to their Github definitions.
-It also makes sure that all teams in conda and conda-incubator are collected here.
+It also makes sure that all teams in passed organizations are declared
 
-We need one fine-grained token per organization (CONDA_ORG_WIDE_TOKEN,
-CONDA_INCUBATOR_ORG_WIDE_TOKEN), with permissions:
+We need one fine-grained token per organization, passed via JSON strings in the `ORG_WIDE_TOKENS`
+environment variable. For example `ORG_WIDE_TOKENS='{"conda": "xxx", "conda-incubator": "yyy"}'.
+Permissions must be:
 
 - All repositories, metadata (read-only)
 - Organization, metadata (read-only)
@@ -77,13 +78,11 @@ def report_diff(
 def gh(org, apipath):
     api_url = f"https://api.github.com/{apipath}"
 
-    if org == "conda":
-        token = os.environ.get("CONDA_ORG_WIDE_TOKEN")
-    elif org == "conda-incubator":
-        token = os.environ.get("CONDA_INCUBATOR_ORG_WIDE_TOKEN")
-    else:
-        token = None
-    token = token or os.environ.get("GITHUB_TOKEN") or ""
+    token = (
+        os.environ.get(f"{org.replace('-', '_').upper()}_ORG_WIDE_TOKEN")
+        or os.environ.get("GITHUB_TOKEN")
+        or ""
+    )
 
     # Headers for authentication and proper API versioning
     headers = {
@@ -144,22 +143,23 @@ def collaborators(org, repo):
 
 
 @cache
-def all_yamls() -> list[Path]:
+def all_yamls(teams_dir: str = "teams") -> list[Path]:
+    teams_dir = ROOT / teams_dir
     return sorted(
         yml
-        for yml in chain(ROOT.glob("teams/**/*.yml"), ROOT.glob("teams/**/*.yaml"))
-        if not yml.name.startswith("__")
+        for yml in chain(teams_dir.glob("**/*.y*l"))
+        if not yml.name.startswith("__") and yml.suffix in (".yml", ".yaml")
     )
 
 
-def check_teams() -> int:
+def check_teams(*organizations: str, teams_dir: str = "teams") -> int:
     seen_teams = set()
     seen_repos = set()
 
     print("======================")
     print("Individual YAML checks")
     print("======================")
-    list_of_yamls = all_yamls()
+    list_of_yamls = all_yamls(teams_dir)
     n_yamls = len(list_of_yamls)
     n_errors = 0
     n_warnings = 0
@@ -198,9 +198,9 @@ def check_teams() -> int:
             print("  Checking Github team name", team_name)
             # 0. Validate team names
             org, name = team_name.split("/")
-            if org not in ("conda", "conda-incubator"):
+            if org not in organizations:
                 eprint(
-                    "::error::Team must belong to the `conda` or `conda-incubator` orgs.",
+                    f"::error::Team must belong to one of {organizations}.",
                     indent=4,
                 )
                 n_errors += 1
@@ -297,7 +297,7 @@ def check_teams() -> int:
     print("=============================")
     print("Check all teams are described")
     print("=============================")
-    teams_in_github = {*teams_in_org("conda"), *teams_in_org("conda-incubator")}
+    teams_in_github = {team for org in organizations for team in teams_in_org(org)}
 
     if seen_teams != teams_in_github:
         teams_in_repo = sorted(seen_teams, key=str.lower)
@@ -311,7 +311,7 @@ def check_teams() -> int:
     print("Check all repos are annotated")
     print("=============================")
     repos_with_direct_access = {}
-    for repo in chain(repos_in_org("conda"), repos_in_org("conda-incubator")):
+    for repo in chain(*(repos_in_org(org) for org in organizations)):
         if "-ghsa-" in repo:
             continue
         if repo not in seen_repos:
@@ -359,14 +359,14 @@ def check_teams() -> int:
     return n_errors
 
 
-def generate():
+def generate(*organizations: str, teams_dir: str = "teams"):
     team_to_fn = {}
-    for path in all_yamls():
+    for path in all_yamls(teams_dir):
         with open(path) as f:
             team = yaml.load(f)
             team_to_fn[team["name"]] = path
 
-    for team in chain(teams_in_org("conda"), teams_in_org("conda-incubator")):
+    for team in chain(*(teams_in_org(org) for org in organizations)):
         org, team_name = team.split("/")
         if team_name in team_to_fn:
             continue
@@ -398,7 +398,40 @@ def generate():
             yaml.dump(data, f)
 
 
+def cli():
+    import argparse
+
+    p = argparse.ArgumentParser()
+    p.add_argument(
+        "--generate",
+        action="store_true",
+        help="Fill in team files for passed organizations instead of checking compliance. "
+        "Filenames without extensions serve as the team name to generate details for.",
+    )
+    p.add_argument(
+        "--teams-dir",
+        help="Directory where the YAML files for each team are stored.",
+        default="teams",
+    )
+    p.add_argument(
+        "organizations",
+        nargs="+",
+        help="Github organization(s) to check. Please provide Github tokens for each in "
+        "the form of `<ORG_NAME>_ORG_WIDE_TOKEN`, with <ORG_NAME> being uppercase and "
+        "underscores as dashes",
+        metavar="ORG",
+    )
+    return p
+
+
+def main() -> int:
+    args = cli().parse_args()
+    if args.generate:
+        generate(*args.organizations)
+        return 0
+
+    return check_teams(*args.organizations)
+
+
 if __name__ == "__main__":
-    if sys.argv[1:] and sys.argv[1] == "generate":
-        sys.exit(generate())
-    sys.exit(1 if check_teams() else 0)
+    sys.exit(main())
