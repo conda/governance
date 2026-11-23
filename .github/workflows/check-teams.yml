@@ -38,7 +38,7 @@ jobs:
         env:
           ORGANIZATIONS: ${{ inputs.organizations }}
           ORGANIZATIONS_TOKENS: ${{ secrets.organizations_tokens }}
-        run: | 
+        run: |
           echo "ORGANIZATIONS=$ORGANIZATIONS" >> "$GITHUB_ENV"
           echo "ORG_WIDE_TOKENS=$ORGANIZATIONS_TOKENS" >> "$GITHUB_ENV"
       - name: Prepare inputs
