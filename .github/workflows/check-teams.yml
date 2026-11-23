@@ -16,9 +16,15 @@ on:
       organizations:
         required: true
         type: string
+        description: "comma-separated list of organizations to check"
+      exclude-checks:
+        required: false
+        type: string
+        description: "comma-separated list of optional checks to skip, or 'all'"
     secrets:
       organizations_tokens:
         required: true
+        description: "JSON string mapping organization names to Github tokens"
 permissions: {}
 jobs:
   check:
@@ -37,9 +43,11 @@ jobs:
         if: github.event_name == 'workflow_call'
         env:
           ORGANIZATIONS: ${{ inputs.organizations }}
+          EXCLUDE_CHECKS: ${{ inputs.exclude-checks }}
           ORGANIZATIONS_TOKENS: ${{ secrets.organizations_tokens }}
         run: |
           echo "ORGANIZATIONS=$ORGANIZATIONS" >> "$GITHUB_ENV"
+          echo "EXCLUDE_CHECKS=$EXCLUDE_CHECKS" >> "$GITHUB_ENV"
           echo "ORG_WIDE_TOKENS=$ORGANIZATIONS_TOKENS" >> "$GITHUB_ENV"
       - name: Prepare inputs
         if: github.event_name != 'workflow_call'
@@ -52,4 +60,4 @@ jobs:
       - name: Check teams for ${{ env.ORGANIZATIONS }}
         env:
           PYTHONUNBUFFERED: "1"
-        run: pixi run check_teams $ORGANIZATIONS
+        run: pixi run check_teams -x "$EXCLUDE_CHECKS" $ORGANIZATIONS
