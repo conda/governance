@@ -11,6 +11,14 @@ on:
       - scripts/schemas.py
       - scripts/sort_team_yaml.py
       - .github/workflows/check-teams.yml
+  workflow_call:
+    inputs:
+      organizations:
+        required: true
+        type: string
+    secrets:
+      organizations_tokens:
+        required: true
 permissions: {}
 jobs:
   check:
@@ -25,8 +33,23 @@ jobs:
         with:
           persist-credentials: false
       - uses: prefix-dev/setup-pixi@ad1da6449d9e506fd127fd67ab2d054a769f6a94 # v0.11.2
-      - run: pixi run check_teams
+      - name: Prepare inputs (on workflow_call)
+        if: github.event_name == 'workflow_call'
         env:
-          PYTHONUNBUFFERED: "1"
+          ORGANIZATIONS: ${{ inputs.organizations }}
+          ORGANIZATIONS_TOKENS: ${{ secrets.organizations_tokens }}
+        run: | 
+          echo "ORGANIZATIONS=$ORGANIZATIONS" >> "$GITHUB_ENV"
+          echo "ORG_WIDE_TOKENS=$ORGANIZATIONS_TOKENS" >> "$GITHUB_ENV"
+      - name: Prepare inputs
+        if: github.event_name != 'workflow_call'
+        env:
           CONDA_ORG_WIDE_TOKEN: ${{ secrets.CONDA_ORG_WIDE_READ_ONLY }}
           CONDA_INCUBATOR_ORG_WIDE_TOKEN: ${{ secrets.CONDA_INCUBATOR_ORG_WIDE_READ_ONLY }}
+        run: |
+          echo "ORGANIZATIONS=conda conda-incubator" >> "$GITHUB_ENV"
+          echo "ORG_WIDE_TOKENS={\"conda\": \"$CONDA_ORG_WIDE_TOKEN\", \"conda-incubator\": \"$CONDA_INCUBATOR_ORG_WIDE_TOKEN\"}" >> "$GITHUB_ENV"
+      - name: Check teams for ${{ env.ORGANIZATIONS }}
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: pixi run check_teams $organizations
