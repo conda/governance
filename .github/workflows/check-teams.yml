@@ -52,4 +52,4 @@ jobs:
       - name: Check teams for ${{ env.ORGANIZATIONS }}
         env:
           PYTHONUNBUFFERED: "1"
-        run: pixi run check_teams $organizations
+        run: pixi run check_teams $ORGANIZATIONS
