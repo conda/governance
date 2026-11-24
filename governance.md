@@ -21,7 +21,6 @@ This is a Work in progress, documenting how we have been operating up to this po
     - [Project Requirements](#project-requirements)
   - [Trademarks](#trademarks)
   - [Incubation](#incubation)
-  - [Project Teams Details](#project-teams-details)
 
 ## Naming & Manifest
 
@@ -41,11 +40,13 @@ The primary teams participating in the conda Organization's activities are:
 
 ### Steering Council
 
-The **Steering Council** is the governing body over the entire conda Organization. Members of the Steering Council have full voting rights within the organization. Steering Council members are the face of the organization, and are responsible for officially interfacing with external communities, organizations, non-profits, and companies. The Steering Council may create new sub-teams, as appropriate. Each Steering Council member is entitled to one vote on all elected matters.
+The [**Steering Council**](steering-council/charter.md) is the governing body over the entire conda Organization. Members of the Steering Council have full voting rights within the organization. Steering Council members are the face of the organization, and are responsible for officially interfacing with external communities, organizations, non-profits, and companies. The Steering Council may create new sub-teams, as appropriate. Each Steering Council member is entitled to one vote on all elected matters.
+
+See the [Steering Council documentation](steering-council/charter.md) for more information about this team and its responsibilities.
 
 ### Sub-Teams
 
-The [Steering Council](#steering-council) may elect to create new **sub-teams** for managing the daily business of the organization. While sub-teams may have non-Steering members, **every sub-team must have at least one [non-provisional](#provisional-members) Steering Council team member at all times.** If a sub-team fails to have a Steering Council member for more than 1 week, that team is considered to be dissolved. A new sub-team would need to be established by the Steering Council in order to reinstate the activity.
+The Steering Council may elect to create new **sub-teams** for managing the daily business of the organization. While sub-teams may have non-Steering members, **every sub-team must have at least one [non-provisional](steering-council/charter.md#provisional-members) Steering Council team member at all times.** If a sub-team fails to have a Steering Council member for more than 1 week, that team is considered to be dissolved. A new sub-team would need to be established by the Steering Council in order to reinstate the activity.
 
 All sub-teams must adhere to the governance, policies, and procedures of the conda Organization at all times. Sub-teams have either a _dynamic_ or _static_ charter.
 
@@ -59,11 +60,11 @@ A **static** charter means that all membership decisions and non-trivial policy 
 
 ### Project Teams
 
-**Project Teams** are responsible for the management of a software project consisting of one or more repositories and any software releases. Project Team members have the ability to merge pull requests into the repositories of the software project they maintain, produce releases of that software project, and all other duties related to repo maintenance. See the [Project Teams Details](#project-teams-details) section for more.
+**Project Teams** are responsible for the management of a software project consisting of one or more repositories and any software releases. Project Team members have the ability to merge pull requests into the repositories of the software project they maintain, produce releases of that software project, and all other duties related to repo maintenance. See the [Project Teams Details](project-team/charter.md) section for more.
 
 ### Emeritus Steering
 
-[Steering Council](#steering-council) members that are inactive (commits, GitHub comments/issues/reviews, dev meetings, and voting on polls) in the past six months will be asked if they want to become **Emeritus Steering** members. One week after asking if the inactive Steering Council member has not responded, they will be automatically moved to emeritus status. Any Steering Council member can also request to become Emeritus if they wish to do so (e.g. taking a sabbatical or long vacation). Emeritus Steering members can be brought back to active Steering Council membership at anytime, assuming there is space and no other policies (e.g., [shared funding](#shared-funding-membership-restrictions), [council size](#steering-council-size), etc.) are violated. Emeritus Steering Council members cannot vote. When the status of a member changes, the corresponding `teams/` YAML files should be immediately updated to reflect the member's new position.
+[Steering Council](#steering-council) members that are inactive (commits, GitHub comments/issues/reviews, dev meetings, and voting on polls) in the past six months will be asked if they want to become **Emeritus Steering** members. One week after asking if the inactive Steering Council member has not responded, they will be automatically moved to emeritus status. Any Steering Council member can also request to become Emeritus if they wish to do so (e.g. taking a sabbatical or long vacation). Emeritus Steering members can be brought back to active Steering Council membership at anytime, assuming there is space and no other policies (e.g., [shared funding](steering-council/charter.md/#shared-funding-membership-restrictions), [council size](steering-council/charter.md/#steering-council-size), etc.) are violated. Emeritus Steering Council members cannot vote. When the status of a member changes, the corresponding `teams/` YAML files should be immediately updated to reflect the member's new position.
 
 ### External Contributors
 
@@ -127,12 +128,4 @@ The conda Organization is in a particularly challenging situation here because t
 
 All projects start their journeys in an experimental or unstable state. To this end, we delineate stable projects as living in the [`conda` GitHub organization](https://github.com/conda/). Therefore, projects new to the conda Organization and governance must begin their inclusion in the [`conda-incubator` GitHub organization](https://github.com/conda-incubator/). The barrier to entry for a project to be added to the incubator should be very low. A vote from the [Steering Council](#steering-council) is required to move a project from incubation to the main GitHub organization.
 
-Any single member of the Steering Council may add a project to the incubator, given the knowledge and consent of the author(s) (see [below](#voting)). Members of the Steering Council that are sponsoring the incubation are responsible for ensuring that basic legal requirements have been met that allow for the incubation. For example, [trademark usage and license terms](#trademarks) must been checked prior to incubation.
-
-## Project Teams Details
-
-A Project Team is a [_sub-team_](#sub-teams) with a [_dynamic_ charter](#dynamic-charter), except for a few caveats as detailed here. They exist to maintain a specific project (or possibly set of projects). Each project in `conda` or `conda-incubator` should belong to exactly one Project Team. This team is granted write access to the repos associated with the project.
-
-The initial Project Team for projects in the `conda` GitHub organization are specified in the [vote to move a project from the incubator to the main `conda` GitHub organization](#incorporate-a-software-project-into-the-main-conda-organization). As this vote has a 60% threshold and [sub-team formation](#sub-team-formation) is only a greater than 50% threshold, the vote for adding a project to the main `conda` GitHub organization can serve both purposes. Project Teams for incubating projects do not need a vote for their creation. Instead they are created [when the project is moved into `conda-incubator`](#incubation).
-
-For [_federated_](#federated-projects) and [_incubating_](#incubation) projects, the Project Team decides among themselves on how to add and/or remove members from the Project Team. Further, Project Teams for incubating projects are exempted from the requirement to have at least one Steering Council member. For federated projects, the Project Team must have at least one Steering Council member. For a [_community maintained project_](#community-projects), a petition for commit rights is made to the current members of the Project Team for that project. If this petition passes according to the voting rules for [Nominate new member of a Project Team](#nominate-new-member-of-a-community-project-team) below, the petitioner is granted write access and added to the team.
+Any single member of the Steering Council may add a project to the incubator, given the knowledge and consent of the author(s) (see [below](#voting)). Members of the Steering Council that are sponsoring the incubation are responsible for ensuring that basic legal requirements have been met that allow for the incubation. For example, [trademark usage and license terms](#trademarks) must have been checked prior to incubation.
