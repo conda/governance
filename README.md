@@ -1,8 +1,8 @@
 # Conda & Conda-Incubator Governance
 
-This repository contains the policies and procedures that manage the conda community. These documents recognize that, while packaging and package tooling is deeply important to all of us, participation in the organization is voluntary. Individual members of the [Steering Council](governance.md/#steering-council), any [sub-team](governance.md/#sub-teams), and external contributors choose to participate and may choose to leave at any time for any reason or for no reason.
+This repository contains the policies and procedures that manage the conda community. These documents recognize that, while packaging and package tooling is deeply important to all of us, participation in the organization is voluntary. Individual members of the [Steering Council](governance/governance.md/#steering-council), any [sub-team](governance/governance/governance.md/#sub-teams), and external contributors choose to participate and may choose to leave at any time for any reason or for no reason.
 
-Larger organizations, such as for-profit businesses, that contribute code and support to the conda organization are welcome to (but not required to) [maintain creative control](governance.md/#federated-projects) of their contributions as long as such contributions adhere to the rules in this document. Such organizations are also welcome to [cede creative & maintenance control](governance.md/#community-projects) of any specific project to the community as well.
+Larger organizations, such as for-profit businesses, that contribute code and support to the conda organization are welcome to (but not required to) [maintain creative control](governance/governance.md/#federated-projects) of their contributions as long as such contributions adhere to the rules in this document. Such organizations are also welcome to [cede creative & maintenance control](governance/governance.md/#community-projects) of any specific project to the community as well.
 
 We deeply appreciate all good faith contributions.
 
@@ -20,14 +20,14 @@ The conda Organization's [Code of Conduct](CODE_OF_CONDUCT.md) governs all inter
 
 The primary groups participating in the conda Organization's activities are:
 
-- [**Steering Council:**](steering-council/charter.md) governing body over the conda Organization.
-  Steering Council members are the face of the organization, and are responsible for officially interfacing with external communities, organizations, non-profits, and companies. The Steering Council is the only group with voting rights at the conda Organization level (see [Voting](steering-council/charter.md/#voting) for more details).
+- [**Steering Council:**](governance/steering-council/charter.md) governing body over the conda Organization.
+  Steering Council members are the face of the organization, and are responsible for officially interfacing with external communities, organizations, non-profits, and companies. The Steering Council is the only group with voting rights at the conda Organization level (see [Voting](governance/steering-council/charter.md/#voting) for more details).
 - **Sub-Teams:** persistent open groups that manage the day-to-day business of the organization. All sub-teams must adhere to the governance, policies, and procedures of the conda Organization at all times. Sub-teams have either a _dynamic_ or _static_ charter.
-- [**Project Teams:**](project-team/charter.md) are responsible for the management of a software project.
+- [**Project Teams:**](governance/project-team/charter.md) are responsible for the management of a software project.
 - **Emeritus Steering:** inactive members that stepped down from their Steering Council duties.
 - **External Contributors:** individuals that are not part of the Steering Council, sub-teams or project teams but contribute to the conda organization.
 
-See the [full conda governance documentation](governance.md) for more details on these groups and their responsibilities.
+See the [full conda governance documentation](governance/governance.md) for more details on these groups and their responsibilities.
 
 ## Current Steering Council Members
 
