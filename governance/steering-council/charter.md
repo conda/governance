@@ -13,6 +13,24 @@
     - [Posting results](#posting-results)
     - [Quorum](#quorum)
     - [Voting Total Examples](#voting-total-examples)
+  - [Voting items](#voting-items)
+    - [Enhancement Proposal Approval](#enhancement-proposal-approval)
+    - [Nominate new Steering Council member](#nominate-new-steering-council-member)
+    - [Nominate a Provisional Steering Council Member](#nominate-a-provisional-steering-council-member)
+    - [Remove a Provisional Steering Council Member](#remove-a-provisional-steering-council-member)
+    - [Resolve Overlapping Funding](#resolve-overlapping-funding)
+    - [Sub-team Formation](#sub-team-formation)
+    - [Sub-team Dissolution](#sub-team-dissolution)
+    - [Add Project/Repo to Incubator](#add-projectrepo-to-incubator)
+    - [Remove Project/Repo from Incubator](#remove-projectrepo-from-incubator)
+    - [Incorporate a Software Project into the main `conda` Organization](#incorporate-a-software-project-into-the-main-conda-organization)
+    - [Lock an Issue, Pull Request, Thread](#lock-an-issue-pull-request-thread)
+    - [Block a Contributor](#block-a-contributor)
+    - [Remove a Steering Council member](#remove-a-steering-council-member)
+    - [Spending of funds](#spending-of-funds)
+    - [Modifying the governance document](#modifying-the-governance-document)
+    - [Project Team Membership Appeal](#project-team-membership-appeal)
+    - [All Other Items](#all-other-items)
 
 ## Steering Council Membership
 
@@ -43,7 +61,7 @@ Provisional memberships are expected to be temporary, lasting just long enough f
 
 Provisional memberships can also be revoked if and when the Council determines that the organization or the individual is no longer acting in the larger interests of the conda community. The voting procedure for such removals are described in the "[Remove a Provisional Steering Council Member](#remove-a-provisional-steering-council-member)" section below.
 
-Organizations may submit an appeal to the Council to stay their provisional membership if and when the organization determines that the individual is no longer acting in the larger interests of the organization or the conda community. The Council will consider the appeal and follow the same voting procedure as described in the "[Remove a Provisional Steering Council Member](#remove-a-provisional-steering-council-member)" section below. The organization may then nominate a replacement for the provisional membership following the procedure described in in the "[Nominate a Provisional Steering Council Member](#nominate-a-provisional-steering-council-member)" section below.
+Organizations may submit an appeal to the Council to stay their provisional membership if and when the organization determines that the individual is no longer acting in the larger interests of the organization or the conda community. The Council will consider the appeal and follow the same voting procedure as described in the "[Remove a Provisional Steering Council Member](#remove-a-provisional-steering-council-member)" section below. The organization may then nominate a replacement for the provisional membership following the procedure described in the "[Nominate a Provisional Steering Council Member](#nominate-a-provisional-steering-council-member)" section below.
 
 Finally, **no more than 1/3 of the Steering Council membership can be Provisional Members.** At all times, at least 2/3 of the Steering Council membership hold a seat because of demonstrated contributions to the conda ecosystem. If this threshold is violated then all other Council business is suspended until this requirement is met. The only allowed actions, in this case, are votes on removing Provisional members, votes on adding new contributing members, votes to resolve overlapping funding, existing members moving to Emeritus status, or existing members coming back from Emeritus status.
 
@@ -88,7 +106,7 @@ Council members need to keep their funding documentation up to date, and notify 
 
 In cases where people have absolutely no funding related to conda, we still document this funding state, but we do not require people to list their irrelevant funding. The "no funding" state can be held by an unlimited number of Steering Council members.
 
-What about cases where someone works on conda for work they are doing, but improving/directing the conda ecosystem is not a specific component of any of their funding? Generally, such cases should be considered as "no funding."
+What about cases where someone works on conda for work they are doing, but improving/directing the conda ecosystem is not a specific component of their funding? Generally, such cases should be considered as "no funding."
 
 ## Steering Council and Project Teams Interactions
 
@@ -103,7 +121,7 @@ It is possible that a project joins as a Community Project, but in fact is not c
 
 We minimize the chance of this happening by clearly communicating requirements for Community Projects when bringing in a new project.
 
-Note that [Federated](#federated-projects) and [Incubator](#incubation) projects are not required to be open to new membership.
+Note that [Federated](../governance.md/#federated-projects) and [Incubator](../governance.md/#incubation) projects are not required to be open to new membership.
 
 ## Voting
 
@@ -118,9 +136,9 @@ This section presents descriptions and criteria for voting items in the conda Or
 - Steering Council members must explicitly abstain from a vote via making a comment on the PR/issue or selecting the "abstain" option. Simply not voting at all doesn't count as an abstention.
 - Abstentions count towards the [quorum](#quorum) but are excluded when computing if a vote passes.
 
-Voting items are labeled as either **standard** or **sensitive**. Standard items are ones where public record and discourse is preferable. Sensitive voting items are ones where the results of the vote should remain private to the voters after the vote has occurred. Sensitive votes should take place on a secure anonymous voting platform in order to retain election integrity and anonymity. (We may use [`Polys`](https://polys.me) and the [`Helios voting system`](https://vote.heliosvoting.org/), but are open to any secure, anonymous system.) The email capability of your chosen voting platform should be used for sending voting invitations and reminders if possible. All votes should be sent to the appropriate people using their email listed in `steering-council.yml` as applicable.
+Voting items are labeled as either **standard** or **sensitive**. Standard items are ones where public record and discourse is preferable. Sensitive voting items are ones where the results of the vote should remain private to the voters after the vote has occurred. Sensitive votes should take place on a secure anonymous voting platform in order to retain election integrity and anonymity. (We may use [`Polys`](https://polys.me) and the [`Helios voting system`](https://vote.heliosvoting.org/), but are open to any secure, anonymous system.) The email capability of your chosen voting platform should be used for sending voting invitations and reminders if possible. All votes should be sent to the appropriate people using their email listed in [`steering-council.yml`](../../teams/steering-council.yml) as applicable.
 
-The default voting period is 1 week (7 days). This may be modified at the time when a vote is called, but may never be less than one week modulo exceptions for some time-sensitive votes below.
+The default voting period is **1 week (7 days)**. This may be modified at the time when a vote is called, but may never be less than one week modulo exceptions for some time-sensitive votes below.
 
 > When specifying voting periods, the date must be specified in a special calendar designation ["Anywhere on Earth" (AoE)](https://en.wikipedia.org/wiki/Anywhere_on_Earth) to be as inclusive as possible for a global community such as conda's.
 >
@@ -130,18 +148,20 @@ Additional requirements may apply in case low turnouts have to be handled, see "
 
 To call for a standard vote, here is a template Issue/PR comment:
 
-    @conda/steering-council
+```md
+@conda/steering-council
 
-    This vote falls under the **"{policy}"** policy of the [conda governance policy](https://github.com/conda/governance),
-    please vote and/or comment on this proposal at your earliest convenience.
+This vote falls under the **"{policy}"** policy of the [conda governance policy](https://github.com/conda/governance),
+please vote and/or comment on this proposal at your earliest convenience.
 
-    It needs **{policy_percent}** of the Steering Council to vote `yes` to pass.
+It needs **{policy_percent}** of the Steering Council to vote `yes` to pass.
 
-    To vote, please leave `yes`, `no` or `abstain` as comments below.
+To vote, please leave `yes`, `no` or `abstain` as comments below.
 
-    If you have questions concerning the proposal, you may also leave a comment or code review.
+If you have questions concerning the proposal, you may also leave a comment or code review.
 
-    **This vote will end on {date}, End of Day, [Anywhere on Earth](https://time.is/Anywhere_on_Earth) (AoE).**
+**This vote will end on {date}, End of Day, [Anywhere on Earth](https://time.is/Anywhere_on_Earth) (AoE).**
+```
 
 A `vote` label must be applied to the PR or issue.
 
@@ -157,7 +177,7 @@ Each "timed out" vote should be its own file. The filename should reflect the to
 - Poll open and close dates
 - documentation of the vote reminders as detailed below
 
-Non-timed-out vote results should be documented in github PR/issue upon which the voting happened. A `vote` label must be applied to the PR or issue.
+Non-timed-out vote results should be documented in GitHub PR/issue upon which the voting happened. A `vote` label must be applied to the PR or issue.
 
 ### Quorum
 
@@ -179,20 +199,22 @@ Extending the above example, if 9 people are required for a quorum, but only 7 h
 
 To post a timeout reminder, here is a template comment:
 
-    @conda/steering-council
+```md
+  @conda/steering-council
 
-    This vote falls under the **"{policy}"** policy of the [conda governance policy](https://github.com/conda/governance),
-    please vote and/or comment on this proposal at your earliest convenience.
+  This vote falls under the **"{policy}"** policy of the [conda governance policy](https://github.com/conda/governance),
+  please vote and/or comment on this proposal at your earliest convenience.
 
-    It needs **{policy_percent}** of the Steering Council to vote `yes` to pass.
+  It needs **{policy_percent}** of the Steering Council to vote `yes` to pass.
 
-    **This vote presently has {current_voters}, and needs {policy_percent * steering_council - current_voters} more for quorum.**
+  **This vote presently has {current_voters}, and needs {policy_percent * steering_council - current_voters} more for quorum.**
 
-    It is proposed that this vote will time out and be evaluated with the current votes in {days} days, **on {date}, End of Day, [Anywhere on Earth](https://time.is/Anywhere_on_Earth) (AoE).**
+  It is proposed that this vote will time out and be evaluated with the current votes in {days} days, **on {date}, End of Day, [Anywhere on Earth](https://time.is/Anywhere_on_Earth) (AoE).**
 
-    To vote, please leave `yes`, `no` or `abstain` as comments below.
+  To vote, please leave `yes`, `no` or `abstain` as comments below.
 
-    If you have questions concerning the proposal, you may also leave a comment or code review.
+  If you have questions concerning the proposal, you may also leave a comment or code review.
+```
 
 To declare a standard vote "timed out," the person making such a declaration must post a pull-request adding a vote record to the [`vote-results`](vote-results/) folder. The declaration PR should be merged by the first Steering Council member who is available to verify that the requirements for the timeout have been met, based on their own personal records.
 
@@ -207,3 +229,157 @@ Assume the Steering Council has 10 active members and the vote threshold is 50%.
 3. Among Steering Council members there are 3 "yes" votes, "1" no vote and no abstentions. Further the timeout rules above **were** invoked. This vote has thus reached quorum and it has passed since 3/4 (75%) is greater than 50%.
 
 4. Among Steering Council members there are 3 "yes" votes, "1" no vote and no abstentions. Further, the timeout rules above **were not** invoked. This vote has not reached quorum and should be extended or redone.
+
+## Voting items
+
+### Enhancement Proposal Approval
+
+When ready, the proposer may call for a vote on an existing [conda enhancement proposal (CEP)](https://github.com/conda/ceps). This requires a super-majority (60%) to pass so that the decision to accept the CEP is unequivocal and we have ensured that consensus has been reached.
+
+- Standard
+- 60% Majority to pass
+
+### Nominate new Steering Council member
+
+The proposer must provide a sufficient justification as to why the nominee should be welcomed into the Steering Council. Prior service to the community, including but not limited to: working on conda organization projects, writing conda specifications, and helping to bridge disparate communities are an important part of the nomination process.
+
+- Sensitive
+- 2/3rds Majority to pass
+
+### Nominate a Provisional Steering Council Member
+
+The proposer must provide a sufficient justification as to why the nominee should be welcomed on a provisional basis into the Steering Council. The guidelines on [Provisional Members](#provisional-members) must be followed as well.
+
+- Sensitive
+- Voting:
+  - At least 50% participation
+  - More than 50% "yes" votes to pass
+
+### Remove a Provisional Steering Council Member
+
+The proposer must provide a sufficient justification as to why the provisional member should be removed. The guidelines on [Provisional Members](#provisional-members) must be followed as well.
+
+- Sensitive
+- Voting:
+  - At least 50% participation
+  - More than 50% "yes" votes to pass
+
+### Resolve Overlapping Funding
+
+In the case that more than two Steering Council members [share the same funding source](#shared-funding-membership-restrictions) and no agreement can be reached
+among the members with shared funding as to who will enter [emeritus status](../governance.md/#emeritus-steering), the Steering Council will hold a simple
+plurality vote in order to resolve the funding conflict. Each member with shared funding will be listed as a separate option in the
+vote. The Steering Council will then vote on which member should be moved to emeritus status. The member who receives the most votes is moved to emeritus status. The quorum for this vote is five. In the case of a tie, the member is chosen at random.
+
+- Sensitive
+- Voting:
+  - Simple plurality of votes
+  - Member with most votes is moved to emeritus status
+  - Ties are resolved by choosing a member at random
+  - The quorum for this vote is five votes
+
+### Sub-team Formation
+
+Proposers must specify the name, role & responsibility, members, and charter (dynamic or static) of any new [sub-teams](../governance.md/#sub-teams).
+
+- Standard
+- Voting:
+  - At least 50% participation
+  - More than 50% "yes" votes to pass
+
+### Sub-team Dissolution
+
+Proposers must specify the name and justification for why a sub-team should be dissolved.
+
+- Standard
+- Voting:
+  - At least 50% participation
+  - More than 50% "yes" votes to pass
+
+### Add Project/Repo to Incubator
+
+Any single Steering Council member may add a project to the [incubator](../governance.md/#incubation), given the knowledge and consent of the author(s). The low barrier to entry here is because we want to encourage innovation, experimentation, and growth. Steering Council members are encouraged to use common sense when adding new projects to the `conda-incubator` organization.
+
+- Standard
+- 1 Steering Council member willing to add the repository, no vote required
+
+### Remove Project/Repo from Incubator
+
+While we do not anticipate this ever being necessary, if the situation arises where a project needs to be removed from the [incubator](../governance.md/#incubation), two potential options are available, depending on the copyright and maintenance of the project.
+
+In the first, easy case, the incubated project has been wholly developed and maintained by the authors. Here, the project should be allowed to leave incubation if the developers of that project decide and consent to leave. No vote from the Steering Council is required. A willing Steering Council member may be needed to transfer the repository, though.
+
+In the second case, the incubated project has been communally developed by other members of the conda organization AND/OR the copyright of the project has been transferred to the conda organization, NumFOCUS, or a similar entity that is larger than the developers/copyright holders at the time of initial incubation. In this case, the Steering Council must decide whether or not to allow the project to leave. A simple vote is required.
+
+- Standard
+- Voting:
+  - At least 50% participation
+  - More than 50% "yes" votes to pass
+
+### Incorporate a Software Project into the main `conda` Organization
+
+At some point, many projects will want to be included in the main `conda` GitHub (or otherwise) organization. Moving a project into this organization can be done with a super-majority vote from the Steering Council. There are no strict criteria for when a project is ready, stable, or viable for this step. Rather, Steering Council members are entrusted to use their objective best judgment and common sense when making this determination. Adherence to conda specifications is a particularly important aspect of the decision to include a project in the main conda organization. The membership of the initial [Project Team](../governance.md/#project-teams) should be included in the vote information. There is not requirement for a project to incubate before a vote of this nature can be called. This kind of vote applies only to software projects.
+
+- Standard
+- 60% Majority to pass
+
+### Lock an Issue, Pull Request, Thread
+
+Occasionally, discussions become toxic and antithetical to the goal of fostering the conda community. Steering Council members have the right to lock the thread in an "ask for forgiveness and not for permission" way so bad situations are handled quickly. The lock must be justified in the thread itself with a text explaining the reasons for locking and how the participants can contest it.
+
+- Standard
+- No need for voting to lock a thread
+
+### Block a Contributor
+
+In extreme cases, such as repeated harassment, it may become necessary to block a user completely from participating in all conda organization activities. This should not be done lightly, but it may be necessary to do so expediently. Shorter voting periods (at minimum 24 hrs) are allowed here. The proposer of the block must provide ample justification as to why this is needed.
+
+- Sensitive
+- 60% Majority to pass
+
+### Remove a Steering Council member
+
+The proposer must provide an overwhelming justification as to why the Steering Council member should be removed.
+
+- Sensitive
+- 75% Majority to pass
+
+### Spending of funds
+
+Proposers must specify the purpose, time limit, and source of funds that are to be spent. Purpose and time limit should be general enough in order to prevent excessive voting. For example, recurrent items (such as CI) should not need to be voted on each and every month. Instead, they should exist for a defined period of time (e.g. until the current migration ends, or for the next year). For such recurring expenses, the person coordinating spending the funds can choose to cancel the spending if it is deemed no longer necessary or cost-effective without calling another vote, although they should make reasonable efforts to notify the rest of the Steering Council before doing so.
+
+Prior to their submission, grant proposals must be supplied to the Steering Council and a vote called under the `Spending of funds` policy. If the vote does not pass the proposal is not to be submitted in its current form and an additional round of voting is required on any subsequent draft. If the vote passes and the funds are awarded, further voting to spend the funds is not required.
+
+- Standard
+- Voting:
+  - At least 50% participation
+  - More than 50% "yes" votes to pass
+
+### Modifying the governance document
+
+The voting should happen in the PR in question and there must be a call to `@conda/steering`. The voting period must be open for at least one Steering Council meeting cycle to allow for clarification questions and discussions.
+
+- Standard
+- 75% Majority to pass
+
+### Project Team Membership Appeal
+
+An applicant to a Project Team that has been rejected from the team via the [Nominate new member of a Community Project Team](../project-team/charter.md/#nominate-new-member-of-a-community-project) policy may appeal that decision to full Steering Council. Per the [Nominate new member of a Community Project Team](../project-team/charter.md/#nominate-new-member-of-a-community-project) policy
+below, the proposer must provide a sufficient justification as to why the nominee should be welcomed into the Project Team.
+Prior work on the project is an essential part of the nomination process. If the vote passes, the nominee is added to the Project Team.
+
+- Sensitive
+- Voting:
+  - At least 50% participation
+  - More than 50% "yes" votes to pass
+
+### All Other Items
+
+All other voting items, including Steering Council member funding sources, are considered to be standard and require a 50% majority to pass.
+
+- Standard
+- Voting:
+  - At least 50% participation
+  - More than 50% "yes" votes to pass
+
+**Note:** For community projects voting processes see the ([Project Teams documentation](../project-team/charter.md)).
