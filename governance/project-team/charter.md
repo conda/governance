@@ -18,6 +18,8 @@ For [_federated_](../governance.md/#federated-projects) and [_incubating_](../go
 
 Here are the minimal voting policies for Community Project Teams.
 
+For the meaning of **Sensitive** and the general rules on abstentions, voting periods, and AoE deadlines, see [Voting](../steering-council/charter.md#voting). Participation and approval requirements for Project Team votes are specified below.
+
 ## Nominate new member of a Community Project Team
 
 The proposer must provide a sufficient justification as to why the nominee should be welcomed into the Project Team. Prior work on the project is an essential part of the nomination process. The voting body for these votes are the current members of the Project Team at the time the nomination is made.
