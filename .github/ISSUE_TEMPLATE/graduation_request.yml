@@ -10,9 +10,9 @@ body:
       value: |
         ## Request for graduation
 
-        Per the [conda governance policy](https://github.com/conda/governance#incubation), a Steering Council vote is required to move a project into the main [`conda`](https://github.com/conda/) org. This vote uses the policy **[Incorporate a Software Project into the main `conda` Organization](https://github.com/conda/governance#incorporate-a-software-project-into-the-main-conda-organization)** (standard, **60%**). State the [initial Project Team](https://github.com/conda/governance#project-teams-details) in this issue. See [Voting](https://github.com/conda/governance#voting) (≥7 days default, end date in [AoE](https://time.is/Anywhere_on_Earth)).
+        Per the [conda governance policy](https://github.com/conda/governance/blob/main/governance/governance.md#incubation), a Steering Council vote is required to move a project into the main [`conda`](https://github.com/conda/) org. This vote uses the policy **[Incorporate a Software Project into the main `conda` Organization](https://github.com/conda/governance/blob/main/governance/steering-council/charter.md#incorporate-a-software-project-into-the-main-conda-organization)** (standard, **60%**). State the [initial Project Team](https://github.com/conda/governance/blob/main/governance/project-team/charter.md#project-teams-details) in this issue. See [Voting](https://github.com/conda/governance/blob/main/governance/steering-council/charter.md#voting) (≥7 days default, end date in [AoE](https://time.is/Anywhere_on_Earth)).
 
-        [Community](https://github.com/conda/governance#community-projects) projects: [Trademarks](https://github.com/conda/governance#trademarks).
+        [Community](https://github.com/conda/governance/blob/main/governance/governance.md#community-projects) projects: [Trademarks](https://github.com/conda/governance/blob/main/governance/governance.md#trademarks).
   - type: input
     id: project_name
     attributes:
@@ -57,7 +57,7 @@ body:
     attributes:
       label: Maintenance model after the move
       description: >-
-        [Community](https://github.com/conda/governance#community-projects) or [Federated](https://github.com/conda/governance#federated-projects).
+        [Community](https://github.com/conda/governance/blob/main/governance/governance.md#community-projects) or [Federated](https://github.com/conda/governance/blob/main/governance/governance.md#federated-projects).
       options:
         - Community project
         - Federated project
@@ -102,7 +102,7 @@ body:
         ```markdown
         @conda/steering-council
 
-        This vote falls under the **Incorporate a Software Project into the main `conda` Organization** policy of the [conda governance policy](https://github.com/conda/governance),
+        This vote falls under the **Incorporate a Software Project into the main `conda` Organization** policy of the [conda governance policy](https://github.com/conda/governance/blob/main/governance/steering-council/charter.md#incorporate-a-software-project-into-the-main-conda-organization),
         please vote and/or comment on this proposal at your earliest convenience.
 
         It needs **60%** of the Steering Council to vote `yes` to pass.
@@ -181,4 +181,4 @@ body:
         <!-- END-OF-STEERING-CHECKLIST -->
         ```
 
-        **If quorum may be low:** before using [timeout](https://github.com/conda/governance#quorum) rules, the vote must run ≥2 weeks, be discussed at a Steering Council meeting, and get ≥3 Slack + ≥3 email reminders (see `teams/steering-council.yml` emails). Timeout outcomes need a PR under [`vote-results/`](https://github.com/conda/governance/tree/main/vote-results).
+        **If quorum may be low:** before using [timeout](https://github.com/conda/governance/blob/main/governance/steering-council/charter.md#quorum) rules, the vote must run ≥2 weeks, be discussed at a Steering Council meeting, and get ≥3 Slack + ≥3 email reminders (see `teams/steering-council.yml` emails). Timeout outcomes need a PR under [`vote-results/`](https://github.com/conda/governance/tree/main/vote-results).

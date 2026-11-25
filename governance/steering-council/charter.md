@@ -121,7 +121,7 @@ It is possible that a project joins as a Community Project, but in fact is not c
 
 We minimize the chance of this happening by clearly communicating requirements for Community Projects when bringing in a new project.
 
-Note that [Federated](../governance.md/#federated-projects) and [Incubator](../governance.md/#incubation) projects are not required to be open to new membership.
+Note that [Federated](../governance.md#federated-projects) and [Incubator](../governance.md#incubation) projects are not required to be open to new membership.
 
 ## Voting
 
@@ -151,7 +151,7 @@ To call for a standard vote, here is a template Issue/PR comment:
 ```md
 @conda/steering-council
 
-This vote falls under the **"{policy}"** policy of the [conda governance policy](https://github.com/conda/governance),
+This vote falls under the **"{policy}"** policy of the [conda governance policy](https://github.com/conda/governance/blob/main/governance/steering-council/charter.md#voting-items),
 please vote and/or comment on this proposal at your earliest convenience.
 
 It needs **{policy_percent}** of the Steering Council to vote `yes` to pass.
@@ -202,7 +202,7 @@ To post a timeout reminder, here is a template comment:
 ```md
   @conda/steering-council
 
-  This vote falls under the **"{policy}"** policy of the [conda governance policy](https://github.com/conda/governance),
+  This vote falls under the **"{policy}"** policy of the [conda governance policy](https://github.com/conda/governance/blob/main/governance/steering-council/charter.md#voting-items),
   please vote and/or comment on this proposal at your earliest convenience.
 
   It needs **{policy_percent}** of the Steering Council to vote `yes` to pass.
@@ -267,7 +267,7 @@ The proposer must provide a sufficient justification as to why the provisional m
 ### Resolve Overlapping Funding
 
 In the case that more than two Steering Council members [share the same funding source](#shared-funding-membership-restrictions) and no agreement can be reached
-among the members with shared funding as to who will enter [emeritus status](../governance.md/#emeritus-steering), the Steering Council will hold a simple
+among the members with shared funding as to who will enter [emeritus status](../governance.md#emeritus-steering), the Steering Council will hold a simple
 plurality vote in order to resolve the funding conflict. Each member with shared funding will be listed as a separate option in the
 vote. The Steering Council will then vote on which member should be moved to emeritus status. The member who receives the most votes is moved to emeritus status. The quorum for this vote is five. In the case of a tie, the member is chosen at random.
 
@@ -280,7 +280,7 @@ vote. The Steering Council will then vote on which member should be moved to eme
 
 ### Sub-team Formation
 
-Proposers must specify the name, role & responsibility, members, and charter (dynamic or static) of any new [sub-teams](../governance.md/#sub-teams).
+Proposers must specify the name, role & responsibility, members, and charter (dynamic or static) of any new [sub-teams](../governance.md#sub-teams).
 
 - Standard
 - Voting:
@@ -298,14 +298,14 @@ Proposers must specify the name and justification for why a sub-team should be d
 
 ### Add Project/Repo to Incubator
 
-Any single Steering Council member may add a project to the [incubator](../governance.md/#incubation), given the knowledge and consent of the author(s). The low barrier to entry here is because we want to encourage innovation, experimentation, and growth. Steering Council members are encouraged to use common sense when adding new projects to the `conda-incubator` organization.
+Any single Steering Council member may add a project to the [incubator](../governance.md#incubation), given the knowledge and consent of the author(s). The low barrier to entry here is because we want to encourage innovation, experimentation, and growth. Steering Council members are encouraged to use common sense when adding new projects to the `conda-incubator` organization.
 
 - Standard
 - 1 Steering Council member willing to add the repository, no vote required
 
 ### Remove Project/Repo from Incubator
 
-While we do not anticipate this ever being necessary, if the situation arises where a project needs to be removed from the [incubator](../governance.md/#incubation), two potential options are available, depending on the copyright and maintenance of the project.
+While we do not anticipate this ever being necessary, if the situation arises where a project needs to be removed from the [incubator](../governance.md#incubation), two potential options are available, depending on the copyright and maintenance of the project.
 
 In the first, easy case, the incubated project has been wholly developed and maintained by the authors. Here, the project should be allowed to leave incubation if the developers of that project decide and consent to leave. No vote from the Steering Council is required. A willing Steering Council member may be needed to transfer the repository, though.
 
@@ -318,7 +318,7 @@ In the second case, the incubated project has been communally developed by other
 
 ### Incorporate a Software Project into the main `conda` Organization
 
-At some point, many projects will want to be included in the main `conda` GitHub (or otherwise) organization. Moving a project into this organization can be done with a super-majority vote from the Steering Council. There are no strict criteria for when a project is ready, stable, or viable for this step. Rather, Steering Council members are entrusted to use their objective best judgment and common sense when making this determination. Adherence to conda specifications is a particularly important aspect of the decision to include a project in the main conda organization. The membership of the initial [Project Team](../governance.md/#project-teams) should be included in the vote information. There is not requirement for a project to incubate before a vote of this nature can be called. This kind of vote applies only to software projects.
+At some point, many projects will want to be included in the main `conda` GitHub (or otherwise) organization. Moving a project into this organization can be done with a super-majority vote from the Steering Council. There are no strict criteria for when a project is ready, stable, or viable for this step. Rather, Steering Council members are entrusted to use their objective best judgment and common sense when making this determination. Adherence to conda specifications is a particularly important aspect of the decision to include a project in the main conda organization. The membership of the initial [Project Team](../governance.md#project-teams) should be included in the vote information. There is not requirement for a project to incubate before a vote of this nature can be called. This kind of vote applies only to software projects.
 
 - Standard
 - 60% Majority to pass
@@ -364,7 +364,7 @@ The voting should happen in the PR in question and there must be a call to `@con
 
 ### Project Team Membership Appeal
 
-An applicant to a Project Team that has been rejected from the team via the [Nominate new member of a Community Project Team](../project-team/charter.md/#nominate-new-member-of-a-community-project) policy may appeal that decision to full Steering Council. Per the [Nominate new member of a Community Project Team](../project-team/charter.md/#nominate-new-member-of-a-community-project) policy
+An applicant to a Project Team that has been rejected from the team via the [Nominate new member of a Community Project Team](../project-team/charter.md#nominate-new-member-of-a-community-project-team) policy may appeal that decision to full Steering Council. Per the [Nominate new member of a Community Project Team](../project-team/charter.md#nominate-new-member-of-a-community-project-team) policy
 below, the proposer must provide a sufficient justification as to why the nominee should be welcomed into the Project Team.
 Prior work on the project is an essential part of the nomination process. If the vote passes, the nominee is added to the Project Team.
 
