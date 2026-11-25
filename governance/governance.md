@@ -1,7 +1,5 @@
 # conda community governance
 
-This is a Work in progress, documenting how we have been operating up to this point.
-
 - [conda community governance](#conda-community-governance)
   - [Naming \& Manifest](#naming--manifest)
   - [Terminology](#terminology)
