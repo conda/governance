@@ -78,7 +78,7 @@ A **Community** maintained project is one where the development, ownership, and 
 
 ### Federated Projects
 
-A **Federated** project is maintained by a sub-team of _the conda Organization_. Such projects maintain control of distribution and licensing via the project's sub-team. Federated projects are not controlled by the community at large. Still, as part of the conda Organization, federated projects agree to the terms of this governance document, including but not limited to the [Code of Conduct](CODE_OF_CONDUCT.md). See [The Rationale for Federated Projects](#the-rationale-for-federated-projects) section below for more.
+A **Federated** project is maintained by a sub-team of _the conda Organization_. Such projects maintain control of distribution and licensing via the project's sub-team. Federated projects are not controlled by the community at large. Still, as part of the conda Organization, federated projects agree to the terms of this governance document, including but not limited to the [Code of Conduct](../CODE_OF_CONDUCT.md). See [The Rationale for Federated Projects](#the-rationale-for-federated-projects) section below for more.
 
 ### The Rationale for Federated Projects
 
