@@ -9,7 +9,6 @@
       - [Dynamic Charter](#dynamic-charter)
       - [Static Charter](#static-charter)
     - [Project Teams](#project-teams)
-    - [Emeritus Steering](#emeritus-steering)
     - [External Contributors](#external-contributors)
   - [Community, Federated \& Archive Maintenance (Projects)](#community-federated--archive-maintenance-projects)
     - [Community Projects](#community-projects)
@@ -59,10 +58,6 @@ A **static** charter means that all membership decisions and non-trivial policy 
 ### Project Teams
 
 **Project Teams** are responsible for the management of a software project consisting of one or more repositories and any software releases. Project Team members have the ability to merge pull requests into the repositories of the software project they maintain, produce releases of that software project, and all other duties related to repo maintenance. See the [Project Teams Details](project-team/charter.md) section for more.
-
-### Emeritus Steering
-
-[Steering Council](#steering-council) members that are inactive (commits, GitHub comments/issues/reviews, dev meetings, and voting on polls) in the past six months will be asked if they want to become **Emeritus Steering** members. One week after asking if the inactive Steering Council member has not responded, they will be automatically moved to emeritus status. Any Steering Council member can also request to become Emeritus if they wish to do so (e.g. taking a sabbatical or long vacation). Emeritus Steering members can be brought back to active Steering Council membership at anytime, assuming there is space and no other policies (e.g., [shared funding](steering-council/charter.md#shared-funding-membership-restrictions), [council size](steering-council/charter.md#steering-council-size), etc.) are violated. Emeritus Steering Council members cannot vote. When the status of a member changes, the corresponding `teams/` YAML files should be immediately updated to reflect the member's new position.
 
 ### External Contributors
 

@@ -6,6 +6,7 @@
     - [Provisional Members](#provisional-members)
   - [Shared Funding Membership restrictions](#shared-funding-membership-restrictions)
     - [Shared Funding: Proximate, Ultimate, and In Between](#shared-funding-proximate-ultimate-and-in-between)
+    - [Emeritus Steering](#emeritus-steering)
       - [Tracking Funding](#tracking-funding)
   - [Steering Council and Project Teams Interactions](#steering-council-and-project-teams-interactions)
     - [Community Project Teams must be open to qualified new members](#community-project-teams-must-be-open-to-qualified-new-members)
@@ -95,6 +96,10 @@ In Robert’s situation, two levels are good candidates for determining shared f
 In most circumstances we will not include the university as a funder because projects in the CS department, and in the Economics department, for example, are unlikely to have shared interests driven by both being at the same university. People funded by NSF, divisions of NSF, or the US government are also unlikely to have shared interests that are driven by their shared funding.
 
 In the other example, Microsoft is a large company and these three largely unrelated parts of it are unlikely to have common goals based mainly on their common ultimate funder. However, a company that wanted to control the conda Organization could do so by enlisting people from across their organization, claim separate funding, and then capture the council. **In this case, the default guideline is to treat all parts of a company as having one funder.**
+
+### Emeritus Steering
+
+[Steering Council](#steering-council) members that are inactive (commits, GitHub comments/issues/reviews, dev meetings, and voting on polls) in the past six months will be asked if they want to become **Emeritus Steering** members. One week after asking if the inactive Steering Council member has not responded, they will be automatically moved to emeritus status. Any Steering Council member can also request to become Emeritus if they wish to do so (e.g. taking a sabbatical or long vacation). Emeritus Steering members can be brought back to active Steering Council membership at anytime, assuming there is space and no other policies (e.g., [shared funding](#shared-funding-membership-restrictions), [council size](#steering-council-size), etc.) are violated. Emeritus Steering Council members cannot vote. When the status of a member changes, the corresponding `teams/` YAML files should be immediately updated to reflect the member's new position.
 
 #### Tracking Funding
 
