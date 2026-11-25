@@ -13,9 +13,8 @@
   - [Community, Federated \& Archive Maintenance (Projects)](#community-federated--archive-maintenance-projects)
     - [Community Projects](#community-projects)
     - [Federated Projects](#federated-projects)
-    - [The Rationale for Federated Projects](#the-rationale-for-federated-projects)
+      - [The Rationale for Federated Projects](#the-rationale-for-federated-projects)
     - [Archive Projects](#archive-projects)
-    - [Project Requirements](#project-requirements)
   - [Trademarks](#trademarks)
   - [Incubation](#incubation)
 
@@ -65,7 +64,9 @@ This group encompasses all others who are not on the [Steering Council](#steerin
 
 ## Community, Federated & Archive Maintenance (Projects)
 
-The conda Organization acknowledges that project contributions may come from a variety of sources. To this end we define three maintenance categories for our projects.
+The conda Organization acknowledges that project contributions may come from a variety of sources. To this end we define three maintenance categories for our projects: community, federated, and archive.
+
+To learn more about project requirements, see the [Project Requirements](project-team/charter.md#project-requirements) section.
 
 ### Community Projects
 
@@ -75,7 +76,7 @@ A **Community** maintained project is one where the development, ownership, and 
 
 A **Federated** project is maintained by a sub-team of _the conda Organization_. Such projects maintain control of distribution and licensing via the project's sub-team. Federated projects are not controlled by the community at large. Still, as part of the conda Organization, federated projects agree to the terms of this governance document, including but not limited to the [Code of Conduct](../CODE_OF_CONDUCT.md). See [The Rationale for Federated Projects](#the-rationale-for-federated-projects) section below for more.
 
-### The Rationale for Federated Projects
+#### The Rationale for Federated Projects
 
 [Federated projects](#federated-projects) enable conda ecosystem projects to exist under the same umbrella organization, while maintaining community standards. They acknowledge the time and investment the developers and authors have put into their creations and that in certain cases they wish to maintain creative control. A federated system also allows for a phased transition plan for projects to become increasingly community maintained over time.
 
@@ -86,14 +87,6 @@ Federated projects are under no obligation to have a transition plan or any inte
 ### Archive Projects
 
 An **Archive** project is one which is unmaintained or clearly superseded by another project. No support is provided or anticipated for these projects.
-
-### Project Requirements
-
-All projects must prominently list their maintenance status in their README and provide clear instructions on where people can seek help for the project. The possible maintenance statuses are one of [`federated`](#federated-projects) or [`community`](#community-projects) or [`archive`](#archive-projects).
-
-**All conda projects must use an [OSI approved software license](https://opensource.org/).** We recommend and encourage the use of [BSD-family licenses](https://opensource.org/licenses/BSD-3-Clause). We recommend that specifications and documentation use [Creative Commons licenses](https://creativecommons.org/).
-
-[Project Teams](#project-teams) decide among themselves whether or not to move their projects in and out of `archive` status. The Steering Council must be notified before this change and will move `archive` projects to the `conda-archive` organization and mark them as archived.
 
 ## Trademarks
 
