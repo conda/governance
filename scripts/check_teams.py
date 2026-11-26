@@ -2,7 +2,7 @@
 Checks whether the members defined in the teams/*.yaml files correspond to their Github definitions.
 It also can check that all teams in the passed organizations are collected here, among others.
 
-We need one owner-level, read-only token per organization, passed via JSON strings in the
+We need one organization-wide, read-only token per organization, passed as a JSON object in the
 `GITHUB_TOKENS_PER_ORG` environment variable. For example:
 
     GITHUB_TOKENS_PER_ORG='{"conda": "xxx", "conda-incubator": "yyy"}'
@@ -27,10 +27,8 @@ Then you can use:
       permission-members: read
 ```
 
-For PATs, permissions must be:
-
-- All repositories, metadata (read-only)
-- Organization, metadata (read-only)
+Fine-grained PATs also work (one per organization, with the organization as resource owner).
+They need the same permissions as the app, with access to all repositories.
 """
 
 # /// script
