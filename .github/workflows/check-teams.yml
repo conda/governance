@@ -54,7 +54,7 @@ jobs:
         uses: $/.github/actions/check-teams
         with:
           organizations: "conda conda-incubator conda-sandbox"
-          tokens-per-organization: >-
+          tokens-per-organization: |
             {
               "conda": "${{ steps.conda-audit-conda.outputs.token }}",
               "conda-incubator": "${{ steps.conda-audit-conda-incubator.outputs.token }}",

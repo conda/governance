@@ -256,7 +256,10 @@ def check_teams(
             # 0. Validate team names
             org, name = team_name.split("/")
             if org not in organizations:
-                eprint(f"Not checked: '{org}' is not among the checked organizations.", indent=4)
+                eprint(
+                    f"Not checked: '{org}' is not among the checked organizations.",
+                    indent=4,
+                )
                 unchecked.setdefault(team_name, str(path.relative_to(ROOT)))
                 continue
 
