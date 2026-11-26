@@ -62,6 +62,7 @@ OPTIONAL_CHECKS = (
     "all-teams-described",  # checks all teams in the org(s) are described by YAML
     "all-repos-described",  # checks all repos in the org(s) are described by YAML
     "direct-access",  # checks no repo has direct access from individuals
+    "all-orgs-checked",  # teams/repos in YAMLs from orgs not being checked are errors, not warnings
 )
 
 
@@ -207,6 +208,7 @@ def check_teams(
 ) -> int:
     seen_teams = set()
     seen_repos = set()
+    unchecked: dict[str, str] = {}
 
     print("======================")
     print("Individual YAML checks")
@@ -254,11 +256,8 @@ def check_teams(
             # 0. Validate team names
             org, name = team_name.split("/")
             if org not in organizations:
-                eprint(
-                    f"::error::Team must belong to one of: {', '.join(organizations)}.",
-                    indent=4,
-                )
-                n_errors += 1
+                eprint(f"Not checked: '{org}' is not among the checked organizations.", indent=4)
+                unchecked.setdefault(team_name, str(path.relative_to(ROOT)))
                 continue
 
             try:
@@ -343,12 +342,40 @@ def check_teams(
                 )
                 n_errors += 1
             print("  ---")
+        for repo in team.get("resources", {}).get("repos") or ():
+            if repo.split("/")[0] not in organizations:
+                unchecked.setdefault(repo, str(path.relative_to(ROOT)))
         print("---")
 
-    with open(ROOT / teams_dir / "__orphaned__.yml") as f:
+    orphaned_path = ROOT / teams_dir / "__orphaned__.yml"
+    with open(orphaned_path) as f:
         orphaned = yaml.load(f)
-    seen_teams.update(orphaned["teams"].keys())
-    seen_repos.update(orphaned["repos"].keys())
+    for item in chain(orphaned["teams"] or (), orphaned["repos"] or ()):
+        if item.split("/")[0] not in organizations:
+            unchecked.setdefault(item, str(orphaned_path.relative_to(ROOT)))
+    seen_teams.update(orphaned["teams"] or ())
+    seen_repos.update(orphaned["repos"] or ())
+    # Unchecked entries are reported below; keep them out of the GitHub comparisons
+    seen_teams = {t for t in seen_teams if t.split("/")[0] in organizations}
+
+    if unchecked:
+        print("==============================================")
+        print("Check all referenced organizations are checked")
+        print("==============================================")
+        strict = "all-orgs-checked" in optional_checks
+        unchecked_orgs = sorted({item.split("/")[0] for item in unchecked})
+        eprint(
+            f"::{'error' if strict else 'warning'}::"
+            f"{len(unchecked)} teams/repos belong to organizations that were not checked "
+            f"({', '.join(unchecked_orgs)}). Maybe missing some in the CLI?"
+        )
+        for item, source in sorted(unchecked.items(), key=lambda kv: kv[0].lower()):
+            eprint(f"- {item} (in {source})", indent=2)
+        if strict:
+            n_errors += len(unchecked)
+        else:
+            n_warnings += len(unchecked)
+        print("---")
 
     if "all-teams-described" in optional_checks:
         # 4. Check all teams are described
