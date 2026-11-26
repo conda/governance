@@ -520,7 +520,7 @@ def main() -> int:
     n_errors = check_teams(
         *args.organizations, teams_dir=args.teams_dir, optional_checks=optional_checks
     )
-    return bool(n_errors)
+    return 1 if n_errors else 0
 
 
 if __name__ == "__main__":
