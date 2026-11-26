@@ -129,9 +129,19 @@ def gh(org, apipath):
         "X-GitHub-Api-Version": "2022-11-28",
     }
 
-    r = requests.get(api_url, headers=headers, params={"per_page": 100}, timeout=30)
-    r.raise_for_status()
-    return r.json()
+    url, params, results = api_url, {"per_page": 100}, []
+    while url:  # paginate
+        if not url.startswith("https://api.github.com/"):
+            raise RuntimeError(f"Refusing to send token to unexpected URL: {url}")
+        r = requests.get(url, headers=headers, params=params, timeout=30)
+        r.raise_for_status()
+        data = r.json()
+        if not isinstance(data, list):
+            return data
+        results.extend(data)
+        url = r.links.get("next", {}).get("url")
+        params = None  # the next URL already carries the query string
+    return results
 
 
 @cache
