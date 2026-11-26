@@ -28,24 +28,24 @@ jobs:
       - uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
         id: conda-audit-conda
         with:
-          client-id: ${{ vars.CONDA_AUDIT_CLIENT_ID }}
-          private-key: ${{ secrets.CONDA_AUDIT_PRIVATE_KEY }}
+          client-id: ${{ vars.CONDA_GOVERNANCE_AUDIT_CLIENT_ID }}
+          private-key: ${{ secrets.CONDA_GOVERNANCE_AUDIT_PRIVATE_KEY }}
           owner: conda # zizmor: ignore[github-app] auditing every team and repository is the point
           permission-administration: read
           permission-members: read
       - uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
         id: conda-audit-conda-incubator
         with:
-          client-id: ${{ vars.CONDA_AUDIT_CLIENT_ID }}
-          private-key: ${{ secrets.CONDA_AUDIT_PRIVATE_KEY }}
+          client-id: ${{ vars.CONDA_GOVERNANCE_AUDIT_CLIENT_ID }}
+          private-key: ${{ secrets.CONDA_GOVERNANCE_AUDIT_PRIVATE_KEY }}
           owner: conda-incubator # zizmor: ignore[github-app] auditing every team and repository is the point
           permission-administration: read
           permission-members: read
       - uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
         id: conda-audit-conda-sandbox
         with:
-          client-id: ${{ vars.CONDA_AUDIT_CLIENT_ID }}
-          private-key: ${{ secrets.CONDA_AUDIT_PRIVATE_KEY }}
+          client-id: ${{ vars.CONDA_GOVERNANCE_AUDIT_CLIENT_ID }}
+          private-key: ${{ secrets.CONDA_GOVERNANCE_AUDIT_PRIVATE_KEY }}
           owner: conda-sandbox # zizmor: ignore[github-app] auditing every team and repository is the point
           permission-administration: read
           permission-members: read

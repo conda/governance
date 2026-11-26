@@ -8,9 +8,9 @@ Authentication uses a single GitHub App installed on each organization. The app 
 - Organization permissions: Members (read-only)
 
 Each installation must cover all repositories of its organization. The Teams workflow mints one
-installation token per organization (CONDA_AUDIT_CLIENT_ID / CONDA_AUDIT_PRIVATE_KEY) and passes
-them as CONDA_AUDIT_TOKEN_CONDA, CONDA_AUDIT_TOKEN_CONDA_INCUBATOR and
-CONDA_AUDIT_TOKEN_CONDA_SANDBOX.
+installation token per organization (CONDA_GOVERNANCE_AUDIT_CLIENT_ID / CONDA_GOVERNANCE_AUDIT_PRIVATE_KEY) and passes
+them as CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA, CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA_INCUBATOR and
+CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA_SANDBOX.
 """
 
 # /// script
@@ -81,11 +81,11 @@ def gh(org, apipath):
     api_url = f"https://api.github.com/{apipath}"
 
     if org == "conda":
-        token = os.environ.get("CONDA_AUDIT_TOKEN_CONDA")
+        token = os.environ.get("CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA")
     elif org == "conda-incubator":
-        token = os.environ.get("CONDA_AUDIT_TOKEN_CONDA_INCUBATOR")
+        token = os.environ.get("CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA_INCUBATOR")
     elif org == "conda-sandbox":
-        token = os.environ.get("CONDA_AUDIT_TOKEN_CONDA_SANDBOX")
+        token = os.environ.get("CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA_SANDBOX")
     else:
         token = None
     token = token or os.environ.get("GITHUB_TOKEN") or ""
