@@ -345,7 +345,7 @@ def check_teams(
             print("  ---")
         print("---")
 
-    with open(ROOT / "teams" / "__orphaned__.yml") as f:
+    with open(ROOT / teams_dir / "__orphaned__.yml") as f:
         orphaned = yaml.load(f)
     seen_teams.update(orphaned["teams"].keys())
     seen_repos.update(orphaned["repos"].keys())
@@ -432,8 +432,9 @@ def generate(*organizations: str, teams_dir: str = "teams"):
         org, team_name = team.split("/")
         if team_name in team_to_fn:
             continue
-        Path("teams").mkdir(parents=True, exist_ok=True)
-        output_path = Path("teams", f"{team_name.replace('.', '-')}.yml")
+        output_dir = ROOT / teams_dir
+        output_dir.mkdir(parents=True, exist_ok=True)
+        output_path = output_dir / f"{team_name.replace('.', '-')}.yml"
         if output_path.exists():
             continue
         details = team_details(org, team_name)
@@ -467,8 +468,8 @@ def cli():
     p.add_argument(
         "--generate",
         action="store_true",
-        help="Fill in team files for passed organizations instead of checking compliance. "
-        "Filenames without extensions serve as the team name to generate details for.",
+        help="Instead of checking compliance, create a YAML file for each team in the passed "
+        "organizations that is not fully described yet.",
     )
     p.add_argument(
         "--teams-dir",
