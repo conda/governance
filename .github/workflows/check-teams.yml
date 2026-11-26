@@ -15,6 +15,7 @@ permissions: {}
 jobs:
   check:
     runs-on: ubuntu-latest
+    environment: teams-audit
     steps:
       - name: Check PR comes from branch
         if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
