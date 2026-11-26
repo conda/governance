@@ -53,6 +53,6 @@ jobs:
       - run: pixi run check_teams
         env:
           PYTHONUNBUFFERED: "1"
-          CONDA_AUDIT_TOKEN_CONDA: ${{ steps.conda-audit-conda.outputs.token }}
-          CONDA_AUDIT_TOKEN_CONDA_INCUBATOR: ${{ steps.conda-audit-conda-incubator.outputs.token }}
-          CONDA_AUDIT_TOKEN_CONDA_SANDBOX: ${{ steps.conda-audit-conda-sandbox.outputs.token }}
+          CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA: ${{ steps.conda-audit-conda.outputs.token }}
+          CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA_INCUBATOR: ${{ steps.conda-audit-conda-incubator.outputs.token }}
+          CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA_SANDBOX: ${{ steps.conda-audit-conda-sandbox.outputs.token }}
