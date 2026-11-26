@@ -93,9 +93,9 @@ class CondaSubTeam(BaseModel):
         "unknown",
     ] = ...
     """
-    The team and charter type, see [dynamic](https://github.com/conda/governance#dynamic-charter),
-    [static](https://github.com/conda/governance#static-charter),
-    and [project](https://github.com/conda/governance#project-teams-details) requirements.
+    The team and charter type, see [dynamic](https://github.com/conda/governance/blob/main/governance/governance.md#dynamic-charter),
+    [static](https://github.com/conda/governance/blob/main/governance/governance.md#static-charter),
+    and [project](https://github.com/conda/governance/blob/main/governance/project-team/charter.md#project-teams-details) requirements.
     """
 
     details: str | None = ...

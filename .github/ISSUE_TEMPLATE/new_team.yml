@@ -7,7 +7,7 @@ body:
       value: |
         ## Basic Information
         > [!NOTE]
-        > To learn more about the different types of teams and their charters, please see [Teams & Roles in Conda Governance](https://github.com/conda/governance#teams--roles).
+        > To learn more about the different types of teams and their charters, please see [Teams & Roles in Conda Governance](https://github.com/conda/governance/blob/main/governance/governance.md#teams--roles-overview).
   - type: dropdown
     id: type
     attributes:

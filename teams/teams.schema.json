@@ -175,7 +175,7 @@
       "type": "string"
     },
     "charter": {
-      "description": "The team and charter type, see [dynamic](https://github.com/conda/governance#dynamic-charter),\n[static](https://github.com/conda/governance#static-charter),\nand [project](https://github.com/conda/governance#project-teams-details) requirements.",
+      "description": "The team and charter type, see [dynamic](https://github.com/conda/governance/blob/main/governance/governance.md#dynamic-charter),\n[static](https://github.com/conda/governance/blob/main/governance/governance.md#static-charter),\nand [project](https://github.com/conda/governance/blob/main/governance/project-team/charter.md#project-teams-details) requirements.",
       "enum": [
         "council",
         "dynamic-subteam",
