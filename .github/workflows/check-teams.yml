@@ -29,6 +29,7 @@ permissions: {}
 jobs:
   check:
     runs-on: ubuntu-latest
+    environment: teams-audit
     steps:
       - name: Check PR comes from branch
         if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
@@ -38,6 +39,30 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      - uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        id: conda-audit-conda
+        with:
+          client-id: ${{ vars.CONDA_GOVERNANCE_AUDIT_CLIENT_ID }}
+          private-key: ${{ secrets.CONDA_GOVERNANCE_AUDIT_PRIVATE_KEY }}
+          owner: conda # zizmor: ignore[github-app] auditing every team and repository is the point
+          permission-administration: read
+          permission-members: read
+      - uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        id: conda-audit-conda-incubator
+        with:
+          client-id: ${{ vars.CONDA_GOVERNANCE_AUDIT_CLIENT_ID }}
+          private-key: ${{ secrets.CONDA_GOVERNANCE_AUDIT_PRIVATE_KEY }}
+          owner: conda-incubator # zizmor: ignore[github-app] auditing every team and repository is the point
+          permission-administration: read
+          permission-members: read
+      - uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        id: conda-audit-conda-sandbox
+        with:
+          client-id: ${{ vars.CONDA_GOVERNANCE_AUDIT_CLIENT_ID }}
+          private-key: ${{ secrets.CONDA_GOVERNANCE_AUDIT_PRIVATE_KEY }}
+          owner: conda-sandbox # zizmor: ignore[github-app] auditing every team and repository is the point
+          permission-administration: read
+          permission-members: read
       - uses: prefix-dev/setup-pixi@ad1da6449d9e506fd127fd67ab2d054a769f6a94 # v0.11.2
       - name: Prepare inputs (on workflow_call)
         if: github.event_name == 'workflow_call'
@@ -52,11 +77,16 @@ jobs:
       - name: Prepare inputs
         if: github.event_name != 'workflow_call'
         env:
-          CONDA_ORG_WIDE_TOKEN: ${{ secrets.CONDA_ORG_WIDE_READ_ONLY }}
-          CONDA_INCUBATOR_ORG_WIDE_TOKEN: ${{ secrets.CONDA_INCUBATOR_ORG_WIDE_READ_ONLY }}
+          CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA: ${{ steps.conda-audit-conda.outputs.token }}
+          CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA_INCUBATOR: ${{ steps.conda-audit-conda-incubator.outputs.token }}
+          CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA_SANDBOX: ${{ steps.conda-audit-conda-sandbox.outputs.token }}
         run: |
-          echo "ORGANIZATIONS=conda conda-incubator" >> "$GITHUB_ENV"
-          echo "ORG_WIDE_TOKENS={\"conda\": \"$CONDA_ORG_WIDE_TOKEN\", \"conda-incubator\": \"$CONDA_INCUBATOR_ORG_WIDE_TOKEN\"}" >> "$GITHUB_ENV"
+          echo "ORGANIZATIONS=conda conda-incubator conda-archive" >> "$GITHUB_ENV"
+          echo "ORG_WIDE_TOKENS={
+            \"conda\": \"$CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA\",
+            \"conda-incubator\": \"$CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA_INCUBATOR\",
+            \"conda-archive\": \"$CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA_SANDBOX\"
+          }" >> "$GITHUB_ENV"
       - name: Check teams for ${{ env.ORGANIZATIONS }}
         env:
           PYTHONUNBUFFERED: "1"

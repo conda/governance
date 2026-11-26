@@ -1,14 +1,36 @@
 """
 Checks whether the members defined in the teams/*.yaml files correspond to their Github definitions.
+It also can check that all teams in the passed organizations are collected here, among others.
 
-We need one fine-grained token per organization, passed via JSON strings in the `ORG_WIDE_TOKENS`
-environment variable. For example `ORG_WIDE_TOKENS='{"conda": "xxx", "conda-incubator": "yyy"}'.
-Permissions must be:
+We need one owner-level, read-only token per organization, passed via JSON strings in the
+`GITHUB_TOKENS_PER_ORG` environment variable. For example:
+
+    GITHUB_TOKENS_PER_ORG='{"conda": "xxx", "conda-incubator": "yyy"}'
+
+We recommend using a GitHub App installed on each organization. The app needs:
+
+- Repository permissions: Metadata (read-only, implicit), Administration (read-only)
+- Organization permissions: Members (read-only)
+
+Each installation must cover all repositories of its organization.
+
+Then you can use:
+
+```yaml
+- uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+  id: token-for-org-name
+  with:
+      client-id: ${{ vars.CLIENT_ID }}
+      private-key: ${{ secrets.PRIVATE_KEY }}
+      owner: ORG-NAME # zizmor: ignore[github-app] auditing every team and repository is the point
+      permission-administration: read
+      permission-members: read
+```
+
+For PATs, permissions must be:
 
 - All repositories, metadata (read-only)
 - Organization, metadata (read-only)
-
-
 """
 
 # /// script
@@ -88,17 +110,20 @@ def report_diff(
 
 
 @cache
-def gh_org_wide_tokens():
-    if tokens := os.environ.get("ORG_WIDE_TOKENS"):
+def gh_tokens():
+    if tokens := os.environ.get("GITHUB_TOKENS_PER_ORG"):
         return json.loads(tokens)
     return {}
 
 
 def gh(org, apipath):
     api_url = f"https://api.github.com/{apipath}"
-
-    token = gh_org_wide_tokens().get(org) or os.environ.get("GITHUB_TOKEN") or ""
-
+    token = gh_tokens().get(org)
+    if not token:
+        raise ValueError(
+            f"No token could be found for org '{org}'. "
+            'Pass it via GITHUB_TOKENS_PER_ORG=\'{"org-name": "token"}\'.'
+        )
     # Headers for authentication and proper API versioning
     headers = {
         "Authorization": f"Bearer {token}",
@@ -106,13 +131,13 @@ def gh(org, apipath):
         "X-GitHub-Api-Version": "2022-11-28",
     }
 
-    r = requests.get(api_url, headers=headers, params={"per_page": 100})
+    r = requests.get(api_url, headers=headers, params={"per_page": 100}, timeout=30)
     r.raise_for_status()
     return r.json()
 
 
 @cache
-def team_details(org: str, team: str) -> list[str]:
+def team_details(org: str, team: str) -> dict:
     return gh(org, f"orgs/{org}/teams/{team}")
 
 
@@ -162,7 +187,7 @@ def all_yamls(teams_dir: str = "teams") -> list[Path]:
     teams_dir = ROOT / teams_dir
     return sorted(
         yml
-        for yml in chain(teams_dir.glob("**/*.y*l"))
+        for yml in teams_dir.glob("**/*.y*l")
         if not yml.name.startswith("__") and yml.suffix in (".yml", ".yaml")
     )
 
@@ -451,7 +476,7 @@ def cli():
         "organizations",
         nargs="+",
         help="Github organization(s) to check. Please provide Github tokens for each in "
-        "$ORG_WIDE_TOKENS set to a JSON string mapping org names to tokens",
+        "$GITHUB_TOKENS_PER_ORG set to a JSON string mapping org names to tokens",
         metavar="ORG",
     )
     return p
@@ -459,6 +484,15 @@ def cli():
 
 def main() -> int:
     args = cli().parse_args()
+
+    tokens = gh_tokens()
+    if not isinstance(tokens, dict):
+        raise SystemExit(
+            "GITHUB_TOKENS_PER_ORG must be a JSON object mapping org names to tokens."
+        )
+    if missing := sorted(set(args.organizations) - tokens.keys()):
+        raise SystemExit(f"No token in GITHUB_TOKENS_PER_ORG for: {', '.join(missing)}")
+
     if args.generate:
         generate(*args.organizations, teams_dir=args.teams_dir)
         return 0
@@ -474,9 +508,10 @@ def main() -> int:
         optional_checks = [c for c in OPTIONAL_CHECKS if c not in exclude_checks]
     else:
         optional_checks = OPTIONAL_CHECKS
-    return check_teams(
+    n_errors = check_teams(
         *args.organizations, teams_dir=args.teams_dir, optional_checks=optional_checks
     )
+    return bool(n_errors)
 
 
 if __name__ == "__main__":
