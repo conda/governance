@@ -24,3 +24,4 @@ teams:
   conda-incubator/implementation:
   conda-incubator/rattler: https://github.com/conda/rattler/issues/799
   conda/conda-lockfiles: https://github.com/conda/conda-maintainers-team-planning/issues/116
+  conda-sandbox/example:

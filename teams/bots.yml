@@ -10,6 +10,8 @@ resources:
   teams:
     - conda-incubator/bots
     - conda/bots
+    - conda-sandbox/bots
+    - conda-sandbox/release-bots
   repos:
     - conda/.github
     - conda/actions
