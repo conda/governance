@@ -12,11 +12,11 @@ resources:
   repos:
     - conda/cla
   other:
-links:
-  - https://github.com/conda/governance/issues/136
 membership:
   eligible:
     - steering-council.yml
+links:
+  - https://github.com/conda/governance/issues/136
 members:
   chenghlee: https://github.com/conda/governance/issues/136
   jaimergp: https://github.com/conda/governance/issues/136
