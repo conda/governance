@@ -11,6 +11,8 @@ resources:
     - conda/anaconda
   repos:
   other:
+membership:
+  on_outdated: warning
 links:
   - https://github.com/conda/governance/issues/222
   - https://github.com/conda/conda-maintainers-team-planning/issues/119

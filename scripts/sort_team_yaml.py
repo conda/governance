@@ -37,8 +37,8 @@ for path in sys.argv[1:]:
         for key in reversed(TEAM_KEY_ORDER):
             # .pop() removes the key/value but RETAINS the comment in 'ca'
             val = data.pop(key, None)
-            if key == "dissolved" and not val:
-                continue
+            if key in ("dissolved", "membership") and not val:
+                continue  # optional keys, only kept when set
             data.insert(0, key, val)
 
         for key in "members", "emeritus":
@@ -48,7 +48,9 @@ for path in sys.argv[1:]:
                     members.insert(0, key, val)
 
         if "resources" in data:
-            for key in reversed(("teams", "repos", "other")):
+            for key in reversed(("teams", "repos", "orgs", "other")):
+                if key == "orgs" and key not in data["resources"]:
+                    continue  # optional key, don't add it if missing
                 val = data["resources"].pop(key, None)
                 data["resources"].insert(0, key, val)
                 if key != "other" and isinstance(val, list):

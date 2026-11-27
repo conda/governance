@@ -1,16 +1,34 @@
 """
 Checks whether the members defined in the teams/*.yaml files correspond to their Github definitions.
-It also makes sure that all teams in conda, conda-incubator, and conda-sandbox are collected here.
+It also can check that all teams in the passed organizations are collected here, among others.
 
-Authentication uses a single GitHub App installed on each organization. The app needs:
+We need one organization-wide, read-only token per organization, passed as a JSON object in the
+`GITHUB_TOKENS_PER_ORG` environment variable. For example:
+
+    GITHUB_TOKENS_PER_ORG='{"conda": "xxx", "conda-incubator": "yyy"}'
+
+We recommend using a GitHub App installed on each organization. The app needs:
 
 - Repository permissions: Metadata (read-only, implicit), Administration (read-only)
 - Organization permissions: Members (read-only)
 
-Each installation must cover all repositories of its organization. The Teams workflow mints one
-installation token per organization (CONDA_GOVERNANCE_AUDIT_CLIENT_ID / CONDA_GOVERNANCE_AUDIT_PRIVATE_KEY) and passes
-them as CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA, CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA_INCUBATOR and
-CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA_SANDBOX.
+Each installation must cover all repositories of its organization.
+
+Then you can use:
+
+```yaml
+- uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+  id: token-for-org-name
+  with:
+      client-id: ${{ vars.CLIENT_ID }}
+      private-key: ${{ secrets.PRIVATE_KEY }}
+      owner: ORG-NAME # zizmor: ignore[github-app] auditing every team and repository is the point
+      permission-administration: read
+      permission-members: read
+```
+
+Fine-grained PATs also work (one per organization, with the organization as resource owner).
+They need the same permissions as the app, with access to all repositories.
 """
 
 # /// script
@@ -18,12 +36,16 @@ CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA_SANDBOX.
 #   "requests",
 #   "ruamel.yaml",
 # ]
+# requires-python = ">=3.11"
 # ///
 
+import json
 import os
 import sys
+from collections.abc import Iterable
 from difflib import unified_diff
 from functools import cache
+from itertools import chain
 from pathlib import Path
 
 import requests
@@ -33,6 +55,16 @@ HERE = Path(__file__).parent
 ROOT = HERE.parent
 yaml = YAML()
 yaml.indent(mapping=2, sequence=4, offset=2)
+OPTIONAL_CHECKS = (
+    "team-details",  # 'details' section in some charters must conform to a certain schema
+    "descriptions-match",  # github team description is checked
+    "inherited-members",  # no inherited access in this team from parent teams
+    "all-teams-described",  # checks all teams in the org(s) are described by YAML
+    "all-repos-described",  # checks all repos in the org(s) are described by YAML
+    "direct-access",  # checks no repo has direct access from individuals
+    "all-orgs-checked",  # teams/repos in YAMLs from orgs not being checked are errors, not warnings
+    "org-owners",  # org owners match the members of the teams listing the org in resources.orgs
+)
 
 
 def eprint(*args, indent=0, **kwargs):
@@ -77,19 +109,21 @@ def report_diff(
     eprint()
 
 
+@cache
+def gh_tokens():
+    if tokens := os.environ.get("GITHUB_TOKENS_PER_ORG"):
+        return json.loads(tokens)
+    return {}
+
+
 def gh(org, apipath):
     api_url = f"https://api.github.com/{apipath}"
-
-    if org == "conda":
-        token = os.environ.get("CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA")
-    elif org == "conda-incubator":
-        token = os.environ.get("CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA_INCUBATOR")
-    elif org == "conda-sandbox":
-        token = os.environ.get("CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA_SANDBOX")
-    else:
-        token = None
-    token = token or os.environ.get("GITHUB_TOKEN") or ""
-
+    token = gh_tokens().get(org)
+    if not token:
+        raise ValueError(
+            f"No token could be found for org '{org}'. "
+            'Pass it via GITHUB_TOKENS_PER_ORG=\'{"org-name": "token"}\'.'
+        )
     # Headers for authentication and proper API versioning
     headers = {
         "Authorization": f"Bearer {token}",
@@ -97,13 +131,23 @@ def gh(org, apipath):
         "X-GitHub-Api-Version": "2022-11-28",
     }
 
-    r = requests.get(api_url, headers=headers, params={"per_page": 100})
-    r.raise_for_status()
-    return r.json()
+    url, params, results = api_url, {"per_page": 100}, []
+    while url:  # paginate
+        if not url.startswith("https://api.github.com/"):
+            raise RuntimeError(f"Refusing to send token to unexpected URL: {url}")
+        r = requests.get(url, headers=headers, params=params, timeout=30)
+        r.raise_for_status()
+        data = r.json()
+        if not isinstance(data, list):
+            return data
+        results.extend(data)
+        url = r.links.get("next", {}).get("url")
+        params = None  # the next URL already carries the query string
+    return results
 
 
 @cache
-def team_details(org: str, team: str) -> list[str]:
+def team_details(org: str, team: str) -> dict:
     return gh(org, f"orgs/{org}/teams/{team}")
 
 
@@ -149,38 +193,118 @@ def collaborators(org, repo):
 
 
 @cache
-def all_yamls() -> list[Path]:
+def org_owners(org) -> list[str]:
+    result = gh(org, f"orgs/{org}/members?role=admin")
+    return [user["login"] for user in result]
+
+
+@cache
+def load_team(path: Path | str) -> dict:
+    with open(path) as f:
+        return yaml.load(f)
+
+
+def eligible_pool(team: dict, teams_root: Path) -> tuple[set[str] | None, list[str]]:
+    """
+    Lowercased members of the teams listed in membership.eligible, plus any errors found
+    resolving them. The pool is None for teams without membership rules (strict teams).
+    """
+    eligible = ((team.get("membership") or {}).get("eligible")) or ()
+    if not eligible:
+        return None, []
+    pool, errors = set(), []
+    for ref in eligible:
+        path = teams_root / ref
+        if not path.is_file():
+            errors.append(f"Eligible team file '{ref}' does not exist.")
+            continue
+        other = load_team(path)
+        if other.get("dissolved"):
+            errors.append(f"Eligible team '{ref}' is dissolved.")
+        elif (other.get("membership") or {}).get("eligible"):
+            errors.append(
+                f"Eligible team '{ref}' has its own membership rules; "
+                "only teams with an exact member list can be referenced."
+            )
+        else:
+            pool.update(member.lower() for member in other.get("members") or {})
+    return pool, errors
+
+
+@cache
+def all_yamls(teams_dir: str = "teams") -> list[Path]:
+    teams_dir = ROOT / teams_dir
     return sorted(
         yml
-        for yml in (*ROOT.glob("teams/**/*.yml"), *ROOT.glob("teams/**/*.yaml"))
-        if not yml.name.startswith("__")
+        for yml in teams_dir.glob("**/*.y*l")
+        if not yml.name.startswith("__") and yml.suffix in (".yml", ".yaml")
     )
 
 
-def check_teams() -> int:
+def check_teams(
+    *organizations: str,
+    teams_dir: str = "teams",
+    optional_checks: Iterable[str] = OPTIONAL_CHECKS,
+) -> int:
     seen_teams = set()
     seen_repos = set()
+    # teams_dir may live outside this repository (e.g. when used as a GitHub Action)
+    display_root = (ROOT / teams_dir).parent
+    unchecked: dict[str, str] = {}
+    # Repos (in the checked orgs) referenced in the YAMLs, for the direct-access check
+    mentioned_repos = set()
+    # org -> {expected owner: [YAML files granting ownership]}
+    expected_owners: dict[str, dict[str, list[str]]] = {}
 
     print("======================")
     print("Individual YAML checks")
     print("======================")
-    list_of_yamls = all_yamls()
+    list_of_yamls = all_yamls(teams_dir)
     n_yamls = len(list_of_yamls)
     n_errors = 0
     n_warnings = 0
     for i, path in enumerate(list_of_yamls, 1):
-        print(f"{i}/{n_yamls}: Checking", path.relative_to(ROOT), "...")
-        with open(path) as f:
-            team = yaml.load(f)
+        print(f"{i}/{n_yamls}: Checking", path.relative_to(display_root), "...")
+        team = load_team(path)
         if team.get("dissolved"):
             continue
+
+        # Teams with membership.eligible: members can join freely from the eligible teams
+        pool, pool_errors = eligible_pool(team, ROOT / teams_dir)
+        for msg in pool_errors:
+            eprint(f"::error::{msg}", indent=4)
+            n_errors += 1
+        if pool is not None and (
+            outsiders := sorted(
+                (m for m in team.get("members") or {} if m.lower() not in pool),
+                key=str.lower,
+            )
+        ):
+            eprint(
+                "::error::These members are not in any of the eligible teams "
+                f"({', '.join(team['membership']['eligible'])}): {', '.join(outsiders)}",
+                indent=4,
+            )
+            n_errors += 1
+
+        for org in (team.get("resources") or {}).get("orgs") or ():
+            if org not in organizations:
+                unchecked.setdefault(org, str(path.relative_to(display_root)))
+                continue
+            for member in team.get("members") or {}:
+                expected_owners.setdefault(org, {}).setdefault(member, []).append(
+                    str(path.relative_to(display_root))
+                )
 
         # Governance says:
         #   Proposers must specify the name, role & responsibility, members,
         #   and charter (dynamic or static) of any new sub-teams.
         # Name, charter and members are in the schema. Role and responsibility need to be enforced
         # in the free text field 'details':
-        if team["charter"] in ("static-subteam", "dynamic-subteam"):
+        if "team-details" in optional_checks and team["charter"] in (
+            "static-subteam",
+            "dynamic-subteam",
+        ):
             details_lines = (team.get("details") or "").splitlines()
             for section, is_error in (
                 ("Role", False),
@@ -203,12 +327,12 @@ def check_teams() -> int:
             print("  Checking Github team name", team_name)
             # 0. Validate team names
             org, name = team_name.split("/")
-            if org not in ("conda", "conda-incubator", "conda-sandbox"):
+            if org not in organizations:
                 eprint(
-                    "::error::Team must belong to the `conda`, `conda-incubator`, `conda-sandbox` orgs.",
+                    f"Not checked: '{org}' is not among the checked organizations.",
                     indent=4,
                 )
-                n_errors += 1
+                unchecked.setdefault(team_name, str(path.relative_to(display_root)))
                 continue
 
             try:
@@ -222,17 +346,18 @@ def check_teams() -> int:
                 continue
 
             # 1. Validate descriptions
-            print("  Checking Github team description")
-            if (team["description"] or "").strip() != (
-                details["description"] or ""
-            ).strip():
-                report_diff(
-                    "descriptions",
-                    file=(team["description"] or ""),
-                    github=(details["description"] or ""),
-                    indent=4,
-                )
-                n_errors += 1
+            if "descriptions-match" in optional_checks:
+                print("  Checking Github team description")
+                if (team["description"] or "").strip() != (
+                    details["description"] or ""
+                ).strip():
+                    report_diff(
+                        "descriptions",
+                        file=(team["description"] or ""),
+                        github=(details["description"] or ""),
+                        indent=4,
+                    )
+                    n_errors += 1
 
             # 2. Validate team members
             print("  Checking team members")
@@ -255,14 +380,38 @@ def check_teams() -> int:
                     inherited_members.append(member)
                 else:
                     direct_members.append(member)
-            if set(direct_members) != set(team["members"]):
-                members_in_file = sorted(team["members"], key=str.lower)
-                members_in_gh = sorted(direct_members, key=str.lower)
+            members_in_file = sorted(team.get("members") or {}, key=str.lower)
+            members_in_gh = sorted(direct_members, key=str.lower)
+            if pool is not None:
+                # Anyone eligible can join or leave; check they are eligible
+                if not_eligible := [m for m in members_in_gh if m.lower() not in pool]:
+                    eprint(
+                        f"::error::Team {org}/{name} has members that are not in any of the "
+                        f"eligible teams ({', '.join(team['membership']['eligible'])}): "
+                        f"{', '.join(not_eligible)}",
+                        indent=4,
+                    )
+                    n_errors += 1
+                outdated = {m.lower() for m in members_in_file} != {
+                    m.lower() for m in members_in_gh
+                }
+            else:
+                outdated = set(members_in_file) != set(members_in_gh)
+            if outdated:
+                # membership.on_outdated: "warning" lets the YAML lag behind GitHub
+                on_outdated = (team.get("membership") or {}).get("on_outdated", "error")
                 report_diff(
-                    "members", file=members_in_file, github=members_in_gh, indent=4
+                    "members",
+                    warning=on_outdated == "warning",
+                    file=members_in_file,
+                    github=members_in_gh,
+                    indent=4,
                 )
-                n_errors += 1
-            if inherited_members:
+                if on_outdated == "warning":
+                    n_warnings += 1
+                else:
+                    n_errors += 1
+            if "inherited-members" in optional_checks and inherited_members:
                 inherited_members_dashed = [
                     f"  - {m}" for m in sorted(set(inherited_members))
                 ]
@@ -273,6 +422,7 @@ def check_teams() -> int:
                     indent=4,
                 )
                 n_errors += 1
+
             # 3. Validate access to repositories
             print("  Checking repositories")
             repos_in_file = sorted(
@@ -291,78 +441,160 @@ def check_teams() -> int:
                 )
                 n_errors += 1
             print("  ---")
+        for repo in team.get("resources", {}).get("repos") or ():
+            if repo.split("/")[0] not in organizations:
+                unchecked.setdefault(repo, str(path.relative_to(display_root)))
+            else:
+                mentioned_repos.add(repo)
         print("---")
 
-    with open(ROOT / "teams" / "__orphaned__.yml") as f:
+    orphaned_path = ROOT / teams_dir / "__orphaned__.yml"
+    with open(orphaned_path) as f:
         orphaned = yaml.load(f)
-    seen_teams.update(orphaned["teams"].keys())
-    seen_repos.update(orphaned["repos"].keys())
+    for item in chain(orphaned["teams"] or (), orphaned["repos"] or ()):
+        if item.split("/")[0] not in organizations:
+            unchecked.setdefault(item, str(orphaned_path.relative_to(display_root)))
+    mentioned_repos.update(
+        repo for repo in orphaned["repos"] or () if repo.split("/")[0] in organizations
+    )
+    seen_teams.update(orphaned["teams"] or ())
+    seen_repos.update(orphaned["repos"] or ())
+    # Unchecked entries are reported below; keep them out of the GitHub comparisons
+    seen_teams = {t for t in seen_teams if t.split("/")[0] in organizations}
 
-    # 4. Check all teams are described
-    print("=============================")
-    print("Check all teams are described")
-    print("=============================")
-    teams_in_github = {
-        *teams_in_org("conda"),
-        *teams_in_org("conda-incubator"),
-        *teams_in_org("conda-sandbox"),
-    }
-
-    if seen_teams != teams_in_github:
-        teams_in_repo = sorted(seen_teams, key=str.lower)
-        teams_in_gh = sorted(teams_in_github, key=str.lower)
-        report_diff("teams", yamls=teams_in_repo, github=teams_in_gh, indent=2)
-        n_errors += 1
+    if unchecked:
+        print("==============================================")
+        print("Check all referenced organizations are checked")
+        print("==============================================")
+        strict = "all-orgs-checked" in optional_checks
+        unchecked_orgs = sorted({item.split("/")[0] for item in unchecked})
+        eprint(
+            f"::{'error' if strict else 'warning'}::"
+            f"{len(unchecked)} teams/repos/orgs belong to organizations that were not checked "
+            f"({', '.join(unchecked_orgs)}). Maybe missing some in the CLI?"
+        )
+        for item, source in sorted(unchecked.items(), key=lambda kv: kv[0].lower()):
+            eprint(f"- {item} (in {source})", indent=2)
+        if strict:
+            n_errors += len(unchecked)
+        else:
+            n_warnings += len(unchecked)
         print("---")
+
+    if "org-owners" in optional_checks:
+        print("===============================")
+        print("Check organization owners match")
+        print("===============================")
+        for org in organizations:
+            if org not in expected_owners:
+                eprint(
+                    f"::warning::No team lists '{org}' in resources.orgs, "
+                    "so its owners can't be checked."
+                )
+                n_warnings += 1
+                continue
+            try:
+                owners = org_owners(org)
+            except requests.HTTPError as exc:
+                eprint(f"::error::Could not fetch the owners of {org}: {exc}")
+                n_errors += 1
+                continue
+            expected = expected_owners[org]
+            if set(owners) != set(expected):
+                report_diff(
+                    f"{org} owners",
+                    yamls=sorted(expected, key=str.lower),
+                    github=sorted(owners, key=str.lower),
+                    indent=2,
+                )
+                for user in sorted(set(owners) - set(expected), key=str.lower):
+                    eprint(
+                        f"- {user} is an owner of {org}, but not a member of any team "
+                        "listing it in resources.orgs",
+                        indent=2,
+                    )
+                for user in sorted(set(expected) - set(owners), key=str.lower):
+                    eprint(
+                        f"- {user} should be an owner of {org} as a member of "
+                        f"{', '.join(expected[user])}",
+                        indent=2,
+                    )
+                n_errors += 1
+            print("---")
+
+    if "all-teams-described" in optional_checks:
+        # 4. Check all teams are described
+        print("=============================")
+        print("Check all teams are described")
+        print("=============================")
+        teams_in_github = {team for org in organizations for team in teams_in_org(org)}
+
+        if seen_teams != teams_in_github:
+            teams_in_repo = sorted(seen_teams, key=str.lower)
+            teams_in_gh = sorted(teams_in_github, key=str.lower)
+            report_diff("teams", yamls=teams_in_repo, github=teams_in_gh, indent=2)
+            n_errors += 1
+            print("---")
+
+    if "all-repos-described" in optional_checks:
+        print("=============================")
+        print("Check all repos are annotated")
+        print("=============================")
+        repos_to_audit = []
+        for repo in chain(*(repos_in_org(org) for org in organizations)):
+            if "-ghsa-" in repo:
+                continue
+            repos_to_audit.append(repo)
+            if repo not in seen_repos:
+                eprint(
+                    f"::error::Repository '{repo}' is not annotated in any local team or orphaned YAMLs."
+                )
+                try:
+                    eprint(
+                        "These teams have access:",
+                        teams_with_access_to_repo(*repo.split("/")),
+                        indent=2,
+                    )
+                except requests.HTTPError as exc:
+                    eprint(
+                        f"::error::Could not check teams with access to {repo} (HTTPError: {exc}), skipping...",
+                        indent=2,
+                    )
+                n_errors += 1
+    else:
+        # Without the org-wide listing, only audit the repos referenced in the YAMLs.
+        # This keeps the number of API calls proportional to the YAMLs, not to the org size.
+        repos_to_audit = sorted(mentioned_repos, key=str.lower)
 
     # 5. Check no individuals are granted access directly (everything must be a team)
-    print("=============================")
-    print("Check all repos are annotated")
-    print("=============================")
-    repos_with_direct_access = {}
-    for repo in (
-        *repos_in_org("conda"),
-        *repos_in_org("conda-incubator"),
-        *repos_in_org("conda-sandbox"),
-    ):
-        if "-ghsa-" in repo:
-            continue
-        if repo not in seen_repos:
-            eprint(
-                f"::error::Repository '{repo}' is not annotated in any local team or orphaned YAMLs."
+    if "direct-access" in optional_checks:
+        print("================================================")
+        print("Check no individuals are granted access directly")
+        print("================================================")
+        if "all-repos-described" not in optional_checks:
+            print(
+                f"Checking the {len(repos_to_audit)} repositories mentioned in the YAMLs "
+                "('all-repos-described' is disabled)."
             )
+        repos_with_direct_access = {}
+        for repo in repos_to_audit:
             try:
-                eprint(
-                    "These teams have access:",
-                    teams_with_access_to_repo(*repo.split("/")),
-                    indent=2,
-                )
+                if users := collaborators(*repo.split("/")):
+                    repos_with_direct_access[repo] = users
             except requests.HTTPError as exc:
                 eprint(
-                    f"::error::Could not check teams with access to {repo} (HTTPError: {exc}), skipping...",
+                    f"::error::Could not check collaborators for {repo} (HTTPError: {exc}), skipping...",
                     indent=2,
                 )
-            n_errors += 1
-        try:
-            if users := collaborators(*repo.split("/")):
-                repos_with_direct_access[repo] = users
-        except requests.HTTPError as exc:
-            eprint(
-                f"::error::Could not check collaborators for {repo} (HTTPError: {exc}), skipping...",
-                indent=2,
-            )
-            continue
-    print("================================================")
-    print("Check no individuals are granted access directly")
-    print("================================================")
-    if repos_with_direct_access:
-        eprint("::warning::Some users have direct access to repositories.")
-        eprint("Direct repository access is reported for review.")
-        for repo, users in repos_with_direct_access.items():
-            n_warnings += 1
-            print(f"- {repo}:")
-            for user, level in sorted(users.items()):
-                print(f"  - {user}: {level}")
+                n_errors += 1
+        if repos_with_direct_access:
+            eprint("::warning::Some users have direct access to repositories.")
+            eprint("Direct repository access is reported for review.")
+            for repo, users in repos_with_direct_access.items():
+                n_warnings += 1
+                print(f"- {repo}:")
+                for user, level in sorted(users.items()):
+                    print(f"  - {user}: {level}")
 
     print("====================", "=" * len(str(max([n_warnings, n_errors]))), sep="")
     print("Number of errors:", n_errors)
@@ -372,23 +604,20 @@ def check_teams() -> int:
     return n_errors
 
 
-def generate():
+def generate(*organizations: str, teams_dir: str = "teams"):
     team_to_fn = {}
-    for path in all_yamls():
+    for path in all_yamls(teams_dir):
         with open(path) as f:
             team = yaml.load(f)
             team_to_fn[team["name"]] = path
 
-    for team in (
-        *teams_in_org("conda"),
-        *teams_in_org("conda-incubator"),
-        *teams_in_org("conda-sandbox"),
-    ):
+    for team in chain(*(teams_in_org(org) for org in organizations)):
         org, team_name = team.split("/")
         if team_name in team_to_fn:
             continue
-        Path("teams").mkdir(parents=True, exist_ok=True)
-        output_path = Path("teams", f"{team_name.replace('.', '-')}.yml")
+        output_dir = ROOT / teams_dir
+        output_dir.mkdir(parents=True, exist_ok=True)
+        output_path = output_dir / f"{team_name.replace('.', '-')}.yml"
         if output_path.exists():
             continue
         details = team_details(org, team_name)
@@ -415,7 +644,67 @@ def generate():
             yaml.dump(data, f)
 
 
+def cli():
+    import argparse
+
+    p = argparse.ArgumentParser()
+    p.add_argument(
+        "--generate",
+        action="store_true",
+        help="Instead of checking compliance, create a YAML file for each team in the passed "
+        "organizations that is not fully described yet.",
+    )
+    p.add_argument(
+        "--teams-dir",
+        help="Directory where the YAML files for each team are stored.",
+        default="teams",
+    )
+    p.add_argument(
+        "-x",
+        "--exclude-checks",
+        help="Comma-separated string of optional checks to skip. Choose 'all' to skip all of them. ",
+    )
+    p.add_argument(
+        "organizations",
+        nargs="+",
+        help="Github organization(s) to check. Please provide Github tokens for each in "
+        "$GITHUB_TOKENS_PER_ORG set to a JSON string mapping org names to tokens",
+        metavar="ORG",
+    )
+    return p
+
+
+def main() -> int:
+    args = cli().parse_args()
+
+    tokens = gh_tokens()
+    if not isinstance(tokens, dict):
+        raise SystemExit(
+            "GITHUB_TOKENS_PER_ORG must be a JSON object mapping org names to tokens."
+        )
+    if missing := sorted(set(args.organizations) - tokens.keys()):
+        raise SystemExit(f"No token in GITHUB_TOKENS_PER_ORG for: {', '.join(missing)}")
+
+    if args.generate:
+        generate(*args.organizations, teams_dir=args.teams_dir)
+        return 0
+
+    exclude_checks = (args.exclude_checks or "").split(",")
+    if exclude_checks == [""]:
+        exclude_checks = []
+    if invalid := set(exclude_checks).difference({"all", *OPTIONAL_CHECKS}):
+        raise ValueError(f"Some exclude-checks values are not recognized: {invalid}")
+    if "all" in exclude_checks:
+        optional_checks = []
+    elif exclude_checks:
+        optional_checks = [c for c in OPTIONAL_CHECKS if c not in exclude_checks]
+    else:
+        optional_checks = OPTIONAL_CHECKS
+    n_errors = check_teams(
+        *args.organizations, teams_dir=args.teams_dir, optional_checks=optional_checks
+    )
+    return 1 if n_errors else 0
+
+
 if __name__ == "__main__":
-    if sys.argv[1:] and sys.argv[1] == "generate":
-        sys.exit(generate())
-    sys.exit(1 if check_teams() else 0)
+    sys.exit(main())

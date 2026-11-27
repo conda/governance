@@ -11,6 +11,8 @@ resources:
     - conda/prefix-dev
   repos: []
   other:
+membership:
+  on_outdated: warning
 links:
   - https://github.com/conda/governance/issues/226
 members:

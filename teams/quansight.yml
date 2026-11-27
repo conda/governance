@@ -14,6 +14,8 @@ resources:
     - conda/menuinst
   other:
     - conda/conda-maintainers-team-planning
+membership:
+  on_outdated: warning
 links:
   - https://github.com/conda/governance/issues/225
   - https://github.com/conda/conda-maintainers-team-planning/issues/119

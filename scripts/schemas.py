@@ -42,8 +42,42 @@ class Resources(BaseModel):
         | None
     ) = ...
     """The GitHub repositories this team owns or has write access to."""
+    orgs: list[Annotated[str, Field(pattern=r"^[a-zA-Z0-9\-_\.\+]{1,128}$")]] | None = (
+        None
+    )
+    """
+    The GitHub organizations this team administers. The owners of each organization
+    must be exactly the (non-emeritus) members of the teams listing it here.
+    """
     other: list[HttpUrl] | None = ...
     """Other responsibilities of this team"""
+
+
+class Membership(BaseModel):
+    """
+    Additional membership rules
+    """
+
+    model_config = ConfigDict(extra="forbid", use_attribute_docstrings=True)
+
+    eligible: (
+        list[
+            Annotated[
+                str, Field(pattern=r"^([a-zA-Z0-9\-_]+/)*[a-zA-Z0-9\-_]+\.ya?ml$")
+            ]
+        ]
+        | None
+    ) = Field(None, min_length=1)
+    """
+    Only members mentioned in these YAML files are eligible to join. Use filenames, like
+    `steering-council.yml`.
+    """
+
+    on_outdated: Literal["error", "warning"] = "error"
+    """
+    How to report differences between `members` and the GitHub team(s). Use `warning`
+    for teams whose members join and leave freely, so `members` can lag behind.
+    """
 
 
 class MemberDetails(BaseModel):
@@ -107,6 +141,11 @@ class CondaSubTeam(BaseModel):
 
     resources: Resources = ...
     """Resources owned by the team (Github teams, repos, service accounts, etc)"""
+
+    membership: Membership | None = None
+    """
+    Membership rules. When omitted, the members must match the GitHub team(s) exactly.
+    """
 
     links: list[HttpUrl] = ...
     """Important links, e.g. the issue/PR proposing the team creation"""

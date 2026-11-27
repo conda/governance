@@ -26,6 +26,9 @@ resources:
     - conda/actions
     - conda/infrastructure
     - conda/issue-tracker
+  orgs:
+    - conda
+    - conda-sandbox
   other:
     - https://github.com/conda-bot
     - https://conda.zulipchat.com/#narrow/channel/487124-infrastructure

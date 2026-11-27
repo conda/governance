@@ -11,6 +11,7 @@ on:
       - scripts/schemas.py
       - scripts/sort_team_yaml.py
       - .github/workflows/check-teams.yml
+      - .github/actions/check-teams/**
 permissions: {}
 jobs:
   check:
@@ -22,9 +23,6 @@ jobs:
         run: |
           echo "::error::Pull Requests from forks are not allowed. Please submit your PR from a branch. If you don't have permissions, check with a member of @conda/infrastructure."
           exit 1
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
       - uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
         id: conda-audit-conda
         with:
@@ -49,10 +47,16 @@ jobs:
           owner: conda-sandbox # zizmor: ignore[github-app] auditing every team and repository is the point
           permission-administration: read
           permission-members: read
-      - uses: prefix-dev/setup-pixi@ad1da6449d9e506fd127fd67ab2d054a769f6a94 # v0.11.2
-      - run: pixi run check_teams
-        env:
-          PYTHONUNBUFFERED: "1"
-          CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA: ${{ steps.conda-audit-conda.outputs.token }}
-          CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA_INCUBATOR: ${{ steps.conda-audit-conda-incubator.outputs.token }}
-          CONDA_GOVERNANCE_AUDIT_TOKEN_CONDA_SANDBOX: ${{ steps.conda-audit-conda-sandbox.outputs.token }}
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check teams
+        uses: $/.github/actions/check-teams
+        with:
+          organizations: "conda conda-incubator conda-sandbox"
+          tokens-per-organization: |
+            {
+              "conda": "${{ steps.conda-audit-conda.outputs.token }}",
+              "conda-incubator": "${{ steps.conda-audit-conda-incubator.outputs.token }}",
+              "conda-sandbox": "${{ steps.conda-audit-conda-sandbox.outputs.token }}"
+            }
