@@ -60,12 +60,23 @@ class Membership(BaseModel):
 
     model_config = ConfigDict(extra="forbid", use_attribute_docstrings=True)
 
-    eligible: list[
-        Annotated[str, Field(pattern=r"^([a-zA-Z0-9\-_]+/)*[a-zA-Z0-9\-_]+\.ya?ml$")]
-    ] = Field(..., min_length=1)
+    eligible: (
+        list[
+            Annotated[
+                str, Field(pattern=r"^([a-zA-Z0-9\-_]+/)*[a-zA-Z0-9\-_]+\.ya?ml$")
+            ]
+        ]
+        | None
+    ) = Field(None, min_length=1)
     """
     Only members mentioned in these YAML files are eligible to join. Use filenames, like
     `steering-council.yml`.
+    """
+
+    on_outdated: Literal["error", "warning"] = "error"
+    """
+    How to report differences between `members` and the GitHub team(s). Use `warning`
+    for teams whose members join and leave freely, so `members` can lag behind.
     """
 
 

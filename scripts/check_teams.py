@@ -383,7 +383,7 @@ def check_teams(
             members_in_file = sorted(team.get("members") or {}, key=str.lower)
             members_in_gh = sorted(direct_members, key=str.lower)
             if pool is not None:
-                # Anyone eligible can join or leave; only check they are eligible
+                # Anyone eligible can join or leave; check they are eligible
                 if not_eligible := [m for m in members_in_gh if m.lower() not in pool]:
                     eprint(
                         f"::error::Team {org}/{name} has members that are not in any of the "
@@ -392,22 +392,25 @@ def check_teams(
                         indent=4,
                     )
                     n_errors += 1
-                if {m.lower() for m in members_in_file} != {
+                outdated = {m.lower() for m in members_in_file} != {
                     m.lower() for m in members_in_gh
-                }:
-                    report_diff(
-                        "members",
-                        warning=True,
-                        file=members_in_file,
-                        github=members_in_gh,
-                        indent=4,
-                    )
-                    n_warnings += 1
-            elif set(direct_members) != set(members_in_file):
+                }
+            else:
+                outdated = set(members_in_file) != set(members_in_gh)
+            if outdated:
+                # membership.on_outdated: "warning" lets the YAML lag behind GitHub
+                on_outdated = (team.get("membership") or {}).get("on_outdated", "error")
                 report_diff(
-                    "members", file=members_in_file, github=members_in_gh, indent=4
+                    "members",
+                    warning=on_outdated == "warning",
+                    file=members_in_file,
+                    github=members_in_gh,
+                    indent=4,
                 )
-                n_errors += 1
+                if on_outdated == "warning":
+                    n_warnings += 1
+                else:
+                    n_errors += 1
             if "inherited-members" in optional_checks and inherited_members:
                 inherited_members_dashed = [
                     f"  - {m}" for m in sorted(set(inherited_members))

@@ -93,19 +93,34 @@
       "description": "Additional membership rules",
       "properties": {
         "eligible": {
+          "anyOf": [
+            {
+              "items": {
+                "pattern": "^([a-zA-Z0-9\\-_]+/)*[a-zA-Z0-9\\-_]+\\.ya?ml$",
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
           "description": "Only members mentioned in these YAML files are eligible to join. Use filenames, like\n`steering-council.yml`.",
-          "items": {
-            "pattern": "^([a-zA-Z0-9\\-_]+/)*[a-zA-Z0-9\\-_]+\\.ya?ml$",
-            "type": "string"
-          },
-          "minItems": 1,
-          "title": "Eligible",
-          "type": "array"
+          "title": "Eligible"
+        },
+        "on_outdated": {
+          "default": "error",
+          "description": "How to report differences between `members` and the GitHub team(s). Use `warning`\nfor teams whose members join and leave freely, so `members` can lag behind.",
+          "enum": [
+            "error",
+            "warning"
+          ],
+          "title": "On Outdated",
+          "type": "string"
         }
       },
-      "required": [
-        "eligible"
-      ],
       "title": "Membership",
       "type": "object"
     },
