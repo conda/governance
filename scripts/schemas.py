@@ -55,7 +55,7 @@ class Resources(BaseModel):
 
 class Membership(BaseModel):
     """
-    Membership rules for teams whose members can join and leave freely.
+    Additional membership rules
     """
 
     model_config = ConfigDict(extra="forbid", use_attribute_docstrings=True)
@@ -64,9 +64,8 @@ class Membership(BaseModel):
         Annotated[str, Field(pattern=r"^([a-zA-Z0-9\-_]+/)*[a-zA-Z0-9\-_]+\.ya?ml$")]
     ] = Field(..., min_length=1)
     """
-    Team files (relative to the teams directory, e.g. `core.yml`) whose members can join
-    this team freely. Every member must belong to at least one of these teams, but the
-    member list doesn't need to match the GitHub team exactly.
+    Only members mentioned in these YAML files are eligible to join. Use filenames, like
+    `steering-council.yml`.
     """
 
 

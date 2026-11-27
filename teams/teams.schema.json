@@ -90,10 +90,10 @@
     },
     "Membership": {
       "additionalProperties": false,
-      "description": "Membership rules for teams whose members can join and leave freely.",
+      "description": "Additional membership rules",
       "properties": {
         "eligible": {
-          "description": "Team files (relative to the teams directory, e.g. `core.yml`) whose members can join\nthis team freely. Every member must belong to at least one of these teams, but the\nmember list doesn't need to match the GitHub team exactly.",
+          "description": "Only members mentioned in these YAML files are eligible to join. Use filenames, like\n`steering-council.yml`.",
           "items": {
             "pattern": "^([a-zA-Z0-9\\-_]+/)*[a-zA-Z0-9\\-_]+\\.ya?ml$",
             "type": "string"
