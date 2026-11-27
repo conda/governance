@@ -42,6 +42,13 @@ class Resources(BaseModel):
         | None
     ) = ...
     """The GitHub repositories this team owns or has write access to."""
+    orgs: list[Annotated[str, Field(pattern=r"^[a-zA-Z0-9\-_\.\+]{1,128}$")]] | None = (
+        None
+    )
+    """
+    The GitHub organizations this team administers. The owners of each organization
+    must be exactly the (non-emeritus) members of the teams listing it here.
+    """
     other: list[HttpUrl] | None = ...
     """Other responsibilities of this team"""
 

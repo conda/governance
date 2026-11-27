@@ -124,6 +124,23 @@
           "description": "The GitHub repositories this team owns or has write access to.",
           "title": "Repos"
         },
+        "orgs": {
+          "anyOf": [
+            {
+              "items": {
+                "pattern": "^[a-zA-Z0-9\\-_\\.\\+]{1,128}$",
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The GitHub organizations this team administers. The owners of each organization\nmust be exactly the (non-emeritus) members of the teams listing it here.",
+          "title": "Orgs"
+        },
         "other": {
           "anyOf": [
             {

@@ -63,6 +63,7 @@ OPTIONAL_CHECKS = (
     "all-repos-described",  # checks all repos in the org(s) are described by YAML
     "direct-access",  # checks no repo has direct access from individuals
     "all-orgs-checked",  # teams/repos in YAMLs from orgs not being checked are errors, not warnings
+    "org-owners",  # org owners match the members of the teams listing the org in resources.orgs
 )
 
 
@@ -192,6 +193,12 @@ def collaborators(org, repo):
 
 
 @cache
+def org_owners(org) -> list[str]:
+    result = gh(org, f"orgs/{org}/members?role=admin")
+    return [user["login"] for user in result]
+
+
+@cache
 def all_yamls(teams_dir: str = "teams") -> list[Path]:
     teams_dir = ROOT / teams_dir
     return sorted(
@@ -213,6 +220,8 @@ def check_teams(
     unchecked: dict[str, str] = {}
     # Repos (in the checked orgs) referenced in the YAMLs, for the direct-access check
     mentioned_repos = set()
+    # org -> {expected owner: [YAML files granting ownership]}
+    expected_owners: dict[str, dict[str, list[str]]] = {}
 
     print("======================")
     print("Individual YAML checks")
@@ -227,6 +236,15 @@ def check_teams(
             team = yaml.load(f)
         if team.get("dissolved"):
             continue
+
+        for org in (team.get("resources") or {}).get("orgs") or ():
+            if org not in organizations:
+                unchecked.setdefault(org, str(path.relative_to(display_root)))
+                continue
+            for member in team.get("members") or {}:
+                expected_owners.setdefault(org, {}).setdefault(member, []).append(
+                    str(path.relative_to(display_root))
+                )
 
         # Governance says:
         #   Proposers must specify the name, role & responsibility, members,
@@ -378,7 +396,7 @@ def check_teams(
         unchecked_orgs = sorted({item.split("/")[0] for item in unchecked})
         eprint(
             f"::{'error' if strict else 'warning'}::"
-            f"{len(unchecked)} teams/repos belong to organizations that were not checked "
+            f"{len(unchecked)} teams/repos/orgs belong to organizations that were not checked "
             f"({', '.join(unchecked_orgs)}). Maybe missing some in the CLI?"
         )
         for item, source in sorted(unchecked.items(), key=lambda kv: kv[0].lower()):
@@ -388,6 +406,47 @@ def check_teams(
         else:
             n_warnings += len(unchecked)
         print("---")
+
+    if "org-owners" in optional_checks:
+        print("===============================")
+        print("Check organization owners match")
+        print("===============================")
+        for org in organizations:
+            if org not in expected_owners:
+                eprint(
+                    f"::warning::No team lists '{org}' in resources.orgs, "
+                    "so its owners can't be checked."
+                )
+                n_warnings += 1
+                continue
+            try:
+                owners = org_owners(org)
+            except requests.HTTPError as exc:
+                eprint(f"::error::Could not fetch the owners of {org}: {exc}")
+                n_errors += 1
+                continue
+            expected = expected_owners[org]
+            if set(owners) != set(expected):
+                report_diff(
+                    f"{org} owners",
+                    yamls=sorted(expected, key=str.lower),
+                    github=sorted(owners, key=str.lower),
+                    indent=2,
+                )
+                for user in sorted(set(owners) - set(expected), key=str.lower):
+                    eprint(
+                        f"- {user} is an owner of {org}, but not a member of any team "
+                        "listing it in resources.orgs",
+                        indent=2,
+                    )
+                for user in sorted(set(expected) - set(owners), key=str.lower):
+                    eprint(
+                        f"- {user} should be an owner of {org} as a member of "
+                        f"{', '.join(expected[user])}",
+                        indent=2,
+                    )
+                n_errors += 1
+            print("---")
 
     if "all-teams-described" in optional_checks:
         # 4. Check all teams are described
