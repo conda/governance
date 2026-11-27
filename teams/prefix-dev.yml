@@ -13,6 +13,8 @@ resources:
   other:
 links:
   - https://github.com/conda/governance/issues/226
+membership:
+  on_outdated: warning
 members:
   baszalmstra: https://github.com/conda/governance/issues/226
   Hofer-Julian: https://github.com/conda/governance/issues/226

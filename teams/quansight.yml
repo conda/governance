@@ -17,6 +17,8 @@ resources:
 links:
   - https://github.com/conda/governance/issues/225
   - https://github.com/conda/conda-maintainers-team-planning/issues/119
+membership:
+  on_outdated: warning
 members:
   jaimergp: https://github.com/conda/governance/issues/225
   peytondmurray: https://github.com/conda/governance/issues/225
