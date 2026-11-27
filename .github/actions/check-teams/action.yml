@@ -3,27 +3,41 @@ description: 'Org-wide audits of team composition, owned repositories, permissio
 inputs:
   organizations:
     required: true
-    description: space-separated list of organizations to check
+    description: Space-separated list of organizations to check
   exclude-checks:
     required: false
     default: ""
-    description: comma-separated list of optional checks to skip, or 'all'
+    description: Comma-separated list of optional checks to skip, or 'all'
   tokens-per-organization:
     required: true
     description: JSON object mapping organization names to GitHub tokens
+  teams-dir:
+    required: false
+    default: teams
+    description: Directory with the team YAML files, relative to the caller's workspace
 runs:
   using: composite
   steps:
+    # The scripts and the pixi workspace live in the repository providing this action,
+    # which is not necessarily the one being checked out by the calling workflow.
+    - name: Locate the governance tooling
+      id: paths
+      shell: bash
+      run: echo "manifest=$(realpath "$GITHUB_ACTION_PATH/../../../pixi.toml")" >> "$GITHUB_OUTPUT"
     - uses: prefix-dev/setup-pixi@ad1da6449d9e506fd127fd67ab2d054a769f6a94 # v0.11.2
+      with:
+        manifest-path: ${{ steps.paths.outputs.manifest }}
     - name: Check teams for ${{ inputs.organizations }}
       env:
         PYTHONUNBUFFERED: "1"
         ORGANIZATIONS: ${{ inputs.organizations }}
         EXCLUDE_CHECKS: ${{ inputs.exclude-checks }}
         GITHUB_TOKENS_PER_ORG: ${{ inputs.tokens-per-organization }}
+        MANIFEST: ${{ steps.paths.outputs.manifest }}
+        TEAMS_DIR: ${{ inputs.teams-dir }}
       shell: bash
       run: |
         read -ra orgs <<< "$ORGANIZATIONS"
-        args=()
+        args=(--teams-dir "$(realpath "$GITHUB_WORKSPACE/$TEAMS_DIR")")
         if [[ -n "$EXCLUDE_CHECKS" ]]; then args+=(-x "$EXCLUDE_CHECKS"); fi
-        pixi run check_teams "${args[@]}" "${orgs[@]}"
+        pixi run --manifest-path "$MANIFEST" check_teams "${args[@]}" "${orgs[@]}"

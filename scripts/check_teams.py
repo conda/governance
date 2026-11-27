@@ -208,6 +208,8 @@ def check_teams(
 ) -> int:
     seen_teams = set()
     seen_repos = set()
+    # teams_dir may live outside this repository (e.g. when used as a GitHub Action)
+    display_root = (ROOT / teams_dir).parent
     unchecked: dict[str, str] = {}
 
     print("======================")
@@ -218,7 +220,7 @@ def check_teams(
     n_errors = 0
     n_warnings = 0
     for i, path in enumerate(list_of_yamls, 1):
-        print(f"{i}/{n_yamls}: Checking", path.relative_to(ROOT), "...")
+        print(f"{i}/{n_yamls}: Checking", path.relative_to(display_root), "...")
         with open(path) as f:
             team = yaml.load(f)
         if team.get("dissolved"):
@@ -260,7 +262,7 @@ def check_teams(
                     f"Not checked: '{org}' is not among the checked organizations.",
                     indent=4,
                 )
-                unchecked.setdefault(team_name, str(path.relative_to(ROOT)))
+                unchecked.setdefault(team_name, str(path.relative_to(display_root)))
                 continue
 
             try:
@@ -347,7 +349,7 @@ def check_teams(
             print("  ---")
         for repo in team.get("resources", {}).get("repos") or ():
             if repo.split("/")[0] not in organizations:
-                unchecked.setdefault(repo, str(path.relative_to(ROOT)))
+                unchecked.setdefault(repo, str(path.relative_to(display_root)))
         print("---")
 
     orphaned_path = ROOT / teams_dir / "__orphaned__.yml"
@@ -355,7 +357,7 @@ def check_teams(
         orphaned = yaml.load(f)
     for item in chain(orphaned["teams"] or (), orphaned["repos"] or ()):
         if item.split("/")[0] not in organizations:
-            unchecked.setdefault(item, str(orphaned_path.relative_to(ROOT)))
+            unchecked.setdefault(item, str(orphaned_path.relative_to(display_root)))
     seen_teams.update(orphaned["teams"] or ())
     seen_repos.update(orphaned["repos"] or ())
     # Unchecked entries are reported below; keep them out of the GitHub comparisons
