@@ -199,6 +199,39 @@ def org_owners(org) -> list[str]:
 
 
 @cache
+def load_team(path: Path | str) -> dict:
+    with open(path) as f:
+        return yaml.load(f)
+
+
+def eligible_pool(team: dict, teams_root: Path) -> tuple[set[str] | None, list[str]]:
+    """
+    Lowercased members of the teams listed in membership.eligible, plus any errors found
+    resolving them. The pool is None for teams without membership rules (strict teams).
+    """
+    eligible = ((team.get("membership") or {}).get("eligible")) or ()
+    if not eligible:
+        return None, []
+    pool, errors = set(), []
+    for ref in eligible:
+        path = teams_root / ref
+        if not path.is_file():
+            errors.append(f"Eligible team file '{ref}' does not exist.")
+            continue
+        other = load_team(path)
+        if other.get("dissolved"):
+            errors.append(f"Eligible team '{ref}' is dissolved.")
+        elif (other.get("membership") or {}).get("eligible"):
+            errors.append(
+                f"Eligible team '{ref}' has its own membership rules; "
+                "only teams with an exact member list can be referenced."
+            )
+        else:
+            pool.update(member.lower() for member in other.get("members") or {})
+    return pool, errors
+
+
+@cache
 def all_yamls(teams_dir: str = "teams") -> list[Path]:
     teams_dir = ROOT / teams_dir
     return sorted(
@@ -232,10 +265,27 @@ def check_teams(
     n_warnings = 0
     for i, path in enumerate(list_of_yamls, 1):
         print(f"{i}/{n_yamls}: Checking", path.relative_to(display_root), "...")
-        with open(path) as f:
-            team = yaml.load(f)
+        team = load_team(path)
         if team.get("dissolved"):
             continue
+
+        # Teams with membership.eligible: members can join freely from the eligible teams
+        pool, pool_errors = eligible_pool(team, ROOT / teams_dir)
+        for msg in pool_errors:
+            eprint(f"::error::{msg}", indent=4)
+            n_errors += 1
+        if pool is not None and (
+            outsiders := sorted(
+                (m for m in team.get("members") or {} if m.lower() not in pool),
+                key=str.lower,
+            )
+        ):
+            eprint(
+                "::error::These members are not in any of the eligible teams "
+                f"({', '.join(team['membership']['eligible'])}): {', '.join(outsiders)}",
+                indent=4,
+            )
+            n_errors += 1
 
         for org in (team.get("resources") or {}).get("orgs") or ():
             if org not in organizations:
@@ -330,9 +380,30 @@ def check_teams(
                     inherited_members.append(member)
                 else:
                     direct_members.append(member)
-            if set(direct_members) != set(team["members"]):
-                members_in_file = sorted(team["members"], key=str.lower)
-                members_in_gh = sorted(direct_members, key=str.lower)
+            members_in_file = sorted(team.get("members") or {}, key=str.lower)
+            members_in_gh = sorted(direct_members, key=str.lower)
+            if pool is not None:
+                # Anyone eligible can join or leave; only check they are eligible
+                if not_eligible := [m for m in members_in_gh if m.lower() not in pool]:
+                    eprint(
+                        f"::error::Team {org}/{name} has members that are not in any of the "
+                        f"eligible teams ({', '.join(team['membership']['eligible'])}): "
+                        f"{', '.join(not_eligible)}",
+                        indent=4,
+                    )
+                    n_errors += 1
+                if {m.lower() for m in members_in_file} != {
+                    m.lower() for m in members_in_gh
+                }:
+                    report_diff(
+                        "members",
+                        warning=True,
+                        file=members_in_file,
+                        github=members_in_gh,
+                        indent=4,
+                    )
+                    n_warnings += 1
+            elif set(direct_members) != set(members_in_file):
                 report_diff(
                     "members", file=members_in_file, github=members_in_gh, indent=4
                 )

@@ -88,6 +88,27 @@
       "title": "MemberDetails",
       "type": "object"
     },
+    "Membership": {
+      "additionalProperties": false,
+      "description": "Membership rules for teams whose members can join and leave freely.",
+      "properties": {
+        "eligible": {
+          "description": "Team files (relative to the teams directory, e.g. `core.yml`) whose members can join\nthis team freely. Every member must belong to at least one of these teams, but the\nmember list doesn't need to match the GitHub team exactly.",
+          "items": {
+            "pattern": "^([a-zA-Z0-9\\-_]+/)*[a-zA-Z0-9\\-_]+\\.ya?ml$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Eligible",
+          "type": "array"
+        }
+      },
+      "required": [
+        "eligible"
+      ],
+      "title": "Membership",
+      "type": "object"
+    },
     "Resources": {
       "additionalProperties": false,
       "description": "Defines the responsibilities of a Conda sub-team.\nThis structure is nested within the main CondaSubTeam model.",
@@ -220,6 +241,18 @@
     "resources": {
       "$ref": "#/$defs/Resources",
       "description": "Resources owned by the team (Github teams, repos, service accounts, etc)"
+    },
+    "membership": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Membership"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Membership rules. When omitted, the members must match the GitHub team(s) exactly."
     },
     "links": {
       "description": "Important links, e.g. the issue/PR proposing the team creation",

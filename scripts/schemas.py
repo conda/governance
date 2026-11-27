@@ -53,6 +53,23 @@ class Resources(BaseModel):
     """Other responsibilities of this team"""
 
 
+class Membership(BaseModel):
+    """
+    Membership rules for teams whose members can join and leave freely.
+    """
+
+    model_config = ConfigDict(extra="forbid", use_attribute_docstrings=True)
+
+    eligible: list[
+        Annotated[str, Field(pattern=r"^([a-zA-Z0-9\-_]+/)*[a-zA-Z0-9\-_]+\.ya?ml$")]
+    ] = Field(..., min_length=1)
+    """
+    Team files (relative to the teams directory, e.g. `core.yml`) whose members can join
+    this team freely. Every member must belong to at least one of these teams, but the
+    member list doesn't need to match the GitHub team exactly.
+    """
+
+
 class MemberDetails(BaseModel):
     """
     Defines the contact details of a team member.
@@ -114,6 +131,11 @@ class CondaSubTeam(BaseModel):
 
     resources: Resources = ...
     """Resources owned by the team (Github teams, repos, service accounts, etc)"""
+
+    membership: Membership | None = None
+    """
+    Membership rules. When omitted, the members must match the GitHub team(s) exactly.
+    """
 
     links: list[HttpUrl] = ...
     """Important links, e.g. the issue/PR proposing the team creation"""
