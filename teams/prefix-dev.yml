@@ -11,10 +11,10 @@ resources:
     - conda/prefix-dev
   repos: []
   other:
-links:
-  - https://github.com/conda/governance/issues/226
 membership:
   on_outdated: warning
+links:
+  - https://github.com/conda/governance/issues/226
 members:
   baszalmstra: https://github.com/conda/governance/issues/226
   Hofer-Julian: https://github.com/conda/governance/issues/226
