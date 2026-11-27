@@ -211,6 +211,8 @@ def check_teams(
     # teams_dir may live outside this repository (e.g. when used as a GitHub Action)
     display_root = (ROOT / teams_dir).parent
     unchecked: dict[str, str] = {}
+    # Repos (in the checked orgs) referenced in the YAMLs, for the direct-access check
+    mentioned_repos = set()
 
     print("======================")
     print("Individual YAML checks")
@@ -350,6 +352,8 @@ def check_teams(
         for repo in team.get("resources", {}).get("repos") or ():
             if repo.split("/")[0] not in organizations:
                 unchecked.setdefault(repo, str(path.relative_to(display_root)))
+            else:
+                mentioned_repos.add(repo)
         print("---")
 
     orphaned_path = ROOT / teams_dir / "__orphaned__.yml"
@@ -358,6 +362,9 @@ def check_teams(
     for item in chain(orphaned["teams"] or (), orphaned["repos"] or ()):
         if item.split("/")[0] not in organizations:
             unchecked.setdefault(item, str(orphaned_path.relative_to(display_root)))
+    mentioned_repos.update(
+        repo for repo in orphaned["repos"] or () if repo.split("/")[0] in organizations
+    )
     seen_teams.update(orphaned["teams"] or ())
     seen_repos.update(orphaned["repos"] or ())
     # Unchecked entries are reported below; keep them out of the GitHub comparisons
@@ -396,15 +403,16 @@ def check_teams(
             n_errors += 1
             print("---")
 
-    if "all-repos-described" in optional_checks or "direct-access" in optional_checks:
+    if "all-repos-described" in optional_checks:
         print("=============================")
         print("Check all repos are annotated")
         print("=============================")
-        repos_with_direct_access = {}
+        repos_to_audit = []
         for repo in chain(*(repos_in_org(org) for org in organizations)):
             if "-ghsa-" in repo:
                 continue
-            if "all-repos-described" in optional_checks and repo not in seen_repos:
+            repos_to_audit.append(repo)
+            if repo not in seen_repos:
                 eprint(
                     f"::error::Repository '{repo}' is not annotated in any local team or orphaned YAMLs."
                 )
@@ -420,30 +428,40 @@ def check_teams(
                         indent=2,
                     )
                 n_errors += 1
-            if "direct-access" in optional_checks:
-                try:
-                    if users := collaborators(*repo.split("/")):
-                        repos_with_direct_access[repo] = users
-                except requests.HTTPError as exc:
-                    eprint(
-                        f"::error::Could not check collaborators for {repo} (HTTPError: {exc}), skipping...",
-                        indent=2,
-                    )
-                    continue
+    else:
+        # Without the org-wide listing, only audit the repos referenced in the YAMLs.
+        # This keeps the number of API calls proportional to the YAMLs, not to the org size.
+        repos_to_audit = sorted(mentioned_repos, key=str.lower)
 
-        # 5. Check no individuals are granted access directly (everything must be a team)
-        if "direct-access" in optional_checks:
-            print("================================================")
-            print("Check no individuals are granted access directly")
-            print("================================================")
-            if repos_with_direct_access:
-                eprint("::warning::Some users have direct access to repositories.")
-                eprint("Direct repository access is reported for review.")
-                for repo, users in repos_with_direct_access.items():
-                    n_warnings += 1
-                    print(f"- {repo}:")
-                    for user, level in sorted(users.items()):
-                        print(f"  - {user}: {level}")
+    # 5. Check no individuals are granted access directly (everything must be a team)
+    if "direct-access" in optional_checks:
+        print("================================================")
+        print("Check no individuals are granted access directly")
+        print("================================================")
+        if "all-repos-described" not in optional_checks:
+            print(
+                f"Checking the {len(repos_to_audit)} repositories mentioned in the YAMLs "
+                "('all-repos-described' is disabled)."
+            )
+        repos_with_direct_access = {}
+        for repo in repos_to_audit:
+            try:
+                if users := collaborators(*repo.split("/")):
+                    repos_with_direct_access[repo] = users
+            except requests.HTTPError as exc:
+                eprint(
+                    f"::error::Could not check collaborators for {repo} (HTTPError: {exc}), skipping...",
+                    indent=2,
+                )
+                n_errors += 1
+        if repos_with_direct_access:
+            eprint("::warning::Some users have direct access to repositories.")
+            eprint("Direct repository access is reported for review.")
+            for repo, users in repos_with_direct_access.items():
+                n_warnings += 1
+                print(f"- {repo}:")
+                for user, level in sorted(users.items()):
+                    print(f"  - {user}: {level}")
 
     print("====================", "=" * len(str(max([n_warnings, n_errors]))), sep="")
     print("Number of errors:", n_errors)
